@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "supergene"
+version = "0.1.0"
+description = "A module to facilitate the scraping, procedural editing and formatting of the webnovel, Super [God] Gene. It also can automate converting the chapters into ebooks using Pandoc."
+authors = ["maxludden <dev@maxludden.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
