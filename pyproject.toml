@@ -8,7 +8,14 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+maxconsole = "^0.4.0"
+maxprogress = "^0.4.0"
+maxcolor = "^1.0.0"
+maxsetup = "^0.7.0"
 
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
 
 [build-system]
 requires = ["poetry-core"]
