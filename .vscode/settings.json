@@ -53,4 +53,5 @@
         "terminal.border": "#bb00ff"
     },
     "1password.debug.enabled": true,
+    "python.formatting.provider": "black",
 }

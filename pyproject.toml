@@ -1,22 +1,17 @@
-[tool.poetry]
+[tool.pdm]
+
+[project]
 name = "supergene"
-version = "0.1.0"
-description = "A module to facilitate the scraping, procedural editing and formatting of the webnovel, Super [God] Gene. It also can automate converting the chapters into ebooks using Pandoc."
-authors = ["maxludden <dev@maxludden.com>"]
-license = "MIT"
+version = "0.2.0"
+description = "Module to automate the scraping, formatting, editing, of the webnovel, \"Super Gene\", programattically. It also has helper functions generate the scraped webnovel into epub 3.0 eBooks."
+authors = [
+    {name = "maxludden", email = "dev@maxludden.com"},
+]
+dependencies = []
+requires-python = ">=3.11"
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.10"
-maxconsole = "^0.4.0"
-maxprogress = "^0.4.0"
-maxcolor = "^1.0.0"
-maxsetup = "^0.7.0"
-
-
-[tool.poetry.group.dev.dependencies]
-black = "^22.10.0"
+license = {text = "MIT"}
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["pdm-pep517>=1.0"]
+build-backend = "pdm.pep517.api"
