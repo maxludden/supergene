@@ -7,7 +7,19 @@ description = "Module to automate the scraping, formatting, editing, of the webn
 authors = [
     {name = "maxludden", email = "dev@maxludden.com"},
 ]
-dependencies = []
+dependencies = [
+    "maxconsole>=0.4.0",
+    "maxprogress>=0.4.0",
+    "maxcolor>=1.0.0",
+    "maxsetup>=0.8.0",
+    "ujson>=5.6.0",
+    "loguru>=0.6.0",
+    "rich>=12.6.0",
+    "sh>=1.14.3",
+    "python-dotenv>=0.21.0",
+    "mongoengine>=0.24.2",
+    "pymongo>=4.3.3",
+]
 requires-python = ">=3.11"
 readme = "README.md"
 license = {text = "MIT"}

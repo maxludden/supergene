@@ -16,7 +16,7 @@
             },
         },
         "python.poetryPath": "/Users/maxludden/.local/bin/poetry",
-        "python.defaultInterpreterPath": "/Users/maxludden/dev/venvs/supergene/bin/python",
+        "python.defaultInterpreterPath": "/Users/maxludden/dev/py/supergene/.venv/bin/python",
         "python.terminal.activateEnvironment": true,
         "workbench.colorCustomizations": {
             "editor.background": "#020202",
