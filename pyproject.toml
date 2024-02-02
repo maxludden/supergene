@@ -1,0 +1,27 @@
+[project]
+name = "supergene"
+version = "0.0.1"
+description = "Scrape, trim, parse, edit, format, chapters from the webnovel Super Gene into several ePub books."
+authors = [
+    {name = "Max Ludden", email = "dev@maxludden.com"},
+]
+dependencies = [
+    "pydantic>=2.6.0",
+    "bunnet>=1.2.0",
+    "rich>=13.7.0",
+    "maxgradient>=0.2.18",
+    "python-dotenv[cli]>=1.0.1",
+    "loguru>=0.7.2",
+    "pyyaml>=6.0.1",
+]
+requires-python = ">=3.12"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true

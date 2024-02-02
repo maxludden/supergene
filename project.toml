@@ -1,0 +1,4 @@
+project_name = "supergene"
+project_dir = "/Users/maxludden/dev/py/supergene"
+venv_dir = "/Users/maxludden/dev/venvs/supergene"
+venv_python = "/Users/maxludden/dev/venvs/supergene/bin/python"
