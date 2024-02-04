@@ -30,7 +30,7 @@ class Client:
     def uri(self) -> str:
         """Get the connection string for the database"""
         load_dotenv()
-        uri = getenv("SUPERGENE", "op://Personal/Mongo/connection uri")
+        uri = getenv("SUPERGENE", "op://Personal/ixzlwkey4nyc2w54fathyi4ilq/Database/uri")
         return uri
 
     @property

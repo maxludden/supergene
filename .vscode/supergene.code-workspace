@@ -1,0 +1,308 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../venvs"
+		}
+	],
+	"settings": {
+		"python.defaultInterpreterPath": "/Users/maxludden/dev/venvs/supergene/bin/python",
+		"better-comments.tags": [
+			{
+				"backgroundColor": "transparent",
+				"bold": false,
+				"color": "#FF0000",
+				"italic": false,
+				"strikethrough": false,
+				"tag": "!",
+				"underline": false
+			},
+			{
+				"backgroundColor": "transparent",
+				"bold": true,
+				"color": "#00ffff",
+				"italic": false,
+				"strikethrough": false,
+				"tag": "?",
+				"underline": false
+			},
+			{
+				"backgroundColor": "transparent",
+				"bold": false,
+				"color": "#666666",
+				"italic": false,
+				"strikethrough": false,
+				"tag": "#",
+				"underline": false
+			},
+			{
+				"backgroundColor": "transparent",
+				"bold": true,
+				"color": "#114488",
+				"italic": false,
+				"strikethrough": false,
+				"tag": "##",
+				"underline": false
+			}
+		],
+		"colorize.colorized_variables": [
+			"LESS",
+			"CSS",
+			"SASS",
+			"STYLUS"
+		],
+		"editor.semanticTokenColorCustomizations": {},
+		"editor.tokenColorCustomizations": {
+			"textMateRules": [
+				{
+					"scope": "string.quoted.double.json meta.structure.dictionary.json string.quoted.double.json",
+					"settings": {
+						"foreground": "#00FF00"
+					}
+				}
+			]
+		},
+		"errorLens.excludeBySource": [
+			"Pylint(F0002:astroid-error)"
+		],
+		"errorLens.lintFilePaths": {
+			"Stylelint": [
+				"**/*.stylelintrc",
+				"**/*.stylelintrc.{cjs,js,json,yaml,yml}",
+				"**/*stylelint.config.{cjs,js}",
+				"**/*package.json"
+			],
+			"eslint": [
+				"**/*.eslintrc.{js,cjs,yaml,yml,json}",
+				"**/*package.json"
+			]
+		},
+		"explorer.confirmDelete": false,
+		"explorer.confirmDragAndDrop": false,
+		"files.autoSave": "afterDelay",
+		"git.confirmSync": false,
+		"git.ignoredRepositories": [
+			"/Users/maxludden/.vscode/extensions/stepsize.stepsize-1.0.15/resources/demo-repository"
+		],
+		"github-actions.workflows.pinned.workflows": [
+			".github/workflows/jekyll-gh-pages.yml"
+		],
+		"github.copilot.enable": {
+			"*": true,
+			"markdown": true,
+			"plaintext": false,
+			"python": true,
+			"scminput": false,
+			"yaml": false
+		},
+		"projectManager.git.baseFolders": [
+			"max",
+			"/Users/maxludden/dev/py"
+		],
+		"svg.preview.background": "editor",
+		"syntax.highlightLanguages": [
+			"html",
+			"c",
+			"cpp",
+			"python",
+			"typescript",
+			"typescriptreact",
+			"javascript",
+			"go",
+			"rust",
+			"php",
+			"ruby",
+			"shellscript",
+			"ocaml",
+			"lua"
+		],
+		"terminal.integrated.automationProfile.windows": null,
+		"terminal.integrated.bellDuration": 10000,
+		"terminal.integrated.copyOnSelection": true,
+		"terminal.integrated.cursorWidth": 1000,
+		"terminal.integrated.defaultProfile.osx": "zsh",
+		"terminal.integrated.env.osx": {
+			"FIG_NEW_SESSION": "1"
+		},
+		"terminal.integrated.fontFamily": "MesloLGS NF",
+		"terminal.integrated.profiles.windows": {
+			"Command Prompt": {
+				"args": [],
+				"icon": "terminal-cmd",
+				"path": "${env:windir}\\System32\\cmd.exe"
+			},
+			"PowerShell": {
+				"icon": "terminal-powershell",
+				"source": "PowerShell"
+			},
+			"Ubuntu": {
+				"args": [
+					"-d",
+					"Ubuntu"
+				],
+				"path": "C:\\WINDOWS\\System32\\wsl.exe"
+			}
+		},
+		"terminal.integrated.rightClickBehavior": "paste",
+		"terminal.integrated.scrollback": 10000,
+		"todohighlight.defaultStyle": {
+			"backgroundColor": "#af00ff",
+			"border": "1px solid #5f00ff",
+			"borderRadius": "2px",
+			"color": "#ffffff",
+			"cursor": "block",
+			"isWholeLine": false,
+			"overviewRulerColor": "#af00ff"
+		},
+		"todohighlight.isCaseSensitive": false,
+		"todohighlight.isEnable": true,
+		"vscode-color-picker.languages": [
+			"json",
+			"jsonc",
+			"yaml",
+			"html",
+			"markdown",
+			"css",
+			"python",
+			"javascript",
+			"typescript",
+			"yaml",
+			"toml",
+			"zsh",
+			"sh"
+		],
+		"vsicons.dontShowNewVersionMessage": true,
+		"workbench.colorCustomizations": {
+			"[Dracula]": {
+				"editor.background": "#020202",
+				"panel.background": "#212121",
+				"sideBar.background": "#010101",
+				"sideBarSectionHeader.background": "#1a0056",
+				"sideBarSectionHeader.foreground": "#d699ff",
+				"sideBarSectionHeader.border": "#d699ff30",
+				"terminal.background": "#000000",
+				"activityBar.activeBorder": "#240078",
+				"activityBar.background": "#121212",
+				"activityBar.border": "#2e2e2e",
+				"activityBar.activeBackground": "#1e005171",
+				"activityBar.foreground": "#c0abff",
+				"activityBarBadge.background": "#d497ff",
+				"activityBarBadge.foreground": "#1e0051",
+				"list.errorForeground": "#ff9cde",
+				"list.warningForeground": "#ff0066b1",
+				"list.hoverBackground": "#1e0051",
+				"list.hoverForeground": "#dbbeff",
+				"list.activeSelectionBackground": "#1e0051",
+				"list.activeSelectionForeground": "#dbbeff",
+				"list.focusForeground": "#1e0051",
+				"list.focusBackground": "#dbbeff",
+				"list.inactiveFocusBackground": "#310046",
+				"list.deemphasizedForeground": "#dbbeff",
+				"list.inactiveSelectionBackground": "#1e0051",
+				"list.inactiveSelectionForeground": "#dbbeff",
+				"banner.background": "#121212",
+				"editor.findMatchBackground": "#0fefff89",
+				"editorInlayHint.parameterBackground": "#af00ff",
+				"scrollbarSlider.background": "#403444",
+				"scrollbarSlider.hoverBackground": "#9500ffaa",
+				"terminal.tab.activeBorder": "#af00ff",
+				"terminal.border": "#af00ff",
+				"panel.border": "#7300ff",
+				"panelTitle.activeBorder": "#ff00ff",
+				"panelTitle.activeForeground": "#dfa7ff",
+				"panelTitle.inactiveForeground": "#ffccff88",
+				"tab.activeBackground": "#110033",
+				"tab.activeForeground": "#ffaaff",
+				"tab.inactiveBackground": "#220055",
+				"tab.inactiveForeground": "#dddddd",
+				"statusBar.debuggingBackground": "#000000",
+				"statusBar.debuggingForeground": "#cccccc",
+				"statusBarItem.prominentBackground": "#dbbeff",
+				"statusBarItem.remoteBackground": "#1e0051",
+				"statusBarItem.remoteForeground": "#a782ff",
+				"editorBracketHighlight.foreground1": "#ff00ff",
+				"editorBracketHighlight.foreground2": "#af00ff",
+				"editorBracketHighlight.foreground3": "#5f00ff",
+				"editorBracketHighlight.foreground4": "#0000ff",
+				"editorBracketHighlight.foreground5": "#005fff",
+				"editorBracketHighlight.foreground6": "#00afff"
+			},
+			"[One Dark Drop]": {
+				"editor.background": "#020202",
+				"panel.background": "#50064d5c",
+				"sideBar.background": "#130710",
+				"sideBarSectionHeader.background": "#640f77",
+				"sideBarSectionHeader.foreground": "#bd9dd1",
+				"sideBarSectionHeader.border": "#c09cbb",
+				"terminal.background": "#000000",
+				"activityBar.activeBorder": "#45b8ff",
+				"activityBar.background": "#1f0113",
+				"activityBar.border": "#2e2e2e",
+				"activityBar.activeBackground": "#37466c71",
+				"activityBar.foreground": "#ffffff",
+				"activityBarBadge.background": "#d497ff",
+				"activityBarBadge.foreground": "#1e0051",
+				"list.errorForeground": "#ff9cde",
+				"list.warningForeground": "#ff0066b1",
+				"list.hoverBackground": "#4967b933",
+				"list.hoverForeground": "#dbbeff",
+				"list.activeSelectionBackground": "#45b8ff",
+				"list.activeSelectionForeground": "#000c59",
+				"list.focusForeground": "#0603ab",
+				"list.focusBackground": "#dbbeff",
+				"list.inactiveFocusBackground": "#310046",
+				"list.deemphasizedForeground": "#dbbeff",
+				"list.inactiveSelectionBackground": "#74013daa",
+				"list.inactiveSelectionForeground": "#ecdcff",
+				"banner.background": "#121212",
+				"editor.findMatchBackground": "#0fefff89",
+				"editorInlayHint.parameterBackground": "#bb00ff",
+				"scrollbarSlider.background": "#990099",
+				"scrollbarSlider.hoverBackground": "#af00ff",
+				"terminal.tab.activeBorder": "#0400ff",
+				"terminal.border": "#bb00ff",
+				"panel.border": "#5500ff",
+				"panelTitle.activeBorder": "#02bca3af",
+				"panelTitle.activeForeground": "#20ffd6",
+				"panelTitle.inactiveForeground": "#d1d1d16e",
+				"tab.activeBackground": "#43004c",
+				"tab.activeForeground": "#ffffff",
+				"tab.inactiveBackground": "#563867",
+				"tab.inactiveForeground": "#dddddd",
+				"statusBar.debuggingBackground": "#000000",
+				"statusBar.debuggingForeground": "#cccccc",
+				"statusBarItem.prominentBackground": "#dbbeff",
+				"statusBarItem.remoteBackground": "#2b3a3c",
+				"statusBarItem.remoteForeground": "#e1bcff",
+				"minimap.selectionHighlight": "#9b05ffe0",
+				"debugToolBar.background": "#ff0000",
+				"titleBar.border": "#ff00ff",
+				"titleBar.activeBackground": "#000000",
+				"titleBar.activeForeground": "#af00ff",
+				"titleBar.inactiveBackground": "#777777",
+				"titleBar.inactiveForeground": "#5f0055",
+				"breadcrumb.activeSelectionForeground": "#ff00ff",
+				"breadcrumb.focusForeground": "#ff58ff",
+				"breadcrumb.foreground": "#e6ccffa1",
+				"breadcrumbPicker.background": "#ff00ff",
+				"button.background": "#881f88",
+				"button.foreground": "#ffddff",
+				"minimap.background": "#5e003633",
+				"textLink.foreground": "#4fdfff"
+			}
+		},
+		"workbench.colorTheme": "One Dark Drop",
+		"yaml.customTags": [
+			"!ENV scalar",
+			"!ENV sequence",
+			"tag:yaml.org,2002:python/name:material.extensions.emoji.to_svg",
+			"tag:yaml.org,2002:python/name:material.extensions.emoji.twemoji",
+			"tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format"
+		],
+		"yaml.schemas": {
+			"https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
+		}
+	}
+}

@@ -1,0 +1,587 @@
+{
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.colorDecorators": true,
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnPaste": false,
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file",
+        "editor.formatOnType": true,
+        "editor.parameterHints.cycle": true,
+        "editor.snippetSuggestions": "top",
+        "editor.suggest.preview": true,
+        "editor.trimAutoWhitespace": true
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "better-comments.tags": [
+        {
+            "backgroundColor": "transparent",
+            "bold": false,
+            "color": "#FF0000",
+            "italic": false,
+            "strikethrough": false,
+            "tag": "!",
+            "underline": false
+        },
+        {
+            "backgroundColor": "transparent",
+            "bold": true,
+            "color": "#00ffff",
+            "italic": false,
+            "strikethrough": false,
+            "tag": "?",
+            "underline": false
+        },
+        {
+            "backgroundColor": "transparent",
+            "bold": false,
+            "color": "#114488",
+            "italic": false,
+            "strikethrough": false,
+            "tag": "#",
+            "underline": false
+        },
+        {
+            "backgroundColor": "transparent",
+            "bold": true,
+            "color": "#114488",
+            "italic": false,
+            "strikethrough": false,
+            "tag": "##",
+            "underline": false
+        }
+    ],
+    "cSpell.customDictionaries": {
+        "custom": true,
+        "internal-terms": true,
+        "project-words": {
+            "addWords": true,
+            "description": "Words that Max uses a lot.",
+            "name": "Max's Dictionary",
+            "path": "/Users/maxludden/.cspell/maxDictionary.txt"
+        },
+        "python": true
+    },
+    "cSpell.enableFiletypes": [
+        "dotenv",
+        "gitignore",
+        "kivy",
+        "log",
+        "rainbow hover markup",
+        "shellscript",
+        "sqlite",
+        "ssh_config",
+        "toml",
+        "vb",
+        "python"
+    ],
+    "cSpell.ignoreWords": [
+        "ARGB",
+        "HEXA",
+        "Ludden",
+        "Meslo",
+        "Scrollback",
+        "Sysnative",
+        "aaffaa",
+        "docsmsft",
+        "iusmod",
+        "mclass",
+        "nchr",
+        "pyenv",
+        "pylint",
+        "stepsize",
+        "twotwelve",
+        "windir"
+    ],
+    "cSpell.userWords": [
+        "greylock",
+        "maxbook",
+        "maxludden",
+        "TODOC",
+        "venvs",
+        "webcolors"
+    ],
+    "cSpell.words": [
+        "Donath",
+        "maxgradient",
+        "maxlog"
+    ],
+    "colorize.colorized_variables": [
+        "LESS",
+        "CSS",
+        "SASS",
+        "STYLUS"
+    ],
+    "editor.accessibilitySupport": "off",
+    "editor.codeActionsOnSave": {
+        "editor.action.formatDocument": "explicit",
+        "source.fixAll": "explicit",
+        "source.organizeImports": "explicit"
+    },
+    "editor.colorDecoratorsLimit": 800,
+    "editor.fontFamily": "MesloLGS NF, Menlo, Monaco, 'Courier New', monospace",
+    "editor.inlineSuggest.enabled": true,
+    "editor.linkedEditing": true,
+    "editor.semanticTokenColorCustomizations": {},
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "string.quoted.double.json meta.structure.dictionary.json string.quoted.double.json",
+                "settings": {
+                    "foreground": "#00FF00"
+                }
+            }
+        ]
+    },
+    "errorLens.excludeBySource": [
+        "Pylint(F0002:astroid-error)"
+    ],
+    "errorLens.lintFilePaths": {
+        "Stylelint": [
+            "**/*.stylelintrc",
+            "**/*.stylelintrc.{cjs,js,json,yaml,yml}",
+            "**/*stylelint.config.{cjs,js}",
+            "**/*package.json"
+        ],
+        "eslint": [
+            "**/*.eslintrc.{js,cjs,yaml,yml,json}",
+            "**/*package.json"
+        ]
+    },
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "files.autoSave": "afterDelay",
+    "files.exclude": {
+        "__pychache__": true
+    },
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "git.ignoredRepositories": [
+        "/Users/maxludden/.vscode/extensions/stepsize.stepsize-1.0.15/resources/demo-repository"
+    ],
+    "github-actions.workflows.pinned.workflows": [
+        ".github/workflows/jekyll-gh-pages.yml"
+    ],
+    "github.copilot.enable": {
+        "*": true,
+        "markdown": true,
+        "plaintext": false,
+        "python": true,
+        "scminput": false,
+        "yaml": false
+    },
+    "markdown.styles": [
+        "styles/gradient.css"
+    ],
+    "markdownlint.config": {
+        "MD003": {
+            "style": "atx"
+        },
+        "MD007": {
+            "indent": 4
+        },
+        "MD013": false,
+        "MD033": false,
+        "MD041": false,
+        "default": true,
+        "no-hard-tabs": false
+    },
+    "projectManager.git.baseFolders": [
+        "max",
+        "/Users/maxludden/dev/py"
+    ],
+    "python.defaultInterpreterPath": "/Users/maxludden/dev/venvs/super_gene/bin/python",
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./tests",
+        "-p",
+        "*test*.py"
+    ],
+    "python.testing.unittestEnabled": true,
+    "svg.preview.background": "editor",
+    "syntax.highlightLanguages": [
+        "html",
+        "c",
+        "cpp",
+        "python",
+        "typescript",
+        "typescriptreact",
+        "javascript",
+        "go",
+        "rust",
+        "php",
+        "ruby",
+        "shellscript",
+        "ocaml",
+        "lua"
+    ],
+    "terminal.integrated.automationProfile.windows": null,
+    "terminal.integrated.bellDuration": 10000,
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.cursorWidth": 1000,
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.env.osx": {
+        "FIG_NEW_SESSION": "1"
+    },
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.profiles.windows": {
+        "Command Prompt": {
+            "args": [],
+            "icon": "terminal-cmd",
+            "path": "${env:windir}\\System32\\cmd.exe"
+        },
+        "PowerShell": {
+            "icon": "terminal-powershell",
+            "source": "PowerShell"
+        },
+        "Ubuntu": {
+            "args": [
+                "-d",
+                "Ubuntu"
+            ],
+            "path": "C:\\WINDOWS\\System32\\wsl.exe"
+        }
+    },
+    "terminal.integrated.rightClickBehavior": "paste",
+    "terminal.integrated.scrollback": 10000,
+    "todohighlight.defaultStyle": {
+        "backgroundColor": "#af00ff",
+        "border": "1px solid #5f00ff",
+        "borderRadius": "2px",
+        "color": "#ffffff",
+        "cursor": "block",
+        "isWholeLine": false,
+        "overviewRulerColor": "#af00ff"
+    },
+    "todohighlight.include": [
+        "**/*.js",
+        "**/*.jsx",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.html",
+        "**/*.css",
+        "**/*.scss",
+        "**/*.php",
+        "**/*.rb",
+        "**/*.txt",
+        "**/*.mdown",
+        "**/*.md",
+        "**/*.json",
+        "**/*.jsonc",
+        "**/*.py"
+    ],
+    "todohighlight.isCaseSensitive": false,
+    "todohighlight.isEnable": true,
+    "todohighlight.keywords": [
+        {
+            "backgroundColor": "#ffffff",
+            "bold": true,
+            "border": "1px solid #dddddd",
+            "borderRadius": "2px",
+            "color": "#000000",
+            "isWholeLine": false,
+            "overviewRulerColor": "#ffffff",
+            "regex": {
+                "pattern": "\\b(\\w*\\.?white)\\b|\\b(#f{3,6)\\b|\\b(\\( ?255, *?255, *?255 ?\\))\\b"
+            },
+            "text": "white"
+        },
+        {
+            "backgroundColor": "#888888",
+            "bold": true,
+            "border": "1px solid #444444I2I",
+            "borderRadius": "2px",
+            "color": "#bbbbbb",
+            "isWholeLine": false,
+            "overviewRulerColor": "#888888",
+            "regex": {
+                "pattern": "\\b(\\w*\\.?light_?gr[a|e]y)\\b|\\b(#dddddd)\\b|\\b(\\( ?68, *?68, *?68 ?\\))\\b"
+            },
+            "text": "lightgrey"
+        },
+        {
+            "backgroundColor": "#dddddd",
+            "bold": true,
+            "border": "1px solid #444444",
+            "borderRadius": "2px",
+            "color": "#000000",
+            "isWholeLine": false,
+            "overviewRulerColor": "#dddddd",
+            "regex": {
+                "pattern": "\\b(\\w*\\.?light_?gr[ae]y)\\b|\\b(#dddddd)\\b|\\b(\\( ?221, *?221, *?221 ?\\))\\b"
+            },
+            "text": "lightgrey"
+        },
+        {
+            "backgroundColor": "#888888",
+            "bold": true,
+            "border": "1px solid #444444",
+            "borderRadius": "2px",
+            "color": "#ffffff",
+            "isWholeLine": false,
+            "overviewRulerColor": "#888888",
+            "regex": {
+                "pattern": "\\b(\\w*\\.?_?gr[a|e]y)\\b|\\b(#888888)\\b|\\b(\\( ?68, *?68, *?68 ?\\))\\b"
+            },
+            "text": "grey"
+        },
+        {
+            "backgroundColor": "#444444",
+            "bold": true,
+            "border": "1px solid #444444",
+            "borderRadius": "2px",
+            "color": "#ffffff",
+            "isWholeLine": false,
+            "overviewRulerColor": "#444444",
+            "regex": {
+                "pattern": "\\b(\\w*\\.?dark_?gr[a|e]y)\\b|\\b(#444444)\\b|\\b(\\( ?68, *?68, *?68 ?\\))\\b"
+            },
+            "text": "darkgrey"
+        },
+        {
+            "backgroundColor": "#000000",
+            "bold": true,
+            "border": "1px solid #444444",
+            "borderRadius": "2px",
+            "color": "#ffffff",
+            "isWholeLine": false,
+            "overviewRulerColor": "#000000",
+            "regex": {
+                "pattern": "\\b(\\w*\\.?black)\\b|\\b(#000000)\\b|\\b(\\( 0, *?0, *?0 ?\\))\\b"
+            },
+            "text": "black"
+        },
+        {
+            "backgroundColor": "#ff00ff",
+            "bold": true,
+            "border": "1px solid #af00ff",
+            "borderRadius": "2px",
+            "color": "#000000",
+            "isWholeLine": false,
+            "overviewRulerColor": "#ff00ff",
+            "regex": {
+                "pattern": "\\b(\\w*\\.?magenta)\\b|\\b(#ff00ff)\\b|\\b(\\( ?255, *?0, *?255 ?\\))\\b"
+            },
+            "text": "magenta"
+        },
+        {
+            "backgroundColor": "#af00ff",
+            "bold": true,
+            "border": "1px solid #5f00ff",
+            "borderRadius": "2px",
+            "color": "#ffffff",
+            "isWholeLine": false,
+            "overviewRulerColor": "#af00ff",
+            "regex": {
+                "pattern": "\\b(\\w*\\.?violet\\b|\\b(#af00ff)\\b|\\b(\\( ?175, *?0, *?255 ?\\))\\b"
+            },
+            "text": "violet"
+        },
+        {
+            "backgroundColor": "#5f00ff",
+            "bold": true,
+            "border": "1px solid #af00ff",
+            "borderRadius": "2px",
+            "color": "#ffffff",
+            "isWholeLine": false,
+            "overviewRulerColor": "#5f00ff",
+            "regex": {
+                "pattern": "\\b(\\w*\\.?purple)\\b|\\b(#5f00ff)\\b|\\b(\\( ?95, *?0, *?255 ?\\))\\b"
+            },
+            "text": "purple"
+        },
+        {
+            "backgroundColor": "#0000ff",
+            "bold": true,
+            "border": "1px solid #0088ff",
+            "borderRadius": "2px",
+            "color": "#ffffff",
+            "isWholeLine": false,
+            "overviewRulerColor": "#0000ff",
+            "regex": {
+                "pattern": "\\b(\\.?_?d?e?l?t?a?_?blue\\d?)\\b|\\b(#0000ff)\\b|\\b(\\( ?0, *?0, *?255 ?\\))\\b"
+            },
+            "text": "blue"
+        },
+        {
+            "backgroundColor": "#0088ff",
+            "bold": true,
+            "border": "1px solid #0000ff",
+            "borderRadius": "2px",
+            "color": "#ffffff",
+            "isWholeLine": false,
+            "overviewRulerColor": "#0088ff",
+            "regex": {
+                "pattern": "\\b(\\w*\\.?lightblue\\d?)\\b|\\b(#0088ff)\\b|\\b(\\( ?0, *?136, *?255 ?\\))\\b"
+            },
+            "text": "lightblue"
+        },
+        {
+            "backgroundColor": "#00ffff",
+            "bold": true,
+            "border": "1px solid #0088ff",
+            "borderRadius": "2px",
+            "color": "#000011",
+            "isWholeLine": false,
+            "overviewRulerColor": "#00ffff",
+            "regex": {
+                "pattern": "\\b(\\w*\\.?cyan)\\b|\\b(#00ffff)\\b|\\b(\\( ?0, *?255, *?255 ?\\))\\b"
+            },
+            "text": "cyan"
+        },
+        {
+            "backgroundColor": "#00ff00",
+            "bold": true,
+            "border": "1px solid #008800",
+            "borderRadius": "2px",
+            "color": "#001100",
+            "isWholeLine": false,
+            "overviewRulerColor": "#00ff00",
+            "regex": {
+                "pattern": "\\b(\\w*\\.?green\\d?)\\b|\\b(#00ff00)\\b|\\b(\\( ?0, *?255, *?0 ?\\))\\b"
+            },
+            "text": "green"
+        },
+        {
+            "backgroundColor": "#00ff00",
+            "bold": true,
+            "border": "1px solid #008800",
+            "borderRadius": "2px",
+            "color": "#001100",
+            "isWholeLine": false,
+            "regex": {
+                "pattern": "\\b(\\w*\\.?delta_?green\\d?)\\b|\\b(#00ff00)\\b|\\b(\\( ?0, *?255, *?0 ?\\))\\b"
+            },
+            "text": "delta_green"
+        },
+        {
+            "backgroundColor": "#ffff00",
+            "bold": true,
+            "border": "1px solid #888800",
+            "borderRadius": "2px",
+            "color": "#111100",
+            "isWholeLine": false,
+            "overviewRulerColor": "#ffff00",
+            "regex": {
+                "pattern": "\\b(\\w*\\.?yellow\\d?)\\b|\\b(#ffff00)\\b|\\b(\\( ?255, *?255, *?0 ?\\))\\b"
+            },
+            "text": "yellow"
+        },
+        {
+            "backgroundColor": "#ff8800",
+            "bold": true,
+            "border": "1px solid #884400",
+            "borderRadius": "2px",
+            "color": "#111100",
+            "isWholeLine": false,
+            "overviewRulerColor": "#ff8800",
+            "regex": {
+                "pattern": "\\b(\\w*\\.?orange\\d?)\\b|\\b(#ff8800)\\b|\\b(\\( ?255, *?136, *?0 ?\\))\\b"
+            },
+            "text": "orange"
+        },
+        {
+            "backgroundColor": "#ff0000",
+            "bold": true,
+            "border": "1px solid #880000",
+            "borderRadius": "2px",
+            "color": "#ffeeee",
+            "isWholeLine": false,
+            "overviewRulerColor": "#ff0000",
+            "regex": {
+                "pattern": "\\b(red)\\b|\\b(bold\\.red)\\b|\\b(cs\\.red)\\b|\\b(style\\.red)\\b|\\b(#ff0000)\\b|\\b(\\( ?255, *?0, *?0 ?\\))\\b"
+            },
+            "text": "red"
+        }
+    ],
+    "vscode-color-picker.languages": [
+        "json",
+        "jsonc",
+        "yaml",
+        "html",
+        "markdown",
+        "css",
+        "python",
+        "javascript",
+        "typescript",
+        "yaml",
+        "toml",
+        "zsh",
+        "sh"
+    ],
+    "vsicons.dontShowNewVersionMessage": true,
+    "workbench.colorCustomizations": {
+        "editor.background": "#020202",
+        "panel.background": "#212121",
+        "sideBar.background": "#010101",
+        "sideBarSectionHeader.background": "#1a0056",
+        "sideBarSectionHeader.foreground": "#d699ff",
+        "sideBarSectionHeader.border": "#d699ff30",
+        "terminal.background": "#000000",
+        "activityBar.activeBorder": "#240078",
+        "activityBar.background": "#121212",
+        "activityBar.border": "#2e2e2e",
+        "activityBar.activeBackground": "#1e005171",
+        "activityBar.foreground": "#c0abff",
+        "activityBarBadge.background": "#d497ff",
+        "activityBarBadge.foreground": "#1e0051",
+        "list.errorForeground": "#ff9cde",
+        "list.warningForeground": "#ff0066b1",
+        "list.hoverBackground": "#1e0051",
+        "list.hoverForeground": "#dbbeff",
+        "list.activeSelectionBackground": "#1e0051",
+        "list.activeSelectionForeground": "#dbbeff",
+        "list.focusForeground": "#1e0051",
+        "list.focusBackground": "#dbbeff",
+        "list.inactiveFocusBackground": "#310046",
+        "list.deemphasizedForeground": "#dbbeff",
+        "list.inactiveSelectionBackground": "#1e0051",
+        "list.inactiveSelectionForeground": "#dbbeff",
+        "banner.background": "#121212",
+        "editor.findMatchBackground": "#0fefff89",
+        "editorInlayHint.parameterBackground": "#af00ff",
+        "scrollbarSlider.background": "#403444",
+        "scrollbarSlider.hoverBackground": "#9500ffaa",
+        "terminal.tab.activeBorder": "#af00ff",
+        "terminal.border": "#af00ff",
+        "panel.border": "#7300ff",
+        "panelTitle.activeBorder": "#ff00ff",
+        "panelTitle.activeForeground": "#bea7ff",
+        "panelTitle.inactiveForeground": "#ffccff88",
+        "tab.activeBackground": "#110033",
+        "tab.activeForeground": "#ffaaff",
+        "tab.inactiveBackground": "#220055",
+        "tab.inactiveForeground": "#dddddd",
+        "statusBar.debuggingBackground": "#000000",
+        "statusBar.debuggingForeground": "#cccccc",
+        "statusBarItem.prominentBackground": "#dbbeff",
+        "statusBarItem.remoteBackground": "#1e0051",
+        "statusBarItem.remoteForeground": "#a782ff"
+    },
+    "workbench.colorTheme": "Dracula",
+    "yaml.customTags": [
+        "!ENV scalar",
+        "!ENV sequence",
+        "tag:yaml.org,2002:python/name:material.extensions.emoji.to_svg",
+        "tag:yaml.org,2002:python/name:material.extensions.emoji.twemoji",
+        "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format"
+    ],
+    "yaml.schemas": {
+        "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
+    }
+}
