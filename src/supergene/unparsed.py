@@ -2,6 +2,9 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
+# from pymongo import MongoClient
+from pymongo.database import Database
+from pymongo.collection import Collection
 from pydantic import Field
 from pydantic.networks import AnyUrl
 from pymongo import ASCENDING
@@ -23,3 +26,9 @@ class Unparsed(Document):
     class Settings:
         name = "unparsed"
         indexes = [[("chapter", ASCENDING), ("_id", ASCENDING)]]
+
+    @classmethod
+    def init_collection(cls, db: Database) -> Collection:
+        return db[cls.Settings.name]
+
+    

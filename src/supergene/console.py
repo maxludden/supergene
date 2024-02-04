@@ -135,7 +135,7 @@ def make_layout(self) -> Layout:
     return layout
 
 
-def get_progress() -> Progress:
+def get_progress(console: Console) -> Progress:
     """Get a progress bar."""
     return Progress(
         TextColumn("[bold #00AFFF]{task.fields[description]}[/]", justify="right"),
