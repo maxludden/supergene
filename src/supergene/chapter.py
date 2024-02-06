@@ -1,11 +1,10 @@
 # ruff: noqa: F401
 import re
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from enum import IntEnum
 from multiprocessing import cpu_count
 from pathlib import Path
-from typing import Any, Generator, List, Optional
+from typing import Any, List, Optional
 
 from bunnet import (
     Document,
@@ -15,13 +14,9 @@ from bunnet import (
     after_event,
     before_event,
 )
-from pydantic import BaseModel, Field, computed_field, field_validator
+from pydantic import Field, computed_field, field_validator
 from pydantic.networks import AnyUrl
 from rich.layout import Layout
-
-from supergene.client import MongoClient, mongoclient
-from supergene.console import Console, Progress, get_console, get_progress
-from supergene.unparsed import Unparsed
 
 
 # from enum import Enum
@@ -30,7 +25,6 @@ class Stage(IntEnum):
 
     UNPARSED = 0
     TRIMMED = 1
-    PARSED = 2
     FORMATTED = 3
     MARKDOWN = 4
 
@@ -61,6 +55,9 @@ class Chapter(Document):
         description="The url of the chapter",
     )
     text: str = Field(title="Text", description="The text of the chapter")
+    trimmed_text: str = Field(
+        ..., title="Trimmed Text", description="The trimmed text of the chapter."
+    )
     version: str = Field(pattern=r"\d+\.\d+\.\d+")
     filename: str = Field(
         title="Filename",
@@ -82,6 +79,9 @@ class Chapter(Document):
         examples=[["Voice of God", "Table", "beast soul"]],
         default=[],
     )
+
+    class Settings:
+        name = "chapter"
 
     def __eq__(self, other: Any) -> bool:
         """Check if two chapters are equal."""
@@ -187,94 +187,69 @@ class Chapter(Document):
         return layout
 
 
-def trim_text(chapter: Unparsed) -> Chapter:
-    """Trim the text of the chapter by removing unnecessary lines."""
-    text: str = chapter.text
-    chapter_str: str = f"{chapter.chapter}"
-    title: str = chapter.title
-
-    skip_words: List[str] = [
-        "chapter",
-        chapter_str,
-        title,
-        "translator",
-        "nyoi-bo",
-        "studio",
-        "editor",
-        " - ",
-        ": ",
-    ]
-
-    split_text: List[str] = text.split("\n\n")
-    start: int = 0
-
-    for i, line in enumerate(split_text):
-        skip: int = 0
-        for word in skip_words:
-            if word in line:
-                skip += 1
-                continue
-            if skip >= 2:
-                break
-            else:
-                continue
-
-        # if we made it here, we can skip this line
-        if skip:
-            start = i + 1
-            continue
-        else:
-            break
-    chapter_text: str = "\n\n".join(split_text[start:])
-    return Chapter(
-        chapter=chapter.chapter,
-        order=chapter.order,
-        created=chapter.created,
-        title=chapter.title,
-        url=chapter.url,
-        text=chapter_text,
-        version=chapter.version,
-        filename=chapter.filename,
-        filepath=str(chapter.filepath),
-        tags=chapter.tags,
+class V3Chapter(Document):
+    """Chapter from Version 3 of superforge."""
+    id: PydanticObjectId = Field(
+        ...,
+        title="ID", description="The unique identifier of the chapter."
+    )
+    book: int = Field(
+        ..., 
+        title="Book",
+        ge=1,
+        lt=3465,
+        description="The book number of the chapter."
+    )
+    chapter: int = Field(
+        ...,
+        title="Chapter",
+        ge=1,
+        lt=3465,
+        description="The number of the chapter."
+    )
+    filename: str = Field(
+        ...,
+        title="Filename",
+        description="The filename of the chapter with file extension",
+        examples=["00001.txt", "1234.md"]
+    )
+    html: str = Field(
+        ...,
+        title="HTML",
+        description="The html of the chapter."
+    )
+    html_path: str = Field(
+        ...,
+        title="HTML Path",
+        description="The path to the html file."
+    )
+    md: str = Field(
+        ...,
+        title="Markdown",
+        description="The markdown of the chapter."
+    )
+    md_path: str = Field(
+        ...,
+        title="Markdown Path",
+        description="The path to the markdown file."
+    )
+    section: int = Field(
+        ...,
+        title="Section",
+        ge=1,
+        lt=18,
+        description="The section number of the chapter."
+    )
+    text: str = Field(
+        ...,
+        title="Text",
+        description="The text of the chapter."
+    )
+    title: str = Field(
+        ...,
+        title="Title",
+        description="The title of the chapter."
     )
 
-
-def trim_all_chapters(
-    progress: Progress = get_progress(),
-) -> Generator[Chapter, None, None]:
-    """Trim all the chapters."""
-    with progress:
-        uri_taskid = progress.add_task(
-            "Retrieving MongoDB connection string...", total=2,
-        )
-        try:
-            client = mongoclient().
-            progress.update(
-                uri_taskid, advance=1, description="Retrieved MongoDB Connection String"
-            )
-        except ConnectionError as ce:
-            progress.console.log(f"[i #cfcfcf]ConnectionError:[/] {ce}")
-            raise ce
-        else:
-            try:
-
-        get_chapters: TaskID = progress.add_task("Retrieving chapters", total)
-
-    with ThreadPoolExecutor(max_workers=cpu_count() - 2) as executor:
-        results = list(executor.map(trim_text, chapters))
-
-    for result in results.as_completed():
-        yield result
-
-
-if __name__ == "__main__":
-    pass
-    with ThreadPoolExecutor(max_workers=cpu_count() - 2) as executor:
-        results = list(executor.map(trim_text, chapters))
-
-    for result in results.as_completed():
-        yield result
-
-if __name__ == "__main__":
-    pass
+    class Settings:
+        name = "v3chapter"

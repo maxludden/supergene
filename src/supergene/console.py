@@ -16,6 +16,7 @@ from rich.progress import (
 from rich.style import StyleType
 from rich.theme import Theme
 from rich.traceback import install as tr_install
+from maxgradient.default_styles import DEFAULT_STYLES
 
 
 def get_console(
@@ -23,7 +24,7 @@ def get_console(
     force_jupyter: Optional[bool] = None,
     force_interactive: Optional[bool] = None,
     soft_wrap: bool = False,
-    theme: Optional[Theme] = None,
+    theme: Optional[Theme] = Theme(DEFAULT_STYLES),
     stderr: bool = False,
     file: Optional[IO[str]] = None,
     quiet: bool = False,
@@ -147,3 +148,6 @@ def get_progress(console: Console) -> Progress:
         TimeElapsedColumn(),
         refresh_per_second=60,
     )
+
+global console
+console = get_console()
