@@ -16,14 +16,15 @@ from maxgradient import Gradient
 from pymongo import MongoClient
 from pymongo.collection import Collection
 from pymongo.database import Database
+from pydantic import BaseModel
 from rich.live import Live
 from rich.panel import Panel
 from rich.pretty import Pretty
-from rich.progress import BarColumn, MofNCompleteColumn, TextColumn, TimeElapsedColumn
+from rich.progress import BarColumn, MofNCompleteColumn, TextColumn, TimeElapsedColumn, TimeRemainingColumn, TaskID
 from rich.prompt import Confirm, IntPrompt, Prompt
 from rich.table import Row, Table
 from rich.text import Text
-from snoop import snoop
+from snoop import snoop # type: ignore
 
 from supergene.chapter import V3Chapter, Chapter
 from supergene.console import Console, Progress, get_console, get_progress
@@ -32,15 +33,33 @@ from supergene.unparsed import Unparsed
 
 
 
-console = get_console()
-progress = get_progress(console)
 skip_words: List[str] = [
     "chapter", "translator", "nyoi-bo", "studio", "editor"]
 skip_patterns: List[Pattern] = [
     re.compile(f"{word}", re.IGNORECASE) for word in skip_words
 ]
 
-@snoop()
+
+# @snoop()
+def get_chapter(chapter: int) -> Tuple[int, str, str]:
+    """Retrieve the chapter from MongoDB.
+    
+    Args:
+        chapter (int): the chapter number
+
+    Returns:
+        Tuple[int, str, str]: a tuple of the:
+            - chapter number
+            - title
+            - text
+    """
+
+    doc = Unparsed.find_one(Unparsed.chapter==chapter).run()
+    if not doc:
+        raise ValueError(f"Chapter {chapter} not found in the database.")
+    return doc.chapter, doc.title, doc.text
+
+# @snoop()
 def trim_text(text: str, chapter: int, title: str) -> Tuple[str, str]:
     """Remove the header from the unparsed chapter text
 
@@ -72,35 +91,99 @@ def trim_text(text: str, chapter: int, title: str) -> Tuple[str, str]:
     trimmed_text = '\n\n'.join(split_text[:start])
     return trimmed_text, updated_text
 
-@snoop()
-def trim_texts() -> None:
-    """Remove the header from the unparsed chapter text"""
-    mongo=Mongo()
-    mongo.connect()
-    progress = get_progress(console)
-    with progress:
-        trim = progress.add_task(description="Trimming Chapters' Text", total=Unparsed.count())
-        for doc in Unparsed.all(sort="chapter"):
-            progress.update(trim, advance=0.6, description=f"Processing Chapter {doc.chapter}...")
-            chapter: int = doc.chapter
-            title: str = doc.title
-            text: str = doc.text
-            trimmed_text, updated_text = trim_text(text, chapter, title)
-            chapter_doc = Chapter.find_one(Chapter.chapter==chapter).run()
-            if chapter_doc:
-                chapter_doc.update(Set({"text": updated_text})).run()
-                progress.update(trim, advance=0.1)
-                chapter_doc.update(Set({"trimmed_text": trimmed_text})).run()
-                progress.update(trim, advance=0.1)
-                chapter_doc.update(Set({"title": title})).run()
-                progress.update(trim, advance=0.2)
-                progress.console.print(Gradient(f"Chapter {chapter} trimmed."))
-            else:
-                raise FileNotFoundError(f"Chapter {chapter} not found in the database.")
+class ChapterProjection(BaseModel):
+    """Projection of the Chapter model"""
+    chapter: int
+    title: str
+    text: str
+    trimmed_text: str
 
+# @snoop()
+def update_chapter(chapter: int, title: str, text: str, trimmed_text: str, progress: Progress, task_id: TaskID) -> None:
+    """Update the chapter with the trimmed text"""
+    doc = Chapter.find_one(Chapter.chapter==chapter).run()
+    if doc:
+        progress.update(task_id, advance=0.1, description=f"Updating Chapter {doc.chapter}...")
+        assert chapter == doc.chapter, f"Chapter {chapter} not found in the database."
+        doc.update(Set({"title": title})).update(Set({"text": text})).update(Set({"trimmed_text": trimmed_text}))
+        progress.update(task_id, advance=0.1, description=f"Chapter {doc.chapter} Updated.")
+            
+
+# @snoop()
+def main() -> None:
+    """Remove the header from the unparsed chapter text"""
+    console = get_console()
+    with Progress(
+        TextColumn("[progress.description]{task.description}[/]", justify="right"),
+        BarColumn(bar_width=None),
+        "[progress.percentage]{task.percentage:>3.1f}%",
+        "•",
+        MofNCompleteColumn(),
+        "•",
+        TimeElapsedColumn(),
+        TimeRemainingColumn(),
+        console=console,
+        refresh_per_second=60,
+    ) as progress:
+        mongo =  Mongo()
+        mongo.connect()
+        trim = progress.add_task(description="Trimming Chapters Text", total=Unparsed.count())
+        for doc in Unparsed.all(sort="chapter"):
+            progress.update(trim, advance=0.1, description=f"Retrieving Chapter {doc.chapter}...")
+            if not doc:
+                raise ValueError(f"Chapter {doc.chapter} not found in the database.")
+
+            progress.update(trim, advance=0.1, description=f"Trimming Chapter {doc.chapter}'s Text...")
+            trimmed_text, updated_text = trim_text(doc.text, doc.chapter, doc.title)
+
+
+            progress.update(trim, advance=0.4, description=f"Trimmed Chapter {doc.chapter}...")
+            
+            progress.update(trim, advance=0.2, description=f"Processing Chapter {doc.chapter}...")
+            chapter_doc = Chapter.find_one(Chapter.chapter==doc.chapter).run()
+            if not chapter_doc:
+                raise ValueError(f"Chapter {doc.chapter} not found in the database.")
+            doc.update(Set({"title": doc.title})).update(Set({"text": updated_text})).update(Set({"trimmed_text": trimmed_text}))
+    
+
+def concurrent_main():
+    """Remove the header from the unparsed chapter text"""
+    console = get_console()
+    with Progress(
+        TextColumn("[progress.description]{task.description}[/]", justify="right"),
+        BarColumn(bar_width=None),
+        "[progress.percentage]{task.percentage:>3.1f}%",
+        "•",
+        MofNCompleteColumn(),
+        "•",
+        TimeElapsedColumn(),
+        "•",
+        TimeRemainingColumn(),
+        console=console,
+        refresh_per_second=60,
+    ) as progress:
+        mongo =  Mongo()
+        mongo.connect()
+        trim = progress.add_task(description="Trimming Chapters Text", total=Unparsed.count())
+        with ThreadPoolExecutor(max_workers=cpu_count()) as executor:
+            futures: List[Future] = []
+            for doc in Unparsed.all(sort="chapter"):
+                if doc.chapter <= 784:
+                    progress.update(trim, advance=1, description=f"Trimmed Chapter {doc.chapter}...")
+                    continue
+                future = executor.submit(trim_text, doc.text, doc.chapter, doc.title)
+                future.add_done_callback(lambda future: progress.update(trim, advance=0.1, description=f"Trimmed Chapter {doc.chapter}..."))
+                futures.append(future)
+            for future in as_completed(futures):
+                trimmed_text, updated_text = future.result()
+                progress.update(trim, advance=0.2, description=f"Processing Chapter {doc.chapter}...")
+                chapter_doc = Chapter.find_one(Chapter.chapter==doc.chapter).run()
+                if not chapter_doc:
+                    raise ValueError(f"Chapter {doc.chapter} not found in the database.")
+                doc.update(Set({"title": doc.title})).update(Set({"text": updated_text})).update(Set({"trimmed_text": trimmed_text}))
+                progress.update(trim, advance=0.2, description=f"Chapter {doc.chapter} Updated.")
+                progress.update(trim, advance=0.2, description=f"Trimmed Chapter {doc.chapter}...")
+                progress.update(trim, advance=0.4, description=f"Processing Chapter {doc.chapter}...")
 if __name__ == "__main__":  # pragma: no cover
-    trim_texts()
-    progress.console.print(Gradient("All chapters trimmed."))
-    progress.stop()  # type: ignore
-    progress.console.print(Gradient("Exiting..."))
-    exit(0) 
+    concurrent_main()
+    

@@ -7,6 +7,8 @@ from multiprocessing import cpu_count
 from pathlib import Path
 from typing import Dict, Generator, List, Optional, Tuple
 
+
+from bunnet.odm.operators.update.general import Set
 from loguru import logger
 from maxgradient import Gradient
 from pymongo import MongoClient
@@ -15,12 +17,12 @@ from pymongo.database import Database
 from rich.live import Live
 from rich.panel import Panel
 from rich.pretty import Pretty
-from rich.progress import BarColumn, MofNCompleteColumn, TextColumn, TimeElapsedColumn
+from rich.progress import BarColumn, MofNCompleteColumn, TextColumn, TimeElapsedColumn, TimeRemainingColumn
 from rich.prompt import Confirm, IntPrompt, Prompt
 from rich.table import Row, Table
 from rich.text import Text
 
-from supergene.chapter import V3Chapter
+from supergene.chapter import V3Chapter, Chapter
 from supergene.console import Console, Progress, get_console
 from supergene.mongo import Mongo
 from supergene.unparsed import Unparsed
@@ -45,78 +47,6 @@ logger.add(
 )
 logger.add(lambda msg: progress.console.log(msg, log_locals=True), level="SUCCESS")
 CH_REGEX = re.compile(r"(chapter\W+\d+[ -:]+)", re.IGNORECASE)
-
-
-def get_unparsed_title(chapter: int) -> str:
-    """Get the title of the chapter from the Unparsed collection.
-
-    Args:
-        chapter (int): the chapter number
-    """
-    _chapter: Optional[Unparsed] = Unparsed.find_one(Unparsed.chapter == chapter).run()
-    if _chapter:
-        return _chapter.title
-    else:
-        mongo = Mongo()
-        client: MongoClient = mongo.client
-        db = client.supergene
-        collection = db.unparsed
-
-        _chapter = collection.find_one({"chapter": chapter})
-        if _chapter:
-            return _chapter.title
-        raise AttributeError(f"Chapter {chapter} not found in Unparsed collection.")
-
-
-def get_v3_title(chapter_num: int) -> str:
-    """Get the title of the chapter."""
-    chapter: Optional[V3Chapter] = V3Chapter.find_one({"chapter": chapter_num}).run()
-    if chapter:
-        return chapter.title
-    else:
-        mongo = Mongo()
-        client: MongoClient = mongo.client
-        db = client.supergene
-        collection = db.V3Chapter
-
-        chapter = collection.find_one({"chapter": chapter_num})
-        if chapter:
-            return chapter.title
-
-        return get_unparsed_title(chapter_num)
-
-
-def get_toc_title(chapter_num: int) -> str:
-    """Get the title of the chapter."""
-    toc_path: Path = Path("/Users/maxludden/dev/py/supergene/static/toc.json")
-    with open(toc_path, "r") as toc_file:
-        data = dict(json.load(toc_file))
-        title = data.get(str(chapter_num))
-        if title is None:
-            raise IndexError(
-                f"Title for the chapter {chapter_num} not found in the table of contents."
-            )
-        return title
-
-
-def _toc_table() -> Table:
-    """Generate a table to display the table of contents."""
-    table = Table(
-        title=Gradient("Table of Contents", style="bold"),
-        expand=False,
-        row_styles=["on #222222", "on #060606"],
-        border_style="bold #8fafff",
-    )
-    table.add_column("Chapter", justify="right", style="bold #00afff")
-    table.add_column("Title", justify="default", style="b #cfcfcf")
-    return table
-
-
-def read_toc_json() -> dict:
-    toc_path: Path = Path("/Users/maxludden/dev/py/supergene/static/toc.json")
-    with open(toc_path, "r") as toc_file:
-        data = dict(json.load(toc_file))
-    return data
 
 
 def titlecase(title: str, *, chapter: Optional[int]) -> str:
@@ -174,79 +104,95 @@ the user will be prompted to enter the title.
     return " ".join(final)
 
 
-def update_title(doc: Unparsed) -> Unparsed:
-    """Update the title of the chapter."""
-    chapter: int = doc.chapter
-    title = get_toc_title(chapter)
+def read_toc() -> Dict[str, str]:
+    """Read the table of contents from the file."""
+    with open("static/toc.json", "r") as file:
+        toc = json.load(file)
+    return toc
 
-    doc.title = titlecase(title, chapter=doc.chapter)
-    doc.save()  # type: ignore
-    return doc
+def get_title(chapter: int, toc: Dict[str, str] = read_toc()) -> str:
+    """Retrieve the title of the chapter from MongoDB.
 
+    Args:
+        chapter (int): the chapter number
 
-def update_titles() -> None:
-    """Update the titles in the V3Chapter collection."""
-    console = Console()
-    progress = Progress(
-        TextColumn("[bold #00AFFF]{task.description}[/]", justify="right"),
+    Returns:
+        str: the title of the chapter
+    """
+    title = toc.get(str(chapter))
+    if not title:
+        raise ValueError(f"Chapter {chapter} not found in the table of contents.")
+    return title
+
+def update_chapter(chapter: int, title: str, progress: Progress) -> Chapter:
+    """Update the title of the chapter in MongoDB.
+
+    Args:
+        chapter (int): the chapter number
+        title (str): the title of the chapter
+    """
+    doc = Chapter.find_one(Chapter.chapter == chapter).run()
+    skipped = []
+    if not doc:
+        skipped.append(chapter)
+        progress.console.log(f"Chapter {chapter} not found in the database.")
+        raise ValueError(f"Chapter {chapter} not found in the database.")
+    else:
+        doc.update(Set({Chapter.title: title}))
+        return doc
+
+def main() -> None:
+    console = get_console()
+    with Progress(
+        TextColumn("[progress.description]{task.description}[/]", justify="right"),
         BarColumn(bar_width=None),
         "[progress.percentage]{task.percentage:>3.1f}%",
         "•",
         MofNCompleteColumn(),
         "•",
         TimeElapsedColumn(),
+        "•",
+        TimeRemainingColumn(),
         console=console,
         refresh_per_second=60,
-    )
-    mongo = Mongo()
-    mongo.connect()
-    with progress:
-        update_titles = progress.add_task("Updating titles", total=Unparsed.count())
-        for doc in Unparsed.all(sort="chapter"):
-            update_title(doc)
-            progress.update(
-                update_titles, advance=1, description=f"Chapter {doc.chapter}"
-            )
-            progress.console.print(
-                f"Updated title for Chapter {doc.chapter}: {doc.title}"
-            )
+    ) as progress:
+        update_titles = progress.add_task("Updating Chapter Titles...", total = 3462)
+        mongo=Mongo()
+        mongo.connect()
+        for k, v in read_toc().items():
+            progress.update(update_titles, advance=0.6, description=f"Updating Chapter {k}...")
+            chapter: int = int(k)
+            title: str = v
+            result = update_chapter(chapter, title, progress) # type: ignore # noqa: F841
+            progress.update(update_titles, advance=0.4, description=f"Chapter {k} Updated.")
 
-
-def cc_update_titles() -> None:
-    """Update the titles in the V3Chapter collection."""
-    console = Console()
-    progress = Progress(
-        TextColumn("[bold #00AFFF]{task.description}[/]", justify="right"),
+def concurrent_main() -> None:
+    console = get_console()
+    with Progress(
+        TextColumn("[progress.description]{task.description}[/]", justify="right"),
         BarColumn(bar_width=None),
         "[progress.percentage]{task.percentage:>3.1f}%",
         "•",
         MofNCompleteColumn(),
         "•",
         TimeElapsedColumn(),
+        "•",
+        TimeRemainingColumn(),
         console=console,
         refresh_per_second=60,
-    )
-    mongo = Mongo()
-    mongo.connect()
-    with progress:
-        update_titles = progress.add_task("Updating titles", total=Unparsed.count())
-        with ThreadPoolExecutor(max_workers=cpu_count() - 2) as executor:
-            docs = Unparsed.all(sort="chapter").run()
-            futures = executor.submit(update_title, docs)  # type: ignore
-
-            for future in as_completed(futures):  # type: ignore
-                try:
-                    doc = future.result()  # type: ignore
-                except Exception as e:
-                    progress.console.print(f"An error occurred: {e}")
-                else:
-                    progress.update(
-                        update_titles, advance=1, description=f"Chapter {doc.chapter}"
-                    )
-                    progress.console.print(
-                        f"Updated title for Chapter {doc.chapter}: {doc.title}"
-                    )
-
+    ) as progress:
+        update_titles = progress.add_task("Updating Chapter Titles...", total = 3462)
+        mongo=Mongo()
+        mongo.connect()
+        with ThreadPoolExecutor(max_workers=cpu_count()) as executor:
+            futures: List[Future] = []
+            for k, v in read_toc().items():
+                chapter: int = int(k)
+                title: str = v
+                future: Future = executor.submit(update_chapter, chapter, title, progress)
+                futures.append(future)
+            for future in as_completed(futures):
+                progress.update(update_titles, advance=1, description=f"Chapter {k} Updated.")
 
 if __name__ == "__main__":
-    update_titles()
+    concurrent_main()

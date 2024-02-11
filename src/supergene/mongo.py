@@ -32,7 +32,7 @@ class Mongo:
         __init__(cls, document_models: Optional[List[Document]] = None, database: str = "superene")
 
     """
-
+    connected: bool = False
     docs: List[Any] = [Chapter, Unparsed, V3Chapter]
 
     def __init__(
@@ -57,7 +57,9 @@ class Mongo:
         except ConnectionFailure as cf:
             console.print(cf)
         else:
-            console.print(self._success_panel(), justify="center")
+            if not self.connected:
+                console.print(self._success_panel(), justify="center")
+                self.connected = True
 
     @property
     def uri(self) -> str:
@@ -90,7 +92,9 @@ class Mongo:
         ]
         title_gradient = Text("Connected to Database", style="bold white")  # type: ignore
         message: Text = Text.assemble(
-            Text("Bunnet: Connected to MongoDB: ", style="#aaffaa"),
+            Text("Bunnet", style="italic #00afff", end=""),
+            Text(": ", style="#ffffff", end=""),
+            Text("Connected to MongoDB: ", style="#aaffaa", end=""),
             Gradient("supergene", colors=colors, style="bold").as_text(),  # type: ignore
         )
         console.line(2)
