@@ -1,22 +1,24 @@
 from os import getenv
-from typing import List, Optional, Any
+from typing import Any, List, Optional
 
 from bunnet import init_bunnet
 from dotenv import load_dotenv
-from maxgradient import Gradient, Color
+from maxgradient import Color, Gradient
 from pymongo import MongoClient
 from pymongo.database import Database
 from pymongo.errors import ConnectionFailure
-from rich.panel import Panel
 from rich.markdown import Markdown
-
+from rich.panel import Panel
+from rich.prompt import Confirm
+from rich.text import Text
 
 from supergene.chapter import Chapter, V3Chapter
-from supergene.unparsed import Unparsed
 from supergene.console import Console, get_console
+from supergene.unparsed import Unparsed
 
 load_dotenv()
 console: Console = get_console()
+
 
 class Mongo:
     """The MongoDB client.
@@ -38,6 +40,7 @@ class Mongo:
         *,
         database: str = "supergene",
         document_models: Optional[List[Any]] = docs,
+        console: Console = get_console(),
     ) -> None:
         """Initialize the client."""
         uri = getenv(
@@ -45,11 +48,12 @@ class Mongo:
         )
         self.uri = f"{uri}"
         self.models: List[str] = document_models or self.docs
+        self.console = console
 
     def connect(self):
         """Connect to the MongoDB database."""
         try:
-            init_bunnet(database=self.client.supergene, document_models=self.models) # type: ignore
+            init_bunnet(database=self.client.supergene, document_models=self.models)  # type: ignore
         except ConnectionFailure as cf:
             console.print(cf)
         else:
@@ -75,24 +79,28 @@ class Mongo:
         """Get the database from the client."""
         return self.client.supergene
 
-    def _success_panel(self) -> Panel:
+    @staticmethod
+    def _success_panel() -> Panel:
         """Rich.panel.Panel containing a success message for connecting to with the database."""
-        colors= [Color("#008f00"), Color("#00ff00"), Color("#8fff0f"), Color("#cfffcf")]
-        gradient = Gradient(
-            "Super Gene", colors=colors # type: ignore
+        colors = [
+            Color("#008f00"),
+            Color("#00ff00"),
+            Color("#8fff0f"),
+            Color("#cfffcf"),
+        ]
+        title_gradient = Text("Connected to Database", style="bold white")  # type: ignore
+        message: Text = Text.assemble(
+            Text("Bunnet: Connected to MongoDB: ", style="#aaffaa"),
+            Gradient("supergene", colors=colors, style="bold").as_text(),  # type: ignore
         )
         console.line(2)
         return Panel(
-            Gradient(
-                "Connected to MongoDB: `mongo.supergene`",
-                colors=colors, # type: ignore
-                style="bold",
-                justify="center",
-            ),
-            title=gradient,
+            message,
+            title=title_gradient,
             border_style="bold #3f5f3f",
             width=60,
             expand=False,
+            padding=(1, 4),
         )
 
 
@@ -109,6 +117,8 @@ if __name__ == "__main__":  # pragma: no cover
     console = get_console()
     mongo = Mongo()
     mongo.connect()
-    ch1 = Unparsed.find_one(Unparsed.chapter == 1).run()
-    if ch1:
-        console.print(Markdown(ch1.text))
+    print_chapter = Confirm.ask("Print Chapter 1?")
+    if print_chapter:
+        ch1 = Unparsed.find_one(Unparsed.chapter == 1).run()
+        if ch1:
+            console.print(Panel(Markdown(ch1.text), width=100), justify="center")
