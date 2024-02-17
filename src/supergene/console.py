@@ -1,6 +1,7 @@
 from datetime import datetime
-from typing import IO, Callable, Mapping, Optional, Union
+from typing import IO, Callable, Mapping, Optional, Union, List, Tuple
 
+from maxgradient.default_styles import DEFAULT_STYLES
 from rich._log_render import FormatTimeCallable
 from rich.console import Console, HighlighterType
 from rich.emoji import EmojiVariant
@@ -12,11 +13,15 @@ from rich.progress import (
     Progress,
     TextColumn,
     TimeElapsedColumn,
+    TimeRemainingColumn,
+    ProgressColumn
 )
 from rich.style import StyleType
 from rich.theme import Theme
 from rich.traceback import install as tr_install
-from maxgradient.default_styles import DEFAULT_STYLES
+
+from snoop import snoop # type: ignore
+from cheap_repr import register_repr, normal_repr # type: ignore
 
 
 def get_console(
@@ -135,19 +140,45 @@ def make_layout(self) -> Layout:
     )
     return layout
 
+register_repr(Progress)(normal_repr)
 
-def get_progress(console: Console) -> Progress:
-    """Get a progress bar."""
-    return Progress(
-        TextColumn("[bold #00AFFF]{task.fields[description]}[/]", justify="right"),
-        BarColumn(bar_width=None),
-        "[progress.percentage]{task.percentage:>3.1f}%",
-        "•",
-        MofNCompleteColumn(),
-        "•",
-        TimeElapsedColumn(),
-        refresh_per_second=60,
+@snoop()
+def get_progress_columns(console: Console) -> Tuple[List[str|ProgressColumn], Console, int]:
+    """Get a progress bar setup.
+    
+    Args:
+        console (Console): the console object
+    
+    Returns:
+        Tuple[List[str|ProgressColumn], Console, int]: a tuple of the:
+            - list of columns
+            - console object
+            - the number of refreshes of the progress bar per second
+    """
+    return (
+        [
+            TextColumn(
+            "[progress.description]{task.description}[/]",
+            justify="right"
+            ),
+            BarColumn(
+                bar_width=None
+            ),
+            TextColumn(
+                "[progress.percentage]{task.percentage:>3.1f}%"
+            ),
+            "•",
+            MofNCompleteColumn(),
+            "•",
+            TimeElapsedColumn(),
+            "•",
+            TimeRemainingColumn()
+        ],
+        console,
+        60
     )
+
+
 
 global console
 console = get_console()

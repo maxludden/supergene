@@ -573,7 +573,7 @@
         "statusBarItem.remoteBackground": "#1e0051",
         "statusBarItem.remoteForeground": "#a782ff"
     },
-    "workbench.colorTheme": "Dracula",
+    "workbench.colorTheme": "One Dark Drop",
     "yaml.customTags": [
         "!ENV scalar",
         "!ENV sequence",

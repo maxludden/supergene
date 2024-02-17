@@ -27,7 +27,7 @@ from rich.text import Text
 from snoop import snoop # type: ignore
 
 from supergene.chapter import V3Chapter, Chapter
-from supergene.console import Console, Progress, get_console, get_progress
+from supergene.console import Progress, get_console, get_progress_columns
 from supergene.mongo import Mongo
 from supergene.unparsed import Unparsed
 
@@ -150,7 +150,10 @@ def concurrent_main():
     """Remove the header from the unparsed chapter text"""
     console = get_console()
     with Progress(
-        TextColumn("[progress.description]{task.description}[/]", justify="right"),
+        TextColumn(
+            "[progress.description]{task.description}[/]",
+            justify="right"
+        ),
         BarColumn(bar_width=None),
         "[progress.percentage]{task.percentage:>3.1f}%",
         "•",
@@ -166,7 +169,7 @@ def concurrent_main():
         mongo.connect()
         trim = progress.add_task(description="Trimming Chapters Text", total=Unparsed.count())
         with ThreadPoolExecutor(max_workers=cpu_count()) as executor:
-            futures: List[Future] = []
+            futures: List[Future] = [] # type: ignore
             for doc in Unparsed.all(sort="chapter"):
                 if doc.chapter <= 784:
                     progress.update(trim, advance=1, description=f"Trimmed Chapter {doc.chapter}...")

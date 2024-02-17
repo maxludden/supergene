@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" prefix="rendition: http://www.idpf.org/vocab/rendition/#">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+        <dc:title>First God's Sanctuary</dc:title>
+        <dc:creator>Twelve Winged Dark Burning Angel</dc:creator>
+        <dc:contributor>Maxwell Ludden</dc:contributor>
+        <dc:identifier id="BookId">urn:uuid:12345678-1234-1234-1234-123456789abc</dc:identifier>
+        <dc:language>en</dc:language>
+        <meta property="dcterms:modified">2024-02-11T00:00:00Z</meta>
+        <meta name="cover" content="cover-image" />
+    </metadata>
+    <manifest>
+        <item id="cover-image" href="/Users/maxludden/dev/py/supergene/static/Images/First God's Sanctuary.webp" media-type="image/jpeg" properties="cover-image" />
+        <item id="content" href="content.xhtml" media-type="application/xhtml+xml" />
+        <!-- Add other items like CSS, additional XHTML files, etc. -->
+    </manifest>
+    <spine>
+        <itemref idref="content" />
+        <!-- Add other itemrefs for additional XHTML content files -->
+    </spine>
+</package>

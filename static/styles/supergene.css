@@ -1,0 +1,27 @@
+:root {
+    color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    p { color: white; }
+    code { color: oldlace; }
+    code.comment { color: aquamarine; }
+    code.keywork { color: darkorchid; }
+    code.text { color: gray; }
+    code.variable { color: deepskyblue; }
+    th {
+        fort
+        color: #222222;
+        background-color: #dddddd;
+        
+    }
+    td { border-color: #dddddd; }
+}
+@media (prefers-color-scheme: light) {
+    p { color: black; }
+    code { color: darkslategray; }
+    code.comment { color: green; }
+    code.keywork { color: magenta; }
+    code.text { color: gray; }
+    code.variable { color: dimgray; }
+}

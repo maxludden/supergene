@@ -4,7 +4,7 @@ from rich.progress import Progress
 
 from supergene.chapter import Chapter
 from supergene.mongo import Mongo
-from supergene.console import get_console, get_progress, make_layout
+from supergene.console import get_console, get_progress_columns, make_layout
 from supergene.unparsed import Unparsed
 
 global console
