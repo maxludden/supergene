@@ -191,8 +191,9 @@ def concurrent_main() -> None:
                 title: str = v
                 future: Future = executor.submit(update_chapter, chapter, title, progress)
                 futures.append(future)
-            for future in as_completed(futures):
+            for index, future in enumerate(as_completed(futures)):
                 progress.update(update_titles, advance=1, description=f"Chapter {k} Updated.")
 
 if __name__ == "__main__":
     concurrent_main()
+    # main()

@@ -12,7 +12,7 @@ from rich.panel import Panel
 from rich.prompt import Confirm
 from rich.text import Text
 
-from supergene.chapter import Chapter, V3Chapter
+from supergene.chapter import Chapter, V3Chapter, V4Chapter
 from supergene.console import Console, get_console
 from supergene.unparsed import Unparsed
 
@@ -31,9 +31,12 @@ class Mongo:
     Classmethods:
         __init__(cls, document_models: Optional[List[Document]] = None, database: str = "superene")
 
+    Methods:
+        connect(self): Connect to the MongoDB database.
     """
+
     connected: bool = False
-    docs: List[Any] = [Chapter, Unparsed, V3Chapter]
+    docs: List[Any] = [Chapter, Unparsed, V3Chapter, V4Chapter]
 
     def __init__(
         self,
@@ -90,12 +93,20 @@ class Mongo:
             Color("#8fff0f"),
             Color("#cfffcf"),
         ]
-        title_gradient = Text("Connected to Database", style="bold white")  # type: ignore
+        title_gradient = Gradient("Bunnet ODM", colors=colors, style="bold")  # type: ignore
         message: Text = Text.assemble(
-            Text("Bunnet", style="italic #00afff", end=""),
-            Text(": ", style="#ffffff", end=""),
-            Text("Connected to MongoDB: ", style="#aaffaa", end=""),
-            Gradient("supergene", colors=colors, style="bold").as_text(),  # type: ignore
+            Gradient("Connected to MongoDB:\n\n", colors=colors, style="italic").as_text(), # type: ignore
+            Gradient(
+                "supergene",
+                colors=[
+                    Color("#8fff8f"),
+                    Color("#a0ffa0"),
+                    Color("#afffaf"),
+                    Color("#cfffcf")
+                ],
+                style="bold"
+            ).as_text(),  # type: ignore
+            justify="center",
         )
         console.line(2)
         return Panel(
@@ -106,16 +117,6 @@ class Mongo:
             expand=False,
             padding=(1, 4),
         )
-
-
-# def database(client: MongoClient, db: str="supergene") -> Database:
-#     """Get the database from the client."""
-#     return client[db]
-
-# def init(self, document_models: Optional[List[Document]] = None), connection_string: str):
-#     """Initialize bunnet."""
-#     init_bunnet(connection_string=self.uri, document_models=document_models)  # type: ignore
-
 
 if __name__ == "__main__":  # pragma: no cover
     console = get_console()

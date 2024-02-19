@@ -4,7 +4,7 @@ from datetime import datetime
 from enum import IntEnum
 from multiprocessing import cpu_count
 from pathlib import Path
-from typing import Any, List, Optional
+from typing import Any, List, Optional, Tuple
 
 from bunnet import (
     Document,
@@ -17,6 +17,9 @@ from bunnet import (
 from pydantic import Field, computed_field, field_validator
 from pydantic.networks import AnyUrl
 from rich.layout import Layout
+from rich.table import Table, Row
+from rich.text import Text
+from maxgradient import Gradient, Color
 
 
 # from enum import Enum
