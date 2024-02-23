@@ -1,7 +1,5 @@
-from typing import Optional, Tuple
 from time import sleep
 
-from rich.live import Live
 from rich.progress import (
     BarColumn,
     GetTimeCallable,
@@ -16,8 +14,7 @@ from supergene.console import Console, get_console
 
 progress = Progress(
     TextColumn("[italic]{task.description}[/]", justify="right"),
-    BarColumn(bar_width=None,
-              complete_style="bold #89E6FA"),
+    BarColumn(bar_width=None, complete_style="bold #89E6FA"),
     TextColumn("[progress.percentage]{task.percentage:>3.1f}%"),
     "•",
     MofNCompleteColumn(),
@@ -33,7 +30,6 @@ progress = Progress(
 def get_progress(
     *columns,
     console: Console = get_console(),
-    return_live: bool = False,
     auto_refresh: bool = True,
     refresh_per_second: float = 30,
     speed_estimate_period: float = 30,
@@ -43,7 +39,7 @@ def get_progress(
     get_time: GetTimeCallable | None = None,
     disable: bool = False,
     expand: bool = True,
-) -> Tuple[Progress, Optional[Live]]|Progress:
+) -> Progress:
     """Get a progress bar setup.
 
     Args:
@@ -79,10 +75,7 @@ def get_progress(
         disable=disable,
         expand=expand,
     )
-    if return_live:
-        live = Live(progress, console=console)
-        return progress, live
-    return progress, None
+    return progress
 
 
 if __name__ == "__main__":

@@ -12,7 +12,7 @@ from rich.panel import Panel
 from rich.prompt import Confirm
 from rich.text import Text
 
-from supergene.chapter import Chapter, V3Chapter, V4Chapter
+from supergene.chapter import Chapter, V3Chapter, V4Chapter, Chapter_v4
 from supergene.console import Console, get_console
 from supergene.unparsed import Unparsed
 
@@ -36,7 +36,7 @@ class Mongo:
     """
 
     connected: bool = False
-    docs: List[Any] = [Chapter, Unparsed, V3Chapter, V4Chapter]
+    docs: List[Any] = [Chapter, Unparsed, V3Chapter, V4Chapter, Chapter_v4]
 
     def __init__(
         self,
