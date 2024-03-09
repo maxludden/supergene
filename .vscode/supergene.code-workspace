@@ -50,20 +50,84 @@
 			"SASS",
 			"STYLUS"
 		],
-		"editor.semanticTokenColorCustomizations": {},
-		"editor.tokenColorCustomizations": {
+		"editor.semanticTokenColorCustomizations": {
+			"enabled": true,
+			"rules": {
+				"variable": {
+					"foreground": "#FF0000"
+				},
+				"function": {
+					"foreground": "#00FF00"
+				},
+				"parameter": {
+					"foreground": "#0000FF"
+				},
+				"property": {
+					"foreground": "#FF00FF"
+				},
+				"enumMember": {
+					"foreground": "#FFFF00"
+				},
+				"enum": {
+					"foreground": "#00FFFF"
+				},
+				"keyword": {
+					"foreground": "#FF0000"
+				},
+				"operator": {
+					"foreground": "#00FF00"
+				},
+				"string": {
+					"foreground": "#0000FF"
+				},
+				"comment": {
+					"foreground": "#FF00FF"
+				},
+				"number": {
+					"foreground": "#FFFF00"
+				},
+				"regexp": {
+					"foreground": "#00FFFF"
+				},
+				"type": {
+					"foreground": "#FF0000"
+				},
+				"namespace": {
+					"foreground": "#00FF00"
+				},
+				"interface": {
+					"foreground": "#0000FF"
+				},
+				"struct": {
+					"foreground": "#FF00FF"
+				},
+				"class": {
+					"foreground": "#FFFF00"
+				},
+				"functionVariable": {
+					"foreground": "#FF0000"
+				},
+				"constant": {
+					"foreground": "#00FF00"
+				}
+			}
+		},
+		"editor.tokenColorCustomization": {
 			"textMateRules": [
 				{
 					"scope": "string.quoted.double.json meta.structure.dictionary.json string.quoted.double.json",
 					"settings": {
 						"foreground": "#00FF00"
 					}
+				},
+				{
+					"scope": "meta.object-literal.key.json",
+					"settings": {
+						"foreground": "#ccffcc"
+					}
 				}
 			]
 		},
-		"errorLens.excludeBySource": [
-			"Pylint(F0002:astroid-error)"
-		],
 		"errorLens.lintFilePaths": {
 			"Stylelint": [
 				"**/*.stylelintrc",
