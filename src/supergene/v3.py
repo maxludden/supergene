@@ -140,7 +140,7 @@ class V3(Document):
         section (int): The section number of the chapter.
         book (int): The book number of the chapter.
     """
-    chapter: int = Field(..., title="Chapter", description="The number of the chapter.")
+    chapter: int
     order: int = Field(..., title="Order", description="The order of the chapter.")
     title: str = Field(..., title="Title", description="The title of the chapter.")
     created: datetime = Field(..., title="Created", description="The date and time the chapter was created.")
@@ -545,6 +545,8 @@ class V3(Document):
                 stats.append(line)
             if 'table' in line:
                 table.append(line)
+
+
 if __name__ == '__main__':
     connect()
     console=Console()
