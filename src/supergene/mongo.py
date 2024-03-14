@@ -29,6 +29,7 @@ from rich.traceback import install as tr_install
 # from supergene.v0_0_1 import Version0_0_1
 # from supergene.v0_0_2 import Version0_0_2
 from supergene.v3 import V3
+from supergene.v4 import V4
 
 load_dotenv()
 
@@ -49,7 +50,7 @@ class Mongo:
     """
 
     connected: bool = False
-    docs: List[Any] = [V3]
+    docs: List[Any] = [V3, V4]
 
     # @snoop(watch=["self", "uri", "client", "database"])
     def __init__(
