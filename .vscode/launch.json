@@ -3,7 +3,7 @@
     "configurations": [
         {
             "name": "Debug",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "preLaunchTask": "Clear Logs",
             "program": "${file}",

@@ -54,13 +54,13 @@
 			"enabled": true,
 			"rules": {
 				"variable": {
-					"foreground": "#FF0000"
+					"foreground": "#ff9FFF"
 				},
 				"function": {
-					"foreground": "#00FF00"
+					"foreground": "#FF00AF"
 				},
 				"parameter": {
-					"foreground": "#0000FF"
+					"foreground": "#00afFF"
 				},
 				"property": {
 					"foreground": "#FF00FF"
@@ -72,13 +72,10 @@
 					"foreground": "#00FFFF"
 				},
 				"keyword": {
-					"foreground": "#FF0000"
+					"foreground": "#FF00FF"
 				},
 				"operator": {
 					"foreground": "#00FF00"
-				},
-				"string": {
-					"foreground": "#0000FF"
 				},
 				"comment": {
 					"foreground": "#FF00FF"
@@ -90,7 +87,7 @@
 					"foreground": "#00FFFF"
 				},
 				"type": {
-					"foreground": "#FF0000"
+					"foreground": "#afff00"
 				},
 				"namespace": {
 					"foreground": "#00FF00"
@@ -102,26 +99,29 @@
 					"foreground": "#FF00FF"
 				},
 				"class": {
-					"foreground": "#FFFF00"
+					"foreground": "#999FFF"
 				},
 				"functionVariable": {
-					"foreground": "#FF0000"
+					"foreground": "#7f44b7"
 				},
 				"constant": {
-					"foreground": "#00FF00"
+					"foreground": "#afff00"
+				},
+				"string": {
+					"foreground": "#ffaf00"
 				}
 			}
 		},
-		"editor.tokenColorCustomization": {
+		"editor.tokenColorCustomizations": {
 			"textMateRules": [
 				{
-					"scope": "string.quoted.double.json meta.structure.dictionary.json string.quoted.double.json",
+					"scope": "string.quoted.double.json meta.structure.dictionary.json string.quoted.double.json jsonc.comments",
 					"settings": {
-						"foreground": "#00FF00"
+						"foreground": "#ffffcc"
 					}
 				},
 				{
-					"scope": "meta.object-literal.key.json",
+					"scope": "meta.key.json",
 					"settings": {
 						"foreground": "#ccffcc"
 					}

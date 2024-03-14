@@ -2,6 +2,8 @@ from os import getenv
 from typing import Any, List, Optional
 
 from bunnet import init_bunnet
+
+# from cheap_repr import normal_repr, register_repr  # type: ignore
 from dotenv import load_dotenv
 from maxgradient import Color, Gradient
 from pymongo import MongoClient
@@ -21,13 +23,12 @@ from rich.progress import (
 from rich.prompt import Confirm
 from rich.text import Text
 from rich.traceback import install as tr_install
-from snoop import snoop # type: ignore
-from cheap_repr import register_repr, normal_repr # type: ignore
 
-from supergene.embeddings import Embeddings
-from supergene.v0_0_1 import Version0_0_1
-from supergene.v0_0_2 import Version0_0_2
-from supergene.v0_0_3 import Version0_0_3
+# from snoop import snoop  # type: ignore
+# from supergene.embeddings import Embeddings
+# from supergene.v0_0_1 import Version0_0_1
+# from supergene.v0_0_2 import Version0_0_2
+from supergene.v3 import V3
 
 load_dotenv()
 
@@ -48,9 +49,9 @@ class Mongo:
     """
 
     connected: bool = False
-    docs: List[Any] = [Version0_0_1, Version0_0_2, Version0_0_3, Embeddings]
+    docs: List[Any] = [V3]
 
-    @snoop(watch=["self", "uri", "client", "database"])
+    # @snoop(watch=["self", "uri", "client", "database"])
     def __init__(
         self,
         *,
@@ -66,7 +67,6 @@ class Mongo:
         )
         self.uri = f"{uri}"
         self.models: List[str] = document_models or self.docs
-
 
     def connect(self):
         """Connect to the MongoDB database."""
@@ -177,24 +177,15 @@ class Mongo:
             return db
 
 
-register_repr(Mongo)(normal_repr)
+# register_repr(Mongo)(normal_repr)
 
 if __name__ == "__main__":  # pragma: no cover
     mongo = Mongo()
 
     print_chapter_1 = Confirm.ask("Print Chapter 1?", console=mongo.console)
     if print_chapter_1:
-        ch1 = Version0_0_1.find_one(Version0_0_1.chapter == 1).run()
+        ch1 = V3.find_one(V3.chapter == 1).run()
         if ch1:
             mongo.console.print(Panel(Markdown(ch1.text), width=100), justify="center")
-        ch1 = Version0_0_2.find_one(Version0_0_2.chapter == 1).run()
-        if ch1:
-            mongo.console.print(
-                Panel(
-                    Markdown(ch1.text, style="b #ffffff"),
-                    width=100,
-                ),
-                justify="center",
-            )
         else:
             mongo.console.print("Chapter 1 not found.")
