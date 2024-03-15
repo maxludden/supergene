@@ -229,7 +229,7 @@ def get_embeddings(text: str) -> List[float]:
 
 
 class V4(Document):
-    """Represents a chapter in a document. Version 0.0.2.
+    """Represents a chapter in a document. Version 4.
 
     Attributes:
         id (PydanticObjectId): The unique identifier of the chapter.
@@ -287,7 +287,6 @@ class V4(Document):
         name = "v4"
 
     @classmethod
-    @snoop
     def update(cls, v3: V3) -> None:
         chapter: int = v3.chapter
         section: int = V3.get_section(chapter)
