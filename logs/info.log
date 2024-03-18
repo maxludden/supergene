@@ -1,0 +1,795 @@
+08:35:13:497 AM |  console.py   |      Line 1332  |  ERROR   ﰲ  An error has been caught in function 'render', process 'MainProcess' (7209), thread 'MainThread' (7996644416):
+[33m[1mTraceback (most recent call last):[0m
+
+  File "/Users/maxludden/.config/.pyenv/versions/3.12.1/lib/python3.12/runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+           │         └ <code object <module> at 0x1009c8800, file "/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...
+           └ <function _run_code at 0x10095a020>
+  File "/Users/maxludden/.config/.pyenv/versions/3.12.1/lib/python3.12/runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+         └ <code object <module> at 0x1009c8800, file "/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/[0m[32m[1m__main__.py[0m", line [33m39[0m, in [35m<module>[0m
+    [1mcli[0m[35m[1m.[0m[1mmain[0m[1m([0m[1m)[0m
+    [36m│   └ [0m[36m[1m<function main at 0x1023c4b80>[0m
+    [36m└ [0m[36m[1m<module 'debugpy.server.cli' from '/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled...[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/[0m[32m[1mcli.py[0m", line [33m430[0m, in [35mmain[0m
+    [1mrun[0m[1m([0m[1m)[0m
+    [36m└ [0m[36m[1m<function run_file at 0x1023c4900>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/[0m[32m[1mcli.py[0m", line [33m284[0m, in [35mrun_file[0m
+    [1mrunpy[0m[35m[1m.[0m[1mrun_path[0m[1m([0m[1mtarget[0m[1m,[0m [1mrun_name[0m[35m[1m=[0m[36m"__main__"[0m[1m)[0m
+    [36m│     │        └ [0m[36m[1m'/Users/maxludden/dev/py/supergene/src/supergene/v5.py'[0m
+    [36m│     └ [0m[36m[1m<function run_path at 0x101bf4d60>[0m
+    [36m└ [0m[36m[1m<module '_pydevd_bundle.pydevd_runpy' from '/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m321[0m, in [35mrun_path[0m
+    [35m[1mreturn[0m [1m_run_module_code[0m[1m([0m[1mcode[0m[1m,[0m [1minit_globals[0m[1m,[0m [1mrun_name[0m[1m,[0m
+    [36m       │                │     │             └ [0m[36m[1m'__main__'[0m
+    [36m       │                │     └ [0m[36m[1mNone[0m
+    [36m       │                └ [0m[36m[1m<code object <module> at 0x12e107aa0, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+    [36m       └ [0m[36m[1m<function _run_module_code at 0x101bf49a0>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m135[0m, in [35m_run_module_code[0m
+    [1m_run_code[0m[1m([0m[1mcode[0m[1m,[0m [1mmod_globals[0m[1m,[0m [1minit_globals[0m[1m,[0m
+    [36m│         │     │            └ [0m[36m[1mNone[0m
+    [36m│         │     └ [0m[36m[1m{'__name__': '__main__', '__doc__': 'V4: Update the section and book', '__package__': '', '__loader__': None, '__spec__': Non...[0m
+    [36m│         └ [0m[36m[1m<code object <module> at 0x12e107aa0, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+    [36m└ [0m[36m[1m<function _run_code at 0x101bf4540>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m124[0m, in [35m_run_code[0m
+    [1mexec[0m[1m([0m[1mcode[0m[1m,[0m [1mrun_globals[0m[1m)[0m
+    [36m     │     └ [0m[36m[1m{'__name__': '__main__', '__doc__': 'V4: Update the section and book', '__package__': '', '__loader__': None, '__spec__': Non...[0m
+    [36m     └ [0m[36m[1m<code object <module> at 0x12e107aa0, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+
+  File "[32m/Users/maxludden/dev/py/supergene/src/supergene/[0m[32m[1mv5.py[0m", line [33m247[0m, in [35m<module>[0m
+    [1mV5[0m[35m[1m.[0m[1mtest[0m[1m([0m[1m)[0m
+    [36m│  └ [0m[36m[1m<staticmethod(<function V5.test at 0x13c243100>)>[0m
+    [36m└ [0m[36m[1m<class '__main__.V5'>[0m
+
+  File "[32m/Users/maxludden/dev/py/supergene/src/supergene/[0m[32m[1mv5.py[0m", line [33m242[0m, in [35mtest[0m
+    [1mprint[0m[1m([0m[1mnew_v5[0m[1m,[0m [1mjustify[0m[35m[1m=[0m[36m"center"[0m[1m)[0m
+    [36m│     └ [0m[36m[1mV5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t Man En...[0m
+    [36m└ [0m[36m[1m<bound method Console.print of <console width=188 ColorSystem.TRUECOLOR>>[0m
+
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1700, in print
+    extend(render(renderable, render_options))
+    │      │      │           └ ConsoleOptions(size=ConsoleDimensions(width=188, height=24), legacy_windows=False, min_width=1, max_width=188, is_terminal=Tr...
+    │      │      └ Align(V5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t ...
+    │      └ <bound method Console.render of <console width=188 ColorSystem.TRUECOLOR>>
+    └ <built-in method extend of list object at 0x13c7ffe80>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1332, in render
+    for render_output in iter_render:
+                         └ <generator object Align.__rich_console__ at 0x13bd5b640>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/align.py", line 146, in __rich_console__
+    lines = list(Segment.split_lines(rendered))
+                 │       │           └ <generator object Console.render at 0x13c17b1c0>
+                 │       └ <classmethod(<function Segment.split_lines at 0x139db8ae0>)>
+                 └ <class 'rich.segment.Segment'>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/segment.py", line 248, in split_lines
+    for segment in segments:
+                   └ <generator object Console.render at 0x13c17b1c0>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1332, in render
+    for render_output in iter_render:
+                         └ <generator object Constrain.__rich_console__ at 0x13c78ff10>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/constrain.py", line 29, in __rich_console__
+    yield from console.render(self.renderable, child_options)
+               │       │      │    │           └ ConsoleOptions(size=ConsoleDimensions(width=188, height=24), legacy_windows=False, min_width=188, max_width=188, is_terminal=...
+               │       │      │    └ V5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t Man En...
+               │       │      └ <rich.constrain.Constrain object at 0x13c7dffe0>
+               │       └ <function Console.render at 0x139e63ba0>
+               └ <console width=188 ColorSystem.TRUECOLOR>
+> File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1332, in render
+    for render_output in iter_render:
+                         └ <generator object V5.__rich_console__ at 0x13c7d8a40>
+
+  File "[32m/Users/maxludden/dev/py/supergene/src/supergene/[0m[32m[1mv5.py[0m", line [33m224[0m, in [35m__rich_console__[0m
+    [1mlayout[0m [35m[1m=[0m [1mmake_layout[0m[1m([0m[1m)[0m
+    [36m         └ [0m[36m[1m<function V5.__rich_console__.<locals>.make_layout at 0x100cda480>[0m
+
+[31m[1mTypeError[0m:[1m V5.__rich_console__.<locals>.make_layout() missing 1 required positional argument: 'content'[0m
+08:36:59:529 AM |  console.py   |      Line 1312  |  ERROR   ﰲ  An error has been caught in function 'render', process 'MainProcess' (8116), thread 'MainThread' (7996644416):
+[33m[1mTraceback (most recent call last):[0m
+
+  File "/Users/maxludden/.config/.pyenv/versions/3.12.1/lib/python3.12/runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+           │         └ <code object <module> at 0x105074800, file "/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...
+           └ <function _run_code at 0x105006020>
+  File "/Users/maxludden/.config/.pyenv/versions/3.12.1/lib/python3.12/runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+         └ <code object <module> at 0x105074800, file "/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/[0m[32m[1m__main__.py[0m", line [33m39[0m, in [35m<module>[0m
+    [1mcli[0m[35m[1m.[0m[1mmain[0m[1m([0m[1m)[0m
+    [36m│   └ [0m[36m[1m<function main at 0x106a70b80>[0m
+    [36m└ [0m[36m[1m<module 'debugpy.server.cli' from '/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled...[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/[0m[32m[1mcli.py[0m", line [33m430[0m, in [35mmain[0m
+    [1mrun[0m[1m([0m[1m)[0m
+    [36m└ [0m[36m[1m<function run_file at 0x106a70900>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/[0m[32m[1mcli.py[0m", line [33m284[0m, in [35mrun_file[0m
+    [1mrunpy[0m[35m[1m.[0m[1mrun_path[0m[1m([0m[1mtarget[0m[1m,[0m [1mrun_name[0m[35m[1m=[0m[36m"__main__"[0m[1m)[0m
+    [36m│     │        └ [0m[36m[1m'/Users/maxludden/dev/py/supergene/src/supergene/v5.py'[0m
+    [36m│     └ [0m[36m[1m<function run_path at 0x1062a0d60>[0m
+    [36m└ [0m[36m[1m<module '_pydevd_bundle.pydevd_runpy' from '/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m321[0m, in [35mrun_path[0m
+    [35m[1mreturn[0m [1m_run_module_code[0m[1m([0m[1mcode[0m[1m,[0m [1minit_globals[0m[1m,[0m [1mrun_name[0m[1m,[0m
+    [36m       │                │     │             └ [0m[36m[1m'__main__'[0m
+    [36m       │                │     └ [0m[36m[1mNone[0m
+    [36m       │                └ [0m[36m[1m<code object <module> at 0x12366f780, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+    [36m       └ [0m[36m[1m<function _run_module_code at 0x1062a09a0>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m135[0m, in [35m_run_module_code[0m
+    [1m_run_code[0m[1m([0m[1mcode[0m[1m,[0m [1mmod_globals[0m[1m,[0m [1minit_globals[0m[1m,[0m
+    [36m│         │     │            └ [0m[36m[1mNone[0m
+    [36m│         │     └ [0m[36m[1m{'__name__': '__main__', '__doc__': 'V4: Update the section and book', '__package__': '', '__loader__': None, '__spec__': Non...[0m
+    [36m│         └ [0m[36m[1m<code object <module> at 0x12366f780, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+    [36m└ [0m[36m[1m<function _run_code at 0x1062a0540>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m124[0m, in [35m_run_code[0m
+    [1mexec[0m[1m([0m[1mcode[0m[1m,[0m [1mrun_globals[0m[1m)[0m
+    [36m     │     └ [0m[36m[1m{'__name__': '__main__', '__doc__': 'V4: Update the section and book', '__package__': '', '__loader__': None, '__spec__': Non...[0m
+    [36m     └ [0m[36m[1m<code object <module> at 0x12366f780, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+
+  File "[32m/Users/maxludden/dev/py/supergene/src/supergene/[0m[32m[1mv5.py[0m", line [33m245[0m, in [35m<module>[0m
+    [1mV5[0m[35m[1m.[0m[1mtest[0m[1m([0m[1m)[0m
+    [36m│  └ [0m[36m[1m<staticmethod(<function V5.test at 0x149943100>)>[0m
+    [36m└ [0m[36m[1m<class '__main__.V5'>[0m
+
+  File "[32m/Users/maxludden/dev/py/supergene/src/supergene/[0m[32m[1mv5.py[0m", line [33m240[0m, in [35mtest[0m
+    [1mprint[0m[1m([0m[1mnew_v5[0m[1m,[0m [1mjustify[0m[35m[1m=[0m[36m"center"[0m[1m)[0m
+    [36m│     └ [0m[36m[1mV5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t Man En...[0m
+    [36m└ [0m[36m[1m<bound method Console.print of <console width=188 ColorSystem.TRUECOLOR>>[0m
+
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1700, in print
+    extend(render(renderable, render_options))
+    │      │      │           └ ConsoleOptions(size=ConsoleDimensions(width=188, height=24), legacy_windows=False, min_width=1, max_width=188, is_terminal=Tr...
+    │      │      └ Align(V5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t ...
+    │      └ <bound method Console.render of <console width=188 ColorSystem.TRUECOLOR>>
+    └ <built-in method extend of list object at 0x149df80c0>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1332, in render
+    for render_output in iter_render:
+                         └ <generator object Align.__rich_console__ at 0x1492bb640>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/align.py", line 146, in __rich_console__
+    lines = list(Segment.split_lines(rendered))
+                 │       │           └ <generator object Console.render at 0x1498772e0>
+                 │       └ <classmethod(<function Segment.split_lines at 0x1472b8ae0>)>
+                 └ <class 'rich.segment.Segment'>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/segment.py", line 248, in split_lines
+    for segment in segments:
+                   └ <generator object Console.render at 0x1498772e0>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1332, in render
+    for render_output in iter_render:
+                         └ <generator object Constrain.__rich_console__ at 0x149d8bf10>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/constrain.py", line 29, in __rich_console__
+    yield from console.render(self.renderable, child_options)
+               │       │      │    │           └ ConsoleOptions(size=ConsoleDimensions(width=188, height=24), legacy_windows=False, min_width=188, max_width=188, is_terminal=...
+               │       │      │    └ V5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t Man En...
+               │       │      └ <rich.constrain.Constrain object at 0x149dd9a00>
+               │       └ <function Console.render at 0x147467ba0>
+               └ <console width=188 ColorSystem.TRUECOLOR>
+> File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1312, in render
+    render_iterable = renderable.__rich_console__(self, _options)  # type: ignore[union-attr]
+                      │          │                │     └ ConsoleOptions(size=ConsoleDimensions(width=188, height=24), legacy_windows=False, min_width=188, max_width=188, is_terminal=...
+                      │          │                └ <console width=188 ColorSystem.TRUECOLOR>
+                      │          └ <function V5.__rich_console__ at 0x149941bc0>
+                      └ V5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t Man En...
+
+  File "[32m/Users/maxludden/dev/py/supergene/src/supergene/[0m[32m[1mv5.py[0m", line [33m221[0m, in [35m__rich_console__[0m
+    [1mlayout[0m[1m[[0m[36m"main"[0m[1m][0m[35m[1m.[0m[1mupdate[0m[1m([0m[1mgroup[0m[1m)[0m
+    [36m└ [0m[36m[1mLayout(name='root')[0m
+
+[31m[1mNameError[0m:[1m name 'group' is not defined[0m
+08:36:59:590 AM |     v5.py     |      Line  245  |  ERROR   ﰲ  An error has been caught in function '<module>', process 'MainProcess' (8116), thread 'MainThread' (7996644416):
+[33m[1mTraceback (most recent call last):[0m
+
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1325, in render
+    iter_render = iter(render_iterable)
+                       └ None
+
+[31m[1mTypeError[0m:[1m 'NoneType' object is not iterable[0m
+
+
+[1mDuring handling of the above exception, another exception occurred:[0m
+
+
+[33m[1mTraceback (most recent call last):[0m
+
+  File "/Users/maxludden/.config/.pyenv/versions/3.12.1/lib/python3.12/runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+           │         └ <code object <module> at 0x105074800, file "/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...
+           └ <function _run_code at 0x105006020>
+  File "/Users/maxludden/.config/.pyenv/versions/3.12.1/lib/python3.12/runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+         └ <code object <module> at 0x105074800, file "/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/[0m[32m[1m__main__.py[0m", line [33m39[0m, in [35m<module>[0m
+    [1mcli[0m[35m[1m.[0m[1mmain[0m[1m([0m[1m)[0m
+    [36m│   └ [0m[36m[1m<function main at 0x106a70b80>[0m
+    [36m└ [0m[36m[1m<module 'debugpy.server.cli' from '/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled...[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/[0m[32m[1mcli.py[0m", line [33m430[0m, in [35mmain[0m
+    [1mrun[0m[1m([0m[1m)[0m
+    [36m└ [0m[36m[1m<function run_file at 0x106a70900>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/[0m[32m[1mcli.py[0m", line [33m284[0m, in [35mrun_file[0m
+    [1mrunpy[0m[35m[1m.[0m[1mrun_path[0m[1m([0m[1mtarget[0m[1m,[0m [1mrun_name[0m[35m[1m=[0m[36m"__main__"[0m[1m)[0m
+    [36m│     │        └ [0m[36m[1m'/Users/maxludden/dev/py/supergene/src/supergene/v5.py'[0m
+    [36m│     └ [0m[36m[1m<function run_path at 0x1062a0d60>[0m
+    [36m└ [0m[36m[1m<module '_pydevd_bundle.pydevd_runpy' from '/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m321[0m, in [35mrun_path[0m
+    [35m[1mreturn[0m [1m_run_module_code[0m[1m([0m[1mcode[0m[1m,[0m [1minit_globals[0m[1m,[0m [1mrun_name[0m[1m,[0m
+    [36m       │                │     │             └ [0m[36m[1m'__main__'[0m
+    [36m       │                │     └ [0m[36m[1mNone[0m
+    [36m       │                └ [0m[36m[1m<code object <module> at 0x12366f780, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+    [36m       └ [0m[36m[1m<function _run_module_code at 0x1062a09a0>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m135[0m, in [35m_run_module_code[0m
+    [1m_run_code[0m[1m([0m[1mcode[0m[1m,[0m [1mmod_globals[0m[1m,[0m [1minit_globals[0m[1m,[0m
+    [36m│         │     │            └ [0m[36m[1mNone[0m
+    [36m│         │     └ [0m[36m[1m{'__name__': '__main__', '__doc__': 'V4: Update the section and book', '__package__': '', '__loader__': None, '__spec__': Non...[0m
+    [36m│         └ [0m[36m[1m<code object <module> at 0x12366f780, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+    [36m└ [0m[36m[1m<function _run_code at 0x1062a0540>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m124[0m, in [35m_run_code[0m
+    [1mexec[0m[1m([0m[1mcode[0m[1m,[0m [1mrun_globals[0m[1m)[0m
+    [36m     │     └ [0m[36m[1m{'__name__': '__main__', '__doc__': 'V4: Update the section and book', '__package__': '', '__loader__': None, '__spec__': Non...[0m
+    [36m     └ [0m[36m[1m<code object <module> at 0x12366f780, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+
+> File "[32m/Users/maxludden/dev/py/supergene/src/supergene/[0m[32m[1mv5.py[0m", line [33m245[0m, in [35m<module>[0m
+    [1mV5[0m[35m[1m.[0m[1mtest[0m[1m([0m[1m)[0m
+    [36m│  └ [0m[36m[1m<staticmethod(<function V5.test at 0x149943100>)>[0m
+    [36m└ [0m[36m[1m<class '__main__.V5'>[0m
+
+  File "[32m/Users/maxludden/dev/py/supergene/src/supergene/[0m[32m[1mv5.py[0m", line [33m240[0m, in [35mtest[0m
+    [1mprint[0m[1m([0m[1mnew_v5[0m[1m,[0m [1mjustify[0m[35m[1m=[0m[36m"center"[0m[1m)[0m
+    [36m│     └ [0m[36m[1mV5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t Man En...[0m
+    [36m└ [0m[36m[1m<bound method Console.print of <console width=188 ColorSystem.TRUECOLOR>>[0m
+
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1700, in print
+    extend(render(renderable, render_options))
+    │      │      │           └ ConsoleOptions(size=ConsoleDimensions(width=188, height=24), legacy_windows=False, min_width=1, max_width=188, is_terminal=Tr...
+    │      │      └ Align(V5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t ...
+    │      └ <bound method Console.render of <console width=188 ColorSystem.TRUECOLOR>>
+    └ <built-in method extend of list object at 0x149df80c0>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1332, in render
+    for render_output in iter_render:
+                         └ <generator object Align.__rich_console__ at 0x1492bb640>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/align.py", line 146, in __rich_console__
+    lines = list(Segment.split_lines(rendered))
+                 │       │           └ <generator object Console.render at 0x1498772e0>
+                 │       └ <classmethod(<function Segment.split_lines at 0x1472b8ae0>)>
+                 └ <class 'rich.segment.Segment'>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/segment.py", line 248, in split_lines
+    for segment in segments:
+                   └ <generator object Console.render at 0x1498772e0>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1332, in render
+    for render_output in iter_render:
+                         └ <generator object Constrain.__rich_console__ at 0x149d8bf10>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/constrain.py", line 29, in __rich_console__
+    yield from console.render(self.renderable, child_options)
+               │       │      │    │           └ ConsoleOptions(size=ConsoleDimensions(width=188, height=24), legacy_windows=False, min_width=188, max_width=188, is_terminal=...
+               │       │      │    └ V5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t Man En...
+               │       │      └ <rich.constrain.Constrain object at 0x149dd9a00>
+               │       └ <function Console.render at 0x147467ba0>
+               └ <console width=188 ColorSystem.TRUECOLOR>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1327, in render
+    raise errors.NotRenderableError(
+          │      └ <class 'rich.errors.NotRenderableError'>
+          └ <module 'rich.errors' from '/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/errors.py'>
+
+[31m[1mrich.errors.NotRenderableError[0m:[1m object None is not renderable[0m
+08:37:51:487 AM |  console.py   |      Line 1312  |  ERROR   ﰲ  An error has been caught in function 'render', process 'MainProcess' (8621), thread 'MainThread' (7996644416):
+[33m[1mTraceback (most recent call last):[0m
+
+  File "/Users/maxludden/.config/.pyenv/versions/3.12.1/lib/python3.12/runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+           │         └ <code object <module> at 0x104adc800, file "/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...
+           └ <function _run_code at 0x104a6e020>
+  File "/Users/maxludden/.config/.pyenv/versions/3.12.1/lib/python3.12/runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+         └ <code object <module> at 0x104adc800, file "/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/[0m[32m[1m__main__.py[0m", line [33m39[0m, in [35m<module>[0m
+    [1mcli[0m[35m[1m.[0m[1mmain[0m[1m([0m[1m)[0m
+    [36m│   └ [0m[36m[1m<function main at 0x1064d8b80>[0m
+    [36m└ [0m[36m[1m<module 'debugpy.server.cli' from '/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled...[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/[0m[32m[1mcli.py[0m", line [33m430[0m, in [35mmain[0m
+    [1mrun[0m[1m([0m[1m)[0m
+    [36m└ [0m[36m[1m<function run_file at 0x1064d8900>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/[0m[32m[1mcli.py[0m", line [33m284[0m, in [35mrun_file[0m
+    [1mrunpy[0m[35m[1m.[0m[1mrun_path[0m[1m([0m[1mtarget[0m[1m,[0m [1mrun_name[0m[35m[1m=[0m[36m"__main__"[0m[1m)[0m
+    [36m│     │        └ [0m[36m[1m'/Users/maxludden/dev/py/supergene/src/supergene/v5.py'[0m
+    [36m│     └ [0m[36m[1m<function run_path at 0x105d08d60>[0m
+    [36m└ [0m[36m[1m<module '_pydevd_bundle.pydevd_runpy' from '/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m321[0m, in [35mrun_path[0m
+    [35m[1mreturn[0m [1m_run_module_code[0m[1m([0m[1mcode[0m[1m,[0m [1minit_globals[0m[1m,[0m [1mrun_name[0m[1m,[0m
+    [36m       │                │     │             └ [0m[36m[1m'__main__'[0m
+    [36m       │                │     └ [0m[36m[1mNone[0m
+    [36m       │                └ [0m[36m[1m<code object <module> at 0x1276396c0, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+    [36m       └ [0m[36m[1m<function _run_module_code at 0x105d089a0>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m135[0m, in [35m_run_module_code[0m
+    [1m_run_code[0m[1m([0m[1mcode[0m[1m,[0m [1mmod_globals[0m[1m,[0m [1minit_globals[0m[1m,[0m
+    [36m│         │     │            └ [0m[36m[1mNone[0m
+    [36m│         │     └ [0m[36m[1m{'__name__': '__main__', '__doc__': 'V4: Update the section and book', '__package__': '', '__loader__': None, '__spec__': Non...[0m
+    [36m│         └ [0m[36m[1m<code object <module> at 0x1276396c0, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+    [36m└ [0m[36m[1m<function _run_code at 0x105d08540>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m124[0m, in [35m_run_code[0m
+    [1mexec[0m[1m([0m[1mcode[0m[1m,[0m [1mrun_globals[0m[1m)[0m
+    [36m     │     └ [0m[36m[1m{'__name__': '__main__', '__doc__': 'V4: Update the section and book', '__package__': '', '__loader__': None, '__spec__': Non...[0m
+    [36m     └ [0m[36m[1m<code object <module> at 0x1276396c0, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+
+  File "[32m/Users/maxludden/dev/py/supergene/src/supergene/[0m[32m[1mv5.py[0m", line [33m246[0m, in [35m<module>[0m
+    [1mV5[0m[35m[1m.[0m[1mtest[0m[1m([0m[1m)[0m
+    [36m│  └ [0m[36m[1m<staticmethod(<function V5.test at 0x1474fb100>)>[0m
+    [36m└ [0m[36m[1m<class '__main__.V5'>[0m
+
+  File "[32m/Users/maxludden/dev/py/supergene/src/supergene/[0m[32m[1mv5.py[0m", line [33m241[0m, in [35mtest[0m
+    [1mprint[0m[1m([0m[1mnew_v5[0m[1m,[0m [1mjustify[0m[35m[1m=[0m[36m"center"[0m[1m)[0m
+    [36m│     └ [0m[36m[1mV5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t Man En...[0m
+    [36m└ [0m[36m[1m<bound method Console.print of <console width=188 ColorSystem.TRUECOLOR>>[0m
+
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1700, in print
+    extend(render(renderable, render_options))
+    │      │      │           └ ConsoleOptions(size=ConsoleDimensions(width=188, height=24), legacy_windows=False, min_width=1, max_width=188, is_terminal=Tr...
+    │      │      └ Align(V5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t ...
+    │      └ <bound method Console.render of <console width=188 ColorSystem.TRUECOLOR>>
+    └ <built-in method extend of list object at 0x15d8a3b80>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1332, in render
+    for render_output in iter_render:
+                         └ <generator object Align.__rich_console__ at 0x13723b640>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/align.py", line 146, in __rich_console__
+    lines = list(Segment.split_lines(rendered))
+                 │       │           └ <generator object Console.render at 0x14072f1c0>
+                 │       └ <classmethod(<function Segment.split_lines at 0x1353b8ae0>)>
+                 └ <class 'rich.segment.Segment'>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/segment.py", line 248, in split_lines
+    for segment in segments:
+                   └ <generator object Console.render at 0x14072f1c0>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1332, in render
+    for render_output in iter_render:
+                         └ <generator object Constrain.__rich_console__ at 0x15d843f10>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/constrain.py", line 29, in __rich_console__
+    yield from console.render(self.renderable, child_options)
+               │       │      │    │           └ ConsoleOptions(size=ConsoleDimensions(width=188, height=24), legacy_windows=False, min_width=188, max_width=188, is_terminal=...
+               │       │      │    └ V5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t Man En...
+               │       │      └ <rich.constrain.Constrain object at 0x15d896480>
+               │       └ <function Console.render at 0x135467ba0>
+               └ <console width=188 ColorSystem.TRUECOLOR>
+> File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1312, in render
+    render_iterable = renderable.__rich_console__(self, _options)  # type: ignore[union-attr]
+                      │          │                │     └ ConsoleOptions(size=ConsoleDimensions(width=188, height=24), legacy_windows=False, min_width=188, max_width=188, is_terminal=...
+                      │          │                └ <console width=188 ColorSystem.TRUECOLOR>
+                      │          └ <function V5.__rich_console__ at 0x1474f9bc0>
+                      └ V5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t Man En...
+
+  File "[32m/Users/maxludden/dev/py/supergene/src/supergene/[0m[32m[1mv5.py[0m", line [33m222[0m, in [35m__rich_console__[0m
+    [1mlayout[0m[1m[[0m[36m"main"[0m[1m][0m[35m[1m.[0m[1mupdate[0m[1m([0m[1mgroup[0m[1m)[0m
+    [36m└ [0m[36m[1mLayout(name='root')[0m
+
+[31m[1mNameError[0m:[1m name 'group' is not defined[0m
+08:37:51:551 AM |     v5.py     |      Line  246  |  ERROR   ﰲ  An error has been caught in function '<module>', process 'MainProcess' (8621), thread 'MainThread' (7996644416):
+[33m[1mTraceback (most recent call last):[0m
+
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1325, in render
+    iter_render = iter(render_iterable)
+                       └ None
+
+[31m[1mTypeError[0m:[1m 'NoneType' object is not iterable[0m
+
+
+[1mDuring handling of the above exception, another exception occurred:[0m
+
+
+[33m[1mTraceback (most recent call last):[0m
+
+  File "/Users/maxludden/.config/.pyenv/versions/3.12.1/lib/python3.12/runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+           │         └ <code object <module> at 0x104adc800, file "/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...
+           └ <function _run_code at 0x104a6e020>
+  File "/Users/maxludden/.config/.pyenv/versions/3.12.1/lib/python3.12/runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+         └ <code object <module> at 0x104adc800, file "/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/[0m[32m[1m__main__.py[0m", line [33m39[0m, in [35m<module>[0m
+    [1mcli[0m[35m[1m.[0m[1mmain[0m[1m([0m[1m)[0m
+    [36m│   └ [0m[36m[1m<function main at 0x1064d8b80>[0m
+    [36m└ [0m[36m[1m<module 'debugpy.server.cli' from '/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled...[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/[0m[32m[1mcli.py[0m", line [33m430[0m, in [35mmain[0m
+    [1mrun[0m[1m([0m[1m)[0m
+    [36m└ [0m[36m[1m<function run_file at 0x1064d8900>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/[0m[32m[1mcli.py[0m", line [33m284[0m, in [35mrun_file[0m
+    [1mrunpy[0m[35m[1m.[0m[1mrun_path[0m[1m([0m[1mtarget[0m[1m,[0m [1mrun_name[0m[35m[1m=[0m[36m"__main__"[0m[1m)[0m
+    [36m│     │        └ [0m[36m[1m'/Users/maxludden/dev/py/supergene/src/supergene/v5.py'[0m
+    [36m│     └ [0m[36m[1m<function run_path at 0x105d08d60>[0m
+    [36m└ [0m[36m[1m<module '_pydevd_bundle.pydevd_runpy' from '/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m321[0m, in [35mrun_path[0m
+    [35m[1mreturn[0m [1m_run_module_code[0m[1m([0m[1mcode[0m[1m,[0m [1minit_globals[0m[1m,[0m [1mrun_name[0m[1m,[0m
+    [36m       │                │     │             └ [0m[36m[1m'__main__'[0m
+    [36m       │                │     └ [0m[36m[1mNone[0m
+    [36m       │                └ [0m[36m[1m<code object <module> at 0x1276396c0, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+    [36m       └ [0m[36m[1m<function _run_module_code at 0x105d089a0>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m135[0m, in [35m_run_module_code[0m
+    [1m_run_code[0m[1m([0m[1mcode[0m[1m,[0m [1mmod_globals[0m[1m,[0m [1minit_globals[0m[1m,[0m
+    [36m│         │     │            └ [0m[36m[1mNone[0m
+    [36m│         │     └ [0m[36m[1m{'__name__': '__main__', '__doc__': 'V4: Update the section and book', '__package__': '', '__loader__': None, '__spec__': Non...[0m
+    [36m│         └ [0m[36m[1m<code object <module> at 0x1276396c0, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+    [36m└ [0m[36m[1m<function _run_code at 0x105d08540>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m124[0m, in [35m_run_code[0m
+    [1mexec[0m[1m([0m[1mcode[0m[1m,[0m [1mrun_globals[0m[1m)[0m
+    [36m     │     └ [0m[36m[1m{'__name__': '__main__', '__doc__': 'V4: Update the section and book', '__package__': '', '__loader__': None, '__spec__': Non...[0m
+    [36m     └ [0m[36m[1m<code object <module> at 0x1276396c0, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+
+> File "[32m/Users/maxludden/dev/py/supergene/src/supergene/[0m[32m[1mv5.py[0m", line [33m246[0m, in [35m<module>[0m
+    [1mV5[0m[35m[1m.[0m[1mtest[0m[1m([0m[1m)[0m
+    [36m│  └ [0m[36m[1m<staticmethod(<function V5.test at 0x1474fb100>)>[0m
+    [36m└ [0m[36m[1m<class '__main__.V5'>[0m
+
+  File "[32m/Users/maxludden/dev/py/supergene/src/supergene/[0m[32m[1mv5.py[0m", line [33m241[0m, in [35mtest[0m
+    [1mprint[0m[1m([0m[1mnew_v5[0m[1m,[0m [1mjustify[0m[35m[1m=[0m[36m"center"[0m[1m)[0m
+    [36m│     └ [0m[36m[1mV5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t Man En...[0m
+    [36m└ [0m[36m[1m<bound method Console.print of <console width=188 ColorSystem.TRUECOLOR>>[0m
+
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1700, in print
+    extend(render(renderable, render_options))
+    │      │      │           └ ConsoleOptions(size=ConsoleDimensions(width=188, height=24), legacy_windows=False, min_width=1, max_width=188, is_terminal=Tr...
+    │      │      └ Align(V5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t ...
+    │      └ <bound method Console.render of <console width=188 ColorSystem.TRUECOLOR>>
+    └ <built-in method extend of list object at 0x15d8a3b80>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1332, in render
+    for render_output in iter_render:
+                         └ <generator object Align.__rich_console__ at 0x13723b640>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/align.py", line 146, in __rich_console__
+    lines = list(Segment.split_lines(rendered))
+                 │       │           └ <generator object Console.render at 0x14072f1c0>
+                 │       └ <classmethod(<function Segment.split_lines at 0x1353b8ae0>)>
+                 └ <class 'rich.segment.Segment'>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/segment.py", line 248, in split_lines
+    for segment in segments:
+                   └ <generator object Console.render at 0x14072f1c0>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1332, in render
+    for render_output in iter_render:
+                         └ <generator object Constrain.__rich_console__ at 0x15d843f10>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/constrain.py", line 29, in __rich_console__
+    yield from console.render(self.renderable, child_options)
+               │       │      │    │           └ ConsoleOptions(size=ConsoleDimensions(width=188, height=24), legacy_windows=False, min_width=188, max_width=188, is_terminal=...
+               │       │      │    └ V5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t Man En...
+               │       │      └ <rich.constrain.Constrain object at 0x15d896480>
+               │       └ <function Console.render at 0x135467ba0>
+               └ <console width=188 ColorSystem.TRUECOLOR>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1327, in render
+    raise errors.NotRenderableError(
+          │      └ <class 'rich.errors.NotRenderableError'>
+          └ <module 'rich.errors' from '/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/errors.py'>
+
+[31m[1mrich.errors.NotRenderableError[0m:[1m object None is not renderable[0m
+08:42:07:587 AM |     v5.py     |      Line  241  |  ERROR   ﰲ  An error has been caught in function '<module>', process 'MainProcess' (10863), thread 'MainThread' (7996644416):
+[33m[1mTraceback (most recent call last):[0m
+
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1325, in render
+    iter_render = iter(render_iterable)
+                       └ None
+
+[31m[1mTypeError[0m:[1m 'NoneType' object is not iterable[0m
+
+
+[1mDuring handling of the above exception, another exception occurred:[0m
+
+
+[33m[1mTraceback (most recent call last):[0m
+
+  File "/Users/maxludden/.config/.pyenv/versions/3.12.1/lib/python3.12/runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+           │         └ <code object <module> at 0x100364800, file "/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...
+           └ <function _run_code at 0x1002f6020>
+  File "/Users/maxludden/.config/.pyenv/versions/3.12.1/lib/python3.12/runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+         └ <code object <module> at 0x100364800, file "/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/[0m[32m[1m__main__.py[0m", line [33m39[0m, in [35m<module>[0m
+    [1mcli[0m[35m[1m.[0m[1mmain[0m[1m([0m[1m)[0m
+    [36m│   └ [0m[36m[1m<function main at 0x101f60b80>[0m
+    [36m└ [0m[36m[1m<module 'debugpy.server.cli' from '/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled...[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/[0m[32m[1mcli.py[0m", line [33m430[0m, in [35mmain[0m
+    [1mrun[0m[1m([0m[1m)[0m
+    [36m└ [0m[36m[1m<function run_file at 0x101f60900>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/[0m[32m[1mcli.py[0m", line [33m284[0m, in [35mrun_file[0m
+    [1mrunpy[0m[35m[1m.[0m[1mrun_path[0m[1m([0m[1mtarget[0m[1m,[0m [1mrun_name[0m[35m[1m=[0m[36m"__main__"[0m[1m)[0m
+    [36m│     │        └ [0m[36m[1m'/Users/maxludden/dev/py/supergene/src/supergene/v5.py'[0m
+    [36m│     └ [0m[36m[1m<function run_path at 0x1016ccd60>[0m
+    [36m└ [0m[36m[1m<module '_pydevd_bundle.pydevd_runpy' from '/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m321[0m, in [35mrun_path[0m
+    [35m[1mreturn[0m [1m_run_module_code[0m[1m([0m[1mcode[0m[1m,[0m [1minit_globals[0m[1m,[0m [1mrun_name[0m[1m,[0m
+    [36m       │                │     │             └ [0m[36m[1m'__main__'[0m
+    [36m       │                │     └ [0m[36m[1mNone[0m
+    [36m       │                └ [0m[36m[1m<code object <module> at 0x1015f4a90, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+    [36m       └ [0m[36m[1m<function _run_module_code at 0x1016cc9a0>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m135[0m, in [35m_run_module_code[0m
+    [1m_run_code[0m[1m([0m[1mcode[0m[1m,[0m [1mmod_globals[0m[1m,[0m [1minit_globals[0m[1m,[0m
+    [36m│         │     │            └ [0m[36m[1mNone[0m
+    [36m│         │     └ [0m[36m[1m{'__name__': '__main__', '__doc__': 'V4: Update the section and book', '__package__': '', '__loader__': None, '__spec__': Non...[0m
+    [36m│         └ [0m[36m[1m<code object <module> at 0x1015f4a90, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+    [36m└ [0m[36m[1m<function _run_code at 0x1016cc540>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m124[0m, in [35m_run_code[0m
+    [1mexec[0m[1m([0m[1mcode[0m[1m,[0m [1mrun_globals[0m[1m)[0m
+    [36m     │     └ [0m[36m[1m{'__name__': '__main__', '__doc__': 'V4: Update the section and book', '__package__': '', '__loader__': None, '__spec__': Non...[0m
+    [36m     └ [0m[36m[1m<code object <module> at 0x1015f4a90, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+
+> File "[32m/Users/maxludden/dev/py/supergene/src/supergene/[0m[32m[1mv5.py[0m", line [33m241[0m, in [35m<module>[0m
+    [1mV5[0m[35m[1m.[0m[1mtest[0m[1m([0m[1m)[0m
+    [36m│  └ [0m[36m[1m<function V5.test at 0x14f53f100>[0m
+    [36m└ [0m[36m[1m<class '__main__.V5'>[0m
+
+  File "[32m/Users/maxludden/dev/py/supergene/src/supergene/[0m[32m[1mv5.py[0m", line [33m236[0m, in [35mtest[0m
+    [1mprint[0m[1m([0m[1mnew_v5[0m[1m,[0m [1mjustify[0m[35m[1m=[0m[36m"center"[0m[1m)[0m
+    [36m│     └ [0m[36m[1mV5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t Man En...[0m
+    [36m└ [0m[36m[1m<bound method Console.print of <console width=188 ColorSystem.TRUECOLOR>>[0m
+
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1700, in print
+    extend(render(renderable, render_options))
+    │      │      │           └ ConsoleOptions(size=ConsoleDimensions(width=188, height=24), legacy_windows=False, min_width=1, max_width=188, is_terminal=Tr...
+    │      │      └ Align(V5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t ...
+    │      └ <bound method Console.render of <console width=188 ColorSystem.TRUECOLOR>>
+    └ <built-in method extend of list object at 0x14f7b80c0>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1332, in render
+    for render_output in iter_render:
+                         └ <generator object Align.__rich_console__ at 0x14edbb640>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/align.py", line 146, in __rich_console__
+    lines = list(Segment.split_lines(rendered))
+                 │       │           └ <generator object Console.render at 0x14f3771c0>
+                 │       └ <classmethod(<function Segment.split_lines at 0x14c8b8ae0>)>
+                 └ <class 'rich.segment.Segment'>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/segment.py", line 248, in split_lines
+    for segment in segments:
+                   └ <generator object Console.render at 0x14f3771c0>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1332, in render
+    for render_output in iter_render:
+                         └ <generator object Constrain.__rich_console__ at 0x14f74bc40>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/constrain.py", line 29, in __rich_console__
+    yield from console.render(self.renderable, child_options)
+               │       │      │    │           └ ConsoleOptions(size=ConsoleDimensions(width=188, height=24), legacy_windows=False, min_width=188, max_width=188, is_terminal=...
+               │       │      │    └ V5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t Man En...
+               │       │      └ <rich.constrain.Constrain object at 0x14f917620>
+               │       └ <function Console.render at 0x14c963ba0>
+               └ <console width=188 ColorSystem.TRUECOLOR>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1327, in render
+    raise errors.NotRenderableError(
+          │      └ <class 'rich.errors.NotRenderableError'>
+          └ <module 'rich.errors' from '/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/errors.py'>
+
+[31m[1mrich.errors.NotRenderableError[0m:[1m object None is not renderable[0m
+08:42:44:426 AM |     v5.py     |      Line  241  |  ERROR   ﰲ  An error has been caught in function '<module>', process 'MainProcess' (11219), thread 'MainThread' (7996644416):
+[33m[1mTraceback (most recent call last):[0m
+
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1325, in render
+    iter_render = iter(render_iterable)
+                       └ None
+
+[31m[1mTypeError[0m:[1m 'NoneType' object is not iterable[0m
+
+
+[1mDuring handling of the above exception, another exception occurred:[0m
+
+
+[33m[1mTraceback (most recent call last):[0m
+
+  File "/Users/maxludden/.config/.pyenv/versions/3.12.1/lib/python3.12/runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+           │         └ <code object <module> at 0x104538800, file "/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...
+           └ <function _run_code at 0x1044ca020>
+  File "/Users/maxludden/.config/.pyenv/versions/3.12.1/lib/python3.12/runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+         └ <code object <module> at 0x104538800, file "/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/[0m[32m[1m__main__.py[0m", line [33m39[0m, in [35m<module>[0m
+    [1mcli[0m[35m[1m.[0m[1mmain[0m[1m([0m[1m)[0m
+    [36m│   └ [0m[36m[1m<function main at 0x105f34b80>[0m
+    [36m└ [0m[36m[1m<module 'debugpy.server.cli' from '/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled...[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/[0m[32m[1mcli.py[0m", line [33m430[0m, in [35mmain[0m
+    [1mrun[0m[1m([0m[1m)[0m
+    [36m└ [0m[36m[1m<function run_file at 0x105f34900>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/[0m[32m[1mcli.py[0m", line [33m284[0m, in [35mrun_file[0m
+    [1mrunpy[0m[35m[1m.[0m[1mrun_path[0m[1m([0m[1mtarget[0m[1m,[0m [1mrun_name[0m[35m[1m=[0m[36m"__main__"[0m[1m)[0m
+    [36m│     │        └ [0m[36m[1m'/Users/maxludden/dev/py/supergene/src/supergene/v5.py'[0m
+    [36m│     └ [0m[36m[1m<function run_path at 0x105764d60>[0m
+    [36m└ [0m[36m[1m<module '_pydevd_bundle.pydevd_runpy' from '/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m321[0m, in [35mrun_path[0m
+    [35m[1mreturn[0m [1m_run_module_code[0m[1m([0m[1mcode[0m[1m,[0m [1minit_globals[0m[1m,[0m [1mrun_name[0m[1m,[0m
+    [36m       │                │     │             └ [0m[36m[1m'__main__'[0m
+    [36m       │                │     └ [0m[36m[1mNone[0m
+    [36m       │                └ [0m[36m[1m<code object <module> at 0x10d8bac80, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+    [36m       └ [0m[36m[1m<function _run_module_code at 0x1057649a0>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m135[0m, in [35m_run_module_code[0m
+    [1m_run_code[0m[1m([0m[1mcode[0m[1m,[0m [1mmod_globals[0m[1m,[0m [1minit_globals[0m[1m,[0m
+    [36m│         │     │            └ [0m[36m[1mNone[0m
+    [36m│         │     └ [0m[36m[1m{'__name__': '__main__', '__doc__': 'V4: Update the section and book', '__package__': '', '__loader__': None, '__spec__': Non...[0m
+    [36m│         └ [0m[36m[1m<code object <module> at 0x10d8bac80, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+    [36m└ [0m[36m[1m<function _run_code at 0x105764540>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m124[0m, in [35m_run_code[0m
+    [1mexec[0m[1m([0m[1mcode[0m[1m,[0m [1mrun_globals[0m[1m)[0m
+    [36m     │     └ [0m[36m[1m{'__name__': '__main__', '__doc__': 'V4: Update the section and book', '__package__': '', '__loader__': None, '__spec__': Non...[0m
+    [36m     └ [0m[36m[1m<code object <module> at 0x10d8bac80, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+
+> File "[32m/Users/maxludden/dev/py/supergene/src/supergene/[0m[32m[1mv5.py[0m", line [33m241[0m, in [35m<module>[0m
+    [1mV5[0m[35m[1m.[0m[1mtest[0m[1m([0m[1m)[0m
+    [36m│  └ [0m[36m[1m<function V5.test at 0x163741bc0>[0m
+    [36m└ [0m[36m[1m<class '__main__.V5'>[0m
+
+  File "[32m/Users/maxludden/dev/py/supergene/src/supergene/[0m[32m[1mv5.py[0m", line [33m236[0m, in [35mtest[0m
+    [1mprint[0m[1m([0m[1mnew_v5[0m[1m,[0m [1mjustify[0m[35m[1m=[0m[36m"center"[0m[1m)[0m
+    [36m│     └ [0m[36m[1mV5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t Man En...[0m
+    [36m└ [0m[36m[1m<bound method Console.print of <console width=188 ColorSystem.TRUECOLOR>>[0m
+
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1700, in print
+    extend(render(renderable, render_options))
+    │      │      │           └ ConsoleOptions(size=ConsoleDimensions(width=188, height=24), legacy_windows=False, min_width=1, max_width=188, is_terminal=Tr...
+    │      │      └ Align(V5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t ...
+    │      └ <bound method Console.render of <console width=188 ColorSystem.TRUECOLOR>>
+    └ <built-in method extend of list object at 0x16a67fb80>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1332, in render
+    for render_output in iter_render:
+                         └ <generator object Align.__rich_console__ at 0x16325b640>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/align.py", line 146, in __rich_console__
+    lines = list(Segment.split_lines(rendered))
+                 │       │           └ <generator object Console.render at 0x1636771c0>
+                 │       └ <classmethod(<function Segment.split_lines at 0x1611b8ae0>)>
+                 └ <class 'rich.segment.Segment'>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/segment.py", line 248, in split_lines
+    for segment in segments:
+                   └ <generator object Console.render at 0x1636771c0>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1332, in render
+    for render_output in iter_render:
+                         └ <generator object Constrain.__rich_console__ at 0x16a603f10>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/constrain.py", line 29, in __rich_console__
+    yield from console.render(self.renderable, child_options)
+               │       │      │    │           └ ConsoleOptions(size=ConsoleDimensions(width=188, height=24), legacy_windows=False, min_width=188, max_width=188, is_terminal=...
+               │       │      │    └ V5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t Man En...
+               │       │      └ <rich.constrain.Constrain object at 0x16a81b3e0>
+               │       └ <function Console.render at 0x161263ba0>
+               └ <console width=188 ColorSystem.TRUECOLOR>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1327, in render
+    raise errors.NotRenderableError(
+          │      └ <class 'rich.errors.NotRenderableError'>
+          └ <module 'rich.errors' from '/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/errors.py'>
+
+[31m[1mrich.errors.NotRenderableError[0m:[1m object None is not renderable[0m
+08:46:22:716 AM |     v5.py     |      Line  243  |  ERROR   ﰲ  An error has been caught in function '<module>', process 'MainProcess' (13219), thread 'MainThread' (7996644416):
+[33m[1mTraceback (most recent call last):[0m
+
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1325, in render
+    iter_render = iter(render_iterable)
+                       └ None
+
+[31m[1mTypeError[0m:[1m 'NoneType' object is not iterable[0m
+
+
+[1mDuring handling of the above exception, another exception occurred:[0m
+
+
+[33m[1mTraceback (most recent call last):[0m
+
+  File "/Users/maxludden/.config/.pyenv/versions/3.12.1/lib/python3.12/runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           │         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+           │         └ <code object <module> at 0x1003f0800, file "/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...
+           └ <function _run_code at 0x100382020>
+  File "/Users/maxludden/.config/.pyenv/versions/3.12.1/lib/python3.12/runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+         │     └ {'__name__': '__main__', '__doc__': None, '__package__': '', '__loader__': <_frozen_importlib_external.SourceFileLoader objec...
+         └ <code object <module> at 0x1003f0800, file "/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/[0m[32m[1m__main__.py[0m", line [33m39[0m, in [35m<module>[0m
+    [1mcli[0m[35m[1m.[0m[1mmain[0m[1m([0m[1m)[0m
+    [36m│   └ [0m[36m[1m<function main at 0x101decb80>[0m
+    [36m└ [0m[36m[1m<module 'debugpy.server.cli' from '/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled...[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/[0m[32m[1mcli.py[0m", line [33m430[0m, in [35mmain[0m
+    [1mrun[0m[1m([0m[1m)[0m
+    [36m└ [0m[36m[1m<function run_file at 0x101dec900>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/[0m[32m[1mcli.py[0m", line [33m284[0m, in [35mrun_file[0m
+    [1mrunpy[0m[35m[1m.[0m[1mrun_path[0m[1m([0m[1mtarget[0m[1m,[0m [1mrun_name[0m[35m[1m=[0m[36m"__main__"[0m[1m)[0m
+    [36m│     │        └ [0m[36m[1m'/Users/maxludden/dev/py/supergene/src/supergene/v5.py'[0m
+    [36m│     └ [0m[36m[1m<function run_path at 0x10161cd60>[0m
+    [36m└ [0m[36m[1m<module '_pydevd_bundle.pydevd_runpy' from '/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm6...[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m321[0m, in [35mrun_path[0m
+    [35m[1mreturn[0m [1m_run_module_code[0m[1m([0m[1mcode[0m[1m,[0m [1minit_globals[0m[1m,[0m [1mrun_name[0m[1m,[0m
+    [36m       │                │     │             └ [0m[36m[1m'__main__'[0m
+    [36m       │                │     └ [0m[36m[1mNone[0m
+    [36m       │                └ [0m[36m[1m<code object <module> at 0x1407e1ec0, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+    [36m       └ [0m[36m[1m<function _run_module_code at 0x10161c9a0>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m135[0m, in [35m_run_module_code[0m
+    [1m_run_code[0m[1m([0m[1mcode[0m[1m,[0m [1mmod_globals[0m[1m,[0m [1minit_globals[0m[1m,[0m
+    [36m│         │     │            └ [0m[36m[1mNone[0m
+    [36m│         │     └ [0m[36m[1m{'__name__': '__main__', '__doc__': 'V4: Update the section and book', '__package__': '', '__loader__': None, '__spec__': Non...[0m
+    [36m│         └ [0m[36m[1m<code object <module> at 0x1407e1ec0, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+    [36m└ [0m[36m[1m<function _run_code at 0x10161c540>[0m
+
+  File "[32m/Users/maxludden/.vscode/extensions/ms-python.debugpy-2024.3.10731010-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/[0m[32m[1mpydevd_runpy.py[0m", line [33m124[0m, in [35m_run_code[0m
+    [1mexec[0m[1m([0m[1mcode[0m[1m,[0m [1mrun_globals[0m[1m)[0m
+    [36m     │     └ [0m[36m[1m{'__name__': '__main__', '__doc__': 'V4: Update the section and book', '__package__': '', '__loader__': None, '__spec__': Non...[0m
+    [36m     └ [0m[36m[1m<code object <module> at 0x1407e1ec0, file "/Users/maxludden/dev/py/supergene/src/supergene/v5.py", line 1>[0m
+
+> File "[32m/Users/maxludden/dev/py/supergene/src/supergene/[0m[32m[1mv5.py[0m", line [33m243[0m, in [35m<module>[0m
+    [1mV5[0m[35m[1m.[0m[1mtest[0m[1m([0m[1m)[0m
+    [36m│  └ [0m[36m[1m<function V5.test at 0x134639bc0>[0m
+    [36m└ [0m[36m[1m<class '__main__.V5'>[0m
+
+  File "[32m/Users/maxludden/dev/py/supergene/src/supergene/[0m[32m[1mv5.py[0m", line [33m238[0m, in [35mtest[0m
+    [1mprint[0m[1m([0m[1mnew_v5[0m[1m,[0m [1mjustify[0m[35m[1m=[0m[36m"center"[0m[1m)[0m
+    [36m│     └ [0m[36m[1mV5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t Man En...[0m
+    [36m└ [0m[36m[1m<bound method Console.print of <console width=188 ColorSystem.TRUECOLOR>>[0m
+
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1700, in print
+    extend(render(renderable, render_options))
+    │      │      │           └ ConsoleOptions(size=ConsoleDimensions(width=188, height=24), legacy_windows=False, min_width=1, max_width=188, is_terminal=Tr...
+    │      │      └ Align(V5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t ...
+    │      └ <bound method Console.render of <console width=188 ColorSystem.TRUECOLOR>>
+    └ <built-in method extend of list object at 0x137e7c0c0>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1332, in render
+    for render_output in iter_render:
+                         └ <generator object Align.__rich_console__ at 0x1340bb640>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/align.py", line 146, in __rich_console__
+    lines = list(Segment.split_lines(rendered))
+                 │       │           └ <generator object Console.render at 0x13457b1c0>
+                 │       └ <classmethod(<function Segment.split_lines at 0x1302b8ae0>)>
+                 └ <class 'rich.segment.Segment'>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/segment.py", line 248, in split_lines
+    for segment in segments:
+                   └ <generator object Console.render at 0x13457b1c0>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1332, in render
+    for render_output in iter_render:
+                         └ <generator object Constrain.__rich_console__ at 0x137e0bf10>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/constrain.py", line 29, in __rich_console__
+    yield from console.render(self.renderable, child_options)
+               │       │      │    │           └ ConsoleOptions(size=ConsoleDimensions(width=188, height=24), legacy_windows=False, min_width=188, max_width=188, is_terminal=...
+               │       │      │    └ V5(id=ObjectId('65f314cb6c5063ddb3687f76'), revision_id=None, chapter=44, section=1, book=1, order=44, title='He Isn’t Man En...
+               │       │      └ <rich.constrain.Constrain object at 0x137ed2060>
+               │       └ <function Console.render at 0x130463ba0>
+               └ <console width=188 ColorSystem.TRUECOLOR>
+  File "/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/console.py", line 1327, in render
+    raise errors.NotRenderableError(
+          │      └ <class 'rich.errors.NotRenderableError'>
+          └ <module 'rich.errors' from '/Users/maxludden/dev/venvs/supergene/lib/python3.12/site-packages/rich/errors.py'>
+
+[31m[1mrich.errors.NotRenderableError[0m:[1m object None is not renderable[0m
