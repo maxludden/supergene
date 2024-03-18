@@ -5,8 +5,7 @@ from os import getenv
 from typing import Any, List, Optional
 
 from bunnet import Document, init_bunnet
-
-# from cheap_repr import normal_repr, register_repr  # type: ignore
+from cheap_repr import normal_repr, register_repr  # type: ignore
 from dotenv import load_dotenv
 from maxgradient import Color, Gradient
 from pymongo import MongoClient
@@ -25,22 +24,23 @@ from rich.progress import (
 from rich.prompt import Confirm
 from rich.text import Text
 from rich.traceback import install as tr_install
+# from snoop import snoop
 
 load_dotenv()
 
 
-class Database:
+class MongoDB:
     """The MongoDB Client.
 
     Args:
         documents: The document models to initialize the database with.
         console (Console, optional): The Rich console.
         progress (Progress, optional): The Rich progress bar.
-    
+
     Attributes:
         console (Console): The Rich console.
         progress (Progress): The Rich progress bar.
-    
+
     Methods:
         get_console: Get the Rich console.
         get_progress: Get the Rich progress bar.
@@ -59,9 +59,8 @@ class Database:
             "SUPERGENE", "op://Personal/ixzlwkey4nyc2w54fathyi4ilq/Database/uri"
         )
         self.client: MongoClient = MongoClient(self.uri)
-        self.console = console or self.get_console()
-        self.progress = progress or self.get_progress(self.console)
         self.documents = documents
+        # self.connected = False
 
     @staticmethod
     def get_console() -> Console:
@@ -119,17 +118,16 @@ class Database:
     def connect(self):
         """Connect to the MongoDB database."""
         try:
-            init_bunnet(database=self.client.supergene, document_models=self.models)  # type: ignore
+            init_bunnet(database=self.client.supergene, document_models=self.documents)  # type: ignore
         except ConnectionFailure as cf:
-            self.console.print(cf)
+            raise ConnectionFailure from cf
         else:
-            if not self.connected:
-                self.console.print(self._success_panel(), justify="center")
-                self.connected = True
+            self.console.print(self._success_panel(), justify="center")
+            # self.connected = True
 
     def _success_panel(self) -> Panel:
         """Rich.panel.Panel containing a success message for connecting to with the database."""
-        self.connect()
+        self.console.line(2)
         colors = [
             Color("#008f00"),
             Color("#00ff00"),
@@ -138,7 +136,7 @@ class Database:
         ]
         title_gradient = Gradient("Bunnet ODM", colors=colors, style="bold")  # type: ignore
         message: Text = Text.assemble(
-            Gradient("Connected to MongoDB:\n\n", colors=colors, style="italic").as_text(),  # type: ignore
+            Gradient("Connected to MongoDB:\n\n", colors=colors).as_text(),  # type: ignore
             Gradient(
                 "supergene",
                 colors=[
@@ -160,3 +158,12 @@ class Database:
             expand=False,
             padding=(1, 4),
         )
+
+if __name__ == '__main__':
+    from supergene.v3 import V3
+    from supergene.v4 import V4
+    from supergene.v5 import V5
+
+    db = MongoDB([V3, V4, V5])  # type: ignore
+    db.connect()
+    db.console.print("Connected to the database.",justify="center")
