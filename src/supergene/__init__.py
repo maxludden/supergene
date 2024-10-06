@@ -11,28 +11,40 @@ from rich.traceback import install as tr_install
 from rich.prompt import IntPrompt
 from rich.style import Style
 from rich.panel import Panel
-from pydantic import BaseModel
+from pydantic import BaseModel, computed_field
+from rich_gradient import Gradient
 
 load_dotenv()
-_logger = logger
+format = getenv("LOG_FORMAT", "<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>")
+logger.configure(
+    handlers=[
+        {
+            "sink": "logs/trace.log",
+            "level": "TRACE",
+            "format": format,
+            "colorize": False,
+        }
+    ]
+)
+
+
 
 class Settings(BaseModel):
     """Settings class to store global variables."""
-    def __init__(self) -> None:
-        self.uri: str = getenv("MONGO_URI", "op://Dev/Mongo/Database/uri")
-        self.db: str = getenv("DATABASE_NAME", "op://Dev/Mongo/Database/name")
-        self.collection: str = getenv("COLLECTION_NAME", "op://Dev/Mongo/Database/collection")
-        last: Optional[str] = getenv("LAST")
-        if last:
-            self.last: int = int(last)
-        else:
-            raise ValueError("LAST environment variable not set.")
+    uri: str = getenv("MONGO_URI", "op://Dev/Mongo/Database/uri")
+    db: str = getenv("DATABASE_NAME", "op://Dev/Mongo/Database/name")
+    collection: str = getenv("COLLECTION_NAME", "op://Dev/Mongo/Database/collection")
 
-    def inc(self) -> int:
-        """Increment the LAST environment variable."""
-        self.last += 1
-        environ["LAST"] = str(self.last)
-        return self.last
+    @computed_field
+    def last(self) -> int:
+        last = int(getenv("LAST", "0"))
+
+        if last and last != 0:
+            return last
+        else:
+            last = int(getenv("LAST") or IntPrompt.ask("Enter the last chapter number:"))
+            environ["LAST"] = str(last)
+            return last
 
 
 class Log:
@@ -217,6 +229,17 @@ if __name__=="__main__":
     log.critical("Log object initialized.")
     log.print(
         Panel(
-            "Log ready... ✅"
-        )
+            Gradient(
+                "Log ready... ✅",
+                colors=[
+                    "#00ff00",
+                    "#55ff55",
+                    "#88ff88"
+                ]
+            ),
+            expand = False,
+            border_style = "bold green",
+            title = Gradient("Log"),
+        ),
+        justify = "center"
     )

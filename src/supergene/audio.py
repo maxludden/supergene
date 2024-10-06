@@ -4,8 +4,9 @@ from datetime import datetime
 from os import environ, getenv
 from pathlib import Path
 from subprocess import run
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 
+from dotenv import load_dotenv
 from bunnet import Document, View, init_bunnet
 from pydantic import BaseModel, Field
 from pymongo import MongoClient
@@ -14,8 +15,8 @@ from pymongo.database import Database
 
 from supergene import Log
 
+load_dotenv()
 log: Log = Log()
-
 
 class Chapter(Document):
     """Chapter class to store chapter information."""
@@ -36,30 +37,20 @@ class Chapter(Document):
     class Settings:
         name = "chapter"
 
-
-def init(
-    models: List[type[Document] | type[View] | str] | None = [Chapter],
-) -> Database:
-    mongo_uri = getenv("MONGO_URI", "mongodb://localhost:27017")
-    client: MongoClient = MongoClient(mongo_uri)
-    db = client.get_database("supergene")
-    init_bunnet(database=db, document_models=[models])  # type: ignore
-    log.info("MongoDB connection initialized with bunnet.")
-    return db
+class Mongo:
+    def __init__(self) -> None:
+        mongo_uri = getenv("MONGO_URI", "op://Dev/Mongo/Database/uri")
+        self.client: MongoClient = MongoClient(mongo_uri)
+        self.db: Database = self.client["supergene"]
 
 
-if __name__ == "__main__":
-    db = init()
-    log.info("Database initialized.")
-    log.info("Chapter document model initialized.")
-    chapter1 = Chapter.find_one({"chapter": 1}).run()
-    if chapter1 is None:
-        log.print("[b #0099ff]Chapter[/][b white] 1[/][b #0099ff] not found.[/]")
-    else:
-        title = chapter1.title.title()
-        chapter_header: str = (
-            f"# [b #0099ff]Chapter[/][b white] {chapter1.chapter}[/][b #0099ff][/]"
-        )
-        md = f"Chapter {chapter1.chapter}: {title}\n\n{chapter1.text}"
+    def get_chapters(self) -> List[Chapter]:
+        chapter_col: Collection = self.db["chapter"]
+        chapters = chapter_col.find().to_list()
+        return chapters
 
-        log.print(md)
+if __name__ == '__main__':
+    db = Mongo()
+    chapters = db.get_chapters()
+    print(chapters)
+    log.info("Chapters retrieved.")
