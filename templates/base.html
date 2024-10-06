@@ -1,0 +1,14 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}supergene{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
+</head>
+<body>
+    <h1>{% block header %}Super Gene{% endblock %}</h1>
+    {% block content %}{% endblock %}
+</body>
+</html>

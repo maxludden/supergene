@@ -1,0 +1,17 @@
+<!-- templates/chapters.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapters</title>
+</head>
+<body>
+    <h1>Chapters</h1>
+    <ul>
+        {% for chapter in chapters %}
+            <li>{{ chapter.title }} - {{ chapter.text }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

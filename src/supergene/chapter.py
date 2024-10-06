@@ -3,10 +3,14 @@ from typing import List, Optional
 from datetime import datetime
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException, status
+from fastapi import FastAPI, HTTPException, status, Request
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field, field_validator, computed_field
 from bson import ObjectId
 from pymongo import MongoClient, ReturnDocument
+from fastapi import Query
 from pymongo.cursor import Cursor
 from pymongo.collection import Collection
 from dotenv import load_dotenv
@@ -17,6 +21,7 @@ from supergene import Log
 load_dotenv()
 log = Log()
 console = log.console
+templates = Jinja2Templates(directory="templates")
 
 # ----- Configuration -----
 URI = os.getenv('MONGO_URI', "op://Dev/Mongo/Database/uri")
@@ -189,7 +194,6 @@ class ChapterUpdate(BaseModel):
 
 
 class Chapter(ChapterBase):
-    id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
     created: datetime = Field(default_factory=datetime.utcnow, title="Date and time the chapter was created.")
     modified: datetime = Field(default_factory=datetime.utcnow, title="Date and time the chapter was last modified.")
     version: float = Field(default=0.1, title="Version", description="The version of the chapter.")
@@ -211,15 +215,21 @@ class Chapter(ChapterBase):
 # ----- Database Connection -----
 
 client: MongoClient = MongoClient(URI)
-db = client[DB]
-collection: Collection = db[CHAPTERS]
+db = client.supergene
+collection: Collection = db['chapters']
 
 # Ensure indexes for optimal querying (optional but recommended)
-collection.create_index([("chapter", 1)], unique=True)
+try:
+    collection.create_index([("chapter", 1)], unique=True)
+except Exception:
+    pass
 
 # ----- FastAPI Application -----
 
 app = FastAPI(title="Super Gene", description="API for performing CRUD operations on chapters.", version="0.0.1")
+
+# Serve static files from the "static" directory
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # ----- CRUD Endpoints -----
 
@@ -239,16 +249,27 @@ async def create_chapter(chapter: ChapterCreate):
     created_chapter = collection.find_one({"_id": result.inserted_id})
     return created_chapter
 
-@app.get("/chapters", response_model=List[Chapter])
-async def get_chapters():
+@app.get("/chapters", response_class=HTMLResponse)
+async def get_chapters(request: Request, page: int = Query(1, ge=1), page_size: int = Query(10, ge=1, le=100)):
     """
-    Retrieve all chapters from the collection.
-    """
-    chapters = list(collection.find())
-    return chapters
+    Retrieve a paginated list of chapters.
 
-@app.get("/chapters/{chapter}", response_model=Chapter)
-async def get_chapter(chapter: int, version: Optional[float] = None):
+    Args:
+        page (int): The page number. Defaults to 1.
+        page_size (int): The number of items per page. Defaults to 10.
+    """
+    total_chapters = collection.count_documents({})
+    chapters = list(collection.find().skip((page - 1) * page_size).limit(page_size))
+    return templates.TemplateResponse("chapters.html", {
+        "request": request,
+        "chapters": chapters,
+        "page": page,
+        "page_size": page_size,
+        "total_chapters": total_chapters
+    })
+
+@app.get("/chapters/{chapter}", response_class=HTMLResponse)
+async def get_chapter(request: Request, chapter: int, version: Optional[float] = None):
     """
     Retrieve a version of a chapter. if version is not provided, the latest version is returned.
 
@@ -262,7 +283,7 @@ async def get_chapter(chapter: int, version: Optional[float] = None):
         chapter_doc = collection.find_one({"chapter": chapter})
     if not chapter_doc:
         raise HTTPException(status_code=404, detail=f"Chapter {chapter} not found.")
-    return chapter_doc
+    return templates.TemplateResponse("chapter.html", {"request": request, "chapter": chapter_doc})
 
 @app.get("/chapters/{chapter}/versions", response_model=List[Chapter])
 async def get_chapter_versions(chapter: int):

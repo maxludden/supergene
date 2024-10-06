@@ -1,207 +1,283 @@
-[32m2024-10-05 14:59:52[0m | [36m[1mTRACE   [0m | [36m__main__[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_console()...[0m
-[32m2024-10-05 14:59:52[0m | [36m[1mTRACE   [0m | [36m__main__[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_console() -> Console[0m
-[32m2024-10-05 14:59:52[0m | [36m[1mTRACE   [0m | [36m__main__[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_project()...[0m
-[32m2024-10-05 14:59:52[0m | [36m[1mTRACE   [0m | [36m__main__[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_project() -> Project[0m
-[32m2024-10-05 14:59:52[0m | [36m[1mTRACE   [0m | [36m__main__[0m:[36mtrace[0m:[36m117[0m - [36m[1mLog object initialized.[0m
-[32m2024-10-05 14:59:52[0m | [36m[1mTRACE   [0m | [36m__main__[0m:[36mtrace[0m:[36m117[0m - [36m[1mLog object initialized.[0m
-[32m2024-10-05 14:59:52[0m | [1mINFO    [0m | [36m__main__[0m:[36minfo[0m:[36m133[0m - [1mLog object initialized.[0m
-[32m2024-10-05 14:59:52[0m | [32m[1mSUCCESS [0m | [36m__main__[0m:[36msuccess[0m:[36m141[0m - [32m[1mLog object initialized.[0m
-[32m2024-10-05 14:59:52[0m | [33m[1mWARNING [0m | [36m__main__[0m:[36mwarning[0m:[36m149[0m - [33m[1mLog object initialized.[0m
-[32m2024-10-05 14:59:52[0m | [31m[1mERROR   [0m | [36m__main__[0m:[36merror[0m:[36m157[0m - [31m[1mLog object initialized.[0m
-[32m2024-10-05 14:59:52[0m | [41m[1mCRITICAL[0m | [36m__main__[0m:[36mcritical[0m:[36m165[0m - [41m[1mLog object initialized.[0m
-[32m2024-10-05 14:59:52[0m | [36m[1mTRACE   [0m | [36m__main__[0m:[36mtrace[0m:[36m117[0m - [36m[1mPrinting: (<rich.panel.Panel object at 0x101d890d0>,)[0m
-[32m2024-10-05 15:01:38[0m | [36m[1mTRACE   [0m | [36m__main__[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_console()...[0m
-[32m2024-10-05 15:01:38[0m | [36m[1mTRACE   [0m | [36m__main__[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_console() -> Console[0m
-[32m2024-10-05 15:01:38[0m | [36m[1mTRACE   [0m | [36m__main__[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_project()...[0m
-[32m2024-10-05 15:01:38[0m | [36m[1mTRACE   [0m | [36m__main__[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_project() -> Project[0m
-[32m2024-10-05 15:01:38[0m | [36m[1mTRACE   [0m | [36m__main__[0m:[36mtrace[0m:[36m117[0m - [36m[1mLog object initialized.[0m
-[32m2024-10-05 15:01:38[0m | [36m[1mTRACE   [0m | [36m__main__[0m:[36mtrace[0m:[36m117[0m - [36m[1mLog object initialized.[0m
-[32m2024-10-05 15:01:38[0m | [1mINFO    [0m | [36m__main__[0m:[36minfo[0m:[36m133[0m - [1mLog object initialized.[0m
-[32m2024-10-05 15:01:38[0m | [32m[1mSUCCESS [0m | [36m__main__[0m:[36msuccess[0m:[36m141[0m - [32m[1mLog object initialized.[0m
-[32m2024-10-05 15:01:38[0m | [33m[1mWARNING [0m | [36m__main__[0m:[36mwarning[0m:[36m149[0m - [33m[1mLog object initialized.[0m
-[32m2024-10-05 15:01:38[0m | [31m[1mERROR   [0m | [36m__main__[0m:[36merror[0m:[36m157[0m - [31m[1mLog object initialized.[0m
-[32m2024-10-05 15:01:38[0m | [41m[1mCRITICAL[0m | [36m__main__[0m:[36mcritical[0m:[36m165[0m - [41m[1mLog object initialized.[0m
-[32m2024-10-05 15:01:38[0m | [36m[1mTRACE   [0m | [36m__main__[0m:[36mtrace[0m:[36m117[0m - [36m[1mPrinting: (<rich.panel.Panel object at 0x104310fb0>,)[0m
-[32m2024-10-05 15:02:40[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_console()...[0m
-[32m2024-10-05 15:02:40[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_console() -> Console[0m
-[32m2024-10-05 15:02:40[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_project()...[0m
-[32m2024-10-05 15:02:40[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_project() -> Project[0m
-[32m2024-10-05 15:02:40[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mLog object initialized.[0m
-[32m2024-10-05 15:03:03[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_console()...[0m
-[32m2024-10-05 15:03:03[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_console() -> Console[0m
-[32m2024-10-05 15:03:03[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_project()...[0m
-[32m2024-10-05 15:03:03[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_project() -> Project[0m
-[32m2024-10-05 15:03:03[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mLog object initialized.[0m
-[32m2024-10-05 15:04:41[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_console()...[0m
-[32m2024-10-05 15:04:41[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_console() -> Console[0m
-[32m2024-10-05 15:04:41[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_project()...[0m
-[32m2024-10-05 15:04:41[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_project() -> Project[0m
-[32m2024-10-05 15:04:41[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mLog object initialized.[0m
-[32m2024-10-05 15:05:50[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_console()...[0m
-[32m2024-10-05 15:05:50[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_console() -> Console[0m
-[32m2024-10-05 15:05:50[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_project()...[0m
-[32m2024-10-05 15:05:50[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_project() -> Project[0m
-[32m2024-10-05 15:05:50[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mLog object initialized.[0m
-[32m2024-10-05 15:05:51[0m | [1mINFO    [0m | [36msupergene[0m:[36minfo[0m:[36m133[0m - [1mMongoDB connection initialized with bunnet.[0m
-[32m2024-10-05 15:05:51[0m | [1mINFO    [0m | [36msupergene[0m:[36minfo[0m:[36m133[0m - [1mDatabase initialized.[0m
-[32m2024-10-05 15:05:51[0m | [1mINFO    [0m | [36msupergene[0m:[36minfo[0m:[36m133[0m - [1mChapter document model initialized.[0m
-[32m2024-10-05 15:05:51[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mPrinting: ('[b #0099ff]Chapter[/][b white] 1[/][b #0099ff] not found.[/]',)[0m
-[32m2024-10-05 15:06:26[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_console()...[0m
-[32m2024-10-05 15:06:26[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_console() -> Console[0m
-[32m2024-10-05 15:06:26[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_project()...[0m
-[32m2024-10-05 15:06:26[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_project() -> Project[0m
-[32m2024-10-05 15:06:26[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mLog object initialized.[0m
-[32m2024-10-05 15:06:27[0m | [1mINFO    [0m | [36msupergene[0m:[36minfo[0m:[36m133[0m - [1mMongoDB connection initialized with bunnet.[0m
-[32m2024-10-05 15:06:27[0m | [1mINFO    [0m | [36msupergene[0m:[36minfo[0m:[36m133[0m - [1mDatabase initialized.[0m
-[32m2024-10-05 15:06:27[0m | [1mINFO    [0m | [36msupergene[0m:[36minfo[0m:[36m133[0m - [1mChapter document model initialized.[0m
-[32m2024-10-05 15:06:27[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mPrinting: ('[b #0099ff]Chapter[/][b white] 1[/][b #0099ff] not found.[/]',)[0m
-[32m2024-10-05 15:06:40[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_console()...[0m
-[32m2024-10-05 15:06:40[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_console() -> Console[0m
-[32m2024-10-05 15:06:40[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_project()...[0m
-[32m2024-10-05 15:06:40[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_project() -> Project[0m
-[32m2024-10-05 15:06:40[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mLog object initialized.[0m
-[32m2024-10-05 15:06:40[0m | [1mINFO    [0m | [36msupergene[0m:[36minfo[0m:[36m133[0m - [1mMongoDB connection initialized with bunnet.[0m
-[32m2024-10-05 15:06:40[0m | [1mINFO    [0m | [36msupergene[0m:[36minfo[0m:[36m133[0m - [1mDatabase initialized.[0m
-[32m2024-10-05 15:06:40[0m | [1mINFO    [0m | [36msupergene[0m:[36minfo[0m:[36m133[0m - [1mChapter document model initialized.[0m
-[32m2024-10-05 15:07:23[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_console()...[0m
-[32m2024-10-05 15:07:23[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_console() -> Console[0m
-[32m2024-10-05 15:07:23[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_project()...[0m
-[32m2024-10-05 15:07:23[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_project() -> Project[0m
-[32m2024-10-05 15:07:23[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mLog object initialized.[0m
-[32m2024-10-05 15:07:24[0m | [1mINFO    [0m | [36msupergene[0m:[36minfo[0m:[36m133[0m - [1mMongoDB connection initialized with bunnet.[0m
-[32m2024-10-05 15:07:24[0m | [1mINFO    [0m | [36msupergene[0m:[36minfo[0m:[36m133[0m - [1mDatabase initialized.[0m
-[32m2024-10-05 15:07:24[0m | [1mINFO    [0m | [36msupergene[0m:[36minfo[0m:[36m133[0m - [1mChapter document model initialized.[0m
-[32m2024-10-05 15:07:24[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mPrinting: ('[b #0099ff]Chapter[/][b white] 1[/][b #0099ff] not found.[/]',)[0m
-[32m2024-10-05 15:11:30[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_console()...[0m
-[32m2024-10-05 15:11:30[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_console() -> Console[0m
-[32m2024-10-05 15:11:30[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_project()...[0m
-[32m2024-10-05 15:11:30[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_project() -> Project[0m
-[32m2024-10-05 15:11:30[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mLog object initialized.[0m
-[32m2024-10-05 15:11:58[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_console()...[0m
-[32m2024-10-05 15:11:58[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_console() -> Console[0m
-[32m2024-10-05 15:11:58[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_project()...[0m
-[32m2024-10-05 15:11:58[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_project() -> Project[0m
-[32m2024-10-05 15:11:58[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mLog object initialized.[0m
-[32m2024-10-05 15:12:55[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_console()...[0m
-[32m2024-10-05 15:12:55[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_console() -> Console[0m
-[32m2024-10-05 15:12:55[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_project()...[0m
-[32m2024-10-05 15:12:55[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_project() -> Project[0m
-[32m2024-10-05 15:12:55[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mLog object initialized.[0m
-[32m2024-10-05 15:12:56[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mChapter 1 data: None[0m
-[32m2024-10-05 15:14:58[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_console()...[0m
-[32m2024-10-05 15:14:58[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_console() -> Console[0m
-[32m2024-10-05 15:14:58[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_project()...[0m
-[32m2024-10-05 15:14:58[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_project() -> Project[0m
-[32m2024-10-05 15:14:58[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mLog object initialized.[0m
-[32m2024-10-05 15:14:59[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mChapter 1 data: None[0m
-[32m2024-10-05 15:17:59[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_console()...[0m
-[32m2024-10-05 15:17:59[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_console() -> Console[0m
-[32m2024-10-05 15:17:59[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_project()...[0m
-[32m2024-10-05 15:17:59[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_project() -> Project[0m
-[32m2024-10-05 15:17:59[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mLog object initialized.[0m
-[32m2024-10-05 15:25:13[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_console()...[0m
-[32m2024-10-05 15:25:13[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_console() -> Console[0m
-[32m2024-10-05 15:25:13[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_project()...[0m
-[32m2024-10-05 15:25:13[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_project() -> Project[0m
-[32m2024-10-05 15:25:13[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mLog object initialized.[0m
-[32m2024-10-05 15:25:14[0m | [1mINFO    [0m | [36msupergene[0m:[36minfo[0m:[36m133[0m - [1mChapters retrieved.[0m
-[32m2024-10-05 20:05:01[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_console()...[0m
-[32m2024-10-05 20:05:01[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_console() -> Console[0m
-[32m2024-10-05 20:05:01[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_project()...[0m
-[32m2024-10-05 20:05:01[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_project() -> Project[0m
-[32m2024-10-05 20:05:01[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mLog object initialized.[0m
-[32m2024-10-05 20:05:54[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_console()...[0m
-[32m2024-10-05 20:05:54[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_console() -> Console[0m
-[32m2024-10-05 20:05:54[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_project()...[0m
-[32m2024-10-05 20:05:54[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_project() -> Project[0m
-[32m2024-10-05 20:05:54[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mLog object initialized.[0m
-[32m2024-10-05 20:06:33[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_console()...[0m
-[32m2024-10-05 20:06:33[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_console() -> Console[0m
-[32m2024-10-05 20:06:33[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_project()...[0m
-[32m2024-10-05 20:06:33[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_project() -> Project[0m
-[32m2024-10-05 20:06:33[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mLog object initialized.[0m
-[32m2024-10-05 20:16:14[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_console()...[0m
-[32m2024-10-05 20:16:14[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_console() -> Console[0m
-[32m2024-10-05 20:16:14[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mEntering Log.get_project()...[0m
-[32m2024-10-05 20:16:14[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mExiting Log.get_project() -> Project[0m
-[32m2024-10-05 20:16:14[0m | [36m[1mTRACE   [0m | [36msupergene[0m:[36mtrace[0m:[36m117[0m - [36m[1mLog object initialized.[0m
-2024-10-05 20:18:45 | TRACE    | supergene:trace:117 - Entering Log.get_console()...
-2024-10-05 20:18:45 | TRACE    | supergene:trace:117 - Exiting Log.get_console() -> Console
-2024-10-05 20:18:45 | TRACE    | supergene:trace:117 - Entering Log.get_project()...
-2024-10-05 20:18:45 | TRACE    | supergene:trace:117 - Exiting Log.get_project() -> Project
-2024-10-05 20:18:45 | TRACE    | supergene:trace:117 - Log object initialized.
-2024-10-05 20:19:06 | TRACE    | supergene:trace:117 - Entering Log.get_console()...
-2024-10-05 20:19:06 | TRACE    | supergene:trace:117 - Exiting Log.get_console() -> Console
-2024-10-05 20:19:06 | TRACE    | supergene:trace:117 - Entering Log.get_project()...
-2024-10-05 20:19:06 | TRACE    | supergene:trace:117 - Exiting Log.get_project() -> Project
-2024-10-05 20:19:06 | TRACE    | supergene:trace:117 - Log object initialized.
-2024-10-05 20:20:44 | TRACE    | supergene:trace:117 - Entering Log.get_console()...
-2024-10-05 20:20:44 | TRACE    | supergene:trace:117 - Exiting Log.get_console() -> Console
-2024-10-05 20:20:44 | TRACE    | supergene:trace:117 - Entering Log.get_project()...
-2024-10-05 20:20:44 | TRACE    | supergene:trace:117 - Exiting Log.get_project() -> Project
-2024-10-05 20:20:44 | TRACE    | supergene:trace:117 - Log object initialized.
-2024-10-05 20:22:23 | TRACE    | supergene:trace:117 - Entering Log.get_console()...
-2024-10-05 20:22:23 | TRACE    | supergene:trace:117 - Exiting Log.get_console() -> Console
-2024-10-05 20:22:23 | TRACE    | supergene:trace:117 - Entering Log.get_project()...
-2024-10-05 20:22:23 | TRACE    | supergene:trace:117 - Exiting Log.get_project() -> Project
-2024-10-05 20:22:23 | TRACE    | supergene:trace:117 - Log object initialized.
-2024-10-05 20:22:27 | TRACE    | supergene:trace:117 - Entering Log.get_console()...
-2024-10-05 20:22:27 | TRACE    | supergene:trace:117 - Exiting Log.get_console() -> Console
-2024-10-05 20:22:27 | TRACE    | supergene:trace:117 - Entering Log.get_project()...
-2024-10-05 20:22:27 | TRACE    | supergene:trace:117 - Exiting Log.get_project() -> Project
-2024-10-05 20:22:27 | TRACE    | supergene:trace:117 - Log object initialized.
-2024-10-05 20:22:54 | TRACE    | supergene:trace:117 - Entering Log.get_console()...
-2024-10-05 20:22:54 | TRACE    | supergene:trace:117 - Exiting Log.get_console() -> Console
-2024-10-05 20:22:54 | TRACE    | supergene:trace:117 - Entering Log.get_project()...
-2024-10-05 20:22:54 | TRACE    | supergene:trace:117 - Exiting Log.get_project() -> Project
-2024-10-05 20:22:54 | TRACE    | supergene:trace:117 - Log object initialized.
-2024-10-05 20:25:52 | TRACE    | supergene:trace:117 - Entering Log.get_console()...
-2024-10-05 20:25:52 | TRACE    | supergene:trace:117 - Exiting Log.get_console() -> Console
-2024-10-05 20:25:52 | TRACE    | supergene:trace:117 - Entering Log.get_project()...
-2024-10-05 20:25:52 | TRACE    | supergene:trace:117 - Exiting Log.get_project() -> Project
-2024-10-05 20:25:52 | TRACE    | supergene:trace:117 - Log object initialized.
-2024-10-05 20:25:55 | TRACE    | supergene:trace:117 - Entering Log.get_console()...
-2024-10-05 20:25:55 | TRACE    | supergene:trace:117 - Exiting Log.get_console() -> Console
-2024-10-05 20:25:55 | TRACE    | supergene:trace:117 - Entering Log.get_project()...
-2024-10-05 20:25:55 | TRACE    | supergene:trace:117 - Exiting Log.get_project() -> Project
-2024-10-05 20:25:55 | TRACE    | supergene:trace:117 - Log object initialized.
-2024-10-05 20:25:59 | TRACE    | supergene:trace:117 - Entering Log.get_console()...
-2024-10-05 20:25:59 | TRACE    | supergene:trace:117 - Exiting Log.get_console() -> Console
-2024-10-05 20:25:59 | TRACE    | supergene:trace:117 - Entering Log.get_project()...
-2024-10-05 20:25:59 | TRACE    | supergene:trace:117 - Exiting Log.get_project() -> Project
-2024-10-05 20:25:59 | TRACE    | supergene:trace:117 - Log object initialized.
-2024-10-05 20:26:11 | TRACE    | supergene:trace:117 - Entering Log.get_console()...
-2024-10-05 20:26:11 | TRACE    | supergene:trace:117 - Exiting Log.get_console() -> Console
-2024-10-05 20:26:11 | TRACE    | supergene:trace:117 - Entering Log.get_project()...
-2024-10-05 20:26:11 | TRACE    | supergene:trace:117 - Exiting Log.get_project() -> Project
-2024-10-05 20:26:11 | TRACE    | supergene:trace:117 - Log object initialized.
-2024-10-05 20:27:15 | TRACE    | supergene:trace:117 - Entering Log.get_console()...
-2024-10-05 20:27:15 | TRACE    | supergene:trace:117 - Exiting Log.get_console() -> Console
-2024-10-05 20:27:15 | TRACE    | supergene:trace:117 - Entering Log.get_project()...
-2024-10-05 20:27:15 | TRACE    | supergene:trace:117 - Exiting Log.get_project() -> Project
-2024-10-05 20:27:15 | TRACE    | supergene:trace:117 - Log object initialized.
-2024-10-05 20:27:47 | TRACE    | supergene:trace:117 - Entering Log.get_console()...
-2024-10-05 20:27:47 | TRACE    | supergene:trace:117 - Exiting Log.get_console() -> Console
-2024-10-05 20:27:47 | TRACE    | supergene:trace:117 - Entering Log.get_project()...
-2024-10-05 20:27:47 | TRACE    | supergene:trace:117 - Exiting Log.get_project() -> Project
-2024-10-05 20:27:47 | TRACE    | supergene:trace:117 - Log object initialized.
-2024-10-05 20:27:58 | TRACE    | supergene:trace:117 - Entering Log.get_console()...
-2024-10-05 20:27:58 | TRACE    | supergene:trace:117 - Exiting Log.get_console() -> Console
-2024-10-05 20:27:58 | TRACE    | supergene:trace:117 - Entering Log.get_project()...
-2024-10-05 20:27:58 | TRACE    | supergene:trace:117 - Exiting Log.get_project() -> Project
-2024-10-05 20:27:58 | TRACE    | supergene:trace:117 - Log object initialized.
-2024-10-05 20:28:01 | TRACE    | supergene:trace:117 - Entering Log.get_console()...
-2024-10-05 20:28:01 | TRACE    | supergene:trace:117 - Exiting Log.get_console() -> Console
-2024-10-05 20:28:01 | TRACE    | supergene:trace:117 - Entering Log.get_project()...
-2024-10-05 20:28:01 | TRACE    | supergene:trace:117 - Exiting Log.get_project() -> Project
-2024-10-05 20:28:01 | TRACE    | supergene:trace:117 - Log object initialized.
-2024-10-05 20:28:02 | TRACE    | supergene:trace:117 - Entering Log.get_console()...
-2024-10-05 20:28:02 | TRACE    | supergene:trace:117 - Exiting Log.get_console() -> Console
-2024-10-05 20:28:02 | TRACE    | supergene:trace:117 - Entering Log.get_project()...
-2024-10-05 20:28:02 | TRACE    | supergene:trace:117 - Exiting Log.get_project() -> Project
-2024-10-05 20:28:02 | TRACE    | supergene:trace:117 - Log object initialized.
-2024-10-05 20:28:07 | TRACE    | supergene:trace:117 - Entering Log.get_console()...
-2024-10-05 20:28:07 | TRACE    | supergene:trace:117 - Exiting Log.get_console() -> Console
-2024-10-05 20:28:07 | TRACE    | supergene:trace:117 - Entering Log.get_project()...
-2024-10-05 20:28:07 | TRACE    | supergene:trace:117 - Exiting Log.get_project() -> Project
-2024-10-05 20:28:07 | TRACE    | supergene:trace:117 - Log object initialized.
+2024-10-06 02:24:58 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:24:58 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:24:58 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:24:58 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:24:58 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:26:15 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:26:15 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:26:15 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:26:15 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:26:15 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:26:23 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:26:23 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:26:23 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:26:23 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:26:23 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:26:40 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:26:40 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:26:40 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:26:40 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:26:40 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:26:43 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:26:43 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:26:43 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:26:43 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:26:43 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:32:37 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:32:37 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:32:37 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:32:37 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:32:37 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:32:43 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:32:43 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:32:43 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:32:43 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:32:43 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:34:03 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:34:03 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:34:03 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:34:03 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:34:03 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:38:08 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:38:08 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:38:08 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:38:08 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:38:08 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:38:27 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:38:27 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:38:27 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:38:27 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:38:27 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:38:31 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:38:31 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:38:31 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:38:31 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:38:31 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:38:39 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:38:39 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:38:39 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:38:39 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:38:39 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:38:39 | WARNING  | supergene:warning:169 - Index creation failed: 
+2024-10-06 02:38:40 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:38:40 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:38:40 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:38:40 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:38:40 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:38:40 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728196720, 22), 'signature': {'hash': b'Sn\xcf\xa5C\xfe\x1aw\x07x\xbf\xf8m<\xfd}(~%\xf0', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728196720, 22)}
+2024-10-06 02:44:58 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:44:58 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:44:58 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:44:58 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:44:58 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:44:59 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197099, 13), 'signature': {'hash': b'\xd4\xb7\x84\\\xe0\xe8,\x91\xf9\x7fc\xef3\x9aZ\xac\xd1\xa5BD', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197099, 13)}
+2024-10-06 02:48:47 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:48:47 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:48:47 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:48:47 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:48:47 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:48:48 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197328, 13), 'signature': {'hash': b'B\xcb\xc3Q\x9a\xfd\n\xc9\xcc-%\x96\xf0\x87\xfc\xb6\xcc\xdc\xa5\xb8', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197328, 13)}
+2024-10-06 02:48:53 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:48:53 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:48:53 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:48:53 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:48:53 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:48:53 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197333, 27), 'signature': {'hash': b'+\xec\xcaY\x01\x1c\xf5-U\xeb\xccp\x86\xdb\xfad\xcd(\xb5\xaa', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197333, 27)}
+2024-10-06 02:49:05 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:49:05 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:49:05 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:49:05 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:49:05 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:49:06 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197346, 10), 'signature': {'hash': b'\x91\xbe\xf3d\x15\xca/\x02\x8c\x08\xeap\xf1\xf2`\xe8\x00,\xce\x96', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197346, 10)}
+2024-10-06 02:49:07 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:49:07 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:49:07 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:49:07 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:49:07 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:49:08 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197348, 2), 'signature': {'hash': b'\x8d\xb4\xbc\xbbl|P\x04\x96\xff-\xeb\x95j\xbaM\x9e\xc0Ej', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197348, 2)}
+2024-10-06 02:49:26 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:49:26 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:49:26 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:49:26 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:49:26 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:49:26 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197366, 21), 'signature': {'hash': b'8t\xe7\xdf\xec=\xa7\x06\xc5!,\xfb<=]\xe9\x06\xfc\xb3\xfa', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197366, 21)}
+2024-10-06 02:49:35 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:49:35 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:49:35 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:49:35 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:49:35 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:49:36 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197376, 19), 'signature': {'hash': b",\xf5\x05\x0e'\x1c\xe8\xbc[c\x8b @\xc3\x10Y\xcb\x9f\xda\xed", 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197376, 19)}
+2024-10-06 02:50:02 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:50:02 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:50:02 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:50:02 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:50:02 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:50:02 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197402, 39), 'signature': {'hash': b'\xb6\x96\xbc\x93\xd9\x1d\xf9\x13\x1b\xdc"\x07i\xe5\xfdB\xac[L[', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197402, 39)}
+2024-10-06 02:50:14 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:50:14 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:50:14 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:50:14 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:50:14 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:50:15 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197415, 3), 'signature': {'hash': b'\x86)\xcd\xbe\xd5\xdd\xf2@_\xfc_\xec\x91`\xa7\xe8+\x11\xad7', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197415, 3)}
+2024-10-06 02:50:39 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:50:39 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:50:39 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:50:39 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:50:39 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:50:39 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197439, 41), 'signature': {'hash': b'\x8e\xb1\xbb\xa3\xdc\xac\xea6\xeb(5\x8e\xf5[\x9b1/MMS', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197439, 41)}
+2024-10-06 02:50:42 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:50:42 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:50:42 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:50:42 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:50:42 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:50:43 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197443, 4), 'signature': {'hash': b"b\n\x06'j4\x84\xbd|\x11\xe4\x80\x19\x90\r`1_C\x89", 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197443, 4)}
+2024-10-06 02:50:44 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:50:44 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:50:44 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:50:44 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:50:44 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:50:45 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197445, 6), 'signature': {'hash': b'\x00\xf9\xb6M\x94TQh\x92\xfc\xa8\x1d\x8a`8\x86\xe3J\xda+', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197445, 6)}
+2024-10-06 02:50:50 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:50:50 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:50:50 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:50:50 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:50:50 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:50:51 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197451, 10), 'signature': {'hash': b'\xf4\x8a\xb0\x0b\xba\xd6\x9e\xf6\xe0?\xa0\x00E\xea\xc7\xbf_\x8c\xa3\x1d', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197451, 10)}
+2024-10-06 02:51:01 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:51:01 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:51:01 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:51:01 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:51:01 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:51:01 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197461, 28), 'signature': {'hash': b'\x99\xce,\xd5\x024\xc0A\xb6Lz-\xfap\xd5!\xad\xe9\xef\xfa', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197461, 28)}
+2024-10-06 02:51:22 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:51:22 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:51:22 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:51:22 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:51:22 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:51:23 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197483, 10), 'signature': {'hash': b'\x10\x1e\xe7W),\xe6\x91Q\r\xf3\x17\xdd\xbf\xa6\x07\xa0\xb5h\x14', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197483, 10)}
+2024-10-06 02:51:37 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:51:37 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:51:37 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:51:37 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:51:37 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:51:37 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197497, 30), 'signature': {'hash': b'@\x82_\x99\x99\xee#\x91U\x08T\xb2\xa3\xc1\xc0\xb0PL"p', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197497, 30)}
+2024-10-06 02:51:39 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:51:39 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:51:39 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:51:39 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:51:39 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:51:40 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197500, 10), 'signature': {'hash': b'\x02\x93I\xc3g5ZL\xff\x84\xb1\xedh\xa6\xb0J\xea\xc5%w', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197500, 10)}
+2024-10-06 02:51:59 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:51:59 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:51:59 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:51:59 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:51:59 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:52:00 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197520, 8), 'signature': {'hash': b'\xc1\x89\xee\xfe2;{\xa4\t\x19\xda\xacE\xbbt\xad\x0b\xd8\xd7\r', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197520, 8)}
+2024-10-06 02:53:06 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:53:06 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:53:06 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:53:06 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:53:06 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:53:06 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197586, 26), 'signature': {'hash': b't\xed,W\x17\x91\x8d\x83\xd6\x88\xf1">\xe1&Q\rH\xa4\xef', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197586, 26)}
+2024-10-06 02:53:12 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:53:12 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:53:12 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:53:12 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:53:12 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:53:13 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197593, 11), 'signature': {'hash': b'\xd7\xda]\x0e\x84\xa8w\xa5u\xb9\xe0\xf65Sx\xdcU\x03\xdaY', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197593, 11)}
+2024-10-06 02:59:08 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:59:08 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:59:08 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:59:08 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:59:08 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:59:09 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197949, 8), 'signature': {'hash': b'~\xbb\xae8D*`\xd1\xc2\x818KM\t\x80\xb0\xe7\x17\xe8m', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197949, 8)}
+2024-10-06 02:59:13 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:59:13 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:59:13 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:59:13 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:59:13 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:59:13 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197953, 26), 'signature': {'hash': b'-\x06\xe1\x0f\x93/Z\xdb\x84\ttO\x12D\x12\x9d\xce\xbbJ\x19', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197953, 26)}
+2024-10-06 02:59:41 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:59:41 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:59:41 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:59:41 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:59:41 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:59:42 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197981, 28), 'signature': {'hash': b'$\x1a\x19,0\xbf\xdf\xc7O\xda\xe7\xc9\xde\x00P\xce((\xd7\x8f', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197981, 28)}
+2024-10-06 02:59:49 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 02:59:49 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 02:59:49 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 02:59:49 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 02:59:49 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 02:59:50 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728197990, 25), 'signature': {'hash': b'"\x0b5\xe5\x17t\x81\x8c\xc3\xb8^\xb7\x90\x0e\x87\xfcL\xee\x85\xf4', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728197990, 25)}
+2024-10-06 03:00:12 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 03:00:12 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 03:00:12 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 03:00:12 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 03:00:12 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 03:00:13 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728198013, 23), 'signature': {'hash': b'u\xe3\xf7\x06\xfa\x17\x1a\xfaO{\xe2C\xe0nL\x97[\xa8&\xbd', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728198013, 23)}
+2024-10-06 03:00:14 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 03:00:14 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 03:00:14 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 03:00:14 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 03:00:14 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 03:00:14 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728198014, 45), 'signature': {'hash': b'8%\x1fB\x80E\x89_*a\xb1\xc50@\xccC\x87\x1f\xbe-', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728198014, 45)}
+2024-10-06 03:00:19 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 03:00:19 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 03:00:19 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 03:00:19 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 03:00:19 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 03:00:19 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728198019, 42), 'signature': {'hash': b'"\x0e68Q\x8f\x83Q\xbd\xdb2\xdc0\xf5\x0c\xc7\x1d\x14\xc3\xee', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728198019, 42)}
+2024-10-06 03:01:05 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 03:01:05 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 03:01:05 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 03:01:05 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 03:01:05 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 03:01:05 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728198065, 47), 'signature': {'hash': b')N;\x8f,\x9c\xceQ\xc8\xc0O\xa5\xc5\xd9\x06Y$\xfa\xbe\x86', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728198065, 47)}
+2024-10-06 03:02:17 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 03:02:17 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 03:02:17 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 03:02:17 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 03:02:17 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 03:02:17 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728198137, 43), 'signature': {'hash': b'|\xd1t\x0f\xc2z<"\x85\x04\xd0\x1f\x91\xdb\x8d\xe8\xa2|\xb5\xed', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728198137, 43)}
+2024-10-06 03:26:28 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 03:26:28 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 03:26:28 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 03:26:28 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 03:26:28 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 03:26:29 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728199589, 10), 'signature': {'hash': b'\xc7\xb2\x9e\x9a|\x00 b\x18\xcfr\xfe\xbb\x12W\x07\x0eI\xc8\x05', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728199589, 10)}
+2024-10-06 03:36:18 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 03:36:18 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 03:36:18 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 03:36:18 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 03:36:18 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 03:36:19 | WARNING  | supergene:warning:169 - Index creation failed: Index already exists with a different name: chapter, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: chapter', 'code': 85, 'codeName': 'IndexOptionsConflict', '$clusterTime': {'clusterTime': Timestamp(1728200179, 11), 'signature': {'hash': b'\xdc0n\xdc\x9d\x03\x86!\xc0\xfbQ\xd0K\x0fq\xb6\xea|\xb8\x93', 'keyId': 7360637234451578882}}, 'operationTime': Timestamp(1728200179, 11)}
+2024-10-06 03:54:05 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 03:54:05 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 03:54:05 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 03:54:05 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 03:54:05 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 04:32:05 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 04:32:05 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 04:32:05 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 04:32:05 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 04:32:05 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 04:41:46 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 04:41:46 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 04:41:46 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 04:41:46 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 04:41:46 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 04:48:54 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 04:48:54 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 04:48:54 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 04:48:54 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 04:48:54 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 06:21:40 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 06:21:40 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 06:21:40 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 06:21:40 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 06:21:40 | TRACE    | supergene:trace:137 - Log object initialized.
+2024-10-06 11:42:03 | TRACE    | supergene:trace:137 - Entering Log.get_console()...
+2024-10-06 11:42:03 | TRACE    | supergene:trace:137 - Exiting Log.get_console() -> Console
+2024-10-06 11:42:03 | TRACE    | supergene:trace:137 - Entering Log.get_project()...
+2024-10-06 11:42:03 | TRACE    | supergene:trace:137 - Exiting Log.get_project() -> Project
+2024-10-06 11:42:03 | TRACE    | supergene:trace:137 - Log object initialized.

@@ -31,9 +31,29 @@ logger.configure(
 
 class Settings(BaseModel):
     """Settings class to store global variables."""
-    uri: str = getenv("MONGO_URI", "op://Dev/Mongo/Database/uri")
-    db: str = getenv("DATABASE_NAME", "op://Dev/Mongo/Database/name")
-    collection: str = getenv("COLLECTION_NAME", "op://Dev/Mongo/Database/collection")
+    @computed_field
+    def uri(self) -> str:
+        """The connection string for the MongoDB database."""
+        uri = getenv("DATABASE_URI", "")
+        if uri == "" or uri is None:
+            raise ValueError("DATABASE_URI is not set.")
+        return uri
+
+    @computed_field
+    def db(self) -> str:
+        """The name of the database to connect to."""
+        db = getenv("DATABASE_NAME", "")
+        if db == "" or db is None:
+            raise ValueError("DATABASE_NAME is not set.")
+        return db
+
+    @computed_field
+    def collection(self) -> str:
+        """The name of the collection to connect to."""
+        collection = getenv("COLLECTION_NAME", "")
+        if collection == "" or collection is None:
+            raise ValueError("COLLECTION_NAME is not set.")
+        return collection
 
     @computed_field
     def last(self) -> int:

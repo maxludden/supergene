@@ -1,0 +1,41 @@
+<!-- templates/chapter.html -->
+{% extends "base.html" %}
+
+{% block title %}Chapter {{ chapter.chapter }}{% endblock %}
+
+{% block content %}
+    <table>
+        <tr>
+            <th>Chapter</th>
+            <td>{{ chapter.chapter }}</td>
+        </tr>
+        <tr>
+            <th>Section</th>
+            <td>{{ chapter.section }}</td>
+        </tr>
+        <tr>
+            <th>Book</th>
+            <td>{{ chapter.book }}</td>
+        </tr>
+        <tr>
+            <th>Created</th>
+            <td>{{ chapter.created }}</td>
+        </tr>
+        <tr>
+            <th>Modified</th>
+            <td>{{ chapter.modified }}</td>
+        </tr>
+        <tr>
+            <th>Version</th>
+            <td>{{ chapter.version }}</td>
+        </tr>
+    </table>
+    <h2>Chapter {{ chapter.chapter }}: {{ chapter.title }}</h2>
+    <p class="chapter-text">{{ chapter.text | nl2br }}</p>
+
+    <div class="navigation-buttons">
+        <a href="{{ url_for('get_chapter', chapter=chapter.chapter - 1) }}" class="button">Previous Chapter</a>
+        <a href="{{ url_for('get_chapter', chapter=chapter.chapter + 1) }}" class="button">Next Chapter</a>
+        <a href="{{ url_for('get_chapters') }}" class="button">Chapter List</a>
+    </div>
+{% endblock %}
