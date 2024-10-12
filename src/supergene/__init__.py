@@ -42,7 +42,7 @@ class Settings(BaseModel):
     @computed_field
     def db(self) -> str:
         """The name of the database to connect to."""
-        db = getenv("DATABASE_NAME", "")
+        db = getenv("DATABASE_NAME", "supergene")
         if db == "" or db is None:
             raise ValueError("DATABASE_NAME is not set.")
         return db
@@ -50,16 +50,24 @@ class Settings(BaseModel):
     @computed_field
     def collection(self) -> str:
         """The name of the collection to connect to."""
-        collection = getenv("COLLECTION_NAME", "")
+        collection = getenv("COLLECTION_NAME", "chapter")
         if collection == "" or collection is None:
             raise ValueError("COLLECTION_NAME is not set.")
         return collection
 
     @computed_field
     def last(self) -> int:
-        last = int(getenv("LAST", "0"))
+        """Store the last chapter number that was modified.
 
-        if last and last != 0:
+        Returns:
+            int: The last chapter number that was modified.
+
+        Raises:
+            ValueError: If the LAST environment variable is not set.
+        """
+        last = int(getenv("LAST", -1))
+
+        if last and last != -1:
             return last
         else:
             last = int(getenv("LAST") or IntPrompt.ask("Enter the last chapter number:"))
