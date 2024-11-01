@@ -10,87 +10,48 @@
 #   universal: false
 
 -e file:.
-annotated-types==0.7.0
-    # via pydantic
-anyio==4.6.0
-    # via starlette
-bunnet==1.3.0
-    # via supergene
 click==8.1.7
-    # via bunnet
-    # via python-dotenv
-    # via uvicorn
-dnspython==2.6.1
-    # via pymongo
-fastapi==0.115.0
-    # via supergene
-h11==0.14.0
-    # via uvicorn
-idna==3.10
-    # via anyio
+    # via mkdocs
+ghp-import==2.1.0
+    # via mkdocs
 jinja2==3.1.4
+    # via mkdocs
     # via supergene
-lazy-model==0.2.0
-    # via bunnet
-loguru==0.7.2
-    # via supergene
+markdown==3.7
+    # via mkdocs
 markdown-it-py==3.0.0
     # via rich
-markupsafe==2.1.5
+markupsafe==3.0.2
     # via jinja2
+    # via mkdocs
 mdurl==0.1.2
     # via markdown-it-py
-pendulum==3.0.0
+mergedeep==1.3.4
+    # via mkdocs
+    # via mkdocs-get-deps
+mkdocs==1.6.1
     # via supergene
-pip==24.2
-    # via supergene
-pydantic==2.9.2
-    # via bunnet
-    # via fastapi
-    # via lazy-model
-    # via pydantic-extra-types
-    # via pydantic-settings
-    # via rich-gradient
-    # via supergene
-pydantic-core==2.23.4
-    # via pydantic
-pydantic-extra-types==2.9.0
-    # via rich-gradient
-pydantic-settings==2.5.2
-    # via supergene
+mkdocs-get-deps==0.2.0
+    # via mkdocs
+packaging==24.1
+    # via mkdocs
+pathspec==0.12.1
+    # via mkdocs
+platformdirs==4.3.6
+    # via mkdocs-get-deps
 pygments==2.18.0
     # via rich
-pymongo==4.10.1
-    # via bunnet
-    # via supergene
 python-dateutil==2.9.0.post0
-    # via pendulum
-    # via time-machine
-python-dotenv==1.0.1
-    # via pydantic-settings
-    # via supergene
-rich==13.9.1
-    # via rich-gradient
-    # via supergene
-rich-gradient==0.1.7
-    # via supergene
-sh==2.0.7
+    # via ghp-import
+pyyaml==6.0.2
+    # via mkdocs
+    # via mkdocs-get-deps
+    # via pyyaml-env-tag
+pyyaml-env-tag==0.1
+    # via mkdocs
+rich==13.9.3
     # via supergene
 six==1.16.0
     # via python-dateutil
-sniffio==1.3.1
-    # via anyio
-starlette==0.38.6
-    # via fastapi
-time-machine==2.16.0
-    # via pendulum
-toml==0.10.2
-    # via bunnet
-typing-extensions==4.12.2
-    # via fastapi
-    # via pydantic
-    # via pydantic-core
-tzdata==2024.2
-    # via pendulum
-uvicorn==0.31.0
-    # via supergene
+watchdog==5.0.3
+    # via mkdocs
