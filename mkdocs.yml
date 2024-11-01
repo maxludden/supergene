@@ -1,0 +1,55 @@
+site_name: Super Gene
+theme:
+  name: material
+  palette:
+    primary: 'indigo'
+    accent: 'lime'
+  font:
+    text: 'Urbanist'
+    code: 'Fira Code'
+  features:
+    - search.suggest
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.prune
+    - navigation.top
+    - toc.follow
+  logo: 'images/gem.gif'
+nav:
+  - Home: index.md
+  - About: about.md
+  - Documentation:
+      - Getting Started: docs/getting-started.md
+      - API Reference: docs/api-reference.md
+plugins:
+  - search
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - codehilite
+  - footnotes
+  - meta
+  - pymdownx.arithmatex
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist
+  - pymdownx.tilde
+extra_css:
+  - styles/styles.css
+extra_javascript:
+  - scripts.js
+copyright: Copyright &copy; 2019 Twelve-Winged Dark Seraphim & Webnovel

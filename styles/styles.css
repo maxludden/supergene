@@ -1,0 +1,63 @@
+/* Import Google Font Urbanist */
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap');
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Urbanist', Arial, sans-serif;
+}
+header, footer {
+    background-color: #1f1f1f;
+    padding: 1em;
+    text-align: center;
+}
+
+h1 {
+    color: #dec2ff;
+    font-size: 2em;
+    margin: 0;
+    font-weight: 700;
+}
+
+h2 {
+    color: #8e3e7c;
+    font-size: 1.5em;
+    margin: auto;
+    font-weight: 400;
+    font-style: italic;
+}
+
+a {
+    color: #bb86fc;
+}
+a:hover {
+    color: #3700b3;
+}
+.container {
+    margin: 0 auto;
+    padding: 2em;
+    max-width: 800px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+img.gem {
+    width: 240;
+    height: 240px;
+    margin: auto;
+    padding: 20px;
+    display: block;
+}
+
+.chapters {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 1;
+    padding: 1em;
+}
