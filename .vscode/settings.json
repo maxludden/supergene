@@ -4,5 +4,14 @@
     ],
     "cSpell.ignoreWords": [
         "Webnovel"
+    ],
+    "python.linting.pylintArgs": [
+        "--disable=unused-import"
+    ],
+    "python.linting.flake8Args": [
+        "--ignore=F401"
+    ],
+    "python.linting.ruffArgs": [
+        "--ignore=F401"
     ]
 }

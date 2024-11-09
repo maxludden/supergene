@@ -61,3 +61,15 @@ img.gem {
     flex: 1;
     padding: 1em;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 10px;
+}
+.grid-item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}

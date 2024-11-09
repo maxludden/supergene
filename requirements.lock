@@ -10,17 +10,89 @@
 #   universal: false
 
 -e file:.
+aiohappyeyeballs==2.4.3
+    # via aiohttp
+aiohttp==3.10.10
+    # via realtime
+aiosignal==1.3.1
+    # via aiohttp
+annotated-types==0.7.0
+    # via pydantic
+anyio==4.6.2.post1
+    # via httpx
+    # via starlette
+    # via watchfiles
+attrs==24.2.0
+    # via aiohttp
+babel==2.16.0
+    # via mkdocs-material
+certifi==2024.8.30
+    # via httpcore
+    # via httpx
+    # via requests
+charset-normalizer==3.4.0
+    # via requests
 click==8.1.7
     # via mkdocs
+    # via python-dotenv
+    # via typer
+    # via uvicorn
+colorama==0.4.6
+    # via mkdocs-material
+deprecation==2.1.0
+    # via postgrest
+e==1.4.5
+    # via supergene
+fastapi==0.115.4
+    # via supergene
+fastapi-cli==0.0.5
+    # via supergene
+frozenlist==1.5.0
+    # via aiohttp
+    # via aiosignal
 ghp-import==2.1.0
     # via mkdocs
+gotrue==2.10.0
+    # via supabase
+h11==0.14.0
+    # via httpcore
+    # via uvicorn
+h2==4.1.0
+    # via httpx
+hpack==4.0.0
+    # via h2
+httpcore==1.0.6
+    # via httpx
+httptools==0.6.4
+    # via uvicorn
+httpx==0.27.2
+    # via gotrue
+    # via postgrest
+    # via storage3
+    # via supabase
+    # via supafunc
+hyperframe==6.0.1
+    # via h2
+idna==3.10
+    # via anyio
+    # via httpx
+    # via requests
+    # via yarl
 jinja2==3.1.4
     # via mkdocs
+    # via mkdocs-material
+    # via supergene
+loguru==0.7.2
+    # via ludden-logging
+ludden-logging==0.1.8
     # via supergene
 markdown==3.7
     # via mkdocs
+    # via mkdocs-material
+    # via pymdown-extensions
 markdown-it-py==3.0.0
     # via rich
+    # via supergene
 markupsafe==3.0.2
     # via jinja2
     # via mkdocs
@@ -30,28 +102,132 @@ mergedeep==1.3.4
     # via mkdocs
     # via mkdocs-get-deps
 mkdocs==1.6.1
+    # via mkdocs-material
     # via supergene
 mkdocs-get-deps==0.2.0
     # via mkdocs
+mkdocs-material==9.5.43
+    # via supergene
+mkdocs-material-extensions==1.3.1
+    # via mkdocs-material
+multidict==6.1.0
+    # via aiohttp
+    # via yarl
+mypy==1.13.0
+    # via ludden-logging
+mypy-extensions==1.0.0
+    # via mypy
 packaging==24.1
+    # via deprecation
     # via mkdocs
+paginate==0.5.7
+    # via mkdocs-material
 pathspec==0.12.1
     # via mkdocs
+pip==24.3.1
+    # via supergene
 platformdirs==4.3.6
     # via mkdocs-get-deps
+postgrest==0.18.0
+    # via supabase
+propcache==0.2.0
+    # via yarl
+pydantic==2.9.2
+    # via fastapi
+    # via gotrue
+    # via postgrest
+    # via pydantic-extra-types
+    # via pydantic-settings
+    # via rich-gradient
+    # via sqlmodel
+    # via supergene
+pydantic-core==2.23.4
+    # via pydantic
+pydantic-extra-types==2.10.0
+    # via rich-gradient
+    # via supergene
+pydantic-settings==2.6.1
+    # via supergene
 pygments==2.18.0
+    # via mkdocs-material
     # via rich
+pymdown-extensions==10.12
+    # via mkdocs-material
 python-dateutil==2.9.0.post0
     # via ghp-import
+    # via realtime
+    # via storage3
+python-dotenv==1.0.1
+    # via ludden-logging
+    # via pydantic-settings
+    # via uvicorn
 pyyaml==6.0.2
     # via mkdocs
     # via mkdocs-get-deps
+    # via pymdown-extensions
     # via pyyaml-env-tag
+    # via uvicorn
 pyyaml-env-tag==0.1
     # via mkdocs
+realtime==2.0.6
+    # via supabase
+regex==2024.9.11
+    # via mkdocs-material
+requests==2.32.3
+    # via mkdocs-material
 rich==13.9.3
+    # via ludden-logging
+    # via rich-gradient
     # via supergene
+    # via typer
+rich-gradient==0.1.7
+    # via ludden-logging
+setuptools==75.3.0
+    # via supergene
+sh==2.1.0
+    # via ludden-logging
+shellingham==1.5.4
+    # via typer
 six==1.16.0
     # via python-dateutil
+sniffio==1.3.1
+    # via anyio
+    # via httpx
+sqlalchemy==2.0.36
+    # via sqlmodel
+sqlmodel==0.0.22
+    # via supergene
+starlette==0.41.2
+    # via fastapi
+storage3==0.9.0
+    # via supabase
+supabase==2.10.0
+    # via supergene
+supafunc==0.7.0
+    # via supabase
+typer==0.12.5
+    # via fastapi-cli
+typing-extensions==4.12.2
+    # via fastapi
+    # via mypy
+    # via pydantic
+    # via pydantic-core
+    # via pydantic-extra-types
+    # via realtime
+    # via sqlalchemy
+    # via typer
+urllib3==2.2.3
+    # via requests
+uvicorn==0.32.0
+    # via fastapi-cli
+uvloop==0.21.0
+    # via uvicorn
 watchdog==5.0.3
     # via mkdocs
+watchfiles==0.24.0
+    # via uvicorn
+websockets==13.1
+    # via realtime
+    # via uvicorn
+yarl==1.17.1
+    # via aiohttp

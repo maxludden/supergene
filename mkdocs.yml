@@ -2,11 +2,11 @@ site_name: Super Gene
 theme:
   name: material
   palette:
-    primary: 'indigo'
-    accent: 'lime'
+    primary: "indigo"
+    accent: "lime"
   font:
-    text: 'Urbanist'
-    code: 'Fira Code'
+    text: "Urbanist"
+    code: "Fira Code"
   features:
     - search.suggest
     - navigation.instant
@@ -18,15 +18,16 @@ theme:
     - navigation.prune
     - navigation.top
     - toc.follow
-  logo: 'images/gem.gif'
+  logo: "images/black_gem.png"
 nav:
   - Home: index.md
-  - About: about.md
-  - Documentation:
-      - Getting Started: docs/getting-started.md
-      - API Reference: docs/api-reference.md
+  - Table of Contents: toc.md
+  - Book 1 - First Gods's Sanctuary: book1.md
+  
+
 plugins:
   - search
+  - load_chapters
 markdown_extensions:
   - toc:
       permalink: true
