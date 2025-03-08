@@ -1,8 +1,33 @@
 {
     "cSpell.words": [
-        "superfences"
+        "arithmatex",
+        "betterem",
+        "Bloodlust",
+        "breakworld",
+        "codehilite",
+        "geno",
+        "inlinehilite",
+        "Lightshield",
+        "magiclink",
+        "Mushu",
+        "Nyoi",
+        "pymdownx",
+        "Shreeky",
+        "smartsymbols",
+        "Stormbird’s",
+        "superfences",
+        "Surpasser",
+        "tasklist",
+        "Tianxia",
+        "Unevolved",
+        "Unobtained",
+        "Windhawk",
+        "Wyrm",
+        "xenogeneic",
+        "xenogeneics"
     ],
     "cSpell.ignoreWords": [
+        "SUPABASE",
         "Webnovel"
     ],
     "python.linting.pylintArgs": [
@@ -13,5 +38,27 @@
     ],
     "python.linting.ruffArgs": [
         "--ignore=F401"
-    ]
+    ],
+    "wolf.disableHotModeWarning": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "__pycache__/": true,
+        ".pytest_cache/": true,
+        "**/__pycache__/**": true,
+        "requirements*": true,
+        "**/*.DS_Store": true,
+        "**/*__init__.py": true,
+        "**/*py.typed": true,
+        ".history": true,
+        "**/.retool_types/**": true,
+        "**/*tsconfig.json": true,
+        ".cache": true,
+        "retool.config.json": true
+    },
+    "postman.settings.dotenv-detection-notification-visibility": false
 }

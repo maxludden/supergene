@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1943.76 432.28">
+  <defs>
+    <style>
+      :root {
+        --grey1: #fff;
+        --grey2: #eee;
+        --grey3: #bbb;
+        --grey4: #444;
+        --grey5: #222;
+        --grey6: #000;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --grey1: #111;
+          --grey2: #222;
+          --grey3: #333;
+          --grey4: #bbb;
+          --grey5: #eee;
+          --grey6: #fff;
+        }
+      }
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="71.88" y1="216.14" x2="1871.88" y2="216.14" gradientUnits="userSpaceOnUse">
+      <stop offset="0"   stop-color="var(--grey1)"/>
+      <stop offset="5%"  stop-color="var(--grey2)"/>
+      <stop offset="10%" stop-color="var(--grey3)"/>
+      <stop offset="15%" stop-color="var(--grey4)"/>
+      <stop offset="30%" stop-color="var(--grey5)"/>
+      <stop offset="50%" stop-color="var(--grey6)"/>
+      <stop offset="70%" stop-color="var(--grey5)"/>
+      <stop offset="85%" stop-color="var(--grey4)"/>
+      <stop offset="90%" stop-color="var(--grey3)"/>
+      <stop offset="95%" stop-color="var(--grey2)"/>
+      <stop offset="100%" stop-color="var(--grey1)"/>
+    </linearGradient>
+  </defs>
+  <rect class="cls-1" x="71.88" y="205.12" width="1800" height="22.05"/>
+</svg>

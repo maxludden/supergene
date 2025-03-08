@@ -1,0 +1,533 @@
+"Super Creature Desert Bird Killed. Beast Soul Of Desert Bird Gained. Life Essence Available. Meat Inedible."
+
+- "Sacred-blood Phantom Ant Killed. Beast Soul of Sacred-blood Phantom Ant Gained. Eat Its Meat to Gain Zero to Ten Sacred Geno Points Randomly."
+
+- "Primitive Creature Copper-Toothed Beast Killed. No Beast Soul Gained. Eat The Flesh Of Copper-Toothed Beast To Gain Zero To Ten Primitive Geno Points Randomly."
+
+- "Primitive Creature Copper-Toothed Beast Killed. Primitive Beast Soul Of Copper-Toothed Beast Gained. Eat The Flesh Of Copper-Toothed Beast To Gain Zero To Ten Primitive Geno Points Randomly."
+
+- "Sacred-blood Creature Scaled Armadillo Killed. Beast Soul of Scaled Armadillo Gained. Eat Its Meat to Gain Zero to Ten Sacred Geno Points Randomly."
+
+- "Primitive Quartz Scorpion Flesh Eaten. Four Primitive Geno Points Gained."
+
+- "Meat Of Sacred-Blood Shreeky Beast Eaten. One Sacred Geno Point Gained."
+
+- "Meat Of Sacred-Blood Shreeky Beast Eaten. One Sacred Geno Point Gained."
+
+- "Pet not transformed yet. Unable to use pet armor."
+
+- "Mutant Sawfish Killed. Beast Soul Of Mutant Sawfish Gained. Eat Its Meat To Gain Zero To Ten Mutant Geno Points Randomly."
+
+- "Super Creature Evil Goblin Killed. No Beast Soul Gained. Life Essence Available. Meat Inedible."
+
+- "Super Creature Purgatory Flower Killed. No Beast Soul Gained. Life Essence Available."
+
+- "Life Essence Of Purgatory Flower Consumed. One Super Geno Point Gained."
+
+- "Super Creature Nine-Tail Ghost Fox Killed. No Beast Soul Gained. Consume its Flesh to Gain Zero to Ten Super Geno Points Randomly. You may also Collect the Life Geno Essence."
+
+- "Sacred-blood Creature Stormbird’s Egg Eaten. No Sacred Geno Point Gained."
+
+- "Sacred-Blood Color Shifter Killed. Beast Soul Of Sacred-Blood Color Shifter Gained. Eat Its Meat To Gain Zero To Ten Sacred Geno Points Randomly."
+
+- "Sacred-Blood Ghost-Eyed Bear Killed. Beast Soul Of Sacred-Blood Ghost-Eyed Bear Gained. Eat Its Meat To Gain 0 To 10 Sacred Geno Points Randomly."
+
+- "Primitive Creature Swift Mantis Killed. No Beast Soul Gained. Eat the Swift Mantis to Gain Zero to Ten Primitive Geno Points Randomly."
+
+- "Primitive Creature Swift Mantis Killed. No Beast Soul Gained. Eat The Swift Mantis To Gain Zero To Ten Points Randomly.">"Primitive creature swift mantis killed ..."
+
+- "Super Creature Blood Snail Killed. Beast Soul Of Super Creature Blood Snail Gained. Life Essence Available. Meat Inedible."
+
+- "Life Essence Of Super Creature Blood Snail Eaten. One Super Geno Point Gained."
+
+- "Life Essence Of Super Creature Blood Snail Eaten. One Super Geno Point Gained."
+
+- "Sacred-Blood Creature Beetle Knight Killed. Beast Soul Of Beetle Knight Gained. Meat Inedible."
+
+- "Sacred-Blood Creature Magic Horn Killed. No Beast Soul Gained. Eat Its Meat To Gain 0 To 10 Sacred Geno Points Randomly."
+
+- "Ghost-Toothed Snake King Meat Eaten. One Mutant Geno Point Gained."
+
+- "Mutant Sawfish Killed. No Beast Soul Gained. Eat Its Meat To Gain Zero To Ten Mutant Geno Points Randomly."
+
+- "Mutant Sawfish Meat Eaten. One Mutant Geno Point Gained..."
+
+- "Mutant Sawfish Meat Eaten. One Mutant Geno Point Gained..."
+
+- "Life essence of super creature golden growler consumed. One super Geno point gained."
+
+- "Flesh Of Black Beetle Eaten. One Sacred Geno Point Gained."
+
+- "Flesh Of Black Beetle Eaten. One Sacred Geno Point Gained."
+
+- "Flesh Of Black Beetle Eaten. One Sacred Geno Point Gained."
+
+- "Sacred-Blood Copper-Toothed Beast Killed. No Beast Soul Gained. Eat Its Meat To Gain One To Ten Sacred Geno Points Randomly."
+
+- "Sacred-Blood Creature Tornado Wolf Killed. Beast Soul Of Tornado Wolf Gained. Eat Its Meat To Gain 0 To 10 Sacred Geno Points Randomly."
+
+- "Super Creature Cloud Beast Killed. No Beast Soul Gained. Life Essence Available. Meat Inedible."
+
+- "Mutant Darkness Beast Killed. Beast Soul Of Mutant Darkness Beast Gained. Eat Its Meat To Gain 0 To 10 Mutant Geno Points Randomly."
+
+- "Identifying Beast Soul..."
+
+- "Beast Soul Identified. Sacred-Blood Beast Soul Devil Sword Gained."
+
+- "Mutant Ghost-Toothed Snake King Killed. No Beast Soul Gained. Eat Its Meat To Gain Zero To Ten Mutant Geno Points Randomly."
+
+- "Primitive Creature Green-Scaled Beast Killed. No Beast Soul Gained. Eat The Flesh Of The Primitive Green-Scaled Beast To Gain Zero To Ten Points Randomly."
+
+- "Sacred-Blood Creature Purple-Winged Dragon Killed. Sacred-Blood Beast Soul Of Purple-Winged Dragon Gained. Eat The Flesh Of Purple-Winged Dragon To Gain Zero To Ten Sacred-Blood Geno Points Randomly."
+
+- "Super Creature Cloud Beast Killed. No Beast Soul Gained. Eat Its Life Essence To Gain 0 To 10 Super Geno Points. Meat Inedible."
+
+- "Life Essence Of Super Creature Cloud Beast Eaten. One Super Geno Point Gained."
+
+- "Life Essence Of Super Creature Cloud Beast Eaten. One Super Geno Point Gained."
+
+- "Sacred-Blood Creature Mushu Killed. No Beast Soul Gained. Eat Its Meat To Gain 0 To 10 Sacred Geno Points Randomly."
+
+- "Mutant Creature Swamp Buffalo Killed. No Beast Soul Gained. Eat Its Meat To Gain 0 To 10 Mutant Geno Points Randomly."
+
+- "Sacred-Blood Creature Copper Demon Killed. No Beast Soul Gained. Drink Its Blood To Gain 0 To 10 Sacred Geno Points Randomly."
+
+- "Meat Of Sacred-Blood Ghost-Eyed Bear Eaten. One Sacred Geno Point Gained."
+
+- "Sacred-Blood Golden Rock Worm King Killed. Beast Soul Of Golden Rock Worm King Gained. Eat Its Meat To Gain Zero To Ten Sacred Geno Points Randomly."
+
+- "Sacred-Blood Black Stinger Killed. No Beast Soul Gained. Eat Its Meat To Gain Zero To Ten Sacred Geno Points Randomly."
+
+- "Mutant Black Stinger Killed. No Beast Soul Gained. Eat Its Meat To Gain Zero To Ten Mutant Geno Points Randomly."
+
+- "Sacred-Blood Black Stinger Meat Eaten. One Sacred Geno Point Gained..."
+
+- "Sacred-Blood Black Stinger Meat Eaten. One Sacred Geno Point Gained..."
+
+- "Young Obsidian Dragon Killed. No Beast Soul Gained. Eat It to Gain Zero to Ten Sacred Geno Points Randomly." Having Barbecued It for a While, Han Sen Heard the Voice."
+
+- "Young  Eaten. One Sacred Geno Point Gained..."
+
+- "Primitive Creature Quartz Scorpion Killed. No Beast Soul Gain. Eat The Flesh Of Quartz Scorpion To Gain Zero To Ten Primitive Geno Points."
+
+- "Mutant Black-Feathered Beast Killed. Beast Soul Of Mutant Black-Feathered Beast Gained. Eat Its Meat To Gain Zero To Ten Primitive Geno Points."
+
+- "Primitive Creature Yellow Lion’s Meat Eaten. Zero Primitive Geno Point Gained."
+
+- "Sacred-Blood Ghost Butterfly Killed. Beast Soul Of Sacred-Blood Ghost Butterfly Gained. Meat Inedible."
+
+- "Sacred-Blood Ghost Butterfly Killed. Beast Soul Gained. Meat Inedible."
+
+- "Sacred-Blood Bloody Slayer Killed. Sacred-Blood Beast Soul Bloody Slayer Gained. Eat the Flesh of Bloody Slayer to Gain Zero to Ten Sacred Geno Points Randomly."
+
+- "Super Creature Golden Growler Killed. Beast Soul Of Golden Growler Gained. Life Essence Available. Meat Edible."
+
+- "Life Essence Of Golden Growler Consumed. One Super Geno Point Gained."
+
+- "Sacred-Blood Creature Skeleton King Killed. No Beast Soul Gained. Meat Inedible."
+
+- "Egg Broken. Identifying Beast Soul..."
+
+- "Mutant Horned Sand Fox Killed. Beast Soul Of Mutant Horned Sand Fox Gained. Eat Its Meat To Gain Zero To Ten Mutant Geno Points Randomly."
+
+- "Mutant Phantom Ant Killed. No Beast Soul Gained. Eat Its Meat To Gain Zero To Ten Mutant Geno Points Randomly."
+
+- "Mutant Phantom Ant Killed. Beast Soul Of Mutant Phantom Ant Gained. Eat Its Meat To Gain Zero To Ten Mutant Geno Points Randomly."
+
+- "Meat Of Copper-Toothed Beast Eaten. One Sacred Geno Point Gained."
+
+- "Primitive Sand Snake Killed. Beast Soul of Primitive Sand Snake Gained. Eat Its Meat to Gain Zero to Ten Geno Points Randomly."
+
+- "Mutant Copper-Toothed Beast Killed. No Beast Soul Gained. Eat Its Flesh To Gain Zero To Ten Mutant Geno Points."
+
+- "Mutant Copper-Toothed Beast Flesh Eaten. One Mutant Geno Point Gained."
+
+- "Primitive Black-Feathered Beast Killed. Beast Soul Of Primitive Black-Feathered Beast Gained. Eat Its Meat To Gain Zero To Ten Primitive Geno Pointes."
+
+- "Primitive Creature Black Lantern Fish Killed. No Beast Soul Gained. Eat Its Meat To Gain Zero To Ten Primitive Geno Points Randomly."
+
+- "Black Beetle Killed. No Beast Soul Gained. Eat The Flesh Of The Black Beetle To Gain Zero To Ten Geno Points Randomly."
+
+- "Black Beetle Flesh Eaten. Zero Geno Points Gained."
+
+- "Sacred-Blood Creature Black Beetle Killed. Beast Soul of Sacred-Blood Black Beetle Gained. Eat the Flesh of Sacred-Blood Black Beetle to Gain 0 to 0 Geno Points Randomly."
+
+- "Sacred-Blood Creature Black-Feathered Beast King Killed. Beast Soul Of Black-Feathered Beast King Gained. Eat Its Meat To Gain 0 To 10 Sacred Geno Points."
+
+- "Primitive green-scaled beast flesh eaten. One primitive geno point gained."
+
+- "Larva Of Super Creature Cursed Wolf Killed. Beast Soul Of Cursed Wolf Gained. Life Essence Available. Meat Inedible."
+
+- "Larva of Super Creature Aqua Reaper Killed. Beast Soul of Super Creature Aqua Reaper Gained. Life Essence Available. Consume Its Life Essence to Gain 0 to 10 Super Geno Points Randomly. Meat Inedible."
+
+- "Life Essence Of Super Creature Aqua Reaper Consumed. No Super Geno Point Gained."
+
+- "Sacred-Blood Creature Ghost Butterfly Killed. Beast Soul Of Sacred-Blood Ghost Butterfly Gained. Meat Inedible."
+
+- "Super Creature White Jade Six-Legged Rhinoceros Killed. No Beast Soul Gained. Life Essence Available. Meat Inedible."
+>"Evolution successful. Status of evolver gained. 100 years added to lifespan. Super body king spirit gained."
+
+- "Primitive Creature Ghost Butterfly Killed. No Beast Soul Gained. Meat Inedible."
+
+- "Primitive Creature Ghost Butterfly Killed. Beast Soul Of Primitive Ghost Butterfly Gained. Meat Inedible."
+
+- "Life Essence Of Super Creature Crystal Spirit Beast Consumed. One Super Geno Point Gained."
+
+- "Life Essence Of Cursed Wolf Eaten. One Super Geno Point Gained."
+
+- "Super Creature Silver-Winged Holy Butterfly Killed. No Beast Soul Gained. Eat The Flesh To Gain Zero To Ten Super Geno Points Randomly. You May Also Harvest Its Life Geno Essence. Consume Its Life Geno Essence To Gain Zero To Ten Super Geno Points Randomly."
+
+- "Sacred-Blood Creature Hunted: Green Cloud Eagle. The Beast Soul Has Not Been Acquired. Consume Its Flesh To Obtain A Random Numeric Amount Of Sacred Geno Points, Ranging From Zero To Ten."
+
+- "Sacred-Blood Creature Inferno Bull Killed. Beast Soul Of Inferno Bull Gained. Eat Its Meat To Gain 0 To 10 Sacred Geno Points."
+
+- "Super Creature Spirit Owl Killed. Beast Soul Gained. The Flesh Of This Creature Is Inedible, But You May Harvest Its Life Geno Essence. Consume Its Life Geno Essence To Gain Zero To Ten Super Geno Points Randomly."
+
+- "Primitive Creature Fire Prawn Killed. No Beast Soul Gained. Eat Its Meat To Gain 0 To 10 Primitive Geno Points."
+
+- "Mutant Creature Treasure Scallop Killed. No Beast Soul Gained. Eat Its Meat To Gain 0 To 10 Mutant Geno Points."
+
+- "Sacred-Blood Creature Hunted: Sky Falcon King. The Beast Soul Was Not Acquired. Consume Its Flesh To Obtain A Random Numeric Amount Of Sacred Geno Points, Ranging From Zero To Ten."
+
+- "Super Creature Tiger-Wolf Beast Killed. No Beast Soul Gained. The Flesh Of This Creature Is Inedible, But You May Harvest Its Life Geno Essence. Consume Its Life Geno Essence To Obtain Zero To Ten Super Geno Points Randomly."
+
+- "Super Creature Muscle Beast Killed. No Beast Soul Gained. The Flesh Of This Creature Is Inedible, But You May Harvest Its Life Geno Essence. Consume Its Life Geno Essence To Obtain Zero To Ten Super Geno Points Randomly."
+
+- "Mutant Creature Hunted: Poison-Spike Sea Bug. The Beast Soul Was Not Acquired. Consume Its Flesh To Obtain A Random Amount Of Mutant Geno Points, Between Zero And Ten."
+
+- "Mutant Creature Hunted: Poison-Spike Sea Bug. The Beast Soul Has Been Acquired. Consume Its Flesh To Obtain A Random Numeric Amount Of Mutant Geno Points, Between Zero And Ten."
+
+- "Princess Yin And Princess Yang Slew The Silver Beetle Mother. The Beast Soul Was Not Acquired. Consume Its Flesh To Obtain A Random Numeric Amount Of Sacred Geno Points, Ranging From Zero To Ten."
+
+- "Super Creature Devil-Eye Spider Baby Killed. Beast Soul Gained. Eat The Flesh Of The Devil-Eye Spider Baby To Gain Zero To Ten Super Geno Points Randomly. You May Also Harvest Its Life Geno Essence. Consume Its Life Geno Essence To Gain Zero To Ten Super Geno Points Randomly."
+
+- "Evolution Successful; You Have Achieved The Rank Of Surpasser. You Have Gained An Additional One-Hundred-Year Lifespan. Your Super Body Has Evolved – Super King Spirit."
+
+- "Super Creature Silver-Blood Macaque Killed. Beast Soul Gained. The Flesh Of This Creature Is Edible, And You May Harvest Its Life Geno Essence. Consume Its Life Geno Essence To Gain Zero To Ten Super Geno Points Randomly."
+
+- "You Have Obtained Title Of 'Tenth Son Of God.' Your Randomized Reward Is Opening."
+
+- "You Have Obtained A Super Beast Soul: Devil Unicorn."
+
+- "Super Beast Soul: Devil Unicorn. Possession Beast Soul."
+
+- "Berserk Sacred-Blood Creature Evil Gargoyle Killed. Beast Soul of Berserk Evil Gargoyle Gained. Meat Inedible."
+
+- "Super Creature Hunted: Uncompleted Build. The Beast Soul Has Not Been Acquired. Consume Its Flesh To Obtain A Random Numeric Amount Of Super Geno Points, Ranging From Zero To Five."
+
+- "You Have Consumed The Flesh Of A Super Creature; Your Super Geno Point Total Has Increased By One."
+
+- "Super Creature Hunted: Giant Frosty Bear. The Beast Soul Has Not Been Acquired. The Flesh Of This Creature Is Inedible, But You May Harvest Its Life Geno Essence. Consume Its Life Geno Essence To Obtain A Random Numeric Amount Of Super Geno Points, Ranging From Zero To Ten."
+
+- "Super Creature Hunted: Saint-Bone Elephant. The Beast Soul Has Not Been Acquired. Consume Its Flesh To Obtain A Random Numeric Amount Of Super Geno Points, Ranging From Zero To Ten. You May Also Collect The Life Geno Essence."
+
+- "Super Creature Hunted: Fire-Scale T-Rex. The Beast Soul Has Been Acquired. The Flesh Of This Creature Is Inedible, But You May Harvest Its Life Geno Essence. Consume Its Life Geno Essence To Obtain A Random Numeric Amount Of Super Geno Points, Ranging From Zero To Ten."
+
+- "Primitive Creature Bluefish Killed. No Beast Soul Gained. Eat Its Meat To Gain 0 To 10 Primitive Geno Points."
+
+- "Sacred-Blood Creature Ghost-Pawed Ferret Killed. Beast Soul Of Sacred-Blood Ghost-Pawed Ferret Gained. Eat Its Meat To Gain 0 To 10 Sacred Geno Points Randomly."
+
+- "Super Creature Cruel Witch Killed. No Beast Soul Gained. The Flesh Of This Creature Is Edible, And You May Harvest Its Life Geno Essence. Consume Its Life Geno Essence To Gain Zero To Ten Super Geno Points Randomly."
+
+- "Super Creature Holy Lightshield Bug Killed. No Beast Soul Gained. The Flesh Of This Creature Is Edible, And You May Harvest Its Life Geno Essence. Consume Its Life Geno Essence Gain Zero To Ten Super Geno Points Randomly."
+
+- "Meat Of Golden Anchovy Eaten. One Primitive Geno Point Gained."
+
+- "Snow Charmer Killed Primitive Golden Swordfish. Beast Soul Of Golden Swordfish Gained. Eat Its Meat To Gain 0 To 10 Primitive Geno Points."
+
+- "Sacred-Blood Creature Snake Fish King Killed. No Beast Soul Gained. Eat Its Meat To Gain 0 To 10 Sacred Geno Points."
+
+- "Mutant Creature Hunted: Sacred-Blood Water Buffalo. the Beast Soul Was Not Acquired. Consume Its Flesh to Obtain a Random Amount of Sacred Geno Points, Between Zero and Ten."
+
+- "Meat Of Ghost-Pawed Ferret Eaten. One Sacred Geno Point Gained."
+
+- "Sacred-Blood Creature Hunted: Snow Bird. The Beast Soul Was Not Acquired. Consume Its Flesh To Obtain A Random Numeric Amount Of Sacred Geno Points, Ranging From Zero To Ten."
+
+- "Mutant Creature Hunted: Dark Silkworm. The Beast Soul Has Not Been Acquired. Consume Its Flesh To Obtain A Random Numeric Amount Of Mutant Geno Points, Ranging From Zero To Ten."
+
+- "Super Creature Emerald Golem Killed. No Beast Soul Gained. The Flesh Of This Creature Is Inedible, But You May Harvest Its Life Geno Essence. Consume Its Life Geno Essence To Gain Zero To Ten Super Geno Points Randomly."
+
+- "Primitive Creature Golden Anchovy Killed. Beast Soul Of Golden Anchovy Gained. Eat Its Meat To Gain 0 To 10 Primitive Geno Points Randomly."
+
+- "Of Course This Is Awesome. Just Look At The Beast Souls They Use; They Are Sacred-Blood Ones."
+
+- "Moment Queen Killed The Super Creature Steel-Knight King. The Beast Soul Has Been Gained. The Flesh Of This Creature Is Inedible, But You May Harvest Its Life Geno Essence. Consume Its Life Geno Essence To Gain Zero To Ten Super Geno Points Randomly."
+
+- "Steel-Knight King Life Geno Essence Has Been Absorbed. You Have Received One Super Geno Point."
+
+- "Primitive Creature Snow Spider Killed. No Beast Soul Gained. Eat Its Meat To Gain 0 To 10 Primitive Geno Points."
+
+- "Mutant Creature Hunted: Subterranean Devil Ant Baby. The Beast Soul Has Not Been Acquired. Consume Its Flesh To Obtain A Random Numeric Amount Of Mutant Geno Points, Ranging From Zero To Ten."
+
+- "Sacred-Blood Creature Hunted: Subterranean Devil Ant Baby. The Beast Soul Has Not Been Acquired. Consume Its Flesh To Obtain A Random Numeric Amount Of Sacred Geno Points, Ranging From Zero To Ten."
+
+- "Super Creature Thunder-Devil Bull Killed. No Beast Soul Gained. The Flesh Of This Creature Is Edible, And You May Harvest Its Life Geno Essence. Consume Its Life Geno Essence To Gain Zero To Ten Super Geno Points Randomly."
+
+- "Super Creature Mirage-Gas Freak Killed. No Beast Soul Gained. The Flesh Of This Creature Is Inedible, But You May Harvest Its Life Geno Essence. Consume Its Life Geno Essence To Gain Zero To Ten Super Geno Points Randomly."
+
+- "Super Creature Riverbank Wyrm Killed. No Beast Soul Gained. The Flesh Of This Creature Is Edible, And You May Harvest Its Life Geno Essence. Consume Its Life Geno Essence To Gain Zero To Ten Super Geno Points Randomly."
+
+- "Sacred-Blood Creature Snow Spider Killed. No Beast Soul Gained. Eat Its Meat to Gain 0 to 10 Sacred Geno Points."
+
+- "Young Sacred-Blood Creature Evil-Blooded Condor Killed. Beast Soul of Evil-Blooded Condor Gained. Eat Its Meat to Gain 0 to 10 Sacred-Blood Geno Points."
+
+- "Essence Absorbed: Saint-Bone Elephant. You Have Gained One Super Geno Point."
+
+- "Essence Absorbed: Saint-Bone Elephant. You Have Gained One Super Geno Point."
+
+- "Announcement: The Second God's Sanctuary's Battle Arena Has Opened. Join The Battlegrounds, For The Holy Battles Begin In Thirty-Three Days."
+
+- "Sacred-Blood Creature Hunted: White-Ghost Butterfly. The Beast Soul Has Not Been Acquired. Consume Its Flesh To Obtain A Random Numeric Amount Of Mutant Geno Points, Ranging From Zero To Ten."
+
+- "Mutant Creature Hunted: Dark Silkworm. The Beast Soul Has Not Been Acquired. Consume Its Flesh To Obtain A Random Numeric Amount Of Mutant Geno Points, Ranging From Zero To Ten."
+
+- "Meat Of Evil-Blooded Condor Eaten. One Sacred Geno Point Gained."
+
+- "Super Creature Hunted: Death Knell. The Beast Soul Has Been Acquired. Its Flesh Cannot Be Consumed, But You May Collect The Life Geno Essence And Obtain A Random Numeric Amount Of Super Geno Points, Ranging From Zero To Ten."
+
+- "Super Creature Hunted: Thousand-Blade Blood Dragon Baby. The Beast Soul Has Not Been Acquired. Consume Its Flesh To Obtain A Random Numeric Amount Of Super Geno Points, Ranging From Zero To Ten."
+
+- "Thousand-Blade Blood Dragon Baby Consumed. You Have Received One Super Geno Point."
+
+- "Sacred-Blood Creature Silver Eel Killed. Beast Soul Of Silver Eel Gained. Eat Its Meat To Gain 0 To 10 Sacred Geno Points."
+
+- "Sacred-Blood Creature Hunted: Subterranean Devil Ant. The Beast Soul Has Not Been Acquired. Consume Its Flesh To Obtain A Random Numeric Amount Of Mutant Geno Points, Ranging From Zero To Ten."
+
+- "Sacred-Blood Creature Hunted: Mountain Lizard. The Beast Soul Was Not Acquired. Consume Its Flesh To Obtain A Random Numeric Amount Of Sacred Geno Points, Ranging From Zero To Ten."
+
+- "Sacred-Blood Creature Hunted: Silver-Eye Ice Snake King. The Beast Soul Has Been Acquired. Consume Its Flesh To Obtain A Random Numeric Amount Of Sacred-Blood Geno Points, Ranging From Zero To Ten."
+
+- "Super Creature Hunted: Subterranean Devil Ant King Baby. The Beast Soul Has Been Acquired. Consume Its Flesh To Obtain A Random Numeric Amount Of Super Geno Points, Ranging From Zero To Ten."
+
+- "Subterranean Devil Ant King Baby Consumed. You Have Received One Super Geno Point."
+
+- "Sacred-Blood Creature Hunted: Subterranean Devil Ant Baby. The Beast Soul Has Been Acquired. Consume Its Flesh To Obtain A Random Numeric Amount Of Sacred Geno Points, Ranging From Zero To Ten."
+
+- "Subterranean Devil Ant Baby Consumed. You Have Received One Sacred Geno Point."
+
+- "Subterranean Devil Ant Flesh Consumed. You Have Received One Sacred Geno Point."
+
+- "Super Creature Windhawk Killed. No Beast Soul Gained. The Flesh Of This Creature Is Inedible, But You May Harvest Its Life Geno Essence. Consume Its Life Geno Essence To Gain Zero To Ten Super Geno Points Randomly."
+
+- "Super Creature Flaming Minotaur Killed. No Beast Soul Gained. The Flesh Of This Creature Is Inedible, But You May Harvest Its Life Geno Essence. Consume Its Life Geno Essence To Gain Zero To Ten Super Geno Points Randomly."
+
+- "Super Creature Devil-Eye Spider Killed. No Beast Soul Gained. You May Harvest Its Life Geno Essence. Consume Its Life Geno Essence To Gain Zero To Ten Super Geno Points Randomly."
+
+- "Devil-Eye Spider Baby Consumed. One Super Geno Point Gained."
+
+- "Devil-Eye Spider Consumed. One Super Geno Point Gained."
+
+- "Mutant Creature Bloodlust Mosquito Killed. No Beast Soul Gained. Eat The Flesh Of The Mutant Creature Bloodlust Mosquito To Gain Zero To Ten Geno Points Randomly."
+
+- "Sacred-Blood Bloodlust Mosquito Killed. No Beast Soul Gained. Eat The Flesh Of The Sacred-Blood Creature Bloodlust Mosquito To Gain Zero To Ten Geno Points Randomly."
+
+- "Berserk Ice-Armored Beast Killed. Beast Soul Of Berserk Ice-Armored Beast Gained. Eat Its Meat To Gain 0 To 10 Primitive Geno Points."
+
+- "Berserk Sacred-Blood Creature Inferno Gargoyle Killed. No Beast Soul Gained. Meat Inedible."
+
+- "Sacred-Blood Creature White Goose Killed. Beast Soul Gained. Eat Its Flesh To Gain Zero To Ten Sacred Geno Points Randomly."
+
+- "Super Creature Hunted: Deadeye Peacock. The Beast Soul Has Been Acquired. Consume Its Flesh To Obtain A Random Numeric Amount Of Super Geno Points, Ranging From Zero To Ten."
+
+- "Super Twin-Thunder Knight Beast Soul Obtained."
+
+- "Mutant Pet Beast Soul Obtained; Dragon-Blood Snake."
+
+- "Mutant Dragon-Blood Snake: Second Gene Lock Open."
+
+- "Mutant Dragon-Blood Snake: First Gene Lock Open"
+
+- "Mutant Dragon-Blood Snake: First Gene Lock Open."
+
+- "Mutant Dragon-Blood Snake: Sixth Gene Lock Open."
+
+- "Ordinary Creature Tree Crab Killed. No Beast Soul Gained. Consume Its Flesh To Gain Zero To Ten Ordinary Geno Points Randomly."
+
+- "Berserk Mutant Creature Devil-Horn Sheep killed. No beast soul gained. This creature cannot be consumed."
+
+- "Super Creature Devil-Horn Sheep King killed. Beast soul gained. Its flesh is inedible and there is no Life Geno Essence for retrieval."
+
+- "Sacred-Blood Creature Iron Bug King Killed. Beast Soul Gained. Consume Its Flesh To Gain Zero To Ten Sacred Geno Points Randomly."
+
+- "Ordinary Creature Red-Eye Rabbit killed. No beast soul gained. Consume its flesh to gain zero to ten ordinary geno points randomly."
+
+- "Berserk Super Creature Transparent King Scorpion Killed. Beast Soul Gained. the Flesh of This Creature Is Inedible, but You May Harvest Its Life Geno Essence. Consume Its Life Geno Essence to Gain Zero to Ten Super Geno Points Randomly."
+
+- "Super Creature Devil Fang King Killed. Beast Soul Gained. the Flesh of This Creature Is Edible, and You May Harvest Its Life Geno Essence. Consume Its Life Geno Essence to Gain Zero to Ten Super Geno Points Randomly."
+
+- "Sacred-Geno Point +1."
+
+- "Ordinary Creature Dollar Toad Killed. No Beast Soul Gained. Consume Its Flesh To Obtain Zero To Ten Ordinary Geno Points Randomly."
+
+- "Super Body Exhausted; Super King Spirit Status Cannot Be Maintained."
+
+- "Super Body Exhausted; Super King Spirit Status Cannot Be Maintained."
+
+- "Mutant Creature Gold Thunder-Hawk Killed. No Beast Soul Gained. Consume Its Flesh To Gain Zero To Ten Mutant Geno Points Randomly."
+
+- "Mutant Creature Gold-Talon Wolf Killed. Beast Soul Gained. Consume Its Flesh To Gain Zero To Ten Mutant Geno Points Randomly."
+
+- "Super King Self Spirit Gene +1."
+
+- "Super King Self Spirit Gene +1."
+
+- "Ordinary-Class Blood Fly Beast Soul Obtained."
+
+- "Life Geno Essence Absorbed; Super Geno Point +1."
+
+- "Ordinary Creature Flaming Porcupine Killed. Beast Soul Gained. Consume Its Flesh To Gain Zero To Ten Ordinary Geno Points Randomly."
+
+- "Super Creature Disloyal Knight Killed. Beast Soul Gained. The Flesh Of This Creature Is Inedible, But You May Harvest Its Life Geno Essence. Consume Its Life Geno Essence To Gain Zero To Ten Super Geno Points Randomly."
+
+- "Super Creature Nine-Tail Ghost Fox Killed. No Beast Soul Gained. Consume its Flesh to Gain Zero to Ten Super Geno Points Randomly. You may also Collect the Life Geno Essence. "Time King Spirit Geno Point +1Time King Spirit Geno Point +1."
+
+- "Super Creature Abyssal Beast killed. Beast Soul Gained. The Flesh of This Creature Is Inedible, but You May Harvest Its Life Geno Essence. Consume Its Life Geno Essence to Gain Zero to Ten Super Geno Points Randomly."
+
+- "Sacred-Blood Creature Devil-Blood Mantis Killed. Beast Soul Gained. Consume Its Flesh to Gain Zero to Ten Sacred Geno Points Randomly."
+
+- "Sacred-Blood Creature Green Falcon Killed. No Beast Soul Gained. Consume Its Flesh to Gain Zero to Ten Sacred Geno Points Randomly."
+
+- "Sacred-Blood Creature Loyal Knight Killed. No Beast Soul Gained. The Flesh Is Inedible."
+
+- "Super Creature Sky Peacock Killed. Beast Soul Gained. The Flesh of This Creature Is Inedible, but You May Harvest Its Life Geno Essence. Consume Its Life Geno Essence to Gain Zero to Ten Super Geno Points Randomly."
+
+- "Mutant Creature Pillar Titan Killed. Beast Soul Gained. Consume Its Flesh Gain Zero To Ten Mutant Geno Points Randomly."
+
+- "Sacred-Blood Purple-Butterfly Orchid Consumed: Sacred-Blood Geno Points +1."
+
+- "Mutant Creature Hunted Tank Ant Killed. No Beast Soul Gained. Consume its Flesh to Gain Zero to Ten Mutant Geno Points
+"Mutant Tank Ant Consumed, Mutant Geno Points +1."
+
+- "Ordinary Creature Black Iron Tiger Killed. No Beast Soul Gained. Consume Its Flesh To Gain Zero To Ten Ordinary Geno Points Randomly."
+
+- "Sacred-Blood Creature Ghost Fang Killed. No Beast Soul Gained. Consume Its Flesh to Gain Zero to Ten Sacred Geno Points Randomly."
+
+- "Blood-Demon Fruit Has Not Yet Matured; Beast Soul Creation Cannot Be Completed."
+
+- "Ordinary-Class Blood Firefly Beast Soul Gained."
+
+- "Primitive-Class Blood-Ant Beast Soul Gained."
+
+- "Ordinary-Class Blood-Spider Beast Soul Gained."
+
+- "Ordinary-Class Blood Turtle Beast Soul Obtained."
+
+- "Super Creature Ice Wolf God Killed. Beast Soul Gained. the Flesh of This Creature Can Be Consumed, and You May Also Harvest Its Life Geno Essence. Consume Its Life Geno Essence to Gain Zero to Ten Super Geno Points Randomly. Will You Accept the Beast Soul?"
+
+- "Mutant Creature Thorn Bug Killed. No Beast Soul Gained. Consume Its Flesh To Gain Zero To Ten Mutant Geno Points Randomly."
+
+- "Super Creature Devil-Blood Mantis Killed. Beast Soul Gained. the Flesh of This Creature Is Inedible, but You May Harvest Its Life Geno Essence. Consume Its Life Geno Essence to Gain Zero to Ten Super Geno Points Randomly."
+
+- "Super-class Thunder Hammer Beast Soul Obtained."
+
+- "Would you like to absorb the Battle Gene Thunder Hammer?"
+
+- "Dollar Toad Consumed. You Have Received One Ordinary Geno Point."
+
+- "Obtained Blood River King’s Battle Geno Essence."
+
+- "Obtained Blood River King’s Battle Geno Essence."
+
+- "Sacred-Blood Creature Lightning Wolf killed. Beast soul gained. Consume its Flesh to Gain Zero to Ten Sacred Geno Points Randomly."
+
+- "Sacred-Blood Creature Thorn Scorpion Killed. Beast Soul Gained. Consume Its Flesh to Gain Zero to Ten Sacred Geno Points Randomly."
+
+- "Obtained Emperor Geno Core Blow Blood."
+
+- "Super Creature Bloodthirsty Ant King Killed. Beast Soul Gained. Geno Core Unobtained. Flesh Inedible. Consume the Life Geno Essence to Gain Zero to Ten Super Geno Points."
+
+- "Ordinary Creature Soil Lotus Killed. No Beast Soul Gained. Bronze Geno Core Received: Dust Bug. Consume Its Flesh to Gain Zero to Ten Ordinary Geno Points Randomly."
+
+- "Super Geno Core Split-Knife Obtained."
+
+- "Life Geno Essence absorbed. Super Geno Points +1."
+
+- "Super Creature Mountain River Beast Killed. No Beast Soul Gained. Geno Core Destroyed. the Flesh Is Edible. Claim the Life Geno Essence to Gain Zero to Ten Super Geno Points Randomly."
+
+- "Xenogeneic Baron Hunted; Xenogeneic Gene Found. Xenogeneic Beast Soul Obtained."
+
+- "Xenogeneic Viscount Hunted; Xenogeneic Gene Found: Old Elephant Man"
+
+- "Xenogeneic Baron hunted; Xenogeneic Gene Found."
+
+- "Xenogeneic Viscount Hunted; Xenogeneic Gene Found: Purple-Horn Demon."
+
+- "Mutant Xenogeneic King hunted: Gold Demon Bug King. Xenogeneic gene found."
+
+- "Mutant Xenogeneic King hunted: Gold Demon Bug King. Xenogeneic gene found."
+
+- "Mutant Xenogeneic King hunted: Gold Demon Bug King. Xenogeneic gene found. Obtained Mutant Gold Demon Bug beast soul."
+
+- "Mutant Xenogeneic King hunted: Green Demon Bug King. Xenogeneic gene found. Obtained Mutant Green Demon Bug beast soul."
+
+- "Mutant Xenogeneic Marquise killed. Petrified Demon Cow: mutant xenogeneic gene found. Obtained mutant xenogeneic beast soul."
+
+- "Xenogeneic Gene Discovered."
+
+- "Xenogeneic Earl Hunted. Forest Bird: Xenogeneic Gene Found."
+
+- "Earl Gene +1"
+
+- "Earl Class Xenogeneic Geno Art Obtained: Ant Queen Mark"
+
+- "Successful infusion of deified gene. Deified gene +1. Deified progress is 1/100."
+
+- "Mutant Deified Xenogeneic Hunted: Blood Eye Evil God. Mutant Xenogeneic Gene Found. Obtained Blood Eye Evil God Beast Soul."
+
+- "Xenogeneic King hunted: Move Mountain Sea Conch. Xenogeneic gene found. Obtained beast soul."
+
+- "Xenogeneic Duke hunted. Xenogeneic gene found. Obtained beast soul."
+
+- "Xenogeneic Duke Metal Doll hunted. Xenogeneic gene found. Obtained beast soul."
+
+- "Deified Xenogeneic Killed: Four-Eyed Wolf. Xenogeneic Gene Found."
+
+- "Core deified xenogeneic hunted: Six Core God Snake. Deified xenogeneic gene found. Obtained Six Core God Snake beast soul."
+
+- "Deified gene +1. Deified progress: 30/100"
+
+- "Deified gene +1. Deified progress: 40/100..."
+
+- "Deified gene +1. Deified progress: 56/100"
+
+- "Deified gene +1. Deified progress: 98/100"
+
+- "Deified gene +1. Deified progress: 100/100... God body evolving..."
+
+- "Xenogeneic deified hunted: Tianxia Peacock King. Xenogeneic gene found. Obtained Tianxia Peacock King beast soul."
+
+- "God Body Evolution Complete. Battle Body Leveled Up to Deified Class..."
+
+- "Xenogeneic deified hunted. Time Ghost: Deified xenogeneic gene found. Obtained Time Ghost deified beast soul."
+
+- "Xenogeneic Deified Hunted. Sky Star Wolf: Xenogeneic Deified Gene Found. Obtained Sky Star Wolf Deified Beast Soul."
+
+- "Xenogeneic Deified Hunted. Sky Star Wolf: Xenogeneic Deified Gene Found. Obtained Sky Star Wolf Deified Beast Soul."
+
+- "Xenogeneic Deified Hunted. Cold Light Charm: Deified Xenogeneic Gene Found. Obtained Cold Light Charm Beast Soul."
+
+- "Xenogeneic Deified Hunted. Black Demon Ape: Deified Xenogeneic Gene Found."
+
+- "God Spirit Hunted. Found God Spirit Gene."
+
+- "Perfect God Spirit Blood-Pulse."
+
+- "Got god class gene race Holy Wen White Deer."
+
+- "Got Blood Dragon God Genes. Blood Dragon God Pulse Opened."
+
+- "Successfully combined with the blood ghost spirit. Got gene to combine skill Evil Blood.naBreak World gene plus one."
+
+- "Evolution requirement reached. Super God Spirit mode is evolving."
+
+- "Break World Beast Hunted: Ultimate Tail Fire Beast. Found Break World Gene."
+
+ - Fifteenth Sky Leader: Han Sen
+
+- "Killed God Spirit Gene Race: Decapitation Queen. Found an Annihilation-class God Base."
+
+- "Got Mutant God Class Gene Race Gold Wing Peacock King."
+
+- "Got mutant god class gene race blood ghost spirit."
+
+- "Got Mutant God-class Gene Race Blood Dragon."

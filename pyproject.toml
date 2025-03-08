@@ -2,40 +2,29 @@
 name = "supergene"
 version = "0.1.0"
 description = "Add your description here"
+readme = "README.md"
 authors = [
     { name = "Max Ludden", email = "dev@maxludden.com" }
 ]
+requires-python = ">=3.13"
 dependencies = [
-    "rich>=13.9.3",
-    "jinja2>=3.1.4",
+    "jinja2>=3.1.5",
+    "loguru-mypy>=0.0.4",
+    "loguru>=0.7.3",
     "mkdocs>=1.6.1",
-    "e>=1.4.5",
-    "mkdocs-material>=9.5.43",
-    "setuptools>=75.3.0",
+    "mypy>=1.14.0",
+    "openai>=1.59.6",
     "pip>=24.3.1",
-    "markdown-it-py>=3.0.0",
-    "ludden-logging>=0.1.8",
-    "fastapi>=0.115.4",
-    "sqlmodel>=0.0.22",
-    "supabase>=2.10.0",
-    "pydantic>=2.9.2",
-    "pydantic-extra-types>=2.10.0",
-    "pydantic-settings>=2.6.1",
-    "fastapi-cli>=0.0.5",
+    "pymongo>=4.10.1",
+    "rich>=13.9.4",
+    "rich-gradient>=0.1.7",
+    "selenium>=4.27.1",
+    "webdriver-manager>=4.0.2",
 ]
-readme = "README.md"
-requires-python = ">= 3.12"
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[tool.rye]
-managed = true
-dev-dependencies = []
-
-[tool.hatch.metadata]
-allow-direct-references = true
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/supergene"]
+[tool.ruff]
+ignore = ['F401']
