@@ -1,0 +1,27 @@
+[project]
+name = "supergene"
+version = "0.1.0"
+description = "A package to us LLM to edit the webnovel Super Gene."
+readme = "README.md"
+authors = [
+    { name = "Maxwell Ludden", email = "maxludden@me.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "ebooklib>=0.20",
+    "markdownify>=1.2.2",
+    "python-dotenv>=1.2.2",
+    "supabase>=2.29.0",
+]
+
+[project.scripts]
+supergene = "supergene.__main__:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.11.10,<0.12.0"]
+build-backend = "uv_build"
