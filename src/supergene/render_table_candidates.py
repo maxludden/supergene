@@ -1,0 +1,216 @@
+from __future__ import annotations
+
+import argparse
+import html
+import json
+from pathlib import Path
+from typing import Any
+
+
+def render_table_candidates_html(report_path: str | Path, output_path: str | Path) -> Path:
+    report = json.loads(Path(report_path).read_text(encoding="utf-8"))
+    target = Path(output_path)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(_render_document(report), encoding="utf-8")
+    return target
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="Render proposed_html table candidates into a preview HTML page.")
+    parser.add_argument("report_path", type=Path, help="Path to table_candidates.json.")
+    parser.add_argument("output_path", type=Path, help="Path to write the preview HTML.")
+    args = parser.parse_args(argv)
+    render_table_candidates_html(args.report_path, args.output_path)
+    print(f"Wrote table preview to {args.output_path}")
+    return 0
+
+
+def _render_document(report: dict[str, Any]) -> str:
+    summary = report.get("summary", {})
+    candidates = report.get("candidates", [])
+    return (
+        "<!doctype html>\n"
+        '<html lang="en">\n'
+        "<head>\n"
+        '  <meta charset="utf-8">\n'
+        "  <title>Table Candidate Preview</title>\n"
+        f"  <style>{_CSS}</style>\n"
+        "</head>\n"
+        "<body>\n"
+        "  <main>\n"
+        "    <h1>Table Candidate Preview</h1>\n"
+        f"    {_render_summary(summary)}\n"
+        f"    {_render_candidates(candidates)}\n"
+        "  </main>\n"
+        "</body>\n"
+        "</html>\n"
+    )
+
+
+def _render_summary(summary: dict[str, Any]) -> str:
+    by_kind = summary.get("by_kind", {})
+    kinds = "".join(
+        f"<li><span>{html.escape(str(kind))}</span><strong>{html.escape(str(count))}</strong></li>"
+        for kind, count in sorted(by_kind.items())
+    )
+    return (
+        '<section class="summary">'
+        f"<p>{html.escape(str(summary.get('total_candidates', 0)))} candidates from "
+        f"<code>{html.escape(str(summary.get('chapters_dir', '')))}</code></p>"
+        f"<ul>{kinds}</ul>"
+        "</section>"
+    )
+
+
+def _render_candidates(candidates: list[dict[str, Any]]) -> str:
+    cards = [_render_candidate(index, candidate) for index, candidate in enumerate(candidates, start=1)]
+    return '<section class="candidates">' + "\n".join(cards) + "</section>"
+
+
+def _render_candidate(index: int, candidate: dict[str, Any]) -> str:
+    chapter_path = str(candidate.get("chapter_path", ""))
+    start_line = candidate.get("start_line", "")
+    end_line = candidate.get("end_line", start_line)
+    line_label = str(start_line) if start_line == end_line else f"{start_line}-{end_line}"
+    location = f"{chapter_path}:{line_label}"
+    proposed_html = str(candidate.get("proposed_html", ""))
+    return (
+        '<article class="candidate">'
+        '<header class="candidate-header">'
+        f"<span>#{index}</span>"
+        f"<strong>{html.escape(str(candidate.get('kind', 'unknown')))}</strong>"
+        f"<code>{html.escape(location)}</code>"
+        f"<em>{html.escape(str(candidate.get('confidence', '')))}</em>"
+        "</header>"
+        '<div class="candidate-body">'
+        '<section class="preview">'
+        "<h2>Rendered Suggestion</h2>"
+        f"{proposed_html}"
+        "</section>"
+        '<section class="original">'
+        "<h2>Original</h2>"
+        f"<pre>{html.escape(str(candidate.get('original_text', '')))}</pre>"
+        "</section>"
+        "</div>"
+        "</article>"
+    )
+
+
+_CSS = """
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f7f7f4;
+  color: #222;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 32px 20px 56px;
+}
+h1 {
+  margin: 0 0 16px;
+  font-size: 32px;
+}
+.summary {
+  border: 1px solid #d8d6ce;
+  background: #fff;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+.summary p {
+  margin: 0 0 12px;
+}
+.summary ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.summary li {
+  display: flex;
+  gap: 10px;
+  border: 1px solid #ddd8c9;
+  padding: 6px 10px;
+  background: #fbfaf6;
+}
+.candidate {
+  border: 1px solid #d8d6ce;
+  background: #fff;
+  margin: 14px 0;
+}
+.candidate-header {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e4e1d8;
+  background: #fbfaf6;
+}
+code {
+  overflow-wrap: anywhere;
+}
+.candidate-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+  gap: 16px;
+  padding: 14px;
+}
+h2 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #666;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+.voice-of-world {
+  border: 1px solid #b9a86b;
+  background: #fff9df;
+  color: #3b3320;
+  padding: 16px 20px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.55;
+}
+.voice-of-world em {
+  font-style: italic;
+}
+th,
+td {
+  border: 1px solid #cfcac0;
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: #eee9dc;
+}
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin: 0;
+  padding: 10px;
+  background: #f3f1ea;
+  border: 1px solid #ddd8c9;
+}
+@media (max-width: 760px) {
+  .candidate-header,
+  .candidate-body {
+    grid-template-columns: 1fr;
+  }
+}
+"""
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

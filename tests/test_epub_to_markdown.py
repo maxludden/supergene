@@ -5,7 +5,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from supergene import convert_epub
+from supergene import ConversionProgress, convert_epub
 from epub_fixture import PIXEL_PNG, write_epub
 
 
@@ -36,6 +36,22 @@ def test_convert_epub_splits_toc_anchors_and_preserves_metadata(tmp_path: Path) 
     assert "| Name | Value |" in second
 
 
+def test_convert_epub_reports_chapter_progress(tmp_path: Path) -> None:
+    epub_path = tmp_path / "fixture.epub"
+    output_dir = tmp_path / "out"
+    write_epub(epub_path)
+    events: list[ConversionProgress] = []
+
+    result = convert_epub(epub_path, output_dir, progress_callback=events.append)
+
+    assert len(result.chapters) == 2
+    assert [(event.completed, event.total, event.title) for event in events] == [
+        (1, 2, "Chapter One"),
+        (2, 2, "Chapter Two"),
+    ]
+    assert events[-1].output_path.name == "002-chapter-two.md"
+
+
 def test_cli_converts_epub_and_reports_warnings(tmp_path: Path) -> None:
     epub_path = tmp_path / "fixture.epub"
     output_dir = tmp_path / "cli-out"
@@ -54,6 +70,29 @@ def test_cli_converts_epub_and_reports_warnings(tmp_path: Path) -> None:
     assert metadata["title"] == "Fixture Book"
 
 
+def test_cli_logs_info_to_console_and_trace_file(tmp_path: Path) -> None:
+    epub_path = tmp_path / "fixture.epub"
+    output_dir = tmp_path / "cli-out"
+    write_epub(epub_path)
+
+    completed = subprocess.run(
+        [sys.executable, "-m", "supergene", "epub-to-md", str(epub_path), str(output_dir)],
+        cwd=tmp_path,
+        check=False,
+        text=True,
+        capture_output=True,
+    )
+
+    assert completed.returncode == 0
+    assert "INFO" in completed.stderr
+    assert "Wrote 2 chapters" in completed.stderr
+    trace_log = tmp_path / "logs" / "trace.log"
+    assert trace_log.exists()
+    trace_text = trace_log.read_text()
+    assert "TRACE" in trace_text
+    assert "Starting EPUB conversion" in trace_text
+
+
 def test_missing_anchor_writes_warning_manifest(tmp_path: Path) -> None:
     epub_path = tmp_path / "fixture.epub"
     output_dir = tmp_path / "out"
@@ -64,6 +103,19 @@ def test_missing_anchor_writes_warning_manifest(tmp_path: Path) -> None:
     assert [warning.code for warning in result.warnings] == ["missing_anchor"]
     warnings = json.loads((output_dir / "Fixture Book" / "warnings.json").read_text())
     assert warnings[0]["source_href"] == "chapters.xhtml#missing"
+
+
+def test_incomplete_toc_uses_chapter_like_spine_documents(tmp_path: Path) -> None:
+    epub_path = tmp_path / "fixture.epub"
+    output_dir = tmp_path / "out"
+    write_epub(epub_path, ("chapter2.xhtml",), split_documents=True)
+
+    result = convert_epub(epub_path, output_dir)
+
+    assert [chapter.title for chapter in result.chapters] == ["Chapter 1: Chapter One", "Chapter 2: Chapter Two"]
+    assert [warning.code for warning in result.warnings] == ["incomplete_toc"]
+    first = (output_dir / "Fixture Book" / "chapters" / "001-chapter-1-chapter-one.md").read_text()
+    assert "# Chapter 1: Chapter One" in first
 
 
 def test_cli_refuses_existing_output_without_overwrite(tmp_path: Path) -> None:

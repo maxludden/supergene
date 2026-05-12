@@ -6,6 +6,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from loguru import logger
+
 from supergene.converter import ConversionResult
 from os import getenv
 from dotenv import load_dotenv
@@ -36,6 +38,7 @@ def store_conversion_in_supabase(
     client: Any | None = None,
 ) -> SupabaseStoreResult:
     """Store converted EPUB metadata/content in Postgres and assets in Storage."""
+    logger.trace("Starting Supabase store for {}", conversion.output_dir)
     if client is None:
         if not supabase_url or not supabase_key:
             try: 
@@ -61,9 +64,11 @@ def store_conversion_in_supabase(
     if not getattr(book_response, "data", None):
         raise RuntimeError("Supabase did not return a book row")
     book_id = str(book_response.data[0]["id"])
+    logger.trace("Upserted Supabase book row {}", book_id)
 
     asset_root = f"{config.asset_prefix.strip('/')}/{book_id}/assets"
     uploaded_assets = _upload_assets(client, config, conversion.output_dir / "assets", asset_root)
+    logger.trace("Uploaded {} assets to bucket {}", len(uploaded_assets), config.bucket)
 
     chapter_rows = []
     for chapter in conversion.chapters:
@@ -82,6 +87,7 @@ def store_conversion_in_supabase(
         )
     for batch in _batches(chapter_rows, config.row_batch_size):
         client.table("chapters").upsert(batch, on_conflict="book_id,chapter_index").execute()
+        logger.trace("Upserted {} chapter rows for book {}", len(batch), book_id)
 
     warning_rows = [
         {
@@ -94,7 +100,9 @@ def store_conversion_in_supabase(
     ]
     for batch in _batches(warning_rows, config.row_batch_size):
         client.table("conversion_warnings").insert(batch).execute()
+        logger.trace("Inserted {} warning rows for book {}", len(batch), book_id)
 
+    logger.trace("Finished Supabase store for book {}", book_id)
     return SupabaseStoreResult(
         book_id=book_id,
         chapter_count=len(chapter_rows),

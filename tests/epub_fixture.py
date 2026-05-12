@@ -12,7 +12,28 @@ PIXEL_PNG = (
 )
 
 
-def write_epub(path: Path, toc_hrefs: tuple[str, str] = ("chapters.xhtml#c1", "chapters.xhtml#c2")) -> None:
+def write_epub(
+    path: Path,
+    toc_hrefs: tuple[str, ...] = ("chapters.xhtml#c1", "chapters.xhtml#c2"),
+    *,
+    split_documents: bool = False,
+) -> None:
+    manifest_documents = (
+        '<item id="chapter1" href="chapter1.xhtml" media-type="application/xhtml+xml"/>\n'
+        '    <item id="chapter2" href="chapter2.xhtml" media-type="application/xhtml+xml"/>'
+        if split_documents
+        else '<item id="chapters" href="chapters.xhtml" media-type="application/xhtml+xml"/>'
+    )
+    spine_documents = (
+        "    <itemref idref=\"chapter1\"/>\n    <itemref idref=\"chapter2\"/>"
+        if split_documents
+        else '    <itemref idref="chapters"/>'
+    )
+    labels = ["Chapter One", "Chapter Two"]
+    toc_items = "\n".join(
+        f'        <li><a href="{href}">{labels[index] if index < len(labels) else "Chapter Link"}</a></li>'
+        for index, href in enumerate(toc_hrefs)
+    )
     with zipfile.ZipFile(path, "w") as zf:
         mimetype = zipfile.ZipInfo("mimetype")
         mimetype.compress_type = zipfile.ZIP_STORED
@@ -32,7 +53,7 @@ def write_epub(path: Path, toc_hrefs: tuple[str, str] = ("chapters.xhtml#c1", "c
         )
         zf.writestr(
             "OEBPS/content.opf",
-            """<?xml version="1.0" encoding="UTF-8"?>
+            f"""<?xml version="1.0" encoding="UTF-8"?>
 <package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="bookid">
   <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
     <dc:identifier id="bookid">urn:test:supergene</dc:identifier>
@@ -42,13 +63,13 @@ def write_epub(path: Path, toc_hrefs: tuple[str, str] = ("chapters.xhtml#c1", "c
   </metadata>
   <manifest>
     <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
-    <item id="chapters" href="chapters.xhtml" media-type="application/xhtml+xml"/>
+    {manifest_documents}
     <item id="pixel" href="images/pixel.png" media-type="image/png"/>
     <item id="style" href="style.css" media-type="text/css"/>
   </manifest>
   <spine>
     <itemref idref="nav"/>
-    <itemref idref="chapters"/>
+{spine_documents}
   </spine>
 </package>
 """,
@@ -61,17 +82,48 @@ def write_epub(path: Path, toc_hrefs: tuple[str, str] = ("chapters.xhtml#c1", "c
   <body>
     <nav epub:type="toc" xmlns:epub="http://www.idpf.org/2007/ops">
       <ol>
-        <li><a href="{toc_hrefs[0]}">Chapter One</a></li>
-        <li><a href="{toc_hrefs[1]}">Chapter Two</a></li>
+{toc_items}
       </ol>
     </nav>
   </body>
 </html>
 """,
         )
-        zf.writestr(
-            "OEBPS/chapters.xhtml",
-            """<?xml version="1.0" encoding="UTF-8"?>
+        if split_documents:
+            zf.writestr(
+                "OEBPS/chapter1.xhtml",
+                """<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head><title>Chapter One</title><link href="style.css" rel="stylesheet"/></head>
+  <body>
+    <section id="c1" class="chapter lead">
+      <h1>Chapter 1: Chapter One</h1>
+      <p class="opening">Hello <em>styled</em> world.</p>
+      <p><img src="images/pixel.png" alt="Pixel" /></p>
+    </section>
+  </body>
+</html>
+""",
+            )
+            zf.writestr(
+                "OEBPS/chapter2.xhtml",
+                """<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head><title>Chapter Two</title><link href="style.css" rel="stylesheet"/></head>
+  <body>
+    <section id="c2" class="chapter">
+      <h1>Chapter 2: Chapter Two</h1>
+      <blockquote><p>A quoted line.</p></blockquote>
+      <table><tr><th>Name</th><th>Value</th></tr><tr><td>Gene</td><td>7</td></tr></table>
+    </section>
+  </body>
+</html>
+""",
+            )
+        else:
+            zf.writestr(
+                "OEBPS/chapters.xhtml",
+                """<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head><title>Chapters</title><link href="style.css" rel="stylesheet"/></head>
   <body>
@@ -88,6 +140,6 @@ def write_epub(path: Path, toc_hrefs: tuple[str, str] = ("chapters.xhtml#c1", "c
   </body>
 </html>
 """,
-        )
+            )
         zf.writestr("OEBPS/style.css", ".opening { font-style: italic; }")
         zf.writestr("OEBPS/images/pixel.png", PIXEL_PNG)

@@ -9,9 +9,17 @@ authors = [
 requires-python = ">=3.14"
 dependencies = [
     "ebooklib>=0.20",
+    "loguru>=0.7.3",
     "markdownify>=1.2.2",
+    "openai>=2.36.0",
+    "openpyxl>=3.1.5",
+    "pandas>=3.0.3",
     "python-dotenv>=1.2.2",
+    "rapidfuzz>=3.14.5",
+    "rich>=14.2.0",
+    "scikit-learn>=1.8.0",
     "supabase>=2.29.0",
+    "typer>=0.25.1",
 ]
 
 [project.scripts]

@@ -5,11 +5,13 @@ import re
 import shutil
 from dataclasses import asdict, dataclass
 from pathlib import Path, PurePosixPath
+from typing import Callable
 from urllib.parse import unquote, urlsplit
 
 import ebooklib
 from bs4 import BeautifulSoup, Tag
 from ebooklib import epub
+from loguru import logger
 from markdownify import ATX, markdownify
 
 
@@ -46,15 +48,33 @@ class ConversionResult:
 
 
 @dataclass(frozen=True)
+class ConversionProgress:
+    completed: int
+    total: int
+    title: str
+    output_path: Path
+
+
+@dataclass(frozen=True)
 class TocEntry:
     title: str
     href: str
     depth: int
 
 
-def convert_epub(epub_path: str | Path, output_dir: str | Path, *, overwrite: bool = False) -> ConversionResult:
+ProgressCallback = Callable[[ConversionProgress], None]
+
+
+def convert_epub(
+    epub_path: str | Path,
+    output_dir: str | Path,
+    *,
+    overwrite: bool = False,
+    progress_callback: ProgressCallback | None = None,
+) -> ConversionResult:
     source = Path(epub_path)
     root = Path(output_dir)
+    logger.trace("Starting EPUB conversion: source={} output_dir={} overwrite={}", source, root, overwrite)
     if not source.exists():
         raise FileNotFoundError(source)
 
@@ -80,11 +100,24 @@ def convert_epub(epub_path: str | Path, output_dir: str | Path, *, overwrite: bo
     if not entries:
         warnings.append(ConversionWarning("missing_toc", "No table of contents found; using spine order."))
         entries = _spine_entries(book, document_items)
+    else:
+        spine_entries = _spine_entries(book, document_items)
+        if len(spine_entries) > len(entries):
+            warnings.append(
+                ConversionWarning(
+                    "incomplete_toc",
+                    f"Table of contents has {len(entries)} entries; spine has {len(spine_entries)} chapter-like documents. Using spine order.",
+                )
+            )
+            entries = spine_entries
 
+    logger.trace("Resolved {} conversion entries for {}", len(entries), source)
     copied_assets = _copy_assets(book, assets_dir)
+    logger.trace("Copied {} EPUB assets into {}", len(copied_assets), assets_dir)
     chapters: list[ChapterResult] = []
     used_slugs: dict[str, int] = {}
 
+    total_entries = len(entries)
     for entry in entries:
         doc_name, anchor = _split_href(entry.href)
         item = document_items.get(doc_name)
@@ -130,11 +163,14 @@ def convert_epub(epub_path: str | Path, output_dir: str | Path, *, overwrite: bo
             encoding="utf-8",
         )
         chapters.append(ChapterResult(index, entry.title, entry.depth, entry.href, output_path))
+        if progress_callback:
+            progress_callback(ConversionProgress(index, total_entries, entry.title, output_path))
 
     _write_json(book_dir / "metadata.json", asdict(metadata))
     if warnings:
         _write_json(book_dir / "warnings.json", [asdict(warning) for warning in warnings])
 
+    logger.trace("Finished EPUB conversion: chapters={} warnings={} output={}", len(chapters), len(warnings), book_dir)
     return ConversionResult(metadata, book_dir, chapters, warnings)
 
 
@@ -188,9 +224,26 @@ def _spine_entries(book: epub.EpubBook, document_items: dict[str, object]) -> li
             continue
         name = _clean_item_name(item.get_name())
         if name in document_items and name.lower() not in {"nav.xhtml", "toc.ncx"}:
-            title = getattr(item, "title", None) or Path(name).stem
+            title = _document_title(item) or Path(name).stem
+            if not _looks_like_chapter(title):
+                continue
             entries.append(TocEntry(str(title), name, 0))
     return entries
+
+
+def _document_title(item: object) -> str | None:
+    title = getattr(item, "title", None)
+    if title:
+        return str(title).strip()
+    soup = BeautifulSoup(item.get_content(), "html.parser")
+    heading = soup.find(["h1", "h2", "h3", "title"])
+    if heading:
+        return heading.get_text(" ", strip=True)
+    return None
+
+
+def _looks_like_chapter(title: str) -> bool:
+    return bool(re.search(r"\bchapter\s+\d+\b", title, re.IGNORECASE))
 
 
 def _copy_assets(book: epub.EpubBook, assets_dir: Path) -> dict[str, str]:
