@@ -155,6 +155,15 @@ class Candidate:
     decision: str = "unscored"
 
 
+@dataclass(frozen=True)
+class VoiceLineSearchSummary:
+    """Summary counts from a Voice of the World line search."""
+
+    total_candidates: int
+    likely_count: int
+    review_count: int
+
+
 def normalize_text(text: str) -> str:
     """Normalize text for matching while preserving meaning."""
     replacements = {
@@ -231,6 +240,17 @@ def split_possible_voice_segments(line: str) -> list[str]:
     for pattern in quote_patterns:
         for match in re.finditer(pattern, original):
             segments.append(match.group(1).strip())
+
+    if segments:
+        seen = set()
+        unique_quoted_segments = []
+        for segment in segments:
+            cleaned = clean_display_text(segment)
+            key = normalize_text(cleaned)
+            if cleaned and key not in seen:
+                seen.add(key)
+                unique_quoted_segments.append(cleaned)
+        return unique_quoted_segments
 
     # Add whole line as fallback if it contains likely keywords.
     normalized = normalize_text(original)
@@ -321,11 +341,11 @@ def categorize(normalized_text: str) -> str:
     priority = [
         "evolution_status",
         "life_essence",
+        "xenogeneic_gene",
         "beast_soul_result",
         "hunted_announcement",
         "kill_announcement",
         "geno_point_gain",
-        "xenogeneic_gene",
         "gene_lock",
         "eaten_or_consumed",
         "system_notice",
@@ -544,6 +564,48 @@ def write_outputs(scored: list[Candidate], out_dir: Path) -> None:
         pd.DataFrame(review_rows).to_excel(out_dir / "review_needed.xlsx", index=False)
     except Exception as exc:
         logger.warning(f"Could not write Excel files: {exc}")
+
+
+def run_voice_line_search(
+    chapters_dir: Path,
+    seed_path: Path,
+    out_dir: Path,
+    likely_threshold: float = 0.65,
+    review_threshold: float = 0.45,
+) -> VoiceLineSearchSummary:
+    """Search Markdown chapters for lines similar to known Voice examples.
+
+    Args:
+        chapters_dir: Directory containing chapter Markdown files.
+        seed_path: File containing known Voice of the World seed lines.
+        out_dir: Directory where reports should be written.
+        likely_threshold: Score threshold for likely matches.
+        review_threshold: Score threshold for review-needed matches.
+
+    Returns:
+        Summary counts for extracted and scored candidates.
+
+    Raises:
+        ValueError: If no seed examples are available.
+    """
+
+    seeds = load_seed_lines(seed_path)
+    all_candidates: list[Candidate] = []
+    for chapter_path in iter_markdown_files(chapters_dir):
+        all_candidates.extend(extract_candidates_from_file(chapter_path))
+
+    scored = score_candidates(
+        seeds=seeds,
+        candidates=all_candidates,
+        likely_threshold=likely_threshold,
+        review_threshold=review_threshold,
+    )
+    write_outputs(scored, out_dir)
+    return VoiceLineSearchSummary(
+        total_candidates=len(scored),
+        likely_count=sum(1 for candidate in scored if candidate.decision == "likely"),
+        review_count=sum(1 for candidate in scored if candidate.decision == "review"),
+    )
 
 
 def parse_args() -> argparse.Namespace:

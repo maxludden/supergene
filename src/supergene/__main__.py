@@ -10,9 +10,11 @@ from rich.console import Console
 from rich.progress import BarColumn, Progress, SpinnerColumn, TaskProgressColumn, TextColumn, TimeElapsedColumn
 
 from supergene.converter import ConversionProgress, ConversionResult, convert_epub
+from supergene.find_voice_lines import run_voice_line_search
 from supergene.logging import configure_logging
 from supergene.supabase_store import SupabaseStorageConfig, store_conversion_in_supabase
 from supergene.table_candidates import write_table_candidate_report
+from supergene.voice_review import default_decisions_path
 
 
 app = typer.Typer(no_args_is_help=True)
@@ -87,7 +89,81 @@ def table_report(
     except Exception as exc:
         logger.error("{}", exc)
         raise typer.Exit(1) from exc
+    typer.echo(f"Wrote {len(candidates)} table candidates to {output_path}", err=True)
     logger.info("Wrote {} table candidates to {}", len(candidates), output_path)
+
+
+@app.command("voice-lines")
+def voice_lines(
+    chapters_dir: Annotated[Path, typer.Argument(help="Directory containing Markdown chapter files.")],
+    seed_path: Annotated[Path, typer.Argument(help="Path to voice_of_the_world.txt.")],
+    output_dir: Annotated[Path, typer.Argument(help="Directory where the voice line report will be written.")],
+    likely_threshold: Annotated[
+        float,
+        typer.Option("--likely-threshold", help="Final score threshold for likely matches."),
+    ] = 0.65,
+    review_threshold: Annotated[
+        float,
+        typer.Option("--review-threshold", help="Final score threshold for review-needed matches."),
+    ] = 0.45,
+) -> None:
+    """Find Voice of the World style announcement lines in chapters."""
+    configure_logging()
+    if not chapters_dir.is_dir():
+        _usage_error("chapters_dir must be a directory containing Markdown chapter files")
+    if not seed_path.is_file():
+        _usage_error("seed_path must point to voice_of_the_world.txt")
+    try:
+        summary = run_voice_line_search(
+            chapters_dir=chapters_dir,
+            seed_path=seed_path,
+            out_dir=output_dir,
+            likely_threshold=likely_threshold,
+            review_threshold=review_threshold,
+        )
+    except Exception as exc:
+        logger.error("{}", exc)
+        raise typer.Exit(1) from exc
+    logger.info(
+        "Wrote voice line report to {} ({} likely, {} review-needed, {} total candidates)",
+        output_dir,
+        summary.likely_count,
+        summary.review_count,
+        summary.total_candidates,
+    )
+    typer.echo(
+        (
+            f"Wrote voice line report to {output_dir} "
+            f"({summary.likely_count} likely, {summary.review_count} review-needed, "
+            f"{summary.total_candidates} total candidates)"
+        ),
+        err=True,
+    )
+
+
+@app.command("review-voice-lines")
+def review_voice_lines(
+    review_path: Annotated[Path, typer.Argument(help="CSV file containing Voice of the World review candidates.")],
+    seed_path: Annotated[Path, typer.Argument(help="Path to voice_of_the_world.txt.")],
+    decisions_path: Annotated[
+        Path | None,
+        typer.Option("--decisions", help="Path to write or resume JSONL review decisions."),
+    ] = None,
+) -> None:
+    """Review Voice of the World candidate lines in a Textual TUI."""
+    configure_logging()
+    if not review_path.is_file():
+        _usage_error("review_path must be a CSV file produced by the voice line search")
+    if not seed_path.is_file():
+        _usage_error("seed_path must point to voice_of_the_world.txt")
+    resolved_decisions_path = decisions_path or default_decisions_path(review_path)
+    try:
+        from supergene.voice_review_tui import run_voice_review_tui
+
+        run_voice_review_tui(review_path, seed_path, resolved_decisions_path)
+    except Exception as exc:
+        logger.error("{}", exc)
+        raise typer.Exit(1) from exc
 
 
 def main() -> None:

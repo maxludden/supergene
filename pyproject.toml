@@ -19,6 +19,7 @@ dependencies = [
     "rich>=14.2.0",
     "scikit-learn>=1.8.0",
     "supabase>=2.29.0",
+    "textual>=6.6.0",
     "typer>=0.25.1",
 ]
 
