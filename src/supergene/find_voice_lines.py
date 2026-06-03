@@ -179,9 +179,9 @@ def normalize_text(text: str) -> str:
     for old, new in replacements.items():
         text = text.replace(old, new)
 
-    text = re.sub(r"<!--.*?-->", " ", text)
-    text = re.sub(r"[*_`>#\-\[\]\(\)]", " ", text)
-    text = re.sub(r"\s+", " ", text)
+    text = re.sub(pattern=r"<!--.*?-->", repl=" ", string=text)
+    text = re.sub(pattern=r"[*_`>#\-\[\]\(\)]", repl=" ", string=text)
+    text = re.sub(pattern=r"\s+", repl=" ", string=text)
     return text.strip().lower()
 
 
@@ -462,8 +462,10 @@ def score_candidates(
     )
 
     matrix = vectorizer.fit_transform(corpus)
-    seed_matrix = matrix[: len(normalized_seeds)]
-    candidate_matrix = matrix[len(normalized_seeds) :]
+    # Convert sparse matrix to dense array for slicing
+    matrix_dense = matrix.todense()
+    seed_matrix = matrix_dense[: len(normalized_seeds), :]
+    candidate_matrix = matrix_dense[len(normalized_seeds) :, :]
 
     similarities = cosine_similarity(candidate_matrix, seed_matrix)
 
