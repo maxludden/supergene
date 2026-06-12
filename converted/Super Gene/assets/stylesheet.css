@@ -224,8 +224,8 @@ h1.hidden-title {
 }
 
 .profile-table th {
-  background-color: #000;
-  color: #fff;
+  background-color: #111;
+  color: #eee;
   font-weight: bold;
   text-align: left;
   width: 42%;
@@ -233,8 +233,8 @@ h1.hidden-title {
 
 @media (prefers-color-scheme: dark) {
   .profile-table th {
-    background-color: #fff;
-    color: #000;
+    background-color: #eee;
+    color: #111;
   }
 }
 
