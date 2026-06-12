@@ -20,6 +20,7 @@ from rich.progress import (
 from supergene.converter import ConversionProgress, ConversionResult, convert_epub
 from supergene.find_voice_lines import run_voice_line_search
 from supergene.logging import configure_logging
+from supergene.pandoc_progress import PandocBuildError, build_all_books, build_book
 from supergene.supabase_store import SupabaseStorageConfig, store_conversion_in_supabase
 from supergene.table_candidates import write_table_candidate_report
 from supergene.voice_review import default_decisions_path
@@ -37,8 +38,8 @@ def epub_to_md(
     ],
     overwrite: Annotated[
         bool,
-        typer.Option("--overwrite", help="Replace an existing book output directory."),
-    ] = False,
+        typer.Option("--overwrite/--no-overwrite", help="Replace an existing book output directory."),
+    ] = True,
     supabase_url: Annotated[
         str | None,
         typer.Option("--supabase-url", help="Supabase project URL for storing converted output."),
@@ -188,6 +189,36 @@ def review_voice_lines(
     except Exception as exc:
         logger.error(f"{exc}")
         raise typer.Exit(1) from exc
+
+
+@app.command("generate-book")
+def generate_book(
+    book_number: Annotated[int, typer.Argument(help="One-based Super Gene book number to build.")],
+) -> None:
+    """Generate Pandoc inputs and build one EPUB with Rich progress."""
+    configure_logging()
+    try:
+        build_book(book_number)
+    except ValueError as exc:
+        _usage_error(str(exc))
+    except PandocBuildError as exc:
+        logger.error(str(exc))
+        if exc.output:
+            typer.echo(exc.output, err=True)
+        raise typer.Exit(exc.returncode) from exc
+
+
+@app.command("generate-all-books")
+def generate_all_books() -> None:
+    """Generate Pandoc inputs and build all EPUBs with Rich progress."""
+    configure_logging()
+    try:
+        build_all_books()
+    except PandocBuildError as exc:
+        logger.error(str(exc))
+        if exc.output:
+            typer.echo(exc.output, err=True)
+        raise typer.Exit(exc.returncode) from exc
 
 
 def main() -> None:

@@ -71,15 +71,32 @@ INLINE_VOICE_CONTEXT_PATTERN = re.compile(
 )
 PROFILE_ROW_PATTERN = re.compile(
     r"^(?P<label>Han Sen|Status|Life span|Lifespan|Required for evolution|"
-    r"Requirements for evolution|Geno points needed for evolution|Geno points gained|"
+    r"Requirement for next evolution|Requirement for next revolution|"
+    r"Requirements for evolution|Geno points needed for evolution|Geno points gained|Geno points owned|"
     r"Beast souls? gained):\s*(?P<value>.+?)\s*$",
     re.IGNORECASE,
 )
+PROFILE_LABEL_ONLY_PATTERN = re.compile(r"^(?P<label>Han Sen):\s*$", re.IGNORECASE)
+MARKDOWN_PROFILE_ROW_PATTERN = re.compile(r"^\|\s*(?P<label>[^|]+?)\s*\|\s*(?P<value>[^|]+?)\s*\|\s*$")
 START_READING_LINK = '<a href="{href}" epub:type="bodymatter">Start Reading</a>'
 START_READING_REFERENCE = '<reference type="text" title="Start Reading" href="{href}" />'
 VOICE_MATCH_KEYWORD_THRESHOLD = 0.25
 VOICE_MATCH_FUZZY_THRESHOLD = 0.78
 PROFILE_TABLE_MIN_ROWS = 2
+GENO_POINT_TYPES = ("Primitive", "Ordinary", "Mutant", "Sacred-Blood")
+SUPER_GENO_POINT_TYPES = (*GENO_POINT_TYPES, "Super")
+FULL_WIDTH_PROFILE_LABELS = {
+    "required for evolution",
+    "beast soul gained",
+    "beast souls gained",
+}
+GENO_POINT_ALIASES = {
+    "Primitive": ("Primitive", ""),
+    "Ordinary": ("Ordinary",),
+    "Mutant": ("Mutant",),
+    "Sacred-Blood": ("Sacred-Blood", "Sacred Blood", "Sacred"),
+    "Super": ("Super",),
+}
 
 
 @dataclass(frozen=True, slots=True)
@@ -313,8 +330,12 @@ def normalize_profile_label(label: str) -> str:
 
     label_map = {
         "lifespan": "Life span",
+        "requirement for next evolution": "Required for evolution",
+        "requirement for next revolution": "Required for evolution",
         "requirements for evolution": "Required for evolution",
         "geno points needed for evolution": "Required for evolution",
+        "geno points gained": "Geno Points Gained",
+        "geno points owned": "Geno Points Owned",
     }
     return label_map.get(label.strip().lower(), label.strip())
 
@@ -333,11 +354,174 @@ def is_numeric_profile_value(value: str) -> bool:
     return bool(re.match(r"^\d", value.strip()))
 
 
-def render_profile_table(rows: list[tuple[str, str]]) -> str:
+def clean_table_value(value: str) -> str:
+    """Return table cell value text without one terminal period.
+
+    Args:
+        value: Raw value text captured from source Markdown.
+
+    Returns:
+        Value text with surrounding whitespace and one final period removed.
+    """
+    logger.trace("Cleaning table value")
+
+    cleaned = value.strip()
+    if cleaned.endswith("."):
+        return cleaned[:-1]
+    return cleaned
+
+
+def parse_geno_point_rows(value: str, include_super_geno_points: bool = False) -> list[tuple[str, str]]:
+    """Extract first-sanctuary Geno Points Gained type totals from a value.
+
+    Args:
+        value: Raw ``Geno points gained`` table value.
+        include_super_geno_points: Whether to include the later-discovered
+            Super Geno Point category in the generated rows.
+
+    Returns:
+        Ordered ``(type, amount)`` pairs for every first-sanctuary Geno Point
+        type when any supported type is detected. Missing types default to
+        zero.
+    """
+    logger.trace("Parsing Geno Points Gained value")
+
+    cleaned = clean_table_value(value)
+    parsed_amounts: dict[str, str] = {}
+    point_types = SUPER_GENO_POINT_TYPES if include_super_geno_points else GENO_POINT_TYPES
+    for point_type in point_types:
+        match = _match_geno_point_amount(cleaned, point_type)
+        if match:
+            parsed_amounts[point_type] = match.group("amount")
+    if not parsed_amounts:
+        return []
+    return [(point_type, parsed_amounts.get(point_type, "0")) for point_type in point_types]
+
+
+def _match_geno_point_amount(value: str, point_type: str) -> re.Match[str] | None:
+    """Return the numeric amount for one Geno Point type.
+
+    Args:
+        value: Cleaned source value from a ``Geno points gained`` row.
+        point_type: Canonical Geno Point type label.
+
+    Returns:
+        Regex match containing the ``amount`` group, or ``None`` when the type
+        is not present.
+    """
+    logger.trace(f"Matching Geno Point amount for {point_type}")
+
+    for alias in GENO_POINT_ALIASES[point_type]:
+        if not alias:
+            bare_pattern = re.compile(r"\b(?P<amount>\d+)\s+geno\s+points?\b", re.IGNORECASE)
+            match = bare_pattern.search(value)
+            if match:
+                return match
+            continue
+
+        type_pattern = re.escape(alias).replace("\\-", "[- ]")
+        before_number_pattern = re.compile(
+            rf"\b{type_pattern}\s+geno\s+points?\s+(?P<amount>\d+)\b",
+            re.IGNORECASE,
+        )
+        after_number_pattern = re.compile(
+            rf"\b(?P<amount>\d+)\s+{type_pattern}\s+geno\s+points?\b",
+            re.IGNORECASE,
+        )
+        match = before_number_pattern.search(value) or after_number_pattern.search(value)
+        if match:
+            return match
+    return None
+
+
+def render_geno_points_rows(
+    label: str,
+    value: str,
+    include_super_geno_points: bool = False,
+) -> list[str]:
+    """Render grouped Geno Point rows when point types are present.
+
+    Args:
+        label: Source profile label for the grouped Geno Point section.
+        value: Raw ``Geno points gained`` table value.
+        include_super_geno_points: Whether to include the later-discovered
+            Super Geno Point category in the generated rows.
+
+    Returns:
+        HTML row strings for a grouped header and type-specific totals, or an
+        empty list when no supported point type is mentioned.
+    """
+    logger.trace("Rendering Geno Points Gained detail rows")
+
+    point_rows = parse_geno_point_rows(value, include_super_geno_points)
+    if not point_rows:
+        return []
+
+    section_label = normalize_profile_label(label)
+    section_class = re.sub(r"[^a-z0-9]+", "-", section_label.lower()).strip("-")
+    rendered_rows = [
+        f'<tr class="{section_class}"><th colspan="2" style="text-align:center;">{escape(section_label)}</th></tr>'
+    ]
+    for point_type, amount in point_rows:
+        rendered_rows.append(
+            "<tr>"
+            f"<th>{escape(point_type)}</th>"
+            f'<td class="profile-value numeric-value">{escape(amount)}</td>'
+            "</tr>"
+        )
+    return rendered_rows
+
+
+def is_full_width_profile_label(label: str) -> bool:
+    """Return whether a profile row should span both table columns.
+
+    Args:
+        label: Source profile label.
+
+    Returns:
+        True when the label should render as a centered full-width section
+        label followed by a centered full-width value row.
+    """
+    logger.trace(f"Checking full-width profile label {label}")
+
+    return normalize_profile_label(label).lower() in FULL_WIDTH_PROFILE_LABELS
+
+
+def render_full_width_profile_rows(label: str, value: str) -> list[str]:
+    """Render a full-width profile label row followed by its full-width value.
+
+    Args:
+        label: Source profile label.
+        value: Source profile value.
+
+    Returns:
+        Two raw HTML table row strings for the centered label and value.
+    """
+    logger.trace("Rendering full-width profile rows")
+
+    section_label = normalize_profile_label(label)
+    cleaned_value = clean_table_value(value)
+    value_class = "profile-value numeric-value" if is_numeric_profile_value(cleaned_value) else "profile-value"
+    return [
+        f'<tr><th colspan="2" style="text-align:center;">{escape(section_label)}</th></tr>',
+        (
+            "<tr>"
+            f'<td colspan="2" class="{value_class}" style="text-align:center;">{escape(cleaned_value)}</td>'
+            "</tr>"
+        ),
+    ]
+
+
+def render_profile_table(
+    rows: list[tuple[str, str]],
+    include_super_geno_points: bool = False,
+) -> str:
     """Render status/profile rows as an Apple Books-safe HTML table.
 
     Args:
         rows: Profile label/value pairs in source order.
+        include_super_geno_points: Whether to include the later-discovered
+            Super Geno Point category in grouped Geno Point sections.
 
     Returns:
         Raw HTML table markup for EPUB output.
@@ -346,48 +530,170 @@ def render_profile_table(rows: list[tuple[str, str]]) -> str:
 
     rendered_rows: list[str] = []
     for label, value in rows:
-        value_class = "profile-value numeric-value" if is_numeric_profile_value(value) else "profile-value"
+        if normalize_profile_label(label).lower() in {"geno points gained", "geno points owned"}:
+            geno_rows = render_geno_points_rows(label, value, include_super_geno_points)
+            if geno_rows:
+                rendered_rows.extend(geno_rows)
+                continue
+
+        if is_full_width_profile_label(label):
+            rendered_rows.extend(render_full_width_profile_rows(label, value))
+            continue
+
+        cleaned_value = clean_table_value(value)
+        value_class = "profile-value numeric-value" if is_numeric_profile_value(cleaned_value) else "profile-value"
         rendered_rows.append(
             "<tr>"
             f'<th scope="row">{escape(normalize_profile_label(label))}</th>'
-            f'<td class="{value_class}">{escape(value)}</td>'
+            f'<td class="{value_class}">{escape(cleaned_value)}</td>'
             "</tr>"
         )
     return (
-        '<div class="profile-table-wrap" role="region" aria-label="Status profile">'
+        '<section class="profile-table-wrap" role="region" aria-label="Status profile">'
         '<table class="profile-table">'
         "<tbody>"
         f"{''.join(rendered_rows)}"
         "</tbody>"
         "</table>"
-        "</div>"
+        "</section>"
     )
 
 
-def next_nonblank_profile_match(lines: list[str], start_index: int) -> re.Match[str] | None:
-    """Find the next nonblank line if it is a profile row.
+def parse_profile_row(lines: list[str], index: int) -> tuple[str, str, int] | None:
+    """Parse a profile row starting at a line index.
+
+    Args:
+        lines: Chapter body lines.
+        index: Current line index.
+
+    Returns:
+        A ``(label, value, next_index)`` tuple, or ``None`` when the line does
+        not start a supported profile row.
+    """
+    logger.trace(f"Parsing profile row at line {index}")
+
+    stripped = lines[index].strip()
+    row_match = PROFILE_ROW_PATTERN.match(stripped)
+    if row_match is not None:
+        return row_match.group("label"), row_match.group("value"), index + 1
+
+    markdown_match = MARKDOWN_PROFILE_ROW_PATTERN.match(stripped)
+    if markdown_match is not None and is_profile_label(markdown_match.group("label")):
+        return markdown_match.group("label"), markdown_match.group("value"), index + 1
+
+    label_match = PROFILE_LABEL_ONLY_PATTERN.match(stripped)
+    if label_match is None:
+        return None
+
+    value_index = next_nonblank_index(lines, index + 1)
+    if value_index is None:
+        return None
+    value = lines[value_index].strip()
+    if parse_profile_row(lines, value_index) is not None:
+        return None
+    return label_match.group("label"), value, value_index + 1
+
+
+def is_profile_label(label: str) -> bool:
+    """Return whether a label belongs in a status/profile table.
+
+    Args:
+        label: Candidate profile label.
+
+    Returns:
+        True when the normalized label is a supported profile table field.
+    """
+    logger.trace(f"Checking profile label {label}")
+
+    normalized = normalize_profile_label(label).lower()
+    return normalized in {
+        "han sen",
+        "status",
+        "life span",
+        "required for evolution",
+        "geno points gained",
+        "geno points owned",
+        "beast soul gained",
+        "beast souls gained",
+    }
+
+
+def next_nonblank_index(lines: list[str], start_index: int) -> int | None:
+    """Return the index of the next nonblank line.
 
     Args:
         lines: Chapter body lines.
         start_index: Index to begin scanning.
 
     Returns:
-        Regex match for the next profile line, or None.
+        Index of the next nonblank line, or ``None`` when none exists.
     """
-    logger.trace(f"Looking ahead for profile row from line {start_index}")
+    logger.trace(f"Looking ahead for nonblank line from {start_index}")
 
-    for line in lines[start_index:]:
-        if not line.strip():
-            continue
-        return PROFILE_ROW_PATTERN.match(line.strip())
+    for index, line in enumerate(lines[start_index:], start=start_index):
+        if line.strip():
+            return index
     return None
 
 
-def style_status_profile_tables(body: str) -> str:
+def next_nonblank_profile_row(lines: list[str], start_index: int) -> tuple[str, str, int] | None:
+    """Find the next nonblank line if it starts a profile row.
+
+    Args:
+        lines: Chapter body lines.
+        start_index: Index to begin scanning.
+
+    Returns:
+        Parsed profile row tuple, or ``None``.
+    """
+    logger.trace(f"Looking ahead for profile row from line {start_index}")
+
+    index = next_nonblank_index(lines, start_index)
+    if index is None:
+        return None
+    return parse_profile_row(lines, index)
+
+
+def collect_profile_rows(lines: list[str], start_index: int) -> tuple[list[tuple[str, str]], int]:
+    """Collect contiguous profile rows from source lines.
+
+    Args:
+        lines: Chapter body lines.
+        start_index: Index where a profile row starts.
+
+    Returns:
+        Profile ``(label, value)`` rows and the next unconsumed line index.
+    """
+    logger.trace(f"Collecting profile rows from line {start_index}")
+
+    rows: list[tuple[str, str]] = []
+    cursor = start_index
+    while cursor < len(lines):
+        stripped = lines[cursor].strip()
+        if not stripped:
+            next_row = next_nonblank_profile_row(lines, cursor + 1)
+            if next_row is None:
+                break
+            cursor = next_nonblank_index(lines, cursor + 1) or cursor + 1
+            continue
+
+        row = parse_profile_row(lines, cursor)
+        if row is None:
+            break
+
+        label, value, next_index = row
+        rows.append((label, value))
+        cursor = next_index
+    return rows, cursor
+
+
+def style_status_profile_tables(body: str, include_super_geno_points: bool = False) -> str:
     """Convert compact status/profile line groups into HTML tables.
 
     Args:
         body: Chapter body Markdown.
+        include_super_geno_points: Whether to include the later-discovered
+            Super Geno Point category in grouped Geno Point sections.
 
     Returns:
         Body text with known status/profile blocks rendered as raw HTML tables.
@@ -399,30 +705,15 @@ def style_status_profile_tables(body: str) -> str:
     index = 0
 
     while index < len(lines):
-        first_match = PROFILE_ROW_PATTERN.match(lines[index].strip())
-        if first_match is None:
+        if parse_profile_row(lines, index) is None:
             styled_lines.append(lines[index])
             index += 1
             continue
 
-        rows: list[tuple[str, str]] = []
-        cursor = index
-        while cursor < len(lines):
-            stripped = lines[cursor].strip()
-            if not stripped and next_nonblank_profile_match(lines, cursor + 1) is not None:
-                cursor += 1
-                continue
-
-            row_match = PROFILE_ROW_PATTERN.match(stripped)
-            if row_match is None:
-                break
-
-            rows.append((row_match.group("label"), row_match.group("value")))
-            cursor += 1
-
+        rows, cursor = collect_profile_rows(lines, index)
         has_profile_detail = any(label.strip().lower() != "han sen" for label, _value in rows)
         if len(rows) >= PROFILE_TABLE_MIN_ROWS and has_profile_detail:
-            styled_lines.append(render_profile_table(rows))
+            styled_lines.append(render_profile_table(rows, include_super_geno_points))
             index = cursor
             continue
 
@@ -492,9 +783,9 @@ def render_world_voice_card(text: str) -> str:
 
     display_text = text.strip()
     return (
-        '<div class="world-voice-card" role="note">'
+        '<section class="world-voice-card" role="note">'
         f'<p class="world-voice"><em>{escape(display_text, quote=False)}</em></p>'
-        "</div>"
+        "</section>"
     )
 
 
@@ -565,20 +856,20 @@ def render_chapter_heading(chapter_number: int, title: str, chapter_id: str) -> 
     logger.trace(f"Rendering heading for chapter {chapter_number}")
 
     safe_title = escape(title)
-    return f"""<div class="heading1" id="{chapter_id}-heading">
-<div class="heading-contents1">
-<div class="element">
-<div class="element-number-block">
-<div class="element-number">{chapter_number}</div>
-</div>
-<div class="element title-block">
-<div class="title-subtitle-block">
+    return f"""<section class="heading1" id="{chapter_id}-heading">
+<section class="heading-contents1">
+<section class="element">
+<section class="element-number-block">
+<p class="element-number">{chapter_number}</p>
+</section>
+<section class="element title-block">
+<section class="title-subtitle-block">
 <h1 class="title">{safe_title}</h1>
-</div>
-</div>
-</div>
-</div>
-</div>"""
+</section>
+</section>
+</section>
+</section>
+</section>"""
 
 
 def render_chapter(
@@ -603,7 +894,10 @@ def render_chapter(
     metadata, body = split_markdown_metadata(source)
     title = extract_chapter_title(metadata, body, chapter_number)
     cleaned_body = strip_source_chapter_markup(body)
-    tabled_body = style_status_profile_tables(cleaned_body)
+    tabled_body = style_status_profile_tables(
+        cleaned_body,
+        include_super_geno_points=chapter_number > 270,
+    )
     styled_body = style_voice_of_the_world_lines(add_first_paragraph_dropcap(tabled_body), voice_matcher)
     heading = render_chapter_heading(chapter_number, title, chapter_id)
     hidden_heading = f"# Chapter {chapter_number}: {title} {{.hidden-title}}"
@@ -613,9 +907,9 @@ def render_chapter(
 <section id="{chapter_id}" class="chapter element" role="doc-chapter" epub:type="bodymatter chapter">
 {heading}
 
-::: {{.element .chapter-text #{chapter_id}-text}}
+<section class="element chapter-text" id="{chapter_id}-text" markdown="1">
 {styled_body}
-:::
+</section>
 
 </section>
 """
@@ -667,10 +961,47 @@ def render_title_page(book: BookDefaults) -> str:
 <h1 class="book-title">{escape(book.title)}</h1>
 <p class="book-subtitle">Book {book.number} of Super Gene</p>
 <p class="book-author">Twelve-Winged Dark Seraphim</p>
-<div class="producer-credit">
+<section class="producer-credit">
 <p>Produced By</p>
 <p>Max Ludden</p>
-</div>
+</section>
+</section>
+"""
+
+
+def title_page_artwork_filename(book: BookDefaults) -> str:
+    """Return the title-page artwork file name for a book.
+
+    Args:
+        book: Current book split definition.
+
+    Returns:
+        Expected title-page artwork PNG file name.
+    """
+    logger.trace(f"Rendering title-page artwork file name for book {book.number}")
+
+    return f"book-{book.number:02d}-{book.slug}-title-page-artwork.png"
+
+
+def render_title_page_artwork(book: BookDefaults) -> str:
+    """Render the artwork page that appears before the title page.
+
+    Args:
+        book: Current book split definition.
+
+    Returns:
+        Markdown for a full-page title artwork frontmatter page.
+    """
+    logger.trace(f"Rendering title-page artwork for book {book.number}")
+
+    artwork_filename = title_page_artwork_filename(book)
+    alt_text = escape(f"Title page artwork for Super Gene: {book.title}")
+    return f"""# Title Page Artwork {{.hidden-title .unlisted}}
+
+<section class="frontmatter title-page-artwork" epub:type="frontmatter">
+<figure class="title-page-artwork-frame">
+<img class="title-page-artwork-image" src="{artwork_filename}" alt="{alt_text}" />
+</figure>
 </section>
 """
 
@@ -756,7 +1087,7 @@ def first_bodymatter_input(generated_inputs: list[Path]) -> Path:
         (
             path
             for path in generated_inputs
-            if re.match(r"^\d{4}-\d{3}-.*\.md$", path.name)
+            if re.match(r"^\d{4}-\d+-.*\.md$", path.name)
         ),
         generated_inputs[0],
     )
@@ -800,15 +1131,18 @@ def build_book_inputs(
 
     target_dir = book_inputs_root / book_input_dir(book)
     target_dir.mkdir(parents=True, exist_ok=True)
+    for stale_input in target_dir.glob("*.md"):
+        stale_input.unlink()
 
     generated: list[tuple[str, str]] = [
         ("0001-also-in-series.md", render_also_in_series_page(book, books)),
-        ("0002-title-page.md", render_title_page(book)),
-        ("0003-copyright.md", render_copyright_page()),
-        ("0004-blank-before-chapter.md", render_blank_page()),
+        ("0002-title-page-artwork.md", render_title_page_artwork(book)),
+        ("0003-title-page.md", render_title_page(book)),
+        ("0004-copyright.md", render_copyright_page()),
+        ("0005-blank-before-chapter.md", render_blank_page()),
     ]
 
-    for offset, chapter_path in enumerate(chapters, start=5):
+    for offset, chapter_path in enumerate(chapters, start=6):
         chapter_number = chapter_index(chapter_path)
         chapter_id = f"chapter-{chapter_number}"
         generated.append(
@@ -1055,6 +1389,8 @@ h1.hidden-title {
 }
 
 .profile-table th {
+  background-color: #fff;
+  color: #000;
   font-weight: bold;
   text-align: left;
   width: 42%;
@@ -1192,6 +1528,29 @@ h1.hidden-title {
   page-break-before: avoid;
   break-before: avoid;
   margin-top: 0;
+}
+
+.title-page-artwork {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.title-page-artwork-frame {
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.title-page-artwork-image {
+  display: block;
+  height: auto;
+  max-height: 95vh;
+  max-width: 100%;
+  object-fit: contain;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .copyright-page p,
@@ -1400,6 +1759,7 @@ def render_defaults(book: BookDefaults, generated_inputs: list[Path]) -> str:
         "  - ${.}/../assets",
         "  - ${.}/../assets/fonts",
         "  - ${.}/../../../assets/covers/super-gene",
+        "  - ${.}/../../../assets/titlepage-artwork",
         "css:",
         "  - ${.}/../assets/stylesheet.css",
         "  - ${.}/../assets/page_styles.css",

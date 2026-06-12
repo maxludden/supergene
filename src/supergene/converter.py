@@ -118,6 +118,13 @@ class TocEntry:
 
 
 ProgressCallback = Callable[[ConversionProgress], None]
+GENO_POINT_TYPES = ("Primitive", "Ordinary", "Mutant", "Sacred-Blood")
+GENO_POINT_ALIASES = {
+    "Primitive": ("Primitive", ""),
+    "Ordinary": ("Ordinary",),
+    "Mutant": ("Mutant",),
+    "Sacred-Blood": ("Sacred-Blood", "Sacred Blood", "Sacred"),
+}
 
 
 def convert_epub(
@@ -208,6 +215,7 @@ def convert_epub(
         soup = BeautifulSoup(item.get_content(), "html.parser")
         fragment = _chapter_fragment(soup, anchor, entry, warnings)
         _rewrite_asset_links(fragment, doc_name, copied_assets)
+        _split_profile_table_geno_points(fragment)
         _annotate_source_styles(fragment)
         markdown = markdownify(
             str(fragment),
@@ -440,6 +448,123 @@ def _annotate_source_styles(fragment: Tag) -> None:
         if classes:
             parts.append("." + ".".join(str(class_name) for class_name in classes))
         node.insert_before(owner.new_string(f"\n<!-- source: {''.join(parts)} -->\n"))
+
+
+def _split_profile_table_geno_points(fragment: Tag) -> None:
+    """Expand combined profile table Geno Points Gained rows.
+
+    Args:
+        fragment: Chapter HTML fragment to mutate before Markdown conversion.
+    """
+    logger.trace("Splitting profile table Geno Points Gained rows")
+
+    for row in list(fragment.find_all("tr")):
+        cells = row.find_all(["th", "td"], recursive=False)
+        if len(cells) != 2:
+            continue
+        label_cell, value_cell = cells
+        label = label_cell.get_text(" ", strip=True).lower()
+        if label != "geno points gained":
+            continue
+        point_rows = _parse_geno_point_rows(value_cell.get_text(" ", strip=True))
+        if not point_rows:
+            continue
+        for replacement in reversed(_render_geno_point_row_tags(fragment, point_rows)):
+            row.insert_after(replacement)
+        row.decompose()
+
+
+def _parse_geno_point_rows(value: str) -> list[tuple[str, str]]:
+    """Parse first-sanctuary Geno Point totals from row text.
+
+    Args:
+        value: Source text from a combined ``Geno points gained`` table cell.
+
+    Returns:
+        Ordered ``(type, amount)`` pairs for all first-sanctuary Geno Point
+        types, or an empty list when the value does not contain a supported
+        total.
+    """
+    logger.trace("Parsing profile table Geno Point rows")
+
+    parsed_amounts: dict[str, str] = {}
+    for point_type in GENO_POINT_TYPES:
+        match = _match_geno_point_amount(value, point_type)
+        if match:
+            parsed_amounts[point_type] = match.group("amount")
+    if not parsed_amounts:
+        return []
+    return [(point_type, parsed_amounts.get(point_type, "0")) for point_type in GENO_POINT_TYPES]
+
+
+def _match_geno_point_amount(value: str, point_type: str) -> re.Match[str] | None:
+    """Return the numeric amount for one Geno Point type.
+
+    Args:
+        value: Source value from a combined profile table row.
+        point_type: Canonical Geno Point type label.
+
+    Returns:
+        Regex match containing the ``amount`` group, or ``None`` when the type
+        is not present.
+    """
+    logger.trace(f"Matching profile table Geno Point amount for {point_type}")
+
+    for alias in GENO_POINT_ALIASES[point_type]:
+        if not alias:
+            bare_pattern = re.compile(r"\b(?P<amount>\d+)\s+geno\s+points?\b", re.IGNORECASE)
+            match = bare_pattern.search(value)
+            if match:
+                return match
+            continue
+
+        type_pattern = re.escape(alias).replace("\\-", "[- ]")
+        before_number_pattern = re.compile(
+            rf"\b{type_pattern}\s+geno\s+points?\s+(?P<amount>\d+)\b",
+            re.IGNORECASE,
+        )
+        after_number_pattern = re.compile(
+            rf"\b(?P<amount>\d+)\s+{type_pattern}\s+geno\s+points?\b",
+            re.IGNORECASE,
+        )
+        match = before_number_pattern.search(value) or after_number_pattern.search(value)
+        if match:
+            return match
+    return None
+
+
+def _render_geno_point_row_tags(fragment: Tag, point_rows: list[tuple[str, str]]) -> list[Tag]:
+    """Build HTML table rows for expanded Geno Points Gained values.
+
+    Args:
+        fragment: Chapter HTML fragment used to locate the owning soup.
+        point_rows: Canonical point labels and numeric amounts.
+
+    Returns:
+        Table row tags that can replace the combined source row.
+    """
+    logger.trace("Rendering profile table Geno Point row tags")
+
+    soup = fragment if isinstance(fragment, BeautifulSoup) else fragment.find_parent()
+    owner = soup if isinstance(soup, BeautifulSoup) else BeautifulSoup("", "html.parser")
+    rows: list[Tag] = []
+
+    header = owner.new_tag("tr", attrs={"class": "geno-points-gained"})
+    heading = owner.new_tag("th", attrs={"colspan": "2", "style": "text-align:center;"})
+    heading.string = "Geno Points Gained"
+    header.append(heading)
+    rows.append(header)
+
+    for point_type, amount in point_rows:
+        row = owner.new_tag("tr")
+        label = owner.new_tag("th")
+        label.string = point_type
+        value = owner.new_tag("td", attrs={"class": "profile-value numeric-value"})
+        value.string = amount
+        row.append(label)
+        row.append(value)
+        rows.append(row)
+    return rows
 
 
 def _split_href(href: str) -> tuple[str, str | None]:

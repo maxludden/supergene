@@ -1,0 +1,221 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Super Gene: Generate Pandoc Inputs",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "scripts/generate_pandoc_defaults.py"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "LOGURU_AUTOINIT": "False"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Super Gene: Generate Book 01 - First God's Sanctuary",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "supergene",
+        "generate-book",
+        "1"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "LOGURU_AUTOINIT": "False"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Super Gene: Generate Book 02 - Second God's Sanctuary",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "supergene",
+        "generate-book",
+        "2"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "LOGURU_AUTOINIT": "False"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Super Gene: Generate Book 03 - Third God's Sanctuary",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "supergene",
+        "generate-book",
+        "3"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "LOGURU_AUTOINIT": "False"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Super Gene: Generate Book 04 - Fourth and Fifth God's Sanctuaries",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "supergene",
+        "generate-book",
+        "4"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "LOGURU_AUTOINIT": "False"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Super Gene: Generate Book 05 - Planet Kate and Narrow Moon",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "supergene",
+        "generate-book",
+        "5"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "LOGURU_AUTOINIT": "False"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Super Gene: Generate Book 06 - The Extreme King",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "supergene",
+        "generate-book",
+        "6"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "LOGURU_AUTOINIT": "False"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Super Gene: Generate Book 07 - The Very High and Outer Sky",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "supergene",
+        "generate-book",
+        "7"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "LOGURU_AUTOINIT": "False"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Super Gene: Generate Book 08 - War Against the Gods",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "supergene",
+        "generate-book",
+        "8"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "LOGURU_AUTOINIT": "False"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Super Gene: Generate Book 09 - God Spirit Blood-Pulse",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "supergene",
+        "generate-book",
+        "9"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "LOGURU_AUTOINIT": "False"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Super Gene: Generate Book 10 - The Thirty-Three Skies",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "supergene",
+        "generate-book",
+        "10"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "LOGURU_AUTOINIT": "False"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Super Gene: Generate All Books",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "supergene",
+        "generate-all-books"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "LOGURU_AUTOINIT": "False"
+        }
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}

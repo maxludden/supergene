@@ -17,7 +17,16 @@ def write_epub(
     toc_hrefs: tuple[str, ...] = ("chapters.xhtml#c1", "chapters.xhtml#c2"),
     *,
     split_documents: bool = False,
+    include_profile_table: bool = False,
 ) -> None:
+    """Write a small EPUB fixture for converter tests.
+
+    Args:
+        path: Destination EPUB path.
+        toc_hrefs: Hrefs to include in the navigation document.
+        split_documents: Whether chapters should be emitted as separate XHTML files.
+        include_profile_table: Whether chapter two should include a status profile table.
+    """
     manifest_documents = (
         '<item id="chapter1" href="chapter1.xhtml" media-type="application/xhtml+xml"/>\n'
         '    <item id="chapter2" href="chapter2.xhtml" media-type="application/xhtml+xml"/>'
@@ -34,6 +43,7 @@ def write_epub(
         f'        <li><a href="{href}">{labels[index] if index < len(labels) else "Chapter Link"}</a></li>'
         for index, href in enumerate(toc_hrefs)
     )
+    table_html = _chapter_table_html(include_profile_table)
     with zipfile.ZipFile(path, "w") as zf:
         mimetype = zipfile.ZipInfo("mimetype")
         mimetype.compress_type = zipfile.ZIP_STORED
@@ -107,14 +117,14 @@ def write_epub(
             )
             zf.writestr(
                 "OEBPS/chapter2.xhtml",
-                """<?xml version="1.0" encoding="UTF-8"?>
+                f"""<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head><title>Chapter Two</title><link href="style.css" rel="stylesheet"/></head>
   <body>
     <section id="c2" class="chapter">
       <h1>Chapter 2: Chapter Two</h1>
       <blockquote><p>A quoted line.</p></blockquote>
-      <table><tr><th>Name</th><th>Value</th></tr><tr><td>Gene</td><td>7</td></tr></table>
+      {table_html}
     </section>
   </body>
 </html>
@@ -123,7 +133,7 @@ def write_epub(
         else:
             zf.writestr(
                 "OEBPS/chapters.xhtml",
-                """<?xml version="1.0" encoding="UTF-8"?>
+                f"""<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head><title>Chapters</title><link href="style.css" rel="stylesheet"/></head>
   <body>
@@ -135,7 +145,7 @@ def write_epub(
     <section id="c2" class="chapter">
       <h1>Chapter Two</h1>
       <blockquote><p>A quoted line.</p></blockquote>
-      <table><tr><th>Name</th><th>Value</th></tr><tr><td>Gene</td><td>7</td></tr></table>
+      {table_html}
     </section>
   </body>
 </html>
@@ -143,3 +153,22 @@ def write_epub(
             )
         zf.writestr("OEBPS/style.css", ".opening { font-style: italic; }")
         zf.writestr("OEBPS/images/pixel.png", PIXEL_PNG)
+
+
+def _chapter_table_html(include_profile_table: bool) -> str:
+    """Return the chapter two table HTML for the fixture.
+
+    Args:
+        include_profile_table: Whether to return a status profile table.
+
+    Returns:
+        XHTML table markup for the test EPUB.
+    """
+    if not include_profile_table:
+        return "<table><tr><th>Name</th><th>Value</th></tr><tr><td>Gene</td><td>7</td></tr></table>"
+    return (
+        '<table class="profile-table"><tbody>'
+        '<tr><th scope="row">Geno points gained</th>'
+        '<td class="profile-value numeric-value">79 geno points; 8 sacred geno points</td></tr>'
+        "</tbody></table>"
+    )

@@ -211,6 +211,8 @@ h1.hidden-title {
 }
 
 .profile-table th {
+  background-color: #fff;
+  color: #000;
   font-weight: bold;
   text-align: left;
   width: 42%;
@@ -348,6 +350,29 @@ h1.hidden-title {
   page-break-before: avoid;
   break-before: avoid;
   margin-top: 0;
+}
+
+.title-page-artwork {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.title-page-artwork-frame {
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.title-page-artwork-image {
+  display: block;
+  height: auto;
+  max-height: 95vh;
+  max-width: 100%;
+  object-fit: contain;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .copyright-page p,

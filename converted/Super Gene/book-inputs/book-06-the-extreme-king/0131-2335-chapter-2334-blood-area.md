@@ -1,0 +1,117 @@
+# Chapter 2335: - Blood Area {.hidden-title}
+
+<section id="chapter-2335" class="chapter element" role="doc-chapter" epub:type="bodymatter chapter">
+<section class="heading1" id="chapter-2335-heading">
+<section class="heading-contents1">
+<section class="element">
+<section class="element-number-block">
+<p class="element-number">2335</p>
+</section>
+<section class="element title-block">
+<section class="title-subtitle-block">
+<h1 class="title">- Blood Area</h1>
+</section>
+</section>
+</section>
+</section>
+</section>
+
+<section class="element chapter-text" id="chapter-2335-text" markdown="1">
+<p class="first2"><span class="first-letter">K</span>ing class was divided into nine different tiers. Becoming half-deified required a person to break through all nine tiers. A further barrier had to be surpassed before someone could become fully deified.</p>
+
+Instead of being recognised separately, these nine tiers were typically just grouped under King class, however. The power of a King’s area-of-effect grew with each tier that was surpassed.
+
+The blood Qilin had completed all nine tiers; it was half-deified, after all. Prince Sword-star’s guard was a half-deified elite, too.
+
+**“How dare you behave so poorly in front of a prince!”** That half-deified guard made a cow’s mooing sound. He then released a yellow king area, which overlapped with the blood Qilin’s blood area. The guard lifted the axe in his hand and ran forward to strike the blood Qilin.
+
+The blood area combined with the yellow area, and both guards were affected by each other. A sudden weight fell across the blood Qilin’s body, as if it had suddenly shouldered the weight of a mountain.
+
+The yellow area was associated with the element of earth, and it created earth elemental pressure within its zone. Kings with poor bodies could very well find themselves crushed by that pressure.
+
+As the blood Qilin was pressed down by the earth power, the guard’s axe came towards the creature like a mountain. It was aimed to come down on the blood Qilin’s head. The power exerted would have been enough to cut an entire planet in half.
+
+Roar!
+
+The blood Qilin roared. Instead of trying to avoid the strike, it used its own horn to block the falling axe.
+
+Boom!
+
+The blood and yellow powers surged against each other. The blood Qilin’s horn was able to block the big axe, keeping the axe aloft.
+
+The half-deified guard roared. He struggled to push his big axe down further, as the two powers kept crashing against each other in the area.
+
+Han Sen and Prince Sword-star watched the two from afar. Suddenly, a massive red and yellow explosion rocked the area. The blood Qilin was able to get past the half-deified guard.
+
+When the light of the explosion faded and the onlookers could see again, they immediately noticed that the blood Qilin’s neck scales were torn. There was a huge cleft across them, and the blood Qilin’s blood began to drip slowly down its chest.
+
+The chestplate of the half-deified guard’s armour had also been broken. He had been cut, and he was bleeding, as well.
+
+**“Very strong body! You did not die after taking a blow from my Open Sky Axe, but still, you will die today,”** the half-deified guard shouted fiercely. His Open Sky Axe produced a scary light, and it came swinging at the blood Qilin again.
+
+The blood Qilin lowered its head. Its eyes looked red. Then the eyes grew darker and darker, until they ended up looking black.
+
+Han Sen understood the blood Qilin well, and he knew now that it was really angry. Its blood air was about to go mad. It was like a nuclear bomb that was on the verge of detonating.
+
+As the half-deified guard sprang toward it, the blood Qilin did not dodge. It raised its head and peered at the guard. The blood air in its eyes was about to erupt like a volcano.
+
+Blergh!
+
+The power from the blood Qilin’s eyes didn’t explode out as Han Sen had expected. The other guard’s chest suddenly started to rupture with blood.
+
+His Open Sky Axe didn’t come down as planned. Blood spurted from his wound like a spring, and everyone watching the fight looked on in shock. The half-deified guard quickly tried to cast a power to stop his loss of blood.
+
+But it was a futile effort. Blood still streamed out of his chest, then turned into a mist and drifted straight over to the blood Qilin, where the blood Qilin promptly absorbed it.
+
+The wound on the blood Qilin’s neck soon closed up as if it had never existed.
+
+The blood Qilin roared like a lion. It became a blood shadow, then flew over to the half-deified guard.
+
+The half-deified guard was bleeding, and his face looked shocked at the turn of events. He roared in response and swung his Open Sky Axe at the blood Qilin once more, desperately trying to slash the incoming blood Qilin.
+
+The blood Qilin made no attempt to evade the big axe, and neither did it try to use its claws to block the blow. The beast allowed the axe to slam into it and cut a deep crevice across its scales. At the same time, though, the blood Qilin’s talons touched down on its opponent.
+
+As the guard screamed, his blood sprayed like a geyser.
+
+The murderous blood Qilin ignored the frantic blows of the axe, using its scales to absorb the strikes as its claws continued shredding the guard’s armour and tearing up his flesh.
+
+The blood Qilin’s claws left marks all across the knight, and blood spilled ceaselessly from his body. His blood was like a volcano, and nothing could stop that eruption.
+
+Han Sen grinned as he watched. The blood Qilin’s blood area was a very scary ability. Han Sen was fortunate that the blood Qilin was not his enemy.
+
+Instead, when the guard hit the blood Qilin with the big axe, it was now able to heal so quickly.
+
+After a moment, the half-deified guard was broken. He screamed continuously as he tried to scramble away, but under the grip of the blood Qilin’s blood area, he had lost too much blood. His powers were now weak, and he no longer had the strength to run.
+
+The blood Qilin was like a wolf. It was like a tiger. It leapt over towards the man, then ripped off his arms and swallowed them. Crunching noises came from the creature as it savoured its snack.
+
+**“Prince! Save— save me!”** The half-deified screamed to Prince Sword-star.
+
+Prince Sword-star felt a bitter chill strike him after watching all this. The cruelty of the blood Qilin shocked him and all the other guards.
+
+Before Prince Sword-star could say anything, the blood Qilin picked up the guard in its mouth and ate him whole.
+
+A half-deified elite had been completely swallowed by the blood Qilin. The man’s last scream still echoed in the ears of the horrified audience.
+
+**“Bai Yi— You killed my guard—”** Prince Sword-star looked very ill. His eyes stared blankly ahead.
+
+**“It was just a guard, and he died. What’s the big deal? If you are not happy about it, the blood Qilin is willing to hear your complaints. Go and kill it, if you dare,”** Han Sen replied flatly.
+
+**“You—”** Prince Sword-star’s face had darkened. He wasn’t half-deified. He only had two half-deified guards in his employ, and now one of them had been eaten by the blood Qilin. Sending another one into the fray would not help.
+
+Other princes and princesses watched the fight from afar, looking jealously at the blood Qilin.
+
+**“I didn’t expect that Han Sen’s xenogeneic would be so strong; it is like it is deified already! I cannot believe that asshole Bai Yi was able to claim it.”** When Bai Ling Shuang saw the blood Qilin’s performance, the sight made her grumble angrily.
+
+**“If you have nothing else to say, Brother Forty-Seven, then I best be on my way.”** Han Sen mounted the blood Qilin again and looked at Prince Sword-star with disdain. Then he headed towards the king tree.
+
+Prince Sword-star’s face kept cycling through a number of emotions, but he let Han Sen go and did not press for another fight.
+
+Prince Sword-star wasn’t willing to continue the contest, but Bai Ling Shuang and the other royal children still followed Han Sen— They could see he was getting close to the king tree.
+
+**“Is he going to practise in front of the king tree?”** Bai Ling Shang frowned, her expression turning strange.
+
+Han Sen thought he would find more primary root king dragons closer to the tree, but that wasn’t the case. The ground closest to the king tree was different, and normal royal children wouldn’t dare to approach it. That was why Bai Ling Shuang looked so disturbed.
+</section>
+
+</section>

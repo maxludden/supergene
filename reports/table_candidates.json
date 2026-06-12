@@ -88,7 +88,7 @@
       "start_line": 42,
       "end_line": 42,
       "original_text": "Type of sacred-blood bloody slayer’s beast soul: Shape-shifting.",
-      "proposed_html": "<table>\n  <thead><tr><th>Type</th><th>Description</th></tr></thead>\n  <tbody>\n    <tr><td>Beast Soul</td><td>Type of sacred-blood bloody slayer’s beast soul: Shape-shifting.</td></tr>\n  </tbody>\n</table>",
+      "proposed_html": "<table>\n  <thead><tr><th>Type</th><th>Description</th></tr></thead>\n  <tbody>\n    <tr><td>Beast Soul</td><td>Type of sacred-blood bloody slayer’s beast soul: Shape-shifting</td></tr>\n  </tbody>\n</table>",
       "confidence": 0.75
     },
     {
@@ -106,7 +106,7 @@
       "start_line": 60,
       "end_line": 60,
       "original_text": "Type of beast soul of mutant three-eyed cat: pet.",
-      "proposed_html": "<table>\n  <thead><tr><th>Type</th><th>Description</th></tr></thead>\n  <tbody>\n    <tr><td>Beast Soul</td><td>Type of beast soul of mutant three-eyed cat: pet.</td></tr>\n  </tbody>\n</table>",
+      "proposed_html": "<table>\n  <thead><tr><th>Type</th><th>Description</th></tr></thead>\n  <tbody>\n    <tr><td>Beast Soul</td><td>Type of beast soul of mutant three-eyed cat: pet</td></tr>\n  </tbody>\n</table>",
       "confidence": 0.75
     },
     {
@@ -214,7 +214,7 @@
       "start_line": 56,
       "end_line": 56,
       "original_text": "Type of sacred-blood beast soul fairy queen: shape-shifting.",
-      "proposed_html": "<table>\n  <thead><tr><th>Type</th><th>Description</th></tr></thead>\n  <tbody>\n    <tr><td>Beast Soul</td><td>Type of sacred-blood beast soul fairy queen: shape-shifting.</td></tr>\n  </tbody>\n</table>",
+      "proposed_html": "<table>\n  <thead><tr><th>Type</th><th>Description</th></tr></thead>\n  <tbody>\n    <tr><td>Beast Soul</td><td>Type of sacred-blood beast soul fairy queen: shape-shifting</td></tr>\n  </tbody>\n</table>",
       "confidence": 0.75
     },
     {
@@ -232,7 +232,7 @@
       "start_line": 46,
       "end_line": 46,
       "original_text": "Invisible Toxic King Scorpion Beast Soul: Glyph Type.",
-      "proposed_html": "<table>\n  <thead><tr><th>Type</th><th>Description</th></tr></thead>\n  <tbody>\n    <tr><td>Beast Soul</td><td>Invisible Toxic King Scorpion Beast Soul: Glyph Type.</td></tr>\n  </tbody>\n</table>",
+      "proposed_html": "<table>\n  <thead><tr><th>Type</th><th>Description</th></tr></thead>\n  <tbody>\n    <tr><td>Beast Soul</td><td>Invisible Toxic King Scorpion Beast Soul: Glyph Type</td></tr>\n  </tbody>\n</table>",
       "confidence": 0.75
     },
     {
@@ -277,7 +277,7 @@
       "start_line": 58,
       "end_line": 58,
       "original_text": "Self Geno Core: Bronze Crystal Core.",
-      "proposed_html": "<table>\n  <thead><tr><th>Type</th><th>Description</th></tr></thead>\n  <tbody>\n    <tr><td>Geno Core</td><td>Self Geno Core: Bronze Crystal Core.</td></tr>\n  </tbody>\n</table>",
+      "proposed_html": "<table>\n  <thead><tr><th>Type</th><th>Description</th></tr></thead>\n  <tbody>\n    <tr><td>Geno Core</td><td>Self Geno Core: Bronze Crystal Core</td></tr>\n  </tbody>\n</table>",
       "confidence": 0.75
     },
     {
@@ -331,7 +331,7 @@
       "start_line": 66,
       "end_line": 66,
       "original_text": "Duke class beast soul Gold Fire Peacock: Flying-type.",
-      "proposed_html": "<table>\n  <thead><tr><th>Type</th><th>Description</th></tr></thead>\n  <tbody>\n    <tr><td>Beast Soul</td><td>Duke class beast soul Gold Fire Peacock: Flying-type.</td></tr>\n  </tbody>\n</table>",
+      "proposed_html": "<table>\n  <thead><tr><th>Type</th><th>Description</th></tr></thead>\n  <tbody>\n    <tr><td>Beast Soul</td><td>Duke class beast soul Gold Fire Peacock: Flying-type</td></tr>\n  </tbody>\n</table>",
       "confidence": 0.75
     },
     {

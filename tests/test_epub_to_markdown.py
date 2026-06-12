@@ -52,6 +52,23 @@ def test_convert_epub_reports_chapter_progress(tmp_path: Path) -> None:
     assert events[-1].output_path.name == "002-chapter-two.md"
 
 
+def test_convert_epub_splits_profile_table_geno_points_gained_rows(tmp_path: Path) -> None:
+    """Profile table Geno Points Gained rows render as type-specific totals."""
+    epub_path = tmp_path / "fixture.epub"
+    output_dir = tmp_path / "out"
+    write_epub(epub_path, include_profile_table=True)
+
+    convert_epub(epub_path, output_dir)
+
+    chapter = (output_dir / "Fixture Book" / "chapters" / "002-chapter-two.md").read_text()
+    assert "Geno Points Gained" in chapter
+    assert "| Primitive |<!-- source: td.profile-value.numeric-value --> 79 |" in chapter
+    assert "| Ordinary |<!-- source: td.profile-value.numeric-value --> 0 |" in chapter
+    assert "| Mutant |<!-- source: td.profile-value.numeric-value --> 0 |" in chapter
+    assert "| Sacred-Blood |<!-- source: td.profile-value.numeric-value --> 8 |" in chapter
+    assert "79 geno points; 8 sacred geno points" not in chapter
+
+
 def test_cli_converts_epub_and_reports_warnings(tmp_path: Path) -> None:
     epub_path = tmp_path / "fixture.epub"
     output_dir = tmp_path / "cli-out"
@@ -118,14 +135,41 @@ def test_incomplete_toc_uses_chapter_like_spine_documents(tmp_path: Path) -> Non
     assert "# Chapter 1: Chapter One" in first
 
 
-def test_cli_refuses_existing_output_without_overwrite(tmp_path: Path) -> None:
+def test_cli_overwrites_existing_output_by_default(tmp_path: Path) -> None:
+    epub_path = tmp_path / "fixture.epub"
+    output_dir = tmp_path / "cli-out"
+    write_epub(epub_path)
+    convert_epub(epub_path, output_dir)
+    stale_file = output_dir / "Fixture Book" / "stale.txt"
+    stale_file.write_text("stale", encoding="utf-8")
+
+    completed = subprocess.run(
+        [sys.executable, "-m", "supergene", "epub-to-md", str(epub_path), str(output_dir)],
+        check=False,
+        text=True,
+        capture_output=True,
+    )
+
+    assert completed.returncode == 0
+    assert not stale_file.exists()
+
+
+def test_cli_can_refuse_existing_output_with_no_overwrite(tmp_path: Path) -> None:
     epub_path = tmp_path / "fixture.epub"
     output_dir = tmp_path / "cli-out"
     write_epub(epub_path)
     convert_epub(epub_path, output_dir)
 
     completed = subprocess.run(
-        [sys.executable, "-m", "supergene", "epub-to-md", str(epub_path), str(output_dir)],
+        [
+            sys.executable,
+            "-m",
+            "supergene",
+            "epub-to-md",
+            "--no-overwrite",
+            str(epub_path),
+            str(output_dir),
+        ],
         check=False,
         text=True,
         capture_output=True,

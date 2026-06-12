@@ -50,8 +50,14 @@ def test_find_table_candidates_detects_stat_blocks_and_entity_lines(tmp_path: Pa
     assert "<table>" in candidates[0].proposed_html
     assert "<th>Field</th>" in candidates[0].proposed_html
     assert "Geno points gained" in candidates[0].proposed_html
+    assert "<td>Not evolved</td>" in candidates[0].proposed_html
+    assert "<td>100 geno points</td>" in candidates[0].proposed_html
+    assert "<td>none</td>" in candidates[0].proposed_html
+    assert "Not evolved.</td>" not in candidates[0].proposed_html
     assert candidates[1].original_text.startswith("Sacred-Blood Iron Bug King")
     assert "Iron Bug King" in candidates[1].proposed_html
+    assert "<td>Sacred-Blood Iron Bug King Beast Soul: Armour Type</td>" in candidates[1].proposed_html
+    assert "Armour Type.</td>" not in candidates[1].proposed_html
     assert candidates[2].kind == "voice_of_world"
 
 

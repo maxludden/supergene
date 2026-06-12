@@ -262,9 +262,27 @@ def _stat_block_html(rows: list[tuple[str, str]]) -> str:
     """Render stat block rows as a two-column HTML table."""
     logger.trace("Entering _stat_block_html")
     body = "\n".join(
-        f"    <tr><td>{html.escape(field)}</td><td>{html.escape(value)}</td></tr>" for field, value in rows
+        f"    <tr><td>{html.escape(field)}</td><td>{html.escape(_clean_table_value(value))}</td></tr>"
+        for field, value in rows
     )
     return "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n" + body + "\n  </tbody>\n</table>"
+
+
+def _clean_table_value(value: str) -> str:
+    """Return table cell value text without one terminal period.
+
+    Args:
+        value: Raw value text captured from source Markdown.
+
+    Returns:
+        Value text with surrounding whitespace and one final period removed.
+    """
+    logger.trace("Entering _clean_table_value")
+
+    cleaned = value.strip()
+    if cleaned.endswith("."):
+        return cleaned[:-1]
+    return cleaned
 
 
 def _entity_html(kind: str, text: str) -> str:
@@ -275,7 +293,7 @@ def _entity_html(kind: str, text: str) -> str:
         "<table>\n"
         "  <thead><tr><th>Type</th><th>Description</th></tr></thead>\n"
         "  <tbody>\n"
-        f"    <tr><td>{html.escape(label)}</td><td>{html.escape(text)}</td></tr>\n"
+        f"    <tr><td>{html.escape(label)}</td><td>{html.escape(_clean_table_value(text))}</td></tr>\n"
         "  </tbody>\n"
         "</table>"
     )

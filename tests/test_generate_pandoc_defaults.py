@@ -32,8 +32,10 @@ BookDefaults = generator.BookDefaults
 build_book_inputs = generator.build_book_inputs
 render_chapter = generator.render_chapter
 render_continue_page = generator.render_continue_page
+render_title_page_artwork = generator.render_title_page_artwork
 render_defaults = generator.render_defaults
 render_stylesheet = generator.render_stylesheet
+first_bodymatter_input = generator.first_bodymatter_input
 patch_epub_start_landmark = generator.patch_epub_start_landmark
 VoiceLineMatcher = generator.VoiceLineMatcher
 render_world_voice_card = generator.render_world_voice_card
@@ -59,10 +61,13 @@ The valley was quiet.
 
     assert "# Chapter 1: Supergene {.hidden-title}" in rendered
     assert '<section id="chapter-1" class="chapter element" role="doc-chapter" epub:type="bodymatter chapter">' in rendered
-    assert '<div class="element-number">1</div>' in rendered
+    assert '<p class="element-number">1</p>' in rendered
     assert '<h1 class="title">Supergene</h1>' in rendered
+    assert '<section class="element chapter-text" id="chapter-1-text" markdown="1">' in rendered
     assert '<p class="first2"><span class="first-letter">B</span>y a stony creek, Han Sen waited.</p>' in rendered
     assert "The valley was quiet." in rendered
+    assert "<div" not in rendered
+    assert ":::" not in rendered
     assert '<!-- source: span.dropcap -->' not in rendered
     assert "# Chapter 1 <!-- source: span.hidden-title --> : Supergene" not in rendered
 
@@ -87,11 +92,159 @@ Han Sen looked frustrated."""
 
     assert '<table class="profile-table">' in rendered
     assert '<th scope="row">Han Sen</th>' in rendered
-    assert '<td class="profile-value">Not evolved.</td>' in rendered
-    assert '<th scope="row">Required for evolution</th>' in rendered
-    assert '<td class="profile-value numeric-value">100 geno points.</td>' in rendered
-    assert "Beast souls gained" in rendered
+    assert '<td class="profile-value">Not evolved</td>' in rendered
+    assert '<th colspan="2" style="text-align:center;">Required for evolution</th>' in rendered
+    assert '<td colspan="2" class="profile-value numeric-value" style="text-align:center;">100 geno points</td>' in rendered
+    assert '<th colspan="2" style="text-align:center;">Beast souls gained</th>' in rendered
+    assert '<td colspan="2" class="profile-value" style="text-align:center;">none</td>' in rendered
+    assert '<th scope="row">Required for evolution</th>' not in rendered
+    assert "Not evolved.</td>" not in rendered
     assert "Han Sen looked frustrated." in rendered
+
+
+def test_style_status_profile_tables_splits_mentioned_geno_point_types() -> None:
+    """Mentioned Geno Points Gained values render as grouped detail rows."""
+    body = """Han Sen: Not evolved.
+
+Geno points gained: Ordinary geno points 9, Primitive geno points 5, Mutant geno points 1, Sacred-Blood geno points 0.
+
+Beast souls gained: none."""
+
+    rendered = style_status_profile_tables(body)
+
+    assert '<th colspan="2" style="text-align:center;">Geno Points Gained</th>' in rendered
+    assert '<th>Ordinary</th><td class="profile-value numeric-value">9</td>' in rendered
+    assert '<th>Primitive</th><td class="profile-value numeric-value">5</td>' in rendered
+    assert '<th>Mutant</th><td class="profile-value numeric-value">1</td>' in rendered
+    assert '<th>Sacred-Blood</th><td class="profile-value numeric-value">0</td>' in rendered
+    assert "Ordinary geno points 9, Primitive geno points 5" not in rendered
+
+
+def test_style_status_profile_tables_defaults_missing_geno_point_types_to_zero() -> None:
+    """Bare Geno Points Gained totals render all first-sanctuary point rows."""
+    body = """Han Sen: Not evolved.
+
+Geno points gained: 79 geno points; 8 sacred geno points.
+
+Beast souls gained: none."""
+
+    rendered = style_status_profile_tables(body)
+
+    assert '<tr class="geno-points-gained">' in rendered
+    assert '<th colspan="2" style="text-align:center;">Geno Points Gained</th>' in rendered
+    assert '<th>Primitive</th><td class="profile-value numeric-value">79</td>' in rendered
+    assert '<th>Ordinary</th><td class="profile-value numeric-value">0</td>' in rendered
+    assert '<th>Mutant</th><td class="profile-value numeric-value">0</td>' in rendered
+    assert '<th>Sacred-Blood</th><td class="profile-value numeric-value">8</td>' in rendered
+    assert "79 geno points; 8 sacred geno points" not in rendered
+
+
+def test_style_status_profile_tables_adds_super_geno_points_after_chapter_270() -> None:
+    """Later First Sanctuary profiles include Super in Geno Point groups."""
+    body = """Han Sen: unevolved.
+
+Status: none.
+
+Life span: 200.
+
+Required for evolution: 100 geno points.
+
+Geno points gained: primitive geno points 100, ordinary geno points 100, mutant geno points 84, sacred geno points 61."""
+
+    rendered = style_status_profile_tables(body, include_super_geno_points=True)
+
+    assert '<th>Primitive</th><td class="profile-value numeric-value">100</td>' in rendered
+    assert '<th>Ordinary</th><td class="profile-value numeric-value">100</td>' in rendered
+    assert '<th>Mutant</th><td class="profile-value numeric-value">84</td>' in rendered
+    assert '<th>Sacred-Blood</th><td class="profile-value numeric-value">61</td>' in rendered
+    assert '<th>Super</th><td class="profile-value numeric-value">0</td>' in rendered
+
+
+def test_render_chapter_adds_super_geno_points_for_chapter_271() -> None:
+    """Chapter-aware rendering adds Super to later Geno Point profile rows."""
+    source = """---
+index: 271
+title: "Chapter 271 : Super Gene"
+---
+# Chapter 271 <!-- source: span.hidden-title --> : Super Gene
+
+Han Sen: unevolved.
+
+Status: none.
+
+Geno points gained: primitive geno points 100, ordinary geno points 100, mutant geno points 84, sacred geno points 61."""
+
+    rendered = render_chapter(source, 271, "chapter-271")
+
+    assert '<th>Super</th><td class="profile-value numeric-value">0</td>' in rendered
+
+
+def test_render_chapter_270_does_not_add_super_geno_points() -> None:
+    """Chapter-aware rendering keeps chapter 270 on first-sanctuary point types."""
+    source = """---
+index: 270
+title: "Chapter 270 : Before Super Gene"
+---
+# Chapter 270 <!-- source: span.hidden-title --> : Before Super Gene
+
+Han Sen: unevolved.
+
+Status: none.
+
+Geno points gained: primitive geno points 100, ordinary geno points 100, mutant geno points 84, sacred geno points 61."""
+
+    rendered = render_chapter(source, 270, "chapter-270")
+
+    assert '<th>Sacred-Blood</th><td class="profile-value numeric-value">61</td>' in rendered
+    assert "<th>Super</th>" not in rendered
+
+
+def test_style_status_profile_tables_splits_owned_geno_points() -> None:
+    """Geno Points Owned values render as grouped detail rows."""
+    body = """Han Sen: super body: king spirit.
+
+Status: evolver.
+
+Life span: three hundred.
+
+Requirement for next evolution: one hundred geno points.
+
+Geno points owned: ordinary geno points 100, primitive geno points 100, mutant geno points 43, sacred geno points 28."""
+
+    rendered = style_status_profile_tables(body)
+
+    assert '<tr class="geno-points-owned">' in rendered
+    assert '<th colspan="2" style="text-align:center;">Geno Points Owned</th>' in rendered
+    assert '<th>Primitive</th><td class="profile-value numeric-value">100</td>' in rendered
+    assert '<th>Ordinary</th><td class="profile-value numeric-value">100</td>' in rendered
+    assert '<th>Mutant</th><td class="profile-value numeric-value">43</td>' in rendered
+    assert '<th>Sacred-Blood</th><td class="profile-value numeric-value">28</td>' in rendered
+    assert "Geno points owned: ordinary geno points 100" not in rendered
+
+
+def test_style_status_profile_tables_merges_split_profile_and_markdown_table_rows() -> None:
+    """Split profile labels and Markdown table rows render as one profile table."""
+    body = """Han Sen:
+Super body — king spirit.
+
+| Status | evolver |
+| Life span | 300 |
+
+Requirement for next revolution: 100 geno points.
+Geno points gained: 0."""
+
+    rendered = style_status_profile_tables(body)
+
+    assert rendered.startswith('<section class="profile-table-wrap"')
+    assert rendered.count('<table class="profile-table">') == 1
+    assert '<th scope="row">Han Sen</th><td class="profile-value">Super body — king spirit</td>' in rendered
+    assert '<th scope="row">Status</th><td class="profile-value">evolver</td>' in rendered
+    assert '<th scope="row">Life span</th><td class="profile-value numeric-value">300</td>' in rendered
+    assert '<th colspan="2" style="text-align:center;">Required for evolution</th>' in rendered
+    assert '<td colspan="2" class="profile-value numeric-value" style="text-align:center;">100 geno points</td>' in rendered
+    assert '<th scope="row">Geno Points Gained</th><td class="profile-value numeric-value">0</td>' in rendered
+    assert "| Status | evolver |" not in rendered
+    assert "Requirement for next revolution:" not in rendered
 
 
 def test_style_status_profile_tables_preserves_unrelated_key_value_text() -> None:
@@ -171,6 +324,7 @@ def test_render_stylesheet_contains_bookerly_and_chapter_title_classes() -> None
     assert ".series-name,\n.book-subtitle,\n.book-author,\n.series-book,\n.current-series-book {" in stylesheet
     assert ".profile-table" in stylesheet
     assert ".profile-table th" in stylesheet
+    assert ".profile-table th {\n  background-color: #fff;\n  color: #000;" in stylesheet
     assert ".profile-table .numeric-value" in stylesheet
     assert "text-align: right;" in stylesheet
     assert "overflow-wrap: normal;" in stylesheet
@@ -265,17 +419,22 @@ By a stony creek, Han Sen waited.
         encoding="utf-8",
     )
     book = BookDefaults(1, "First God's Sanctuary", 1, 1, "first-gods-sanctuary")
+    stale_title_page = book_inputs_root / "book-01-first-gods-sanctuary" / "0002-title-page.md"
+    stale_title_page.parent.mkdir(parents=True)
+    stale_title_page.write_text("stale", encoding="utf-8")
 
     generated_files = build_book_inputs(book, (book, BOOKS[1]), [chapter_path], book_inputs_root)
 
     assert [path.name for path in generated_files] == [
         "0001-also-in-series.md",
-        "0002-title-page.md",
-        "0003-copyright.md",
-        "0004-blank-before-chapter.md",
-        "0005-001-chapter-1-supergene.md",
+        "0002-title-page-artwork.md",
+        "0003-title-page.md",
+        "0004-copyright.md",
+        "0005-blank-before-chapter.md",
+        "0006-001-chapter-1-supergene.md",
         "9999-continue.md",
     ]
+    assert not stale_title_page.exists()
     assert generated_files[0].read_text(encoding="utf-8").count("Super Gene:") == 2
     assert '<section id="also-in-series-page" class="frontmatter also-in-series"' in generated_files[
         0
@@ -289,22 +448,26 @@ By a stony creek, Han Sen waited.
     assert "# Also in Series {.frontmatter-title .unlisted}" not in generated_files[0].read_text(
         encoding="utf-8"
     )
-    title_page = generated_files[1].read_text(encoding="utf-8")
+    artwork_page = generated_files[1].read_text(encoding="utf-8")
+    assert "# Title Page Artwork {.hidden-title .unlisted}" in artwork_page
+    assert '<section class="frontmatter title-page-artwork" epub:type="frontmatter">' in artwork_page
+    assert 'src="book-01-first-gods-sanctuary-title-page-artwork.png"' in artwork_page
+    title_page = generated_files[2].read_text(encoding="utf-8")
     assert "# Title Page {.hidden-title .unlisted}" in title_page
     assert '<p class="series-name">Super Gene</p>' in title_page
     assert '<h1 class="book-title">First God&#x27;s Sanctuary</h1>' in title_page
     assert "<h1 class=\"book-title\">Super Gene:" not in title_page
     assert '<p class="book-author">Twelve-Winged Dark Seraphim</p>' in title_page
-    assert '<div class="producer-credit">' in title_page
+    assert '<section class="producer-credit">' in title_page
     assert "Produced By" in title_page
     assert "Max Ludden" in title_page
-    copyright_page = generated_files[2].read_text(encoding="utf-8")
+    copyright_page = generated_files[3].read_text(encoding="utf-8")
     assert "# Copyright {.hidden-title .unlisted}" in copyright_page
     assert "# Copyright {.frontmatter-title .unlisted}" not in copyright_page
     assert "Original text by Twelve-Winged Dark Seraphim." in copyright_page
     assert "Dark Burning Angel" not in copyright_page
-    assert "blank-page" in generated_files[3].read_text(encoding="utf-8")
-    assert '<div class="element-number">1</div>' in generated_files[4].read_text(encoding="utf-8")
+    assert "blank-page" in generated_files[4].read_text(encoding="utf-8")
+    assert '<p class="element-number">1</p>' in generated_files[5].read_text(encoding="utf-8")
 
 
 def test_render_defaults_uses_generated_inputs_and_epub_landmark_metadata(tmp_path: Path) -> None:
@@ -323,9 +486,21 @@ def test_render_defaults_uses_generated_inputs_and_epub_landmark_metadata(tmp_pa
     assert "0005-001-chapter-1-supergene.md" in defaults
     assert "epub-fonts:" in defaults
     assert "${.}/../assets/fonts/Bookerly.ttf" in defaults
+    assert "${.}/../../../assets/titlepage-artwork" in defaults
     assert "${.}/../chapters/" not in defaults
     assert "    - Twelve-Winged Dark Seraphim" in defaults
     assert "Dark Burning Angel" not in defaults
+
+
+def test_first_bodymatter_input_accepts_four_digit_chapter_prefixes(tmp_path: Path) -> None:
+    """The first bodymatter file can point at later books with four-digit chapters."""
+    generated_files = [
+        tmp_path / "book-inputs" / "book-10-the-thirty-three-skies" / "0001-also-in-series.md",
+        tmp_path / "book-inputs" / "book-10-the-thirty-three-skies" / "0002-title-page-artwork.md",
+        tmp_path / "book-inputs" / "book-10-the-thirty-three-skies" / "0006-3218-chapter-3217-the-third-sky.md",
+    ]
+
+    assert first_bodymatter_input(generated_files).name == "0006-3218-chapter-3217-the-third-sky.md"
 
 
 def test_patch_epub_start_landmark_adds_nav_and_guide_entries(tmp_path: Path) -> None:
