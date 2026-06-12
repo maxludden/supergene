@@ -1,0 +1,109 @@
+# Chapter 1642: - Inexcusable {.hidden-title}
+
+<section id="chapter-1642" class="chapter element" role="doc-chapter" epub:type="bodymatter chapter">
+<div class="heading1" id="chapter-1642-heading">
+<div class="heading-contents1">
+<div class="element">
+<div class="element-number-block">
+<div class="element-number">1642</div>
+</div>
+<div class="element title-block">
+<div class="title-subtitle-block">
+<h1 class="title">- Inexcusable</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+::: {.element .chapter-text #chapter-1642-text}
+<p class="first2"><span class="first-letter">A</span>fter Bao’er sucked up all the black and purple smoke, she grabbed Little-flower and hit the wall behind them. However, when they broke through the wall, there was another invisible wall blocking them, and Bao’er and Little-flower bounced back again.</p>
+
+Bao’er’s eyes spun, and she stomped on the ground, kicking a large hole in the floor. Suddenly, the supermarket on the first floor was visible. However, they didn’t fall through the hole in the floor as there seemed to be an invisible screen holding Bao’er and Little-flower back.
+
+There were people walking down there in the supermarket, and nobody noticed the large hole above them. They were still walking and buying stuff as nobody noticed what was happening.
+
+**“As I’ve told you, it’s useless. You can’t get out of my Sen Luo illusion.”** The woman looked at Bao’er with interest. **“You’re indeed a fascinating pet, but sadly, I don’t have time now. If Han Sen comes back, things will get more complicated. So back off. Otherwise, I’ll kill you know. You’re really cute, and it’ll be a shame to kill you now. Even if I’m gonna kill you, it should be on the dining table.”**
+
+**“Sister, why do you want Little-flower? He doesn’t even have as much flesh as I do. If you want to eat flesh, you can just take me,”** said Bao’er, blinking her eyes.
+
+The woman sneered without saying anything more. Black and purple smoke began to waft from her again, and this time, it didn’t attack Bao’er and Little-flower. Instead, it rolled down her own body.
+
+The smoke quickly covered the lady’s body, then twisted and condensed. Gradually, it formed a heavy purple and black crystal armour, making the woman look like a robot.
+
+Hong!
+
+After donning that black and purple crystal armour, the woman stepped out again. Her body tore apart the space around her, and she ran toward Bao’er and Little Flower.
+
+Bao’er was dazed. She dragged Little-flower backwards, but they couldn’t dodge the woman’s palm. Bao’er saw that the woman’s hand was about to grab Little-flower’s shoulder.
+
+Bao’er grabbed Little-flower abruptly, clenched her fist, and punched the woman’s palm.
+
+Peng!
+
+Bao’er bounced away immediately, and she hit the invisible boundary. There was blood coming out of her mouth.
+
+The woman didn’t give a damn about Bao’er; instead, she reached toward Little-flower again.
+
+Bao’er clenched her teeth and climbed up from the ground. She rushed toward Little-flower again and defended against the woman’s palm with the gourd.
+
+**“I’ll kill you if you want to die!”** The woman was kind of infuriated. Her hand that was covered by her purple and black crystal armour clenched into a fist, and she hit the gourd.
+
+Peng!
+
+Bao’er bounced away and hit the boundary again. There was still blood coming out of her mouth, but with the gourd as a buffer, she wasn’t injured like last time. Bao’er climbed up quickly again, and she stood in front of Little-flower, glaring at the woman.
+
+The woman didn’t hesitate at all. She kept punching, and Bao’er kept using her gourd to ward off the attacks. Her small body kept bouncing away, yet every time, she rushed back.
+
+Kacha!
+
+After being hit several times, cracks appeared on Bao’er’s gourd.
+
+Bao’er clenched her teeth and went back to Little-flower, and facing the woman’s fist, she grabbed her gourd and rushed toward. Then the gourd was smashed.
+
+Bao’er spewed blood out everywhere, and her face turned pale immediately. The smashing of the gourd seemed to be a huge blow to her.
+
+She climbed up from the ground again, and there was blood everywhere on her body, and she couldn’t even walk straight anymore. However, she still went back to Little-flower and opened her arms, standing in front of her little brother.
+
+**“Impressive. A demigod pet can take so many of my punches. However, this is your last chance, because I’ll kill you this time.”** The woman raised her fist, and there was still smoke all around the black and purple armour. It looked like the hand of a devil, emanating terrifying force.
+
+Bao’er stared at the woman’s fist and said coldly, **“He’s my father’s son, and he’s my brother. Nobody can harm him in front of me.”**
+
+**“Really?”** The woman sneered, and the terrifying fist tore the space apart. It hit Bao’er, and the force seemed to be able to destroy the entire world.
+
+Bao’er was waving her fist, and she rushed toward the woman’s attack again.
+
+Peng!
+
+Bao’er flew out like a star again, and her body hit the invisible boundary. There was the sound of bone cracking, and the blood in her mouth opened like a flower, and her body fell on the ground.
+
+Bao’er tried to stand up again, and after struggling several times, she wasn’t able to do so. One of her arms had been broken and twisted into a weird shape. She couldn’t use her power.
+
+The woman looked at Bao’er who was half dead already. She didn’t want to waste any time. She reached toward Little-flower beside her.
+
+**“I’ve told you. Don’t touch Little-flower.”** A sound came from beside her, and it was Bao’er.
+
+The woman turned around and saw Bao’er kneeling on the ground, struggling to hold herself there. She was trying to stand up, but she just couldn’t do it.
+
+**“Then come and stop me,”** said the woman disdainfully. She didn’t give a damn about Bao’er, and she tried to grab Little-flower.
+
+Little-flower looked at the shadow of the hand that was reaching toward his head, cloaked with that black and purple armour that looked like a devil. He then cried, and there were tears dropping from his eyes.
+
+Hong!
+
+The woman had almost grabbed Little-flower when a terrifying force rose beside her. She suddenly felt that she was in extreme danger. She reacted quickly and backed off a little bit.
+
+She looked around, and she saw Bao’er standing up from the ground. However, the space around her was already twisted, so the woman couldn’t see her body straight.
+
+**“Inexcusable— Inexcusable— You made Little-flower cry— Inexcusable—”** Bao’er raised her head and glared at the woman. Her eyes were gleaming with terrifying light as if she were a ghost from hell.
+
+The woman was intimidated. She couldn’t help taking some steps back, and then she realised what she was doing. She said to herself with contempt, **“It’s just a demigod-level pet. I was actually intimidated by that. I’ve been comfortable for too long.”**
+
+She turned to Bao’er. **“I thought you were interesting, so I wanted to spare your life so that you could tell Han Sen what happened. Since you really want to die, I’ll satisfy your wish.”**
+
+The woman then condensed the power in her fist, and she threw it toward Bao’er.
+
+**“Only I can bully him, yet you made him cry— You deserve to die—”** Bao’er glared at that woman as if she didn’t see the fist with the terrifying force. She became more and more belligerent, and anyone who saw those ghostly eyes would have been scared.
+:::
+
+</section>

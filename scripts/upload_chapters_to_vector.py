@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+"""Upload converted Markdown chapters to the configured OpenAI vector store."""
+
 
 from __future__ import annotations
 
@@ -50,6 +52,8 @@ progress = Progress(
 
 
 def log_panel_style(level_no: int) -> Style:
+    """Return the Rich panel border style for a Loguru level number."""
+    logger.trace("Entering log_panel_style")
     match level_no:
         case _ if level_no <= 5:
             return Style(color="#999999")
@@ -190,6 +194,7 @@ def upload_files(client: OpenAI, file_paths: Iterable[Path], ) -> list[str]:
 
 def chunked(items: list[str], size: int) -> Iterable[list[str]]:
     """Helper chunking function."""
+    logger.trace("Entering chunked")
     for i in range(0, len(items), size):
         yield items[i : i + size]
 
@@ -291,6 +296,7 @@ def upload(
 
 def main() -> None:
     """Main function to upload chapters to vector storage."""
+    logger.trace("Entering main")
     app()
 
 

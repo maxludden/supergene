@@ -18,6 +18,7 @@ from supergene.voice_review import (
     load_pending_candidates,
     record_decision,
 )
+from loguru import logger
 
 
 class VoiceReviewApp(App[None]):
@@ -99,6 +100,7 @@ class VoiceReviewApp(App[None]):
             seed_path: Seed file to append accepted candidate lines to.
             decisions_path: Optional JSONL file for persisted decisions.
         """
+        logger.trace("Entering __init__")
 
         super().__init__()
         self.review_path = review_path
@@ -109,10 +111,13 @@ class VoiceReviewApp(App[None]):
         self.accepted_count = 0
         self.rejected_count = 0
         self.skipped_count = 0
+        # Store edits separately from immutable candidates so the original
+        # report row stays available for audit/debugging.
         self.edited_text_by_id: dict[str, str] = {}
 
     def compose(self) -> ComposeResult:
         """Create the app layout."""
+        logger.trace("Entering compose")
 
         yield Header(show_clock=True)
         yield Static("", id="summary")
@@ -130,12 +135,14 @@ class VoiceReviewApp(App[None]):
 
     def on_mount(self) -> None:
         """Load candidates and render the first item when the app starts."""
+        logger.trace("Entering on_mount")
 
         self.candidates = load_pending_candidates(self.review_path, self.decisions_path)
         self._render_current()
 
     def action_accept(self) -> None:
         """Accept the current candidate and append it to the seed file."""
+        logger.trace("Entering action_accept")
 
         candidate = self._current_candidate()
         if candidate is None:
@@ -149,6 +156,7 @@ class VoiceReviewApp(App[None]):
 
     def action_edit(self) -> None:
         """Edit the current candidate text before deciding."""
+        logger.trace("Entering action_edit")
 
         candidate = self._current_candidate()
         if candidate is None:
@@ -162,6 +170,7 @@ class VoiceReviewApp(App[None]):
 
     def action_reject(self) -> None:
         """Reject the current candidate."""
+        logger.trace("Entering action_reject")
 
         candidate = self._current_candidate()
         if candidate is None:
@@ -172,6 +181,7 @@ class VoiceReviewApp(App[None]):
 
     def action_skip(self) -> None:
         """Skip the current candidate for this review session."""
+        logger.trace("Entering action_skip")
 
         candidate = self._current_candidate()
         if candidate is None:
@@ -186,6 +196,7 @@ class VoiceReviewApp(App[None]):
         Args:
             event: Textual input submission event.
         """
+        logger.trace("Entering on_input_submitted")
 
         if event.input.id != "editor":
             return
@@ -195,6 +206,8 @@ class VoiceReviewApp(App[None]):
         edited_text = event.value.strip()
         if edited_text:
             self.edited_text_by_id[candidate.candidate_id] = edited_text
+        # Hide the editor immediately after applying text so subsequent keyboard
+        # shortcuts act on the review app instead of the input widget.
         event.input.disabled = True
         event.input.display = False
         self._render_current("Edited candidate text applied.")
@@ -206,6 +219,7 @@ class VoiceReviewApp(App[None]):
             candidate: Candidate being reviewed.
             action: Selected review action.
         """
+        logger.trace("Entering _record")
 
         record_decision(
             self.decisions_path,
@@ -224,12 +238,14 @@ class VoiceReviewApp(App[None]):
         Args:
             message: Status message to display after advancing.
         """
+        logger.trace("Entering _advance")
 
         self.index += 1
         self._render_current(message)
 
     def _current_candidate(self) -> ReviewCandidate | None:
         """Return the candidate currently displayed."""
+        logger.trace("Entering _current_candidate")
 
         if self.index >= len(self.candidates):
             return None
@@ -244,6 +260,7 @@ class VoiceReviewApp(App[None]):
         Returns:
             Edited candidate text when available.
         """
+        logger.trace("Entering _candidate_text")
 
         return self.edited_text_by_id.get(candidate.candidate_id, candidate.raw_text)
 
@@ -253,8 +270,11 @@ class VoiceReviewApp(App[None]):
         Args:
             status: Optional status message for the bottom bar.
         """
+        logger.trace("Entering _render_current")
 
         remaining = max(0, len(self.candidates) - self.index)
+        # Re-render every counter from state instead of incrementally patching
+        # widgets; this keeps skip/accept/reject transitions consistent.
         self.query_one("#summary", Static).update(
             " | ".join(
                 [
@@ -270,6 +290,8 @@ class VoiceReviewApp(App[None]):
 
         candidate = self._current_candidate()
         if candidate is None:
+            # Clear all candidate-specific widgets when the queue is exhausted
+            # so stale scores/context are not left on screen.
             self.query_one("#candidate", Markdown).update(
                 "# Review Complete\n\nNo pending review candidates remain."
             )
@@ -325,5 +347,6 @@ def run_voice_review_tui(
         seed_path: Seed file to append accepted candidates to.
         decisions_path: Optional JSONL file for saved decisions.
     """
+    logger.trace("Entering run_voice_review_tui")
 
     VoiceReviewApp(review_path, seed_path, decisions_path).run()

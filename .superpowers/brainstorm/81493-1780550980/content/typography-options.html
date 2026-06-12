@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Super Gene Cover Typography</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #11141a; color: #eef2f8; font-family: Inter, system-ui, sans-serif; }
+    main { max-width: 1180px; margin: 0 auto; padding: 30px 24px 50px; }
+    h1 { margin: 0; font-family: Georgia, serif; font-size: 32px; font-weight: 500; }
+    .intro { margin: 8px 0 26px; color: #aeb8c8; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+    .option { cursor: pointer; border: 1px solid #394150; background: #1a1f28; padding: 12px; }
+    .option:hover, .option.selected { border-color: #d5b56c; box-shadow: 0 0 0 2px rgba(213,181,108,.25); }
+    .cover { position: relative; overflow: hidden; aspect-ratio: 2 / 3; background: #07162d url("../../../../assets/covers/super-gene/book-02-second-gods-sanctuary.png") center/cover no-repeat; box-shadow: 0 12px 30px #05070b; }
+    .cover::after { content:""; position:absolute; inset:0; background:linear-gradient(to bottom,rgba(2,8,20,.6),transparent 34%,transparent 70%,rgba(2,7,16,.8)); pointer-events:none; }
+    .text { position: absolute; z-index: 1; inset: 0; text-align: center; text-shadow: 0 2px 8px #000, 0 0 18px #06142b; }
+    .series { font-family: Georgia, serif; font-size: 34px; letter-spacing: 3px; text-transform: uppercase; color: #f3e5bb; }
+    .book { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #b9d6ef; }
+    .subtitle { font-family: Georgia, serif; font-size: 17px; letter-spacing: 1px; color: #fff; }
+    .author { font-family: Georgia, serif; font-size: 13px; letter-spacing: 1px; color: #fff; }
+    .producer { font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase; color: #c6d3e3; }
+    .a .series { position:absolute; top:7%; left:0; right:0; }
+    .a .subtitle { position:absolute; top:15%; left:8%; right:8%; }
+    .a .book { position:absolute; top:21%; left:0; right:0; }
+    .a .author { position:absolute; bottom:8%; left:0; right:0; }
+    .a .producer { position:absolute; bottom:4%; left:0; right:0; }
+    .b .book { position:absolute; top:6%; left:0; right:0; }
+    .b .series { position:absolute; top:10%; left:0; right:0; }
+    .b .subtitle { position:absolute; top:20%; left:8%; right:8%; }
+    .b .author { position:absolute; bottom:8%; left:0; right:0; }
+    .b .producer { position:absolute; bottom:4%; left:0; right:0; }
+    .c .subtitle { position:absolute; top:7%; left:8%; right:8%; font-size:21px; }
+    .c .series { position:absolute; top:14%; left:0; right:0; font-size:29px; }
+    .c .book { position:absolute; top:23%; left:0; right:0; }
+    .c .author { position:absolute; bottom:8%; left:0; right:0; }
+    .c .producer { position:absolute; bottom:4%; left:0; right:0; }
+    h2 { margin: 16px 0 5px; font-size: 16px; }
+    p { color: #aeb8c8; font-size: 13px; margin: 0; line-height: 1.45; }
+    .recommend { color: #d5b56c; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+    @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } .option { max-width: 370px; margin: auto; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Choose the series typography hierarchy</h1>
+    <p class="intro">The selected hierarchy will be applied consistently to Books Two through Six.</p>
+    <div class="grid">
+      <article class="option" data-choice="a" onclick="selectOption(this)">
+        <div class="cover a"><div class="text">
+          <div class="series">Super Gene</div><div class="subtitle">Second God's Sanctuary</div><div class="book">Book Two</div>
+          <div class="author">Twelve-Winged Dark Seraphim</div><div class="producer">Produced by Max Ludden</div>
+        </div></div>
+        <h2>Series First</h2><div class="recommend">Recommended</div>
+        <p>Strongest shelf recognition. The individual book title and number remain clearly subordinate.</p>
+      </article>
+      <article class="option" data-choice="b" onclick="selectOption(this)">
+        <div class="cover b"><div class="text">
+          <div class="book">Book Two</div><div class="series">Super Gene</div><div class="subtitle">Second God's Sanctuary</div>
+          <div class="author">Twelve-Winged Dark Seraphim</div><div class="producer">Produced by Max Ludden</div>
+        </div></div>
+        <h2>Number First</h2>
+        <p>Makes reading order immediately visible, while retaining a strong series masthead.</p>
+      </article>
+      <article class="option" data-choice="c" onclick="selectOption(this)">
+        <div class="cover c"><div class="text">
+          <div class="subtitle">Second God's Sanctuary</div><div class="series">Super Gene</div><div class="book">Book Two</div>
+          <div class="author">Twelve-Winged Dark Seraphim</div><div class="producer">Produced by Max Ludden</div>
+        </div></div>
+        <h2>Book Title First</h2>
+        <p>Emphasizes each volume's distinct identity, but weakens instant series recognition.</p>
+      </article>
+    </div>
+  </main>
+  <script>
+    function selectOption(el) {
+      document.querySelectorAll('.option').forEach(x => x.classList.remove('selected'));
+      el.classList.add('selected');
+      fetch('/event', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({type:'click', choice:el.dataset.choice, text:el.querySelector('h2').textContent, timestamp:Date.now()}) });
+    }
+  </script>
+</body>
+</html>

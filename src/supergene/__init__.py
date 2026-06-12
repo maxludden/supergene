@@ -1,3 +1,5 @@
+"""Super Gene conversion, review, and reporting tools."""
+
 from dotenv import load_dotenv
 
 from supergene.converter import (
@@ -14,9 +16,20 @@ from supergene.supabase_store import (
     SupabaseStoreResult,
     store_conversion_in_supabase,
 )
-from supergene.table_candidates import TableCandidate, find_table_candidates, write_table_candidate_report
+from supergene.table_candidates import (
+    TableCandidate,
+    find_table_candidates,
+    write_table_candidate_report
+)
 from supergene.title_quality import TitleSpellingIssue, find_missing_terminal_t_title_issues
+from loguru import logger
 
+# Load environment variables from .env file if present,
+# so they can be used in CLI workflows and tests. Intended to load:
+#   - SUPABASE_URL
+#   - SUPABASE_KEY
+#   - SUPABASE_BUCKET
+#   - OPENAI_API_KEY
 load_dotenv()
 
 __all__ = [

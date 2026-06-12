@@ -6,7 +6,7 @@ source_href: OEBPS/Text/Chapter 1309 - Chapter 1367_split_055.html
 source_id: null
 book_title: Super Gene
 creators:
-  - Twelve Winged Dark Burning Angel
+  - Twelve-Winged Dark Seraphim
 language: en
 asset_root: ../assets
 ---

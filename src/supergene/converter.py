@@ -1,3 +1,5 @@
+"""Convert EPUB files into Markdown chapters with preserved metadata and assets."""
+
 from __future__ import annotations
 
 import json
@@ -5,7 +7,7 @@ import re
 import shutil
 from dataclasses import asdict, dataclass
 from pathlib import Path, PurePosixPath
-from typing import Callable
+from typing import Any, Callable
 from urllib.parse import unquote, urlsplit
 
 import ebooklib
@@ -17,6 +19,15 @@ from markdownify import ATX, markdownify
 
 @dataclass(frozen=True)
 class BookMetadata:
+    """Metadata extracted from an EPUB package.
+
+        Attributes:
+            title: Book title from Dublin Core metadata, or a fallback title.
+            creators: Creator names listed in the EPUB metadata.
+            language: Optional language code from the EPUB metadata.
+            identifiers: Identifier values declared by the EPUB.
+        """
+
     title: str
     creators: list[str]
     language: str | None
@@ -25,6 +36,14 @@ class BookMetadata:
 
 @dataclass(frozen=True)
 class ConversionWarning:
+    """Non-fatal conversion issue captured for later review.
+
+        Attributes:
+            code: Stable warning category.
+            message: Human-readable warning detail.
+            source_href: Optional EPUB href that caused the warning.
+        """
+
     code: str
     message: str
     source_href: str | None = None
@@ -32,6 +51,16 @@ class ConversionWarning:
 
 @dataclass(frozen=True)
 class ChapterResult:
+    """Output details for one converted chapter.
+
+        Attributes:
+            index: One-based chapter index in output order.
+            title: Chapter title used for frontmatter and slugging.
+            depth: Table-of-contents nesting depth.
+            source_href: Original EPUB href for the chapter.
+            output_path: Markdown file written for the chapter.
+        """
+
     index: int
     title: str
     depth: int
@@ -41,6 +70,15 @@ class ChapterResult:
 
 @dataclass(frozen=True)
 class ConversionResult:
+    """Complete result of converting one EPUB.
+
+        Attributes:
+            metadata: EPUB metadata used during conversion.
+            output_dir: Root directory containing the converted book.
+            chapters: Chapter files written during conversion.
+            warnings: Non-fatal conversion warnings.
+        """
+
     metadata: BookMetadata
     output_dir: Path
     chapters: list[ChapterResult]
@@ -49,6 +87,15 @@ class ConversionResult:
 
 @dataclass(frozen=True)
 class ConversionProgress:
+    """Progress event emitted after a chapter is written.
+
+        Attributes:
+            completed: Count of chapters written so far.
+            total: Total conversion entries selected for processing.
+            title: Title of the chapter just written.
+            output_path: Markdown path written for the chapter.
+        """
+
     completed: int
     total: int
     title: str
@@ -57,6 +104,14 @@ class ConversionProgress:
 
 @dataclass(frozen=True)
 class TocEntry:
+    """Chapter-like entry resolved from an EPUB TOC or spine.
+
+        Attributes:
+            title: Display title for the entry.
+            href: EPUB document href, optionally with a fragment.
+            depth: Nesting depth from the TOC walk.
+        """
+
     title: str
     href: str
     depth: int
@@ -72,9 +127,24 @@ def convert_epub(
     overwrite: bool = False,
     progress_callback: ProgressCallback | None = None,
 ) -> ConversionResult:
+    """Convert an EPUB file into Markdown chapter files.
+
+        Args:
+            epub_path: Source EPUB file path.
+            output_dir: Directory where the converted book directory will be created.
+            overwrite: Whether to replace an existing converted book directory.
+            progress_callback: Optional callback invoked after each chapter is written.
+
+        Returns:
+            Metadata, chapter paths, and warnings from the conversion.
+
+        Raises:
+            FileNotFoundError: If the source EPUB does not exist.
+            FileExistsError: If output already exists and overwrite is false.
+        """
     source = Path(epub_path)
     root = Path(output_dir)
-    logger.trace("Starting EPUB conversion: source={} output_dir={} overwrite={}", source, root, overwrite)
+    logger.trace(f"Starting EPUB conversion: source={source} output_dir={root} overwrite={overwrite}")
     if not source.exists():
         raise FileNotFoundError(source)
 
@@ -92,7 +162,10 @@ def convert_epub(
     assets_dir.mkdir(parents=True, exist_ok=True)
 
     warnings: list[ConversionWarning] = []
-    document_items = {
+    # EbookLib exposes documents by internal archive names; normalize those
+    # names once so TOC hrefs, spine entries, and asset links can all compare
+    # against the same key format.
+    document_items: dict[str, Any] = {
         _clean_item_name(item.get_name()): item
         for item in book.get_items_of_type(ebooklib.ITEM_DOCUMENT)
     }
@@ -101,6 +174,9 @@ def convert_epub(
         warnings.append(ConversionWarning("missing_toc", "No table of contents found; using spine order."))
         entries = _spine_entries(book, document_items)
     else:
+        # Some generated EPUBs include a partial TOC but a fuller spine. When
+        # the spine has more chapter-like documents, prefer it to avoid silently
+        # dropping chapters from the Markdown output.
         spine_entries = _spine_entries(book, document_items)
         if len(spine_entries) > len(entries):
             warnings.append(
@@ -111,12 +187,14 @@ def convert_epub(
             )
             entries = spine_entries
 
-    logger.trace("Resolved {} conversion entries for {}", len(entries), source)
+    logger.trace(f"Resolved {len(entries)} conversion entries for {source}")
     copied_assets = _copy_assets(book, assets_dir)
-    logger.trace("Copied {} EPUB assets into {}", len(copied_assets), assets_dir)
+    logger.trace(f"Copied {len(copied_assets)} EPUB assets into {assets_dir}")
     chapters: list[ChapterResult] = []
     used_slugs: dict[str, int] = {}
 
+    # Keep progress based on selected entries rather than written chapters, so
+    # skipped/missing documents still leave an honest denominator in the UI.
     total_entries = len(entries)
     for entry in entries:
         doc_name, anchor = _split_href(entry.href)
@@ -170,11 +248,13 @@ def convert_epub(
     if warnings:
         _write_json(book_dir / "warnings.json", [asdict(warning) for warning in warnings])
 
-    logger.trace("Finished EPUB conversion: chapters={} warnings={} output={}", len(chapters), len(warnings), book_dir)
+    logger.trace(f"Finished EPUB conversion: chapters={len(chapters)} warnings={len(warnings)} output={book_dir}")
     return ConversionResult(metadata, book_dir, chapters, warnings)
 
 
 def _metadata(book: epub.EpubBook) -> BookMetadata:
+    """Extract normalized Dublin Core metadata from an EPUB book."""
+    logger.trace("Entering _metadata")
     title = _first_metadata(book, "title") or "Untitled"
     creators = [value.strip() for value, _attrs in book.get_metadata("DC", "creator") if value and value.strip()]
     language = _first_metadata(book, "language")
@@ -183,6 +263,8 @@ def _metadata(book: epub.EpubBook) -> BookMetadata:
 
 
 def _first_metadata(book: epub.EpubBook, name: str) -> str | None:
+    """Return the first non-empty metadata value for a Dublin Core field."""
+    logger.trace("Entering _first_metadata")
     values = book.get_metadata("DC", name)
     for value, _attrs in values:
         if value and value.strip():
@@ -191,9 +273,16 @@ def _first_metadata(book: epub.EpubBook, name: str) -> str | None:
 
 
 def _toc_entries(book: epub.EpubBook) -> list[TocEntry]:
+    """Flatten the EPUB table of contents into ordered conversion entries."""
+    logger.trace("Entering _toc_entries")
     entries: list[TocEntry] = []
 
     def walk(nodes: object, depth: int) -> None:
+        """Walk nested EPUB TOC nodes and append resolved entries."""
+        logger.trace("Entering walk")
+        # EbookLib represents TOC sections as nested tuples/lists, while leaf
+        # entries expose href/file_name attributes. Handle both shapes in one
+        # recursive walk to preserve reading order and nesting depth.
         if isinstance(nodes, (list, tuple)):
             for node in nodes:
                 if isinstance(node, tuple) and len(node) == 2:
@@ -216,7 +305,9 @@ def _toc_entries(book: epub.EpubBook) -> list[TocEntry]:
     return entries
 
 
-def _spine_entries(book: epub.EpubBook, document_items: dict[str, object]) -> list[TocEntry]:
+def _spine_entries(book: epub.EpubBook, document_items: dict[str, Any]) -> list[TocEntry]:
+    """Build chapter-like entries from the EPUB spine as a TOC fallback."""
+    logger.trace("Entering _spine_entries")
     entries: list[TocEntry] = []
     for item_id, _linear in book.spine:
         item = book.get_item_with_id(item_id)
@@ -225,13 +316,17 @@ def _spine_entries(book: epub.EpubBook, document_items: dict[str, object]) -> li
         name = _clean_item_name(item.get_name())
         if name in document_items and name.lower() not in {"nav.xhtml", "toc.ncx"}:
             title = _document_title(item) or Path(name).stem
+            # The spine also contains non-chapter documents in many EPUBs; the
+            # title check keeps the fallback from emitting nav/about pages.
             if not _looks_like_chapter(title):
                 continue
             entries.append(TocEntry(str(title), name, 0))
     return entries
 
 
-def _document_title(item: object) -> str | None:
+def _document_title(item: Any) -> str | None:
+    """Infer a document title from EPUB metadata or heading content."""
+    logger.trace("Entering _document_title")
     title = getattr(item, "title", None)
     if title:
         return str(title).strip()
@@ -243,10 +338,14 @@ def _document_title(item: object) -> str | None:
 
 
 def _looks_like_chapter(title: str) -> bool:
+    """Return whether text matches the chapter heuristic."""
+    logger.trace("Entering _looks_like_chapter")
     return bool(re.search(r"\bchapter\s+\d+\b", title, re.IGNORECASE))
 
 
 def _copy_assets(book: epub.EpubBook, assets_dir: Path) -> dict[str, str]:
+    """Copy supported EPUB assets into the converted asset directory."""
+    logger.trace("Entering _copy_assets")
     copied: dict[str, str] = {}
     asset_types = {
         ebooklib.ITEM_IMAGE,
@@ -272,6 +371,8 @@ def _chapter_fragment(
     entry: TocEntry,
     warnings: list[ConversionWarning],
 ) -> Tag:
+    """Select the HTML fragment that should become a Markdown chapter."""
+    logger.trace("Entering _chapter_fragment")
     body = soup.body or soup
     if not anchor:
         return body
@@ -283,6 +384,9 @@ def _chapter_fragment(
     if isinstance(target, Tag) and target.name in {"section", "article", "chapter", "div", "body"}:
         return target
 
+    # Anchors often land on headings inside a larger chapter section. Prefer
+    # that enclosing semantic block so the Markdown file contains the full
+    # chapter instead of only the heading node.
     parent = target.find_parent(["section", "article", "div"])
     if isinstance(parent, Tag):
         return parent
@@ -293,6 +397,8 @@ def _chapter_fragment(
     while current is not None:
         next_sibling = current.find_next_sibling()
         wrapper.append(current.extract())
+        # Stop at the next anchored sibling to avoid swallowing the following
+        # chapter when a TOC anchor points into a flat XHTML document.
         if isinstance(next_sibling, Tag) and next_sibling.has_attr("id"):
             break
         current = next_sibling if isinstance(next_sibling, Tag) else None
@@ -300,19 +406,25 @@ def _chapter_fragment(
 
 
 def _rewrite_asset_links(fragment: Tag, doc_name: str, copied_assets: dict[str, str]) -> None:
+    """Rewrite local asset references in a chapter fragment."""
+    logger.trace("Entering _rewrite_asset_links")
     base = PurePosixPath(doc_name).parent
     for tag, attr in [("img", "src"), ("image", "href"), ("a", "href"), ("link", "href"), ("source", "src")]:
         for node in fragment.find_all(tag):
             value = node.get(attr)
-            if not value or _is_external_url(value):
+            if not isinstance(value, str) or _is_external_url(value):
                 continue
             href, suffix = _href_without_fragment(value)
+            # EPUB asset links are relative to the source document. Resolve that
+            # relative path before looking it up in the copied-asset map.
             normalized = _clean_item_name(str((base / href).as_posix()))
             if normalized in copied_assets:
                 node[attr] = copied_assets[normalized] + suffix
 
 
 def _annotate_source_styles(fragment: Tag) -> None:
+    """Preserve source CSS classes as data attributes before Markdown conversion."""
+    logger.trace("Entering _annotate_source_styles")
     soup = fragment if isinstance(fragment, BeautifulSoup) else fragment.find_parent()
     owner = soup if isinstance(soup, BeautifulSoup) else BeautifulSoup("", "html.parser")
     for node in list(fragment.find_all(True)):
@@ -320,6 +432,8 @@ def _annotate_source_styles(fragment: Tag) -> None:
         node_id = node.get("id")
         if not classes and not node_id:
             continue
+        # markdownify discards most class/id information. Insert source comments
+        # so later cleanup can still find where styled EPUB blocks came from.
         parts = [node.name]
         if node_id:
             parts.append(f"#{node_id}")
@@ -329,27 +443,37 @@ def _annotate_source_styles(fragment: Tag) -> None:
 
 
 def _split_href(href: str) -> tuple[str, str | None]:
+    """Split an EPUB href into document path and optional fragment."""
+    logger.trace("Entering _split_href")
     split = urlsplit(href)
     doc_name = _clean_item_name(unquote(split.path))
     return doc_name, unquote(split.fragment) if split.fragment else None
 
 
 def _href_without_fragment(href: str) -> tuple[str, str]:
+    """Remove a URL fragment without normalizing the href body."""
+    logger.trace("Entering _href_without_fragment")
     split = urlsplit(href)
     suffix = f"#{split.fragment}" if split.fragment else ""
     return unquote(split.path), suffix
 
 
 def _clean_item_name(name: str) -> str:
+    """Normalize an EPUB item name to a decoded POSIX-style path."""
+    logger.trace("Entering _clean_item_name")
     return str(PurePosixPath(unquote(name))).lstrip("/")
 
 
 def _is_external_url(value: str) -> bool:
+    """Return whether a link points outside the EPUB package."""
+    logger.trace("Entering _is_external_url")
     scheme = urlsplit(value).scheme
     return bool(scheme and scheme not in {"", "file"})
 
 
 def _first_element_id(fragment: Tag) -> str | None:
+    """Return the first element id found in an HTML fragment."""
+    logger.trace("Entering _first_element_id")
     if fragment.has_attr("id"):
         return str(fragment["id"])
     node = fragment.find(id=True)
@@ -357,6 +481,8 @@ def _first_element_id(fragment: Tag) -> str | None:
 
 
 def _frontmatter(values: dict[str, object]) -> str:
+    """Render a dictionary as Markdown YAML frontmatter."""
+    logger.trace("Entering _frontmatter")
     lines = ["---"]
     for key, value in values.items():
         lines.extend(_yaml_value(key, value))
@@ -365,6 +491,8 @@ def _frontmatter(values: dict[str, object]) -> str:
 
 
 def _yaml_value(key: str, value: object) -> list[str]:
+    """Render one YAML scalar or list field."""
+    logger.trace("Entering _yaml_value")
     if value is None:
         return [f"{key}: null"]
     if isinstance(value, list):
@@ -375,6 +503,8 @@ def _yaml_value(key: str, value: object) -> list[str]:
 
 
 def _yaml_scalar(value: object) -> str:
+    """Render a Python value as a YAML scalar string."""
+    logger.trace("Entering _yaml_scalar")
     text = str(value)
     if not text or text.strip() != text or any(char in text for char in ":#[]{}&*!|>'\"%@`\n"):
         return json.dumps(text)
@@ -382,10 +512,14 @@ def _yaml_scalar(value: object) -> str:
 
 
 def _write_json(path: Path, value: object) -> None:
+    """Write UTF-8 JSON with stable indentation."""
+    logger.trace("Entering _write_json")
     path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
 def _unique_slug(title: str, used: dict[str, int]) -> str:
+    """Create a unique slug for a chapter title."""
+    logger.trace("Entering _unique_slug")
     slug = _slugify(title) or "chapter"
     used[slug] = used.get(slug, 0) + 1
     if used[slug] == 1:
@@ -394,9 +528,13 @@ def _unique_slug(title: str, used: dict[str, int]) -> str:
 
 
 def _slugify(value: str) -> str:
+    """Convert display text into a lowercase URL-style slug."""
+    logger.trace("Entering _slugify")
     value = re.sub(r"[^a-zA-Z0-9]+", "-", value.lower()).strip("-")
     return value[:80].strip("-")
 
 
 def _safe_folder_name(value: str) -> str:
+    """Return a filesystem-safe folder name for a book title."""
+    logger.trace("Entering _safe_folder_name")
     return re.sub(r'[<>:"/\\|?*\x00-\x1f]+', "-", value).strip(" .") or "book"

@@ -25,11 +25,11 @@ def test_super_gene_book_splits_match_the_planned_ranges() -> None:
         (3, "Third God's Sanctuary", 883, 1338),
         (4, "Fourth and Fifth God's Sanctuaries", 1339, 1712),
         (5, "Planet Kate and Narrow Moon", 1713, 2209),
-        (6, "Ice Blue Knights", 2210, 2467),
-        (7, "Fighting God", 2468, 2719),
-        (8, "Empty God's Decision", 2720, 2969),
-        (9, "Breaking Point", 2970, 3217),
-        (10, "The Third Sky", 3218, 3463),
+        (6, "The Extreme King", 2210, 2467),
+        (7, "The Very High and Outer Sky", 2468, 2719),
+        (8, "War Against the Gods", 2720, 2969),
+        (9, "God Spirit Blood-Pulse", 2970, 3217),
+        (10, "The Thirty-Three Skies", 3218, 3463),
     ]
 
 

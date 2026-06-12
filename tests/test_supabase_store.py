@@ -3,6 +3,7 @@ from __future__ import annotations
 import subprocess
 import sys
 from pathlib import Path
+from typing import Any, cast
 
 from supergene import convert_epub, store_conversion_in_supabase
 from supergene.supabase_store import SupabaseStorageConfig
@@ -74,8 +75,8 @@ class FakeStorage:
 
 class FakeSupabaseClient:
     def __init__(self) -> None:
-        self.table_calls: list[dict[str, object]] = []
-        self.uploads: list[dict[str, object]] = []
+        self.table_calls: list[dict[str, Any]] = []
+        self.uploads: list[dict[str, Any]] = []
         self.storage = FakeStorage(self)
 
     def table(self, table: str) -> FakeTableQuery:
@@ -106,11 +107,13 @@ def test_store_conversion_in_supabase_upserts_rows_and_uploads_assets(tmp_path: 
     assert book_call["table"] == "books"
     assert book_call["operation"] == "upsert"
     assert book_call["on_conflict"] == "source_fingerprint"
-    assert book_call["payload"]["title"] == "Fixture Book"  # type: ignore[index]
+    book_payload = cast("dict[str, Any]", book_call["payload"])
+    assert book_payload["title"] == "Fixture Book"
 
     chapter_call = next(call for call in client.table_calls if call["table"] == "chapters")
     chapter_rows = chapter_call["payload"]
     assert isinstance(chapter_rows, list)
+    chapter_rows = cast("list[dict[str, Any]]", chapter_rows)
     assert chapter_rows[0]["book_id"] == "book-123"
     assert chapter_rows[0]["markdown"].startswith("---")
     assert chapter_rows[0]["asset_root"] == "storage://epub-assets/books/book-123/assets"
@@ -118,6 +121,7 @@ def test_store_conversion_in_supabase_upserts_rows_and_uploads_assets(tmp_path: 
     warning_call = next(call for call in client.table_calls if call["table"] == "conversion_warnings")
     warning_rows = warning_call["payload"]
     assert isinstance(warning_rows, list)
+    warning_rows = cast("list[dict[str, Any]]", warning_rows)
     assert warning_rows[0]["code"] == "missing_anchor"
 
     assert client.uploads[0] == {

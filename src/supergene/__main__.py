@@ -1,3 +1,5 @@
+"""Command-line interface for Super Gene conversion and analysis workflows."""
+
 from __future__ import annotations
 
 from pathlib import Path
@@ -7,8 +9,14 @@ from urllib.parse import urlparse
 import typer
 from loguru import logger
 from rich.console import Console
-from rich.progress import BarColumn, Progress, SpinnerColumn, TaskProgressColumn, TextColumn, TimeElapsedColumn
-
+from rich.progress import (
+    BarColumn,
+    Progress,
+    SpinnerColumn,
+    TaskProgressColumn,
+    TextColumn,
+    TimeElapsedColumn,
+)
 from supergene.converter import ConversionProgress, ConversionResult, convert_epub
 from supergene.find_voice_lines import run_voice_line_search
 from supergene.logging import configure_logging
@@ -23,8 +31,14 @@ app = typer.Typer(no_args_is_help=True)
 @app.command("epub-to-md")
 def epub_to_md(
     epub_path: Annotated[Path, typer.Argument(help="EPUB file to convert.")],
-    output_dir: Annotated[Path, typer.Argument(help="Directory where converted Markdown output will be written.")],
-    overwrite: Annotated[bool, typer.Option("--overwrite", help="Replace an existing book output directory.")] = False,
+    output_dir: Annotated[
+        Path,
+        typer.Argument(help="Directory where converted Markdown output will be written."),
+    ],
+    overwrite: Annotated[
+        bool,
+        typer.Option("--overwrite", help="Replace an existing book output directory."),
+    ] = False,
     supabase_url: Annotated[
         str | None,
         typer.Option("--supabase-url", help="Supabase project URL for storing converted output."),
@@ -40,21 +54,35 @@ def epub_to_md(
 ) -> None:
     """Convert an EPUB into chapter Markdown files."""
     configure_logging()
+
+    # Validate that input path is and ePub file
     if not epub_path.is_file() or epub_path.suffix.lower() != ".epub":
         _usage_error("epub_path must be an .epub file, not a directory or project folder")
+
+    # Validate that either all or none of the Supabase storage options are provided,
+    # and that the URL looks like a Supabase API URL if provided. We don't want to
+    # start the conversion and then fail when trying to store the result due to a
+    # simple CLI mistake.
     supplied_supabase_args = [supabase_url, supabase_key, supabase_bucket]
     if any(supplied_supabase_args) and not all(supplied_supabase_args):
-        _usage_error("--supabase-url, --supabase-key, and --supabase-bucket must be provided together")
+        _usage_error(
+            "--supabase-url, "
+            "--supabase-key, and --supabase-bucket must be provided together"
+        )
     if supabase_url and not _is_supabase_api_url(supabase_url):
+        # The CLI writes through the Supabase REST API, not the direct Postgres
+        # connection string shown elsewhere in the dashboard.
         _usage_error(
             "--supabase-url must be the HTTPS Supabase API URL, "
             "for example https://PROJECT_REF.supabase.co; do not use a postgresql:// database URL"
         )
     try:
-        logger.info("Converting {} to {}", epub_path, output_dir)
+
+        # Starting conversion
+        logger.info(f"Converting {epub_path} to {output_dir}")
         result = _convert_with_progress(epub_path, output_dir, overwrite=overwrite)
         if supabase_url and supabase_key and supabase_bucket:
-            logger.info("Storing converted book in Supabase bucket {}", supabase_bucket)
+            logger.info(f"Storing converted book in Supabase bucket {supabase_bucket}")
             store_result = store_conversion_in_supabase(
                 result,
                 SupabaseStorageConfig(bucket=supabase_bucket),
@@ -62,17 +90,15 @@ def epub_to_md(
                 supabase_key=supabase_key,
             )
             logger.info(
-                "Stored book {} in Supabase ({} chapters, {} assets)",
-                store_result.book_id,
-                store_result.chapter_count,
-                len(store_result.uploaded_assets),
+                f"Stored book {store_result.book_id} in Supabase "
+                f"({store_result.chapter_count} chapters, {len(store_result.uploaded_assets)} assets)"
             )
     except Exception as exc:
-        logger.error("{}", exc)
+        logger.error(f"{exc}")
         raise typer.Exit(1) from exc
-    logger.info("Wrote {} chapters to {}", len(result.chapters), result.output_dir)
+    logger.info(f"Wrote {len(result.chapters)} chapters to {result.output_dir}")
     for warning in result.warnings:
-        logger.warning("warning[{}]: {}", warning.code, warning.message)
+        logger.warning(f"warning[{warning.code}]: {warning.message}")
 
 
 @app.command("table-report")
@@ -87,10 +113,10 @@ def table_report(
     try:
         candidates = write_table_candidate_report(chapters_dir, output_path)
     except Exception as exc:
-        logger.error("{}", exc)
+        logger.error(f"{exc}")
         raise typer.Exit(1) from exc
     typer.echo(f"Wrote {len(candidates)} table candidates to {output_path}", err=True)
-    logger.info("Wrote {} table candidates to {}", len(candidates), output_path)
+    logger.info(f"Wrote {len(candidates)} table candidates to {output_path}")
 
 
 @app.command("voice-lines")
@@ -122,14 +148,12 @@ def voice_lines(
             review_threshold=review_threshold,
         )
     except Exception as exc:
-        logger.error("{}", exc)
+        logger.error(f"{exc}")
         raise typer.Exit(1) from exc
     logger.info(
-        "Wrote voice line report to {} ({} likely, {} review-needed, {} total candidates)",
-        output_dir,
-        summary.likely_count,
-        summary.review_count,
-        summary.total_candidates,
+        f"Wrote voice line report to {output_dir} "
+        f"({summary.likely_count} likely, {summary.review_count} review-needed, "
+        f"{summary.total_candidates} total candidates)"
     )
     typer.echo(
         (
@@ -162,26 +186,36 @@ def review_voice_lines(
 
         run_voice_review_tui(review_path, seed_path, resolved_decisions_path)
     except Exception as exc:
-        logger.error("{}", exc)
+        logger.error(f"{exc}")
         raise typer.Exit(1) from exc
 
 
 def main() -> None:
+    """Run the command-line entrypoint."""
+    logger.trace("Entering main")
     app()
 
 
 def _is_supabase_api_url(value: str) -> bool:
+    """Return whether a value is a Supabase project API URL."""
+    logger.trace("Entering _is_supabase_api_url")
     parsed = urlparse(value)
     return parsed.scheme == "https" and (parsed.hostname or "").endswith(".supabase.co")
 
 
 def _usage_error(message: str) -> None:
+    """Print a CLI usage error and exit with Typer's usage status."""
+    logger.trace("Entering _usage_error")
     typer.echo(message, err=True)
     raise typer.Exit(2)
 
 
 def _convert_with_progress(epub_path: Path, output_dir: Path, *, overwrite: bool) -> ConversionResult:
+    """Convert an EPUB while rendering Rich progress to stderr."""
+    logger.trace("Entering _convert_with_progress")
     console = Console(stderr=True)
+    # Keep progress on stderr so stdout remains available for command output or
+    # shell piping in future commands.
     with Progress(
         SpinnerColumn(),
         TextColumn("[progress.description]{task.description}"),
@@ -196,7 +230,14 @@ def _convert_with_progress(epub_path: Path, output_dir: Path, *, overwrite: bool
         task_id = progress.add_task("Writing chapters", total=None)
 
         def update(event: ConversionProgress) -> None:
-            progress.update(task_id, total=event.total, completed=event.completed, description=f"Writing {event.title}")
+            """Update the Rich progress bar from a conversion event."""
+            logger.trace("Entering update")
+            progress.update(
+                task_id,
+                total=event.total,
+                completed=event.completed,
+                description=f"Writing {event.title}",
+            )
 
         return convert_epub(epub_path, output_dir, overwrite=overwrite, progress_callback=update)
 

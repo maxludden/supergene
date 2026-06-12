@@ -1,9 +1,64 @@
+@font-face {
+  font-family: "Bookerly";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Bookerly.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Bookerly";
+  font-style: italic;
+  font-weight: normal;
+  src: url("../fonts/Bookerly Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Bookerly";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/Bookerly Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Bookerly";
+  font-style: italic;
+  font-weight: bold;
+  src: url("../fonts/Bookerly Bold Italic.ttf") format("truetype");
+}
+
+body,
+.calibre {
+  display: block;
+  font-family: "Bookerly", Georgia, serif;
+  font-size: 1em;
+  line-height: 1.35;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0 5pt;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+p {
+  margin: 0;
+}
+
+p::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .calibre4 {
   font-weight: bold;
 }
+
 .calibre5 {
   font-style: italic;
 }
+
 .calibre6 {
   display: block;
   font-size: 1.41667em;
@@ -12,6 +67,7 @@
   text-align: center;
   margin: 10% 0;
 }
+
 .calibre8 {
   border-collapse: collapse;
   border-spacing: 2px;
@@ -22,14 +78,17 @@
   margin: 0 auto;
   border: black solid 1px;
 }
+
 .calibre9 {
   display: table-row-group;
   vertical-align: middle;
 }
+
 .calibre10 {
   display: table-row;
   vertical-align: inherit;
 }
+
 .calibre11 {
   display: table-cell;
   text-align: inherit;
@@ -37,26 +96,270 @@
   padding: 1px;
   border: black solid 1px;
 }
-p::after {
-  content: "";
-  display: table;
-  clear: both;
-}
 
-.dropcap {
-  float: left;
-  font-size: 3em;
-  line-height: 0.2;
-  font-family: 'Georgia', serif;
-  margin: 0.01em 0.0em 0.1em 0;
-  text-transform: uppercase;
-  font-weight: bold;
-  height: 1em;
-  display: flex;
-  justify-content: center;
-}
-
-.hidden-title {
+h1.hidden-title {
   display: none;
   line-height: 1.2;
+}
+
+.chapter {
+  break-before: left;
+  page-break-before: left;
+  page-break-inside: avoid;
+}
+
+.element {
+  display: block;
+}
+
+.heading1 {
+  display: block;
+  margin: 0 6% 2em 6%;
+  min-height: 12em;
+  text-align: center;
+}
+
+.heading-contents1 {
+  display: block;
+  padding-top: 5em;
+}
+
+.element-number {
+  display: block;
+  font-size: 0.91667em;
+  font-weight: normal;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.element-number-block {
+  display: block;
+  min-height: 1.5em;
+}
+
+.title {
+  display: block;
+  font-size: 1em;
+  font-weight: normal;
+  letter-spacing: 0.15em;
+  page-break-inside: avoid;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-hyphens: none;
+  hyphens: none;
+  overflow-wrap: normal;
+  word-break: normal;
+  margin: 0;
+}
+
+.title-block {
+  display: block;
+  font-size: 0.91667em;
+  padding-top: 0;
+}
+
+.title-subtitle-block {
+  display: block;
+  padding-top: 0;
+}
+
+.chapter-text {
+  display: block;
+}
+
+.chapter-text p {
+  text-align: justify;
+  text-indent: 1.5em;
+  margin: 0;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.chapter-text .first2 {
+  text-align: justify;
+  text-indent: 0;
+}
+
+.profile-table-wrap {
+  margin: 1em 6%;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.profile-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin: 0 auto;
+  page-break-inside: avoid;
+}
+
+.profile-table th,
+.profile-table td {
+  border: 1px solid #7a7a7a;
+  padding: 0.3em 0.5em;
+  vertical-align: top;
+  text-indent: 0;
+  -webkit-hyphens: none;
+  hyphens: none;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.profile-table th {
+  font-weight: bold;
+  text-align: left;
+  width: 42%;
+}
+
+.profile-table .profile-value {
+  text-align: left;
+}
+
+.profile-table .numeric-value {
+  text-align: right;
+}
+
+.world-voice-card {
+  border: 1px solid #7a7a7a;
+  background-color: #f4f4f4;
+  margin: 1em 8%;
+  padding: 0.75em 1em;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  text-align: center;
+}
+
+.world-voice-card,
+.world-voice,
+.world-voice em,
+.world-voice-inline {
+  -webkit-hyphens: none;
+  hyphens: none;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.world-voice {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.8em;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  text-indent: 0;
+  margin: 0;
+}
+
+.chapter-text .world-voice,
+.chapter-text .world-voice em {
+  text-align: center;
+  text-indent: 0;
+}
+
+.world-voice em,
+.world-voice-inline {
+  display: block;
+  font-style: normal;
+  font-weight: normal;
+  padding: 0;
+  text-indent: 0;
+}
+
+.world-voice-inline {
+  display: inline;
+  text-indent: 0;
+}
+
+.first-letter,
+.dropcap {
+  float: left;
+  font-family: "Bookerly", Georgia, serif;
+  font-size: 325%;
+  line-height: 0.85;
+  margin: -0.04em 0.05em -0.1em 0;
+  text-transform: uppercase;
+}
+
+.frontmatter,
+.backmatter {
+  break-before: page;
+  page-break-before: always;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  text-align: center;
+  margin: 20% 8% 0 8%;
+}
+
+.frontmatter-heading,
+.book-title {
+  font-size: 1.2em;
+  font-weight: normal;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 0 2em 0;
+  page-break-after: avoid;
+  break-after: avoid;
+  -webkit-hyphens: none;
+  hyphens: none;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.series-name,
+.book-subtitle,
+.book-author,
+.series-book,
+.current-series-book {
+  display: block;
+  text-align: center;
+  margin: 0.5em 0;
+  -webkit-hyphens: none;
+  hyphens: none;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.current-series-book {
+  font-weight: bold;
+}
+
+.producer-credit {
+  margin-top: 18em;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.producer-credit p {
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.also-in-series {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.also-in-series ol {
+  page-break-before: avoid;
+  break-before: avoid;
+  margin-top: 0;
+}
+
+.copyright-page p,
+.continue-page p {
+  text-align: center;
+  text-indent: 0;
+}
+
+.blank-page {
+  break-before: page;
+  break-after: page;
+  page-break-before: always;
+  page-break-after: always;
+  min-height: 95vh;
 }

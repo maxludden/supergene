@@ -34,3 +34,13 @@ dev = [
 [build-system]
 requires = ["uv_build>=0.11.10,<0.12.0"]
 build-backend = "uv_build"
+
+[tool.pylint."MESSAGES CONTROL"]
+disable = [
+    "W0603" #       global-statement
+]
+
+[tool.ruff]
+ignore = [
+    "F401", # module-imported-but-unused
+]

@@ -92,6 +92,8 @@ VOICE_KEYWORDS = [
     "life span",
 ]
 
+# These markers define the high-recall prefilter. They are intentionally broad
+# because the later hybrid scorer is responsible for demoting prose/dialogue.
 STRONG_MARKERS = [
     "beast soul",
     "geno point",
@@ -137,7 +139,7 @@ CATEGORY_RULES: list[tuple[str, list[str]]] = [
 
 @dataclass
 class Candidate:
-    """A chandidate line for the Voice of the World."""
+    """A candidate line for the Voice of the World."""
     chapter_file: str
     chapter_index: int | None
     title: str | None
@@ -166,6 +168,7 @@ class VoiceLineSearchSummary:
 
 def normalize_text(text: str) -> str:
     """Normalize text for matching while preserving meaning."""
+    logger.trace("Entering normalize_text")
     replacements = {
         "“": '"',
         "”": '"',
@@ -187,6 +190,7 @@ def normalize_text(text: str) -> str:
 
 def clean_display_text(text: str) -> str:
     """Clean markdown wrappers but keep readable original casing."""
+    logger.trace("Entering clean_display_text")
     text = text.strip()
     text = re.sub(r"^\s*[-*>]+\s*", "", text)
     text = text.strip("*_` ")
@@ -198,6 +202,7 @@ def clean_display_text(text: str) -> str:
 
 def extract_frontmatter(lines: list[str]) -> tuple[int | None, str | None]:
     """Pull index/title from simple YAML frontmatter when present."""
+    logger.trace("Entering extract_frontmatter")
     if not lines or lines[0].strip() != "---":
         return None, None
 
@@ -226,6 +231,7 @@ def split_possible_voice_segments(line: str) -> list[str]:
     Voice lines are often wrapped in bold markdown quotes, but sometimes
     appear as plain text or malformed quoted snippets.
     """
+    logger.trace("Entering split_possible_voice_segments")
     original = line.strip()
     if not original:
         return []
@@ -252,7 +258,8 @@ def split_possible_voice_segments(line: str) -> list[str]:
                 unique_quoted_segments.append(cleaned)
         return unique_quoted_segments
 
-    # Add whole line as fallback if it contains likely keywords.
+    # Add the whole line as a fallback for system notices that are not wrapped
+    # in quotation marks by the source converter.
     normalized = normalize_text(original)
     if contains_any_keyword(normalized, VOICE_KEYWORDS):
         segments.append(original)
@@ -285,18 +292,22 @@ def split_possible_voice_segments(line: str) -> list[str]:
 
 def contains_any_keyword(normalized_text: str, keywords: Iterable[str]) -> bool:
     """Find keywords in the normalized text."""
+    logger.trace("Entering contains_any_keyword")
     return any(keyword in normalized_text for keyword in keywords)
 
 
 def keyword_score(normalized_text: str) -> float:
     """Rule score from 0 to 1 based on Voice-like terms."""
+    logger.trace("Entering keyword_score")
     score = 0.0
 
     for marker in STRONG_MARKERS:
         if marker in normalized_text:
             score += 0.10
 
-    # Strong structural combos.
+    # Strong structural combos are much more reliable than isolated keywords:
+    # narration can mention "killed", but system notices combine kill/eat verbs
+    # with beast souls, geno points, or evolution status.
     if "killed" in normalized_text and "beast soul" in normalized_text:
         score += 0.25
     if "hunted" in normalized_text and "beast soul" in normalized_text:
@@ -312,14 +323,16 @@ def keyword_score(normalized_text: str) -> float:
     if "gene" in normalized_text and "+1" in normalized_text:
         score += 0.20
 
-    # System messages are usually compact.
+    # System messages are usually compact; very long matches tend to be normal
+    # prose that merely contains a few Voice-like terms.
     word_count = len(normalized_text.split())
     if 3 <= word_count <= 45:
         score += 0.10
     elif word_count > 80:
         score -= 0.20
 
-    # Penalize normal dialogue/narration indicators.
+    # Penalize normal dialogue/narration indicators without discarding the row,
+    # so reviewers can still see borderline cases in the review bucket.
     padded = f" {normalized_text} "
     if any(marker in padded for marker in DIALOGUE_MARKERS):
         score -= 0.20
@@ -328,7 +341,8 @@ def keyword_score(normalized_text: str) -> float:
 
 
 def categorize(normalized_text: str) -> str:
-    """Catagorize types of lines spoken by the Voice of the World."""
+    """Categorize a normalized Voice of the World candidate line."""
+    logger.trace("Entering categorize")
     matched = []
     for category, terms in CATEGORY_RULES:
         if any(term in normalized_text for term in terms):
@@ -337,7 +351,8 @@ def categorize(normalized_text: str) -> str:
     if not matched:
         return "unknown_voice"
 
-    # Prefer more specific categories first.
+    # Prefer more specific categories first when several rule groups match the
+    # same short system notice.
     priority = [
         "evolution_status",
         "life_essence",
@@ -360,6 +375,7 @@ def categorize(normalized_text: str) -> str:
 
 def load_seed_lines(seed_path: Path) -> list[str]:
     """Load and clean example Voice lines."""
+    logger.trace("Entering load_seed_lines")
     raw = seed_path.read_text(encoding="utf-8", errors="replace")
     seeds: list[str] = []
 
@@ -390,10 +406,14 @@ def load_seed_lines(seed_path: Path) -> list[str]:
 
 
 def iter_markdown_files(chapter_dir: Path) -> list[Path]:
+    """Return Markdown chapter files below a directory in stable order."""
+    logger.trace("Entering iter_markdown_files")
     return sorted(chapter_dir.rglob("*.md"))
 
 
 def extract_candidates_from_file(path: Path) -> list[Candidate]:
+    """Extract Voice of the World candidate lines from one Markdown file."""
+    logger.trace("Entering extract_candidates_from_file")
     text = path.read_text(encoding="utf-8", errors="replace")
     lines = text.splitlines()
     chapter_index, title = extract_frontmatter(lines)
@@ -442,6 +462,8 @@ def score_candidates(
     likely_threshold: float,
     review_threshold: float,
 ) -> list[Candidate]:
+    """Score candidate lines against seed examples and assign decisions."""
+    logger.trace("Entering score_candidates")
     if not seeds:
         raise ValueError("No seed examples found.")
 
@@ -453,6 +475,8 @@ def score_candidates(
 
     corpus = normalized_seeds + normalized_candidates
 
+    # Word n-grams work well for formulaic notices while still tolerating
+    # minor wording differences between translations.
     vectorizer = TfidfVectorizer(
         analyzer="word",
         ngram_range=(1, 4),
@@ -462,8 +486,9 @@ def score_candidates(
     )
 
     matrix = vectorizer.fit_transform(corpus)
-    # Convert sparse matrix to dense array for slicing
-    matrix_dense = matrix.todense()
+    # Newer scikit-learn rejects np.matrix from todense(); toarray() keeps the
+    # same slicing behavior while returning a supported ndarray.
+    matrix_dense = matrix.toarray()
     seed_matrix = matrix_dense[: len(normalized_seeds), :]
     candidate_matrix = matrix_dense[len(normalized_seeds) :, :]
 
@@ -477,9 +502,9 @@ def score_candidates(
 
         fuzzy_sim = fuzz.token_set_ratio(candidate.normalized_text, normalize_text(matched_seed)) / 100.0
 
-        # Hybrid score.
-        # TF-IDF is strongest for formulaic lines; keyword score rescues short system messages;
-        # fuzzy score helps with punctuation/casing/word-order variants.
+        # TF-IDF is strongest for formulaic lines; keyword score rescues short
+        # system messages; fuzzy score helps with punctuation/casing/word-order
+        # variants. The weights keep exact-ish seed matches dominant.
         final = (0.58 * tfidf_sim) + (0.30 * candidate.keyword_score) + (0.12 * fuzzy_sim)
 
         candidate.tfidf_similarity = round(tfidf_sim, 4)
@@ -498,13 +523,18 @@ def score_candidates(
 
 
 def write_outputs(scored: list[Candidate], out_dir: Path) -> None:
+    """Write outputs output."""
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    # Keep the same rows in CSV, JSONL, Markdown, and optional Excel outputs so
+    # downstream review tooling can choose whichever format is easiest.
     all_rows = [asdict(c) for c in scored]
     likely_rows = [asdict(c) for c in scored if c.decision == "likely"]
     review_rows = [asdict(c) for c in scored if c.decision == "review"]
 
     def write_csv(path: Path, rows: list[dict]) -> None:
+        """Write csv output."""
+        logger.trace("Entering write_csv")
         if not rows:
             path.write_text("", encoding="utf-8")
             return
@@ -515,6 +545,8 @@ def write_outputs(scored: list[Candidate], out_dir: Path) -> None:
             writer.writerows(rows)
 
     def write_jsonl(path: Path, rows: list[dict]) -> None:
+        """Write jsonl output."""
+        logger.trace("Entering write_jsonl")
         with path.open("w", encoding="utf-8") as f:
             for row in rows:
                 f.write(json.dumps(row, ensure_ascii=False) + "\n")
@@ -590,6 +622,7 @@ def run_voice_line_search(
     Raises:
         ValueError: If no seed examples are available.
     """
+    logger.trace("Entering run_voice_line_search")
 
     seeds = load_seed_lines(seed_path)
     all_candidates: list[Candidate] = []
@@ -611,6 +644,8 @@ def run_voice_line_search(
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse args values."""
+    logger.trace("Entering parse_args")
     parser = argparse.ArgumentParser(
         description="Find Voice of the World style announcement lines in markdown chapters."
     )
@@ -656,6 +691,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> int:
+    """Run the command-line entrypoint."""
     args = parse_args()
 
     args.log.parent.mkdir(parents=True, exist_ok=True)

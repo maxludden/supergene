@@ -9,6 +9,7 @@ from enum import StrEnum
 from pathlib import Path
 
 from supergene.find_voice_lines import clean_display_text, normalize_text
+from loguru import logger
 
 
 class ReviewAction(StrEnum):
@@ -88,6 +89,7 @@ def default_decisions_path(review_path: Path) -> Path:
     Returns:
         Path for persisted review decisions.
     """
+    logger.trace("Entering default_decisions_path")
 
     return review_path.with_name("voice_review_decisions.jsonl")
 
@@ -102,6 +104,7 @@ def load_pending_candidates(review_path: Path, decisions_path: Path | None = Non
     Returns:
         Review candidates still awaiting a decision.
     """
+    logger.trace("Entering load_pending_candidates")
 
     resolved_decisions_path = decisions_path or default_decisions_path(review_path)
     decided_ids = load_decided_candidate_ids(resolved_decisions_path)
@@ -110,6 +113,8 @@ def load_pending_candidates(review_path: Path, decisions_path: Path | None = Non
     with review_path.open(encoding="utf-8", newline="") as file:
         for row in csv.DictReader(file):
             candidate = candidate_from_row(row)
+            # Decisions are append-only, so filtering by stable candidate ID
+            # gives resumable review without mutating the source CSV report.
             if candidate.candidate_id not in decided_ids:
                 candidates.append(candidate)
 
@@ -125,6 +130,7 @@ def load_decided_candidate_ids(decisions_path: Path) -> set[str]:
     Returns:
         Set of candidate IDs with saved decisions.
     """
+    logger.trace("Entering load_decided_candidate_ids")
 
     if not decisions_path.exists():
         return set()
@@ -149,10 +155,13 @@ def candidate_from_row(row: dict[str, str]) -> ReviewCandidate:
     Returns:
         Typed candidate with parsed numeric fields and a stable ID.
     """
+    logger.trace("Entering candidate_from_row")
 
     chapter_file = row.get("chapter_file", "")
     line_number = _parse_int(row.get("line_number")) or 0
     raw_text = clean_display_text(row.get("raw_text", ""))
+    # Older reports may not include normalized_text. Recompute it from the
+    # display text so IDs remain deterministic across report versions.
     normalized = row.get("normalized_text") or normalize_text(raw_text)
 
     return ReviewCandidate(
@@ -185,6 +194,7 @@ def build_candidate_id(chapter_file: str, line_number: int, normalized_text: str
     Returns:
         Stable candidate identifier.
     """
+    logger.trace("Entering build_candidate_id")
 
     return f"{chapter_file}:{line_number}:{normalized_text}"
 
@@ -199,9 +209,12 @@ def append_accepted_seed(seed_path: Path, raw_text: str) -> bool:
     Returns:
         True when the seed file was changed, otherwise False.
     """
+    logger.trace("Entering append_accepted_seed")
 
     candidate = clean_display_text(raw_text)
     candidate_key = normalize_text(candidate)
+    # Dedupe on normalized text, not literal text, so quote style and casing
+    # differences do not create duplicate seed examples.
     existing_keys = {
         normalize_text(clean_display_text(line))
         for line in seed_path.read_text(encoding="utf-8").splitlines()
@@ -226,16 +239,20 @@ def record_decision(decisions_path: Path, decision: ReviewDecision) -> None:
         decisions_path: JSONL path to write.
         decision: Decision to append.
     """
+    logger.trace("Entering record_decision")
 
     decisions_path.parent.mkdir(parents=True, exist_ok=True)
     row = asdict(decision)
     row["action"] = decision.action.value
+    # JSONL keeps each decision durable as soon as it is written and is simple
+    # to append during an interactive review session.
     with decisions_path.open("a", encoding="utf-8") as file:
         file.write(json.dumps(row, ensure_ascii=False) + "\n")
 
 
 def _parse_int(value: str | None) -> int | None:
     """Parse an optional integer field from a CSV row."""
+    logger.trace("Entering _parse_int")
 
     if not value:
         return None
@@ -247,6 +264,7 @@ def _parse_int(value: str | None) -> int | None:
 
 def _parse_float(value: str | None) -> float:
     """Parse an optional float field from a CSV row."""
+    logger.trace("Entering _parse_float")
 
     if not value:
         return 0.0
