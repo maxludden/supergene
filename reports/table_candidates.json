@@ -1,0 +1,500 @@
+{
+  "summary": {
+    "chapters_dir": "converted/Super Gene/chapters",
+    "total_candidates": 54,
+    "by_kind": {
+      "voice_of_world": 26,
+      "stat_block": 22,
+      "beast_soul": 5,
+      "geno_core": 1
+    }
+  },
+  "candidates": [
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/001-chapter-1-supergene.md",
+      "start_line": 22,
+      "end_line": 22,
+      "original_text": "**“Black beetle killed. No beast soul gained. Eat the flesh of the black beetle to gain zero to ten geno points randomly.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Black beetle killed. No beast soul gained. Eat the flesh of the black beetle to gain zero to ten geno points randomly.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/001-chapter-1-supergene.md",
+      "start_line": 24,
+      "end_line": 24,
+      "original_text": "**“Black beetle flesh eaten. Zero geno points gained.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Black beetle flesh eaten. Zero geno points gained.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "stat_block",
+      "chapter_path": "converted/Super Gene/chapters/001-chapter-1-supergene.md",
+      "start_line": 28,
+      "end_line": 38,
+      "original_text": "Han Sen: Not evolved.\n\nStatus: None.\n\nLife span: 200 years.\n\nRequired for evolution: 100 geno points.\n\nGeno points gained: 79.\n\nBeast souls gained: none.",
+      "proposed_html": "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n    <tr><td>Han Sen</td><td>Not evolved</td></tr>\n    <tr><td>Status</td><td>None</td></tr>\n    <tr><td>Life span</td><td>200 years</td></tr>\n    <tr><td>Required for evolution</td><td>100 geno points</td></tr>\n    <tr><td>Geno points gained</td><td>79</td></tr>\n    <tr><td>Beast souls gained</td><td>none</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.9
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/001-chapter-1-supergene.md",
+      "start_line": 96,
+      "end_line": 96,
+      "original_text": "**“Sacred-blood creature black beetle killed. Beast soul of sacred-blood black beetle gained. Eat the flesh of sacred-blood black beetle to gain 0 to 10 geno points randomly.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Sacred-blood creature black beetle killed. Beast soul of sacred-blood black beetle gained. Eat the flesh of sacred-blood black beetle to gain 0 to 10 geno points randomly.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/003-chapter-3-sacred-blood-armour.md",
+      "start_line": 52,
+      "end_line": 52,
+      "original_text": "**“Primitive creature green-scaled beast killed. No beast soul gained. Eat the flesh of the primitive green-scaled beast to gain zero to ten points randomly.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Primitive creature green-scaled beast killed. No beast soul gained. Eat the flesh of the primitive green-scaled beast to gain zero to ten points randomly.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "stat_block",
+      "chapter_path": "converted/Super Gene/chapters/003-chapter-3-sacred-blood-armour.md",
+      "start_line": 70,
+      "end_line": 82,
+      "original_text": "Han Sen: Not evolved.\n\nStatus: None.\n\nLife span: 200 years.\n\nRequirements for evolution: 100 geno points.\n\nGeno points gained: 79 geno points; 8 sacred geno points.\n\nBeast soul gained: Sacred-blood black beetle.\n\nType of sacred-blood black beetle’s beast soul: Armour.",
+      "proposed_html": "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n    <tr><td>Han Sen</td><td>Not evolved</td></tr>\n    <tr><td>Status</td><td>None</td></tr>\n    <tr><td>Life span</td><td>200 years</td></tr>\n    <tr><td>Requirements for evolution</td><td>100 geno points</td></tr>\n    <tr><td>Geno points gained</td><td>79 geno points; 8 sacred geno points</td></tr>\n    <tr><td>Beast soul gained</td><td>Sacred-blood black beetle</td></tr>\n    <tr><td>Type of sacred-blood black beetle’s beast soul</td><td>Armour</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.9
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/006-chapter-6-armour-is-everything.md",
+      "start_line": 40,
+      "end_line": 40,
+      "original_text": "**“Primitive creature swift mantis killed. No beast soul gained. Eat the swift mantis to gain zero to ten points randomly.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Primitive creature swift mantis killed. No beast soul gained. Eat the swift mantis to gain zero to ten points randomly.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/010-chapter-10-bloody-slayer.md",
+      "start_line": 20,
+      "end_line": 20,
+      "original_text": "**“Sacred-blood bloody slayer killed. Sacred-blood beast soul bloody slayer gained. Eat the flesh of bloody slayer to gain zero to ten sacred geno points randomly.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Sacred-blood bloody slayer killed. Sacred-blood beast soul bloody slayer gained. Eat the flesh of bloody slayer to gain zero to ten sacred geno points randomly.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "beast_soul",
+      "chapter_path": "converted/Super Gene/chapters/010-chapter-10-bloody-slayer.md",
+      "start_line": 42,
+      "end_line": 42,
+      "original_text": "Type of sacred-blood bloody slayer’s beast soul: Shape-shifting.",
+      "proposed_html": "<table>\n  <thead><tr><th>Type</th><th>Description</th></tr></thead>\n  <tbody>\n    <tr><td>Beast Soul</td><td>Type of sacred-blood bloody slayer’s beast soul: Shape-shifting.</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.75
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/015-chapter-15-selling-flesh.md",
+      "start_line": 48,
+      "end_line": 48,
+      "original_text": "**“Mutant copper-toothed beast flesh eaten. One mutant geno point gained.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Mutant copper-toothed beast flesh eaten. One mutant geno point gained.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "beast_soul",
+      "chapter_path": "converted/Super Gene/chapters/026-chapter-26-mutant-three-eyed-cat.md",
+      "start_line": 60,
+      "end_line": 60,
+      "original_text": "Type of beast soul of mutant three-eyed cat: pet.",
+      "proposed_html": "<table>\n  <thead><tr><th>Type</th><th>Description</th></tr></thead>\n  <tbody>\n    <tr><td>Beast Soul</td><td>Type of beast soul of mutant three-eyed cat: pet.</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.75
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/072-chapter-72-hunting-frenzy.md",
+      "start_line": 26,
+      "end_line": 26,
+      "original_text": "**“Sacred-blood black stinger killed. No beast soul gained. Eat its meat to gain zero to ten sacred geno points randomly.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Sacred-blood black stinger killed. No beast soul gained. Eat its meat to gain zero to ten sacred geno points randomly.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "stat_block",
+      "chapter_path": "converted/Super Gene/chapters/082-chapter-82-fighting-luo-tianyang.md",
+      "start_line": 16,
+      "end_line": 26,
+      "original_text": "Han Sen: Not evolved.\n\nStatus: None.\n\nLife span: 200 years.\n\nRequirements for evolution: 100 geno points.\n\nGeno points gained: 100 ordinary geno points; 100 primitive geno points; 47 mutant geno points; 29 sacred geno points.\n\nBeast souls gained: Sacred-blood black beetle; sacred-blood bloody slayer; sacred-blood purple-winged dragon; mutant three-eyed cat; mutant black barracuda; mutant black stinger; mutant sawfish.",
+      "proposed_html": "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n    <tr><td>Han Sen</td><td>Not evolved</td></tr>\n    <tr><td>Status</td><td>None</td></tr>\n    <tr><td>Life span</td><td>200 years</td></tr>\n    <tr><td>Requirements for evolution</td><td>100 geno points</td></tr>\n    <tr><td>Geno points gained</td><td>100 ordinary geno points; 100 primitive geno points; 47 mutant geno points; 29 sacred geno points</td></tr>\n    <tr><td>Beast souls gained</td><td>Sacred-blood black beetle; sacred-blood bloody slayer; sacred-blood purple-winged dragon; mutant three-eyed cat; mutant black barracuda; mutant black stinger; mutant sawfish</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.9
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/1000-chapter-999-blue-ape.md",
+      "start_line": 62,
+      "end_line": 62,
+      "original_text": "**“Sacred-Blood Creature Black Python killed. No beast soul gained. Consume its flesh to gain zero to ten sacred geno points randomly.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Sacred-Blood Creature Black Python killed. No beast soul gained. Consume its flesh to gain zero to ten sacred geno points randomly.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/1012-chapter-1011-killing-the-wolf-king.md",
+      "start_line": 86,
+      "end_line": 86,
+      "original_text": "**“Sacred-Blood Creature Lightning Wolf killed. Beast soul gained. Consume its flesh gain zero to ten sacred geno points randomly.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Sacred-Blood Creature Lightning Wolf killed. Beast soul gained. Consume its flesh gain zero to ten sacred geno points randomly.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/1030-chapter-1029-striking-ghost-sword.md",
+      "start_line": 44,
+      "end_line": 44,
+      "original_text": "**“Sacred-Blood Creature Green Falcon killed. No beast soul gained. Consume its flesh to gain zero to ten sacred geno points randomly.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Sacred-Blood Creature Green Falcon killed. No beast soul gained. Consume its flesh to gain zero to ten sacred geno points randomly.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/1044-chapter-1043-getting-a-super-beast-soul.md",
+      "start_line": 100,
+      "end_line": 100,
+      "original_text": "**“Super Creature Devil-horn Sheep King killed. Beast soul gained. Its flesh is inedible and there is no Super Geno Essence for retrieval.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Super Creature Devil-horn Sheep King killed. Beast soul gained. Its flesh is inedible and there is no Super Geno Essence for retrieval.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "stat_block",
+      "chapter_path": "converted/Super Gene/chapters/1108-chapter-1107-recovery.md",
+      "start_line": 26,
+      "end_line": 30,
+      "original_text": "Han Sen: Super Body Super King Spirit.\n\nLevel: Surpasser.\n\nLifespan: 400.",
+      "proposed_html": "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n    <tr><td>Han Sen</td><td>Super Body Super King Spirit</td></tr>\n    <tr><td>Level</td><td>Surpasser</td></tr>\n    <tr><td>Lifespan</td><td>400</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.9
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/1111-chapter-1110-super-armour.md",
+      "start_line": 88,
+      "end_line": 88,
+      "original_text": "**“Super Creature Devil-Blood Mantis killed. Beast soul gained. The flesh of this creature is inedible, but you may harvest its Super Geno Essence. Consume its Super Geno Essence to gain zero to ten super geno points randomly.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Super Creature Devil-Blood Mantis killed. Beast soul gained. The flesh of this creature is inedible, but you may harvest its Super Geno Essence. Consume its Super Geno Essence to gain zero to ten super geno points randomly.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/1112-chapter-1111-squeezing-beast-souls.md",
+      "start_line": 50,
+      "end_line": 50,
+      "original_text": "**“Ordinary-class Blood Firefly beast soul gained.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Ordinary-class Blood Firefly beast soul gained.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/1112-chapter-1111-squeezing-beast-souls.md",
+      "start_line": 106,
+      "end_line": 106,
+      "original_text": "**“Ordinary-class Blood Turtle beast soul obtained.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Ordinary-class Blood Turtle beast soul obtained.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/1152-chapter-1151-thorn-scorpion-beast-soul.md",
+      "start_line": 68,
+      "end_line": 68,
+      "original_text": "**“Sacred-Blood Creature Thorn Scorpion killed. Beast soul gained. Consume its flesh to gain zero to ten sacred geno points randomly.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Sacred-Blood Creature Thorn Scorpion killed. Beast soul gained. Consume its flesh to gain zero to ten sacred geno points randomly.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "beast_soul",
+      "chapter_path": "converted/Super Gene/chapters/118-chapter-118-fairy-queen-beast-soul.md",
+      "start_line": 56,
+      "end_line": 56,
+      "original_text": "Type of sacred-blood beast soul fairy queen: shape-shifting.",
+      "proposed_html": "<table>\n  <thead><tr><th>Type</th><th>Description</th></tr></thead>\n  <tbody>\n    <tr><td>Beast Soul</td><td>Type of sacred-blood beast soul fairy queen: shape-shifting.</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.75
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/1190-chapter-1189-killing-sky-king.md",
+      "start_line": 94,
+      "end_line": 94,
+      "original_text": "**“Super Creature Sky Peacock killed. Beast soul gained. The flesh of this creature is inedible, but you may harvest its Super Geno Essence. Consume its Super Geno Essence to gain zero to ten super geno points randomly.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Super Creature Sky Peacock killed. Beast soul gained. The flesh of this creature is inedible, but you may harvest its Super Geno Essence. Consume its Super Geno Essence to gain zero to ten super geno points randomly.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "beast_soul",
+      "chapter_path": "converted/Super Gene/chapters/1242-chapter-1241-invisible-toxic-king-scorpion.md",
+      "start_line": 46,
+      "end_line": 46,
+      "original_text": "Invisible Toxic King Scorpion Beast Soul: Glyph Type.",
+      "proposed_html": "<table>\n  <thead><tr><th>Type</th><th>Description</th></tr></thead>\n  <tbody>\n    <tr><td>Beast Soul</td><td>Invisible Toxic King Scorpion Beast Soul: Glyph Type.</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.75
+    },
+    {
+      "kind": "stat_block",
+      "chapter_path": "converted/Super Gene/chapters/1286-chapter-1285-attacking-saint-fan-shelter.md",
+      "start_line": 60,
+      "end_line": 64,
+      "original_text": "Han Sen: Super Body Super King Spirit.\n\nLevel: Surpasser.\n\nLifespan: 400.",
+      "proposed_html": "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n    <tr><td>Han Sen</td><td>Super Body Super King Spirit</td></tr>\n    <tr><td>Level</td><td>Surpasser</td></tr>\n    <tr><td>Lifespan</td><td>400</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.9
+    },
+    {
+      "kind": "stat_block",
+      "chapter_path": "converted/Super Gene/chapters/1340-chapter-1339-demigod-creature.md",
+      "start_line": 46,
+      "end_line": 50,
+      "original_text": "Han Sen: Super Body Super King Spirit – Ultimate.\n\nLevel: Demigod.\n\nLifespan: 500.",
+      "proposed_html": "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n    <tr><td>Han Sen</td><td>Super Body Super King Spirit – Ultimate</td></tr>\n    <tr><td>Level</td><td>Demigod</td></tr>\n    <tr><td>Lifespan</td><td>500</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.9
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/1340-chapter-1339-demigod-creature.md",
+      "start_line": 98,
+      "end_line": 98,
+      "original_text": "**“Ordinary Creature Soil Lotus killed. No beast soul gained. Bronze Geno Core received: Dust Bug. Consume its flesh to gain zero to ten ordinary geno points randomly.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Ordinary Creature Soil Lotus killed. No beast soul gained. Bronze Geno Core received: Dust Bug. Consume its flesh to gain zero to ten ordinary geno points randomly.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/1347-chapter-1346-jade-snail.md",
+      "start_line": 54,
+      "end_line": 54,
+      "original_text": "**“Ordinary Creature Jade Snail killed. No beast soul gained. Geno Core destroyed. Consume its flesh to gain zero to ten ordinary geno points randomly.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Ordinary Creature Jade Snail killed. No beast soul gained. Geno Core destroyed. Consume its flesh to gain zero to ten ordinary geno points randomly.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "geno_core",
+      "chapter_path": "converted/Super Gene/chapters/1351-chapter-1350-first-self-geno-core.md",
+      "start_line": 58,
+      "end_line": 58,
+      "original_text": "Self Geno Core: Bronze Crystal Core.",
+      "proposed_html": "<table>\n  <thead><tr><th>Type</th><th>Description</th></tr></thead>\n  <tbody>\n    <tr><td>Geno Core</td><td>Self Geno Core: Bronze Crystal Core.</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.75
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/145-chapter-145-olympic-size-appetite.md",
+      "start_line": 90,
+      "end_line": 90,
+      "original_text": "**“Mutant phantom ant killed. Beast soul of mutant phantom ant gained. Eat its meat to gain zero to ten mutant geno points randomly.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Mutant phantom ant killed. Beast soul of mutant phantom ant gained. Eat its meat to gain zero to ten mutant geno points randomly.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/1521-chapter-1520-slaying-the-ant-king.md",
+      "start_line": 84,
+      "end_line": 84,
+      "original_text": "**“Super Creature Bloodthirsty Ant King killed. Beast soul gained. Geno core unobtained. Flesh inedible. Consume the Super Geno Essence to gain zero to ten super geno points.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Super Creature Bloodthirsty Ant King killed. Beast soul gained. Geno core unobtained. Flesh inedible. Consume the Super Geno Essence to gain zero to ten super geno points.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/1844-chapter-1843-killing-a-viscount-xenogeneic.md",
+      "start_line": 93,
+      "end_line": 93,
+      "original_text": "**“Xenogeneic Viscount hunted; xenogeneic gene found: King Earthworm”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Xenogeneic Viscount hunted; xenogeneic gene found: King Earthworm</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "stat_block",
+      "chapter_path": "converted/Super Gene/chapters/188-chapter-188-ghost-butterfly.md",
+      "start_line": 70,
+      "end_line": 74,
+      "original_text": "Type of primitive ghost butterfly beast soul: one-off hidden weapon.\n\nType of beast soul of primitive black-feathered beast: flying.\n\nType of beast soul of mutant black-feathered beast: flying.",
+      "proposed_html": "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n    <tr><td>Type of primitive ghost butterfly beast soul</td><td>one-off hidden weapon</td></tr>\n    <tr><td>Type of beast soul of primitive black-feathered beast</td><td>flying</td></tr>\n    <tr><td>Type of beast soul of mutant black-feathered beast</td><td>flying</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.9
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/1975-chapter-1974-spell-becomes-strong.md",
+      "start_line": 92,
+      "end_line": 92,
+      "original_text": "**“Xenogeneic Earl hunted. Jade Ghost Claw Beast: xenogeneic gene found. Obtained Jade Ghost Claw Beast beast soul.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Xenogeneic Earl hunted. Jade Ghost Claw Beast: xenogeneic gene found. Obtained Jade Ghost Claw Beast beast soul.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "beast_soul",
+      "chapter_path": "converted/Super Gene/chapters/2223-chapter-2222-gold-fire-peacock.md",
+      "start_line": 66,
+      "end_line": 66,
+      "original_text": "Duke class beast soul Gold Fire Peacock: Flying-type.",
+      "proposed_html": "<table>\n  <thead><tr><th>Type</th><th>Description</th></tr></thead>\n  <tbody>\n    <tr><td>Beast Soul</td><td>Duke class beast soul Gold Fire Peacock: Flying-type.</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.75
+    },
+    {
+      "kind": "stat_block",
+      "chapter_path": "converted/Super Gene/chapters/239-chapter-239-an-odd-sacred-blood-creature.md",
+      "start_line": 16,
+      "end_line": 20,
+      "original_text": "Han Sen: unevolved.\n\nStatus: none.\n\nLifespan: 200.",
+      "proposed_html": "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n    <tr><td>Han Sen</td><td>unevolved</td></tr>\n    <tr><td>Status</td><td>none</td></tr>\n    <tr><td>Lifespan</td><td>200</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.9
+    },
+    {
+      "kind": "stat_block",
+      "chapter_path": "converted/Super Gene/chapters/2573-chapter-2572-gene-potential.md",
+      "start_line": 18,
+      "end_line": 22,
+      "original_text": "**“Target: Very High female. Gene Age Calculation: 23 years”**\n\n**“Gene level: Ninth-tier King”**\n\n**“Gene potential: 5 stars”**",
+      "proposed_html": "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n    <tr><td>Target</td><td>Very High female. Gene Age Calculation: 23 years</td></tr>\n    <tr><td>Gene level</td><td>Ninth-tier King</td></tr>\n    <tr><td>Gene potential</td><td>5 stars</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.9
+    },
+    {
+      "kind": "stat_block",
+      "chapter_path": "converted/Super Gene/chapters/2573-chapter-2572-gene-potential.md",
+      "start_line": 70,
+      "end_line": 74,
+      "original_text": "Target: Gravity Crocodile God female. Gene Age Calculation: 1.365 billion years\n\nGene Level: Transmutation Deified\n\nGene potential: 7 star",
+      "proposed_html": "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n    <tr><td>Target</td><td>Gravity Crocodile God female. Gene Age Calculation: 1.365 billion years</td></tr>\n    <tr><td>Gene Level</td><td>Transmutation Deified</td></tr>\n    <tr><td>Gene potential</td><td>7 star</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.9
+    },
+    {
+      "kind": "stat_block",
+      "chapter_path": "converted/Super Gene/chapters/2573-chapter-2572-gene-potential.md",
+      "start_line": 88,
+      "end_line": 92,
+      "original_text": "Target: Gravity Crocodile God male. Gene Age Calculation: one month, seven days.\n\nGene Level: Primitive Deified\n\nGene Potential: 9 stars",
+      "proposed_html": "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n    <tr><td>Target</td><td>Gravity Crocodile God male. Gene Age Calculation: one month, seven days</td></tr>\n    <tr><td>Gene Level</td><td>Primitive Deified</td></tr>\n    <tr><td>Gene Potential</td><td>9 stars</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.9
+    },
+    {
+      "kind": "stat_block",
+      "chapter_path": "converted/Super Gene/chapters/2574-chapter-2573-analysis-result.md",
+      "start_line": 88,
+      "end_line": 92,
+      "original_text": "Target: Phoenix (51%) and Fish-bird (49%) female\n\nGene class: Original Deified\n\nGene potential: 10 stars",
+      "proposed_html": "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n    <tr><td>Target</td><td>Phoenix (51%) and Fish-bird (49%) female</td></tr>\n    <tr><td>Gene class</td><td>Original Deified</td></tr>\n    <tr><td>Gene potential</td><td>10 stars</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.9
+    },
+    {
+      "kind": "stat_block",
+      "chapter_path": "converted/Super Gene/chapters/2592-chapter-2591-bad-fight.md",
+      "start_line": 62,
+      "end_line": 66,
+      "original_text": "Target: Extreme King male. Gene Age Calculation: 12,300 years\n\nGene Level: Transmutation deified\n\nGene Potential: 8 stars",
+      "proposed_html": "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n    <tr><td>Target</td><td>Extreme King male. Gene Age Calculation: 12,300 years</td></tr>\n    <tr><td>Gene Level</td><td>Transmutation deified</td></tr>\n    <tr><td>Gene Potential</td><td>8 stars</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.9
+    },
+    {
+      "kind": "stat_block",
+      "chapter_path": "converted/Super Gene/chapters/2592-chapter-2591-bad-fight.md",
+      "start_line": 72,
+      "end_line": 76,
+      "original_text": "Target: Lion male. Gene Age Calculation: 163,000 years\n\nGene Level: Primitive deified\n\nGene Potential: 6 stars",
+      "proposed_html": "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n    <tr><td>Target</td><td>Lion male. Gene Age Calculation: 163,000 years</td></tr>\n    <tr><td>Gene Level</td><td>Primitive deified</td></tr>\n    <tr><td>Gene Potential</td><td>6 stars</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.9
+    },
+    {
+      "kind": "stat_block",
+      "chapter_path": "converted/Super Gene/chapters/2622-chapter-2621-at6-gene-mutant-people.md",
+      "start_line": 72,
+      "end_line": 76,
+      "original_text": "Target: AT6-type mutant genes. Male. Calculated Gene Age: 34.\n\nGene level: none.\n\nGene potential: none.",
+      "proposed_html": "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n    <tr><td>Target</td><td>AT6-type mutant genes. Male. Calculated Gene Age: 34</td></tr>\n    <tr><td>Gene level</td><td>none</td></tr>\n    <tr><td>Gene potential</td><td>none</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.9
+    },
+    {
+      "kind": "stat_block",
+      "chapter_path": "converted/Super Gene/chapters/271-chapter-271-super-gene.md",
+      "start_line": 64,
+      "end_line": 68,
+      "original_text": "Han Sen: unevolved.\n\nStatus: none.\n\nLifespan: 200.",
+      "proposed_html": "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n    <tr><td>Han Sen</td><td>unevolved</td></tr>\n    <tr><td>Status</td><td>none</td></tr>\n    <tr><td>Lifespan</td><td>200</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.9
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/2786-chapter-2785-killing-sky-radish.md",
+      "start_line": 104,
+      "end_line": 104,
+      "original_text": "**“Killed God Spirit. Obtained God Spirit. Found God Spirit Gene.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Killed God Spirit. Obtained God Spirit. Found God Spirit Gene.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "stat_block",
+      "chapter_path": "converted/Super Gene/chapters/2854-chapter-2853-the-conditions-to-shape-shift.md",
+      "start_line": 20,
+      "end_line": 24,
+      "original_text": "Level: Deified.\n\nProgress: 0 out of 100\n\nLifespan: 2,658",
+      "proposed_html": "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n    <tr><td>Level</td><td>Deified</td></tr>\n    <tr><td>Progress</td><td>0 out of 100</td></tr>\n    <tr><td>Lifespan</td><td>2,658</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.9
+    },
+    {
+      "kind": "stat_block",
+      "chapter_path": "converted/Super Gene/chapters/3163-chapter-3162-god-of-wealth-blood-pulse.md",
+      "start_line": 24,
+      "end_line": 28,
+      "original_text": "Gene potential: Ten star.\n\nCompatibility: Nine star.\n\nOverall: S-class Blood-Pulse inheritor.",
+      "proposed_html": "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n    <tr><td>Gene potential</td><td>Ten star</td></tr>\n    <tr><td>Compatibility</td><td>Nine star</td></tr>\n    <tr><td>Overall</td><td>S-class Blood-Pulse inheritor</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.9
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/520-chapter-519-hunting-on-the-bottom-of-the-lake.md",
+      "start_line": 110,
+      "end_line": 110,
+      "original_text": "**“Primitive creature golden anchovy killed. Beast soul of golden anchovy gained. Eat its meat to gain 0 to 10 primitive geno points randomly.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Primitive creature golden anchovy killed. Beast soul of golden anchovy gained. Eat its meat to gain 0 to 10 primitive geno points randomly.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "stat_block",
+      "chapter_path": "converted/Super Gene/chapters/526-chapter-525-new-understanding.md",
+      "start_line": 38,
+      "end_line": 42,
+      "original_text": "Han Sen: super body: king spirit.\n\nStatus: evolver.\n\nLifespan: three hundred.",
+      "proposed_html": "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n    <tr><td>Han Sen</td><td>super body: king spirit</td></tr>\n    <tr><td>Status</td><td>evolver</td></tr>\n    <tr><td>Lifespan</td><td>three hundred</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.9
+    },
+    {
+      "kind": "voice_of_world",
+      "chapter_path": "converted/Super Gene/chapters/546-chapter-545-killing-a-sacred-blood-beneath-the-sea.md",
+      "start_line": 102,
+      "end_line": 102,
+      "original_text": "**“Mutant Creature Hunted: sacred-blood Water Buffalo. The beast soul was not acquired. Consume its flesh to obtain a random amount of sacred geno points, between zero and ten.”**",
+      "proposed_html": "<div class=\"voice-of-world\"><em>Mutant Creature Hunted: sacred-blood Water Buffalo. The beast soul was not acquired. Consume its flesh to obtain a random amount of sacred geno points, between zero and ten.</em></div>",
+      "confidence": 0.8
+    },
+    {
+      "kind": "stat_block",
+      "chapter_path": "converted/Super Gene/chapters/702-chapter-701-devil-ant-king-beast-soul.md",
+      "start_line": 16,
+      "end_line": 20,
+      "original_text": "Han Sen: Super Body – King Spirit.\n\nStatus: Evolver.\n\nLife Span: Three Hundred.",
+      "proposed_html": "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n    <tr><td>Han Sen</td><td>Super Body – King Spirit</td></tr>\n    <tr><td>Status</td><td>Evolver</td></tr>\n    <tr><td>Life Span</td><td>Three Hundred</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.9
+    },
+    {
+      "kind": "stat_block",
+      "chapter_path": "converted/Super Gene/chapters/883-chapter-882-becoming-a-surpasser.md",
+      "start_line": 94,
+      "end_line": 98,
+      "original_text": "Lifespan: 400.\n\nNext Evolution Requirement: 100 Geno Points.\n\nOwned Geno Points: 0.",
+      "proposed_html": "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n    <tr><td>Lifespan</td><td>400</td></tr>\n    <tr><td>Next Evolution Requirement</td><td>100 Geno Points</td></tr>\n    <tr><td>Owned Geno Points</td><td>0</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.9
+    },
+    {
+      "kind": "stat_block",
+      "chapter_path": "converted/Super Gene/chapters/982-chapter-981-tutor.md",
+      "start_line": 36,
+      "end_line": 40,
+      "original_text": "Han Sen: Super Body Super King Spirit.\n\nLevel: Surpasser.\n\nLifespan: 400.",
+      "proposed_html": "<table>\n  <thead><tr><th>Field</th><th>Value</th></tr></thead>\n  <tbody>\n    <tr><td>Han Sen</td><td>Super Body Super King Spirit</td></tr>\n    <tr><td>Level</td><td>Surpasser</td></tr>\n    <tr><td>Lifespan</td><td>400</td></tr>\n  </tbody>\n</table>",
+      "confidence": 0.9
+    }
+  ]
+}

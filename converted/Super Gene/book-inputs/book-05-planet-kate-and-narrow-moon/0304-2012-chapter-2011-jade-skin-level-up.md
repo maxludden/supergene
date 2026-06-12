@@ -1,0 +1,105 @@
+# Chapter 2012: - Jade-skin Level Up {.hidden-title}
+
+<section id="chapter-2012" class="chapter element" role="doc-chapter" epub:type="bodymatter chapter">
+<div class="heading1" id="chapter-2012-heading">
+<div class="heading-contents1">
+<div class="element">
+<div class="element-number-block">
+<div class="element-number">2012</div>
+</div>
+<div class="element title-block">
+<div class="title-subtitle-block">
+<h1 class="title">- Jade-skin Level Up</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+::: {.element .chapter-text #chapter-2012-text}
+<p class="first2"><span class="first-letter">T</span>he Feathers wanted to use Han Sen to boost their reputation, but Han Sen ignored them. He stuck to practising with his geno arts and his knife-skills.</p>
+
+Because his core talents were so good, Han Sen’s progress with Under the Sky was coming along quickly. When he practised with Yun Suyi, however, he suppressed it.
+
+He continued to practise with her because she could be a witness for him. If anyone doubted his ability to learn and correct Under the Sky, she would be able to speak in support of him. He really did only learn it faster than others.
+
+Having been at Sky Palace for three months now, Han Sen’s Jade-skin was finally going to ascend. A strange power flowed inside his bones and flesh. Levelling up to Earl meant generating a spirit.
+
+Jade-skin’s power had a light element. As the power increased, a jade light would cast a shadow across Han Sen at all times. It was very weird.
+
+The strangest part of the process was that beautiful light. It looked rather like a cold fairy, and her skin shone like jade. Han Sen successfully became an Earl with Jade-skin, and his fitness level increased.
+
+Other people could only level up to Earl and gain strength in the process once. Han Sen, however, had levelled up Earl three times. That meant his body was three times stronger. His strength was practically like a Marquise.
+
+After Jade-skin successfully reached Earl status, he put all his power and focus into the practise of the Blood-Pulse Sutra.
+
+He used the Jade Air to practise with the Blood-Pulse Sutra, but its progress was only accelerated a little. It wasn’t as compatible with the Jade Air as Jade-skin was.
+
+Yun Suyi was becoming an Earl. Yun Changkong soon had her studying at home. With his extra free time, Han Sen returned to Xuanyuan Cave to hunt down xenogeneics.
+
+When Yun Suyi levelled up to Earl, she began practising Phenomenon. It was a skill that was only one level beneath the Textless Book.
+
+It was a powerful skill. Yun Suyi gave up on using swords and furthered herself with knife-skills and Under the Sky. Using swords no longer felt comfortable to her.
+
+**“It looks like I should find myself a decent knife.”** Yun Suyi was still not sure if she should totally abandon swords, as she had never owned a proper knife for herself.
+
+If she decided to proceed with knives, she’d have to procure a knife that was suitable for her.
+
+**“Suyi, why are you using knives?”** Yun Sushang asked, following her to the armoury.
+
+**“I learned a new knife skill, so I thought I should give it a try.”** Yun Suyi started looking through the knives available in the armoury. She seemed rather carefree about it.
+
+**“You can try knife-skills, sure. But there is one thing you can’t try.”** Yun Sushang looked very serious.
+
+**“What are you talking about, sis?”** Yun Suyi’s heart panicked a little.
+
+Yun Sushang sighed and said, **“You know what I’m talking about. You know Han Sen isn’t an option, so why do you remain so close to him?”**
+
+**“What are you thinking? He has a wife and kids! What can I do? I am just practising with knives with him and nothing more,”** Yun Suyi explained.
+
+**“Good.”** Yun Sushang let the conversation end there. She didn’t want to push the subject with Yun Suyi any further and risk making her mad.
+
+Yun Sushang smiled and said, **“If you’re practising knife-skills, you’ll want to attend a knife event on Cloud Island.”**
+
+**“What knife event? Do we have an event like that?”** Yun Suyi asked with surprise.
+
+Yun Sushang smiled and said, **“Yes, because of the Feathers. They really want to use Han Sen to boost their reputation, but Han Sen continues to ignore them.”**
+
+**“They think too highly of themselves, if they really think they can fight Han Sen,”** Yun Suyi scoffed.
+
+Yun Sushang, seeing her confidence in Han Sen, felt worried. Even so, she knew she shouldn’t say anything about it.
+
+After a moment of silence, Yun Sushang said, **“Angia wants to challenge Han Sen, and he’s not a fool. You cannot underestimate him.”**
+
+**“The Feathers became a low race, and they all dropped a level because of it. Angia was an Earl, and he was knocked down to a Viscount. Angia was very angry, so he went to the Pool of Rebirth. His body returned to zero, and now he has become an Earl again. Because of this, Angia is much stronger than the average Earl. Furthermore, he has practised with the most difficult skill of the Feathers: Heaven Feather. Not many people can learn it, like our Textless Book. It is not too powerful, but regardless, he is strong.”**
+
+**“This Angia does sound strong. The Pool of Rebirth is dangerous. If ten people made use of it, there’s no guarantee one of them would succeed. He is very lucky,”** Yun Suyi said.
+
+Yun Sushang nodded and said, **“He removed all of his skills with the pool, but his talent remained. Otherwise, he could not have learned Heaven Feather. The guy is complicated, but he is also ambitious. He makes for a difficult target.”**
+
+**“Even so, he’s still weaker than Han Sen,”** Yun Suyi said with a smile.
+
+Yun Sushang did not say anything, and she just looked at her sister with something that resembled a smile.
+
+Yun Suyi blushed and said, **“Am I not correct? Han Sen was able to fight Lone Bamboo. That Angia is nothing! I don’t even think he could beat me.”**
+
+**“So, you’ll be attending tomorrow’s knife event?”** Yun Sushang smiled.
+
+Yes! Why wouldn’t I?” Yun Suyi said.
+
+The armoury had all sorts of weapons, but it was mostly filled with swords. Yun Suyi selected a Marquise Ice Knife. There were also some Duke knives available, but despite being a higher class, they weren’t as good as Ice Knife.
+
+After she returned, she used the Ice Knife to practise Under the Sky. It worked far better than it did with a practise knife.
+
+**“You really do need a real knife to practise knife-skills.”** Yun Suyi touched the blade of the Ice Knife gleefully.
+
+The next afternoon, Yun Sushang took Yun Suyi to participate in the knife event on Cloud Island. On their way, Yun Sushang remembered the question she had wanted to ask.
+
+**“By the way, which knife-skill are you practising?”**
+
+**“We are learning the Yun family’s skill Under the Sky. Han Sen chose that skill as his prize, so I have been learning from him,”** Yun Suyi said.
+
+Yun Sushang did not say anything, but she thought to herself, **“What can he do with Under the Sky? That skill is useless. It has a flaw.”**
+:::
+
+</section>

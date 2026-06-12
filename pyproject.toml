@@ -1,0 +1,46 @@
+[project]
+name = "supergene"
+version = "0.1.0"
+description = "A package to us LLM to edit the webnovel Super Gene."
+readme = "README.md"
+authors = [
+    { name = "Maxwell Ludden", email = "maxludden@me.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "ebooklib>=0.20",
+    "loguru>=0.7.3",
+    "markdownify>=1.2.2",
+    "openai>=2.36.0",
+    "openpyxl>=3.1.5",
+    "pandas>=3.0.3",
+    "python-dotenv>=1.2.2",
+    "rapidfuzz>=3.14.5",
+    "rich>=14.2.0",
+    "scikit-learn>=1.8.0",
+    "supabase>=2.29.0",
+    "textual>=6.6.0",
+    "typer>=0.25.1",
+]
+
+[project.scripts]
+supergene = "supergene.__main__:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.11.10,<0.12.0"]
+build-backend = "uv_build"
+
+[tool.pylint."MESSAGES CONTROL"]
+disable = [
+    "W0603" #       global-statement
+]
+
+[tool.ruff]
+ignore = [
+    "F401", # module-imported-but-unused
+]

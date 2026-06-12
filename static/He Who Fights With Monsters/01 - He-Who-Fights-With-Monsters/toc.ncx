@@ -1,0 +1,747 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="en">
+  <head>
+    <meta content="a435e13b-4216-4169-8afa-c97a7d2167d3" name="dtb:uid"/>
+    <meta content="2" name="dtb:depth"/>
+    <meta content="calibre (4.8.0)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>He Who Fights with Monsters: A LitRPG Adventure</text>
+  </docTitle>
+  <navMap>
+    <navPoint id="num_1" playOrder="1">
+      <navLabel>
+        <text>Cover</text>
+      </navLabel>
+      <content src="titlepage.xhtml"/>
+    </navPoint>
+    <navPoint id="num_2" playOrder="2">
+      <navLabel>
+        <text>He Who Fights With Monsters</text>
+      </navLabel>
+      <content src="text/part0000.html#u24qcHOCdtJvwjdCKSMJpf6"/>
+    </navPoint>
+    <navPoint id="num_3" playOrder="3">
+      <navLabel>
+        <text>Copyright</text>
+      </navLabel>
+      <content src="text/part0001.html#UGI0-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_4" playOrder="4">
+      <navLabel>
+        <text>ALSO IN SERIES</text>
+      </navLabel>
+      <content src="text/part0003.html#ub3DGwctiMJxTGGq34ElHv6"/>
+    </navPoint>
+    <navPoint id="num_5" playOrder="5">
+      <navLabel>
+        <text>1. Strange Business</text>
+      </navLabel>
+      <content src="text/part0004.html#uGsEJMoXKL2HlP2NZY7fCs5"/>
+    </navPoint>
+    <navPoint id="num_6" playOrder="6">
+      <navLabel>
+        <text>2. Of Course Magic is a Thing</text>
+      </navLabel>
+      <content src="text/part0005.html#urELPlKHqaw6eHZFrmH4QjF"/>
+    </navPoint>
+    <navPoint id="num_7" playOrder="7">
+      <navLabel>
+        <text>3. Local Cuisine</text>
+      </navLabel>
+      <content src="text/part0006.html#uEObFUTiMqxBY9IeXL4WC22"/>
+    </navPoint>
+    <navPoint id="num_8" playOrder="8">
+      <navLabel>
+        <text>4. Cannibals and Spelunking</text>
+      </navLabel>
+      <content src="text/part0007.html#uEMSdnn9hErTSARXKwZzoq5"/>
+    </navPoint>
+    <navPoint id="num_9" playOrder="9">
+      <navLabel>
+        <text>5. Wizard</text>
+      </navLabel>
+      <content src="text/part0008.html#ugfMBzsbhxKOSX2QQrgxqYF"/>
+    </navPoint>
+    <navPoint id="num_10" playOrder="10">
+      <navLabel>
+        <text>6. Potent Potable</text>
+      </navLabel>
+      <content src="text/part0009.html#uCXFVpHHRxEM5kXzV2tl8CH"/>
+    </navPoint>
+    <navPoint id="num_11" playOrder="11">
+      <navLabel>
+        <text>7. Spoils</text>
+      </navLabel>
+      <content src="text/part0010.html#usDyCVQfDxBTDUXxLRjSgyE"/>
+    </navPoint>
+    <navPoint id="num_12" playOrder="12">
+      <navLabel>
+        <text>8. Dark Magic</text>
+      </navLabel>
+      <content src="text/part0011.html#AFM60-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_13" playOrder="13">
+      <navLabel>
+        <text>9. Escape</text>
+      </navLabel>
+      <content src="text/part0012.html#BE6O0-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_14" playOrder="14">
+      <navLabel>
+        <text>10. The Evil Pit of Evil</text>
+      </navLabel>
+      <content src="text/part0013.html#CCNA0-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_15" playOrder="15">
+      <navLabel>
+        <text>11. Dashing Heroics</text>
+      </navLabel>
+      <content src="text/part0014.html#DB7S0-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_16" playOrder="16">
+      <navLabel>
+        <text>12. Sanguine Horror</text>
+      </navLabel>
+      <content src="text/part0015.html#E9OE0-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_17" playOrder="17">
+      <navLabel>
+        <text>13. This is the Part Where We Step Back</text>
+      </navLabel>
+      <content src="text/part0016.html#F8900-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_18" playOrder="18">
+      <navLabel>
+        <text>14. Worlds Apart</text>
+      </navLabel>
+      <content src="text/part0017.html#G6PI0-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_19" playOrder="19">
+      <navLabel>
+        <text>15. Outworlder</text>
+      </navLabel>
+      <content src="text/part0018.html#H5A40-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_20" playOrder="20">
+      <navLabel>
+        <text>16. Rescue Party</text>
+      </navLabel>
+      <content src="text/part0019.html#I3QM0-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_21" playOrder="21">
+      <navLabel>
+        <text>17. A Conservative Pillage</text>
+      </navLabel>
+      <content src="text/part0020.html#J2B80-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_22" playOrder="22">
+      <navLabel>
+        <text>18. One of Us</text>
+      </navLabel>
+      <content src="text/part0021.html#K0RQ0-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_23" playOrder="23">
+      <navLabel>
+        <text>19. I Want a Lava Cannon</text>
+      </navLabel>
+      <content src="text/part0022.html#KVCC0-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_24" playOrder="24">
+      <navLabel>
+        <text>20. By the Power of Grayskull</text>
+      </navLabel>
+      <content src="text/part0023.html#LTSU0-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_25" playOrder="25">
+      <navLabel>
+        <text>21. I Have the Power</text>
+      </navLabel>
+      <content src="text/part0024.html#MSDG0-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_26" playOrder="26">
+      <navLabel>
+        <text>22. Apocalypse Stone</text>
+      </navLabel>
+      <content src="text/part0025.html#NQU20-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_27" playOrder="27">
+      <navLabel>
+        <text>23. I May have Made a Huge Mistake</text>
+      </navLabel>
+      <content src="text/part0026.html#OPEK0-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_28" playOrder="28">
+      <navLabel>
+        <text>24. Astral Space</text>
+      </navLabel>
+      <content src="text/part0027.html#PNV60-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_29" playOrder="29">
+      <navLabel>
+        <text>25. Blasphemy is Kind of My Thing</text>
+      </navLabel>
+      <content src="text/part0028.html#QMFO0-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_30" playOrder="30">
+      <navLabel>
+        <text>26. Waterfall</text>
+      </navLabel>
+      <content src="text/part0029.html#RL0A0-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_31" playOrder="31">
+      <navLabel>
+        <text>27. Water, Fall</text>
+      </navLabel>
+      <content src="text/part0030.html#SJGS0-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_32" playOrder="32">
+      <navLabel>
+        <text>28. How Did You All Fit In There?</text>
+      </navLabel>
+      <content src="text/part0031.html#TI1E0-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_33" playOrder="33">
+      <navLabel>
+        <text>29. That’s What Adventurers Do</text>
+      </navLabel>
+      <content src="text/part0032.html#UGI00-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_34" playOrder="34">
+      <navLabel>
+        <text>30. Closing the Door Too Hard</text>
+      </navLabel>
+      <content src="text/part0033.html#VF2I0-e35ebdf095b04015a4a268ef0c5644f0"/>
+    </navPoint>
+    <navPoint id="num_35" playOrder="35">
+      <navLabel>
+        <text>31. Taming the Beast</text>
+      </navLabel>
+      <content src="text/part0034.html#uLs7JMWMRhH7IigSRv4USC7"/>
+    </navPoint>
+    <navPoint id="num_36" playOrder="36">
+      <navLabel>
+        <text>32. Monster Hunting For Beginners</text>
+      </navLabel>
+      <content src="text/part0035.html#uI9c2vZpb2ycJtXXmQnylY8"/>
+    </navPoint>
+    <navPoint id="num_37" playOrder="37">
+      <navLabel>
+        <text>33. Mistrun River</text>
+      </navLabel>
+      <content src="text/part0036.html#uGWpyjHprBpLWR8hANyuX2F"/>
+    </navPoint>
+    <navPoint id="num_38" playOrder="38">
+      <navLabel>
+        <text>34. Waving the Flag For Secular Morality</text>
+      </navLabel>
+      <content src="text/part0037.html#uZwFq4WGy5Ef8sLRhRKNQT5"/>
+    </navPoint>
+    <navPoint id="num_39" playOrder="39">
+      <navLabel>
+        <text>35. Greenstone</text>
+      </navLabel>
+      <content src="text/part0038.html#unYdrfG5NEqcAIApPoDnAxG"/>
+    </navPoint>
+    <navPoint id="num_40" playOrder="40">
+      <navLabel>
+        <text>36. The Island</text>
+      </navLabel>
+      <content src="text/part0039.html#uqUDHW9huVE4RmglMOKZVCC"/>
+    </navPoint>
+    <navPoint id="num_41" playOrder="41">
+      <navLabel>
+        <text>37. A Good Adventurer and a Great One</text>
+      </navLabel>
+      <content src="text/part0040.html#uxB9iTp2jnzRlTRkRmsD8c3"/>
+    </navPoint>
+    <navPoint id="num_42" playOrder="42">
+      <navLabel>
+        <text>38. Just Another Adventurer</text>
+      </navLabel>
+      <content src="text/part0041.html#uykarMvYrYerIdAQ9wgMsGH"/>
+    </navPoint>
+    <navPoint id="num_43" playOrder="43">
+      <navLabel>
+        <text>39. Training</text>
+      </navLabel>
+      <content src="text/part0042.html#ueiYNcOdBAGuCSPGYp66Ch9"/>
+    </navPoint>
+    <navPoint id="num_44" playOrder="44">
+      <navLabel>
+        <text>40. Eyebeams and the Ethics of Adventuring</text>
+      </navLabel>
+      <content src="text/part0043.html#uPqVUYlC8mpABbntu8oIn7B"/>
+    </navPoint>
+    <navPoint id="num_45" playOrder="45">
+      <navLabel>
+        <text>41. Vulnerable and Exposed</text>
+      </navLabel>
+      <content src="text/part0044.html#u3EuWDM5hIRkKnVZ9PMYQ66"/>
+    </navPoint>
+    <navPoint id="num_46" playOrder="46">
+      <navLabel>
+        <text>42. This is the Pits</text>
+      </navLabel>
+      <content src="text/part0045.html#uW4aiFgqmELvru7WgC3nv5E"/>
+    </navPoint>
+    <navPoint id="num_47" playOrder="47">
+      <navLabel>
+        <text>43. Nightingale</text>
+      </navLabel>
+      <content src="text/part0046.html#u8Ogl2VuviX5ca7gsmLQLv2"/>
+    </navPoint>
+    <navPoint id="num_48" playOrder="48">
+      <navLabel>
+        <text>44. Complimentary Ointment</text>
+      </navLabel>
+      <content src="text/part0047.html#uZQgWwvTZel6QOCtiAUzlN5"/>
+    </navPoint>
+    <navPoint id="num_49" playOrder="49">
+      <navLabel>
+        <text>45. So Much For Atheism</text>
+      </navLabel>
+      <content src="text/part0048.html#umiFrqyPLVHsNdh28mHXFIF"/>
+    </navPoint>
+    <navPoint id="num_50" playOrder="50">
+      <navLabel>
+        <text>46. Blatant Manipulation</text>
+      </navLabel>
+      <content src="text/part0049.html#u9N6N47EoXlIdZVsUpPNVIE"/>
+    </navPoint>
+    <navPoint id="num_51" playOrder="51">
+      <navLabel>
+        <text>47. Mirage Chamber</text>
+      </navLabel>
+      <content src="text/part0050.html#uibic5wQs3IswQgmABQYit3"/>
+    </navPoint>
+    <navPoint id="num_52" playOrder="52">
+      <navLabel>
+        <text>48. An Endless, Inescapable Nightmare</text>
+      </navLabel>
+      <content src="text/part0051.html#uYE5BzMiHZWFPio8GkNsKT2"/>
+    </navPoint>
+    <navPoint id="num_53" playOrder="53">
+      <navLabel>
+        <text>49. A Voice From Home</text>
+      </navLabel>
+      <content src="text/part0052.html#uoTwLR7ssvezE8NGdczupKE"/>
+    </navPoint>
+    <navPoint id="num_54" playOrder="54">
+      <navLabel>
+        <text>50. The Full Keanu</text>
+      </navLabel>
+      <content src="text/part0053.html#u2aYGsW92GR26KofWKDoZCF"/>
+    </navPoint>
+    <navPoint id="num_55" playOrder="55">
+      <navLabel>
+        <text>51. Song of the Nightingale</text>
+      </navLabel>
+      <content src="text/part0054.html#uzKDUiQLNndUIiRQbaE9dA4"/>
+    </navPoint>
+    <navPoint id="num_56" playOrder="56">
+      <navLabel>
+        <text>52. Pain</text>
+      </navLabel>
+      <content src="text/part0055.html#uJLw4CxOO3P4EPEPweeJbgC"/>
+    </navPoint>
+    <navPoint id="num_57" playOrder="57">
+      <navLabel>
+        <text>53. Nightlife</text>
+      </navLabel>
+      <content src="text/part0056.html#uo2b8Z6WsCbmM7Q6wurr4RG"/>
+    </navPoint>
+    <navPoint id="num_58" playOrder="58">
+      <navLabel>
+        <text>54. Field Assessment</text>
+      </navLabel>
+      <content src="text/part0057.html#uugAzuNCCFbOfnKKEgaNokE"/>
+    </navPoint>
+    <navPoint id="num_59" playOrder="59">
+      <navLabel>
+        <text>55. Rune Tortoise</text>
+      </navLabel>
+      <content src="text/part0058.html#u7ZntAT9O6sXjcvanZakgaC"/>
+    </navPoint>
+    <navPoint id="num_60" playOrder="60">
+      <navLabel>
+        <text>56. Gary’s Gift</text>
+      </navLabel>
+      <content src="text/part0059.html#uXlJ67lLyENd3BdXjWC3eIA"/>
+    </navPoint>
+    <navPoint id="num_61" playOrder="61">
+      <navLabel>
+        <text>57. Rainbow Smoke</text>
+      </navLabel>
+      <content src="text/part0060.html#usluJnZfZgdhPdfJNwJtew5"/>
+    </navPoint>
+    <navPoint id="num_62" playOrder="62">
+      <navLabel>
+        <text>58. A Man of Malevolent Intellect</text>
+      </navLabel>
+      <content src="text/part0061.html#uG5tgDGmxdMdokOuVgkG3uB"/>
+    </navPoint>
+    <navPoint id="num_63" playOrder="63">
+      <navLabel>
+        <text>59. Falling Short</text>
+      </navLabel>
+      <content src="text/part0062.html#uIQ9R4n9G2XIcy2YrZZiFTA"/>
+    </navPoint>
+    <navPoint id="num_64" playOrder="64">
+      <navLabel>
+        <text>60. Making Music</text>
+      </navLabel>
+      <content src="text/part0063.html#ukj3V954T6GtgaofWuaycX7"/>
+    </navPoint>
+    <navPoint id="num_65" playOrder="65">
+      <navLabel>
+        <text>61. Trade Hall</text>
+      </navLabel>
+      <content src="text/part0064.html#uIzgd2za3g8C8uMKNAQEmC6"/>
+    </navPoint>
+    <navPoint id="num_66" playOrder="66">
+      <navLabel>
+        <text>62. Have Some Damn Adventures</text>
+      </navLabel>
+      <content src="text/part0065.html#uDtoGBuKg83YPgLtzKrTTtE"/>
+    </navPoint>
+    <navPoint id="num_67" playOrder="67">
+      <navLabel>
+        <text>63. Sunk-Cost Fallacy</text>
+      </navLabel>
+      <content src="text/part0066.html#ubDMDI7w8YV7oitYoNFGMR6"/>
+    </navPoint>
+    <navPoint id="num_68" playOrder="68">
+      <navLabel>
+        <text>64. Take My Wife, Please</text>
+      </navLabel>
+      <content src="text/part0067.html#udb2VFV3YnctLPZjQYJgU96"/>
+    </navPoint>
+    <navPoint id="num_69" playOrder="69">
+      <navLabel>
+        <text>65. Curious Urges</text>
+      </navLabel>
+      <content src="text/part0068.html#uSGwP2CqI2war4Ezgnk4vF8"/>
+    </navPoint>
+    <navPoint id="num_70" playOrder="70">
+      <navLabel>
+        <text>66. A Stronger Weapon Than the One in Your Hand</text>
+      </navLabel>
+      <content src="text/part0069.html#uzeebQQkKszAueo7p2rQI69"/>
+    </navPoint>
+    <navPoint id="num_71" playOrder="71">
+      <navLabel>
+        <text>67. This is What it Means to Fight Me</text>
+      </navLabel>
+      <content src="text/part0070.html#uWbC6RDeInbe55MAvlNRZKC"/>
+    </navPoint>
+    <navPoint id="num_72" playOrder="72">
+      <navLabel>
+        <text>68. Good News For Clive</text>
+      </navLabel>
+      <content src="text/part0071.html#uDwZcN6fgAv4VcxudYfa3V3"/>
+    </navPoint>
+    <navPoint id="num_73" playOrder="73">
+      <navLabel>
+        <text>69. Dumpling Soup</text>
+      </navLabel>
+      <content src="text/part0072.html#uTSDY7AjJTgjgppgKe8YRTE"/>
+    </navPoint>
+    <navPoint id="num_74" playOrder="74">
+      <navLabel>
+        <text>70. Rewards</text>
+      </navLabel>
+      <content src="text/part0073.html#ucnIqP9FMIzpqwimk5hUA6C"/>
+    </navPoint>
+    <navPoint id="num_75" playOrder="75">
+      <navLabel>
+        <text>71. A Bit of Poo</text>
+      </navLabel>
+      <content src="text/part0074.html#ujIOjVq4DaYipXimRDbsOSG"/>
+    </navPoint>
+    <navPoint id="num_76" playOrder="76">
+      <navLabel>
+        <text>72. Rat Race</text>
+      </navLabel>
+      <content src="text/part0075.html#urbsJnRTTiBUzHy9ktG9UT4"/>
+    </navPoint>
+    <navPoint id="num_77" playOrder="77">
+      <navLabel>
+        <text>73. A Grim Sword to Live By</text>
+      </navLabel>
+      <content src="text/part0076.html#u9XDUcmtoAnTHnyvquH7YQ7"/>
+    </navPoint>
+    <navPoint id="num_78" playOrder="78">
+      <navLabel>
+        <text>74. Doing Better</text>
+      </navLabel>
+      <content src="text/part0077.html#ut2yrs6trdRIRFUDkeCSeQ4"/>
+    </navPoint>
+    <navPoint id="num_79" playOrder="79">
+      <navLabel>
+        <text>75. Progress</text>
+      </navLabel>
+      <content src="text/part0078.html#uuWOBT3LIav5i3WGPSEu3P8"/>
+    </navPoint>
+    <navPoint id="num_80" playOrder="80">
+      <navLabel>
+        <text>76. Preparations</text>
+      </navLabel>
+      <content src="text/part0079.html#uHtMTCQmf5e4V2xb3yeky5C"/>
+    </navPoint>
+    <navPoint id="num_81" playOrder="81">
+      <navLabel>
+        <text>77. Group Cohesion</text>
+      </navLabel>
+      <content src="text/part0080.html#uDMinMdX8Y6WPD6sj7UG7C5"/>
+    </navPoint>
+    <navPoint id="num_82" playOrder="82">
+      <navLabel>
+        <text>78. Jason Has the Good Biscuits</text>
+      </navLabel>
+      <content src="text/part0081.html#ufpA4LUcYm6iuAOevtWVahC"/>
+    </navPoint>
+    <navPoint id="num_83" playOrder="83">
+      <navLabel>
+        <text>79. Sand Everywhere</text>
+      </navLabel>
+      <content src="text/part0082.html#uurzXTdwdOGpeNApX6Qk8f2"/>
+    </navPoint>
+    <navPoint id="num_84" playOrder="84">
+      <navLabel>
+        <text>80. It’s Not Work if You Love What You Do</text>
+      </navLabel>
+      <content src="text/part0083.html#usfmOzzNeNoKRsXToDjs948"/>
+    </navPoint>
+    <navPoint id="num_85" playOrder="85">
+      <navLabel>
+        <text>81. Crazy Desperation Move</text>
+      </navLabel>
+      <content src="text/part0084.html#uM7eDoj8pcrVxiyA5wQ9IL6"/>
+    </navPoint>
+    <navPoint id="num_86" playOrder="86">
+      <navLabel>
+        <text>82. Choices</text>
+      </navLabel>
+      <content src="text/part0085.html#uEZTu69m3a4NtaKGqsWAZaA"/>
+    </navPoint>
+    <navPoint id="num_87" playOrder="87">
+      <navLabel>
+        <text>83. It Makes No Difference to the Ant</text>
+      </navLabel>
+      <content src="text/part0086.html#uLvjaGt9EahjMzUHBMfNWa3"/>
+    </navPoint>
+    <navPoint id="num_88" playOrder="88">
+      <navLabel>
+        <text>84. Injury &amp; Death</text>
+      </navLabel>
+      <content src="text/part0087.html#uncop5e9SvswS6jx7EOZbn9"/>
+    </navPoint>
+    <navPoint id="num_89" playOrder="89">
+      <navLabel>
+        <text>85. Because I’m an Adventurer</text>
+      </navLabel>
+      <content src="text/part0088.html#uNiasgVUijmKfKWhtNU74oB"/>
+    </navPoint>
+    <navPoint id="num_90" playOrder="90">
+      <navLabel>
+        <text>86. Some Kind of Secret</text>
+      </navLabel>
+      <content src="text/part0089.html#uSKudjGnS4gt4kEzfwfLNt7"/>
+    </navPoint>
+    <navPoint id="num_91" playOrder="91">
+      <navLabel>
+        <text>87. Can’t Lose</text>
+      </navLabel>
+      <content src="text/part0090.html#uui4aWYeBjftvtIG26chnJ8"/>
+    </navPoint>
+    <navPoint id="num_92" playOrder="92">
+      <navLabel>
+        <text>88. The Nature of Absolution</text>
+      </navLabel>
+      <content src="text/part0091.html#uWRPuYU2n3lDXvbzwP638W7"/>
+    </navPoint>
+    <navPoint id="num_93" playOrder="93">
+      <navLabel>
+        <text>89. Anti-Pirate Operations</text>
+      </navLabel>
+      <content src="text/part0092.html#uxpy6EXgXXo86J9YX3Fa5PF"/>
+    </navPoint>
+    <navPoint id="num_94" playOrder="94">
+      <navLabel>
+        <text>90. The Path to Bronze</text>
+      </navLabel>
+      <content src="text/part0093.html#u5apaPQvPZ5ZzrrmnUZRgxE"/>
+    </navPoint>
+    <navPoint id="num_95" playOrder="95">
+      <navLabel>
+        <text>91. Life &amp; Death</text>
+      </navLabel>
+      <content src="text/part0094.html#u5Ikw389uXEBF2RlfAK3NUH"/>
+    </navPoint>
+    <navPoint id="num_96" playOrder="96">
+      <navLabel>
+        <text>92. Unusual Contract</text>
+      </navLabel>
+      <content src="text/part0095.html#uN8Sxt9jOurkVL4R2ed9NUF"/>
+    </navPoint>
+    <navPoint id="num_97" playOrder="97">
+      <navLabel>
+        <text>93. Truth</text>
+      </navLabel>
+      <content src="text/part0096.html#uBLHrqMmsQuy7qhMSoiDuzC"/>
+    </navPoint>
+    <navPoint id="num_98" playOrder="98">
+      <navLabel>
+        <text>94. Consequences</text>
+      </navLabel>
+      <content src="text/part0097.html#uNmpaFsQYodJ9Gs3JZvZCyD"/>
+    </navPoint>
+    <navPoint id="num_99" playOrder="99">
+      <navLabel>
+        <text>95. Punishment</text>
+      </navLabel>
+      <content src="text/part0098.html#uZFYG95ZAN3NNUlPl5XIMhA"/>
+    </navPoint>
+    <navPoint id="num_100" playOrder="100">
+      <navLabel>
+        <text>96. You Don’t Get a Third</text>
+      </navLabel>
+      <content src="text/part0099.html#ufxXG7OAZBXV9IPVQ3dTSZ7"/>
+    </navPoint>
+    <navPoint id="num_101" playOrder="101">
+      <navLabel>
+        <text>97. Integrity is Sexy</text>
+      </navLabel>
+      <content src="text/part0100.html#uiEpflSe9yhXPNR4omQTO3C"/>
+    </navPoint>
+    <navPoint id="num_102" playOrder="102">
+      <navLabel>
+        <text>98. The Point of Money and Power</text>
+      </navLabel>
+      <content src="text/part0101.html#ublKr4wE3ggAZimGo9vc4D8"/>
+    </navPoint>
+    <navPoint id="num_103" playOrder="103">
+      <navLabel>
+        <text>99. Someone Else’s Game</text>
+      </navLabel>
+      <content src="text/part0102.html#uEJdF9tAkbnb96wgM2wk9w8"/>
+    </navPoint>
+    <navPoint id="num_104" playOrder="104">
+      <navLabel>
+        <text>100. Legwork</text>
+      </navLabel>
+      <content src="text/part0103.html#u7qy4HQBD5DVONqiFQ8xvH5"/>
+    </navPoint>
+    <navPoint id="num_105" playOrder="105">
+      <navLabel>
+        <text>101. Fantasy World Goodness</text>
+      </navLabel>
+      <content src="text/part0104.html#u5yGcVGVRO5gUTUGXW26c98"/>
+    </navPoint>
+    <navPoint id="num_106" playOrder="106">
+      <navLabel>
+        <text>102. You Fight Like Me</text>
+      </navLabel>
+      <content src="text/part0105.html#ubHUqgsxyJesomn6GBEqty8"/>
+    </navPoint>
+    <navPoint id="num_107" playOrder="107">
+      <navLabel>
+        <text>103. Silver Hair</text>
+      </navLabel>
+      <content src="text/part0106.html#uWtSJZXDhUysWckhnLTukQB"/>
+    </navPoint>
+    <navPoint id="num_108" playOrder="108">
+      <navLabel>
+        <text>104. An Outcome That Satisfies</text>
+      </navLabel>
+      <content src="text/part0107.html#u4BUlJW5gGZ3mYGOFisSYcB"/>
+    </navPoint>
+    <navPoint id="num_109" playOrder="109">
+      <navLabel>
+        <text>105. You Aren’t in Control of What Happens Next</text>
+      </navLabel>
+      <content src="text/part0108.html#uHWLBa9LUJIBwCisplfQ2tE"/>
+    </navPoint>
+    <navPoint id="num_110" playOrder="110">
+      <navLabel>
+        <text>106. Something Shady</text>
+      </navLabel>
+      <content src="text/part0109.html#ufEvMGGVFpe4CyMyq2MU9a5"/>
+    </navPoint>
+    <navPoint id="num_111" playOrder="111">
+      <navLabel>
+        <text>107. All the Good People We Can Get</text>
+      </navLabel>
+      <content src="text/part0110.html#ursZNgZchWMqBnwIjAVaNT5"/>
+    </navPoint>
+    <navPoint id="num_112" playOrder="112">
+      <navLabel>
+        <text>108. You Don’t Have the Strength</text>
+      </navLabel>
+      <content src="text/part0111.html#uxeZ3exGYxhvyKMHKOqhpdD"/>
+    </navPoint>
+    <navPoint id="num_113" playOrder="113">
+      <navLabel>
+        <text>109. The Tyranny of Rank</text>
+      </navLabel>
+      <content src="text/part0112.html#uhVQ2e5Ir76CbRPDHTQTSaB"/>
+    </navPoint>
+    <navPoint id="num_114" playOrder="114">
+      <navLabel>
+        <text>110. Help Arrives</text>
+      </navLabel>
+      <content src="text/part0113.html#udI2TnCAeOY3Fc5x3abFL48"/>
+    </navPoint>
+    <navPoint id="num_115" playOrder="115">
+      <navLabel>
+        <text>111. Strange Star</text>
+      </navLabel>
+      <content src="text/part0114.html#uk9BdBFtnLvb7a2lAEE5aEG"/>
+    </navPoint>
+    <navPoint id="num_116" playOrder="116">
+      <navLabel>
+        <text>112. The Accumulation of a Life</text>
+      </navLabel>
+      <content src="text/part0115.html#ueMDNU7EPrOY5pnScCpLeEF"/>
+    </navPoint>
+    <navPoint id="num_117" playOrder="117">
+      <navLabel>
+        <text>113. You Need to Work on Making Enemies</text>
+      </navLabel>
+      <content src="text/part0116.html#uPIZ2noulDB3C26qpD3MNe6"/>
+    </navPoint>
+    <navPoint id="num_118" playOrder="118">
+      <navLabel>
+        <text>Looking for more great LitRPG from Aethon Books?</text>
+      </navLabel>
+      <content src="text/part0117.html#ukMENWUcU2bzpsKMfSc7vRH"/>
+    </navPoint>
+    <navPoint id="num_119" playOrder="119">
+      <navLabel>
+        <text>FROM THE PUBLISHER</text>
+      </navLabel>
+      <content src="text/part0118.html#uZAR6yFfuShiLZ4qa4LiFt8"/>
+    </navPoint>
+    <navPoint id="num_120" playOrder="120">
+      <navLabel>
+        <text>ALSO IN SERIES</text>
+      </navLabel>
+      <content src="text/part0119.html#uEfFDW2AILVZThhbpqXm3tD"/>
+    </navPoint>
+    <navPoint id="num_121" playOrder="121">
+      <navLabel>
+        <text>LitRPG</text>
+      </navLabel>
+      <content src="text/part0120.html#uIg56vTnbd9LOjvXth3SuTC"/>
+    </navPoint>
+    <navPoint id="num_122" playOrder="122">
+      <navLabel>
+        <text>LitRPG</text>
+      </navLabel>
+      <content src="text/part0121.html#uQq6ZoXd5c82VhOfTgKkZaB"/>
+    </navPoint>
+  </navMap>
+</ncx>

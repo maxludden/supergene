@@ -1,0 +1,429 @@
+.alignment-block {
+    clear: both;
+    display: block;
+    margin-bottom: 1.4em;
+    margin-top: 1.4em;
+    }
+.alignment-block-content {
+    display: block;
+    font-size: 0.91667em;
+    text-align: center;
+    text-indent: 0;
+    margin: 0
+    }
+.alignment-block-content1 {
+    display: block;
+    font-size: 0.91667em;
+    text-align: left;
+    text-indent: 0;
+    margin: 0
+    }
+.alignment-block-content2 {
+    display: block;
+    text-align: center;
+    text-indent: 0;
+    margin: 0
+    }
+.alignment-block-content3 {
+    display: block;
+    text-align: left;
+    text-indent: 0;
+    margin: 0
+    }
+.alignment-block1 {
+    clear: both;
+    display: block;
+    margin: 1.4em 1.5em
+    }
+.calibre {
+    display: block;
+    font-size: 1em;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 5pt
+    }
+.calibre1 {
+    font-weight: bold
+    }
+.calibre2 {
+    font-size: 0.95455em;
+    line-height: 1.2;
+    margin-left: 0.05em;
+    vertical-align: super
+    }
+.calibre3 {
+    font-style: italic
+    }
+.calibre4 {
+    text-decoration: underline
+    }
+.calibre5 {
+    clear: left;
+    display: block;
+    list-style-type: disc;
+    margin-bottom: 1.4em;
+    margin-right: 0;
+    margin-top: 1.4em;
+    padding-right: 1.5em
+    }
+.calibre6 {
+    display: list-item;
+    text-align: left
+    }
+.calibre7 {
+    height: auto;
+    width: 100%
+    }
+.content-external-link {
+    text-decoration: underline;
+    }
+.element {
+    display: block
+    }
+.element-number {
+    display: block;
+    font-size: 0.91667em;
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0
+    }
+.element-number-block {
+    display: block;
+    min-height: 1.5em
+    }
+.element1 {
+    display: block;
+    margin-top: 2.5em
+    }
+.first {
+    display: block;
+    font-size: 0.91667em;
+    text-align: left;
+    text-indent: 0;
+    margin: 0.75em 0 0
+    }
+.first-letter {
+    float: left;
+    font-size: 325%;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: -0.35em 0.05em -0.05em 0.22em
+    }
+.first-letter1 {
+    float: left;
+    font-size: 325%;
+    font-style: normal;
+    font-weight: normal;
+    margin-bottom: -0.31em;
+    margin-right: 0.05em;
+    margin-top: -0.35em;
+    text-decoration: none;
+    text-transform: uppercase
+    }
+.first-letter2 {
+    float: left;
+    font-size: 325%;
+    font-style: normal;
+    font-weight: normal;
+    margin-bottom: -0.31em;
+    margin-right: 0.1em;
+    margin-top: -0.35em;
+    text-decoration: none;
+    text-transform: uppercase
+    }
+.first-letter3 {
+    float: left;
+    font-size: 325%;
+    font-style: normal;
+    font-weight: normal;
+    margin-bottom: -0.31em;
+    margin-right: 0.09em;
+    margin-top: -0.35em;
+    text-decoration: none;
+    text-transform: uppercase
+    }
+.first-letter4 {
+    float: left;
+    font-size: 325%;
+    font-style: normal;
+    font-weight: normal;
+    margin-bottom: -0.31em;
+    margin-right: 0.03em;
+    margin-top: -0.35em;
+    text-decoration: none;
+    text-transform: uppercase
+    }
+.first-letter5 {
+    float: left;
+    font-size: 325%;
+    font-style: normal;
+    font-weight: normal;
+    margin-bottom: -0.31em;
+    margin-right: 0.08em;
+    margin-top: -0.35em;
+    text-decoration: none;
+    text-transform: uppercase
+    }
+.first1 {
+    display: block;
+    font-size: 0.91667em;
+    text-align: center;
+    text-indent: 0;
+    margin: 0 0 0.5em
+    }
+.first2 {
+    display: block;
+    text-align: justify;
+    text-indent: 0;
+    margin: 0
+    }
+.first3 {
+    display: block;
+    font-size: 0.91667em;
+    font-style: normal;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em;
+    text-align: justify;
+    text-indent: 0;
+    border-top: rgb(221, 221, 221) solid 1px;
+    margin: 0
+    }
+.first4 {
+    display: block;
+    font-size: 0.91667em;
+    font-style: normal;
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: justify;
+    text-indent: 0;
+    margin: 0
+    }
+.first5 {
+    display: block;
+    font-size: 0.91667em;
+    font-style: normal;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: justify;
+    text-indent: 0;
+    border-bottom: rgb(221, 221, 221) solid 1px;
+    margin: 0
+    }
+.first6 {
+    display: block;
+    font-size: 0.91667em;
+    text-align: justify;
+    text-indent: 0;
+    margin: 0
+    }
+.heading {
+    display: block;
+    margin-bottom: 2em;
+    margin-left: 6%;
+    margin-right: 6%;
+    min-height: inherit;
+    text-align: center
+    }
+.heading-contents {
+    display: block;
+    padding-top: 2em
+    }
+.heading-contents1 {
+    display: block;
+    padding-top: 5em
+    }
+.heading1 {
+    display: block;
+    margin-bottom: 2em;
+    margin-left: 6%;
+    margin-right: 6%;
+    min-height: 12em;
+    text-align: center
+    }
+.image-element-block {
+    display: block;
+    text-align: center
+    }
+.image-element-image {
+    height: auto;
+    vertical-align: middle;
+    width: 100%
+    }
+.image-element-size-container {
+    display: inline-block;
+    width: 100%
+    }
+.implicit-break {
+    display: block;
+    height: 0;
+    page-break-inside: avoid;
+    text-align: justify;
+    text-indent: 0;
+    margin: 1.4em 0 0
+    }
+.implicit-break1 {
+    clear: both;
+    display: block;
+    height: 1.4em;
+    page-break-inside: avoid;
+    text-align: justify;
+    text-indent: 0;
+    margin: 0 0 1.4em
+    }
+.implicit-break2 {
+    display: block;
+    height: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+    page-break-inside: avoid;
+    text-align: justify;
+    text-indent: 0;
+    margin: 1.4em 0 0
+    }
+.inline-image {
+    clear: both;
+    display: block;
+    float: left;
+    margin-bottom: 1.5em;
+    margin-right: 6%;
+    text-align: center;
+    width: 40%
+    }
+.inline-image-container {
+    display: block;
+    width: 100%
+    }
+.inline-image-container1 {
+    display: block;
+    margin-left: 0%;
+    margin-right: 0%;
+    width: 100%
+    }
+.inline-image1 {
+    clear: both;
+    display: block;
+    float: right;
+    margin-bottom: 1.5em;
+    margin-left: 6%;
+    text-align: center;
+    width: 40%
+    }
+.inline-image2 {
+    clear: both;
+    display: block;
+    margin-bottom: 1.5em;
+    text-align: center;
+    width: 100%
+    }
+.item-number {
+    font-size: 0.95455em;
+    padding-left: 0;
+    padding-right: 0.3em;
+    text-indent: 0
+    }
+.item-title {
+    display: block;
+    font-size: 0.91667em;
+    padding-left: 1.5em;
+    text-align: left;
+    text-indent: -1.5em;
+    margin: 0
+    }
+.ornamental-break {
+    clear: both;
+    display: block;
+    margin-bottom: 1.4em;
+    margin-top: 1.4em;
+    page-break-before: avoid;
+    page-break-inside: avoid;
+    text-align: center
+    }
+.ornamental-break-as-text {
+    display: none;
+    text-align: center;
+    text-indent: 0;
+    margin: 0
+    }
+.ornamental-break-block {
+    display: inline-block;
+    width: 11.2em
+    }
+.ornamental-break-image {
+    height: auto;
+    vertical-align: top;
+    width: 100%
+    }
+.ornamental-break-size-container {
+    display: inline-block;
+    width: 9.3%
+    }
+.subsq {
+    display: block;
+    text-align: justify;
+    text-indent: 1.5em;
+    margin: 0
+    }
+.subsq1 {
+    display: block;
+    font-size: 0.91667em;
+    text-align: justify;
+    text-indent: 1.5em;
+    margin: 0
+    }
+.title {
+    display: block;
+    font-size: 1em;
+    font-weight: normal;
+    letter-spacing: 0.15em;
+    page-break-inside: avoid;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0
+    }
+.title-block {
+    display: block;
+    font-size: 0.91667em;
+    padding-top: 0
+    }
+.title-subtitle-block {
+    display: block;
+    padding-top: 0
+    }
+.toc-backmatter-group {
+    display: block;
+    margin-top: 0.75em
+    }
+.toc-contents {
+    display: block;
+    padding-left: 5%;
+    padding-right: 5%
+    }
+.toc-frontmatter-group {
+    display: block;
+    margin-bottom: 0.75em
+    }
+.toc-heading {
+    display: block;
+    margin: 3em 6%
+    }
+.toc-item {
+    display: block;
+    margin-bottom: 0.1em;
+    page-break-inside: avoid
+    }
+.toc-title {
+    display: block;
+    font-size: 1em;
+    font-weight: normal;
+    letter-spacing: 0.1em;
+    page-break-inside: avoid;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0
+    }
