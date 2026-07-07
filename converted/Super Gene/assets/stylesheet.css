@@ -105,7 +105,6 @@ h1.hidden-title {
 .chapter {
   break-before: left;
   page-break-before: left;
-  page-break-inside: avoid;
 }
 
 .element {

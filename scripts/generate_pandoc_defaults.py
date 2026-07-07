@@ -1254,7 +1254,7 @@ p::after {
   text-indent: 0;
   width: 90%;
   margin: 0 auto;
-  border: black solid 1px;
+  border: 1px solid #7a7a7a;
 }
 
 .calibre9 {
@@ -1272,7 +1272,7 @@ p::after {
   text-align: inherit;
   vertical-align: inherit;
   padding: 1px;
-  border: black solid 1px;
+  border: 1px solid #7a7a7a;
 }
 
 h1.hidden-title {
@@ -1283,7 +1283,6 @@ h1.hidden-title {
 .chapter {
   break-before: left;
   page-break-before: left;
-  page-break-inside: avoid;
 }
 
 .element {
@@ -1378,7 +1377,10 @@ h1.hidden-title {
 
 .profile-table th,
 .profile-table td {
-  border: 1px solid #7a7a7a;
+  border-top: 1px solid #7a7a7a;
+  border-bottom: 1px solid #7a7a7a;
+  border-left: 0;
+  border-right: 0;
   padding: 0.3em 0.5em;
   vertical-align: top;
   text-indent: 0;
@@ -1388,12 +1390,29 @@ h1.hidden-title {
   word-break: normal;
 }
 
+.profile-table th:first-child,
+.profile-table td:first-child {
+  border-left: 1px solid #7a7a7a;
+}
+
+.profile-table th:last-child,
+.profile-table td:last-child {
+  border-right: 1px solid #7a7a7a;
+}
+
 .profile-table th {
-  background-color: #fff;
-  color: #000;
+  background-color: #111;
+  color: #eee;
   font-weight: bold;
   text-align: left;
   width: 42%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .profile-table th {
+    background-color: #eee;
+    color: #111;
+  }
 }
 
 .profile-table .profile-value {

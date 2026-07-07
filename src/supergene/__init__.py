@@ -1,6 +1,7 @@
 """Super Gene conversion, review, and reporting tools."""
 
 from dotenv import load_dotenv
+from loguru import logger
 
 from supergene.converter import (
     BookMetadata,
@@ -10,6 +11,7 @@ from supergene.converter import (
     ConversionWarning,
     convert_epub,
 )
+from supergene.logging import RichLoggerConfig
 from supergene.render_table_candidates import render_table_candidates_html
 from supergene.supabase_store import (
     SupabaseStorageConfig,
@@ -22,7 +24,7 @@ from supergene.table_candidates import (
     write_table_candidate_report
 )
 from supergene.title_quality import TitleSpellingIssue, find_missing_terminal_t_title_issues
-from loguru import logger
+
 
 # Load environment variables from .env file if present,
 # so they can be used in CLI workflows and tests. Intended to load:
@@ -38,6 +40,7 @@ __all__ = [
     "ConversionProgress",
     "ConversionResult",
     "ConversionWarning",
+    "RichLoggerConfig",
     "SupabaseStorageConfig",
     "SupabaseStoreResult",
     "TableCandidate",
